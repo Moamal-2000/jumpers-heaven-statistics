@@ -3,197 +3,170 @@ note: bot generated file, due to markdown restriction all escape characters got 
 # Player Rankings Changes
 
 ## FPS Category: 125
-| Rank | Player Name           | Old Score | New Score | Old Places (1-5) | New Places (1-5) | Status          |
+| Rank | Player Name           | Old Score | New Score | Old Tops (1-5) | New Tops (1-5) | Status          |
 |------|-----------------------|-----------|-----------|------------------|------------------|-----------------|
-|    0 | UnReal.JumperZ/Tona |   2884 |   1058 | [218 39 12 9 13] | [84 13 2 3 3] | updated          |
-|    1 | Unknown          |   2439 |    854 | [55 35 50 58 53] | [9 6 23 29 27] | updated          |
-|    2 | wormtongue       |   1941 |    762 | [56 52 38 32 26] | [21 17 16 13 11] | updated          |
-|    3 | UnReal.JumperZ/claay |   1642 |    626 | [26 49 33 36 24] | [6 22 15 11 14] | updated          |
-|    4 | UnReal.JumperZ/picajzl |   1836 |    582 | [20 101 37 18 21] | [7 32 10 5 7] | updated          |
-|    5 | Phylo            |   1166 |    488 | [22 32 28 18 13] | [7 13 12 11 6] | updated          |
-|    6 | nendecrew maci.  |     -     |    344 |         -         | [1 10 6 5 8] | new in top      |
-|    7 | Untouch p a d e rSAD |     -     |    327 |         -         | [7 3 7 5 7] | new in top      |
-|    8 | UnReal.JumperZ/Trela |    894 |    323 | [18 20 17 9 22] | [5 8 10 2 6] | updated          |
-|    9 | ^ImmortalJumpers.Muki |     -     |    301 |         -         | [0 3 7 12 5] | new in top      |
-|   10 | Pauli            |   1100 |    296 | [14 21 31 25 18] | [3 4 9 7 4] | updated          |
-|   11 | nendecrew Baket. |     -     |    267 |         -         | [0 4 4 4 4] | new in top      |
-|   12 | BlueJay          |    522 |    221 | [1 10 12 9 16] | [1 4 4 4 7] | updated          |
-|   13 | UnReal.JumperZ/Gr3y |     -     |    217 |         -         | [0 1 2 5 5] | new in top      |
-|   14 | Shinji           |    859 |    212 | [3 11 18 31 14] | [0 4 3 7 0] | updated          |
-|   15 | CHETELABOIZ n3v0rn1k |    581 |    166 | [0 1 10 14 17] | [0 0 2 3 4] | updated          |
-|   16 | IzNoGoD          |    174 |    144 | [5 7 1 3 2] | [4 6 1 2 2] | updated          |
-|   17 | bluzz            |    305 |    142 | [1 4 4 7 5] | [1 2 2 3 2] | updated          |
-|   18 | Kryptah          |    414 |    142 | [5 6 10 9 7] | [2 2 4 4 1] | updated          |
-|   19 | Duck             |    464 |    130 | [0 8 12 11 8] | [0 1 4 3 3] | updated          |
-|   20 | pitterer         |    241 |    125 | [1 2 2 5 6] | [1 1 2 4 2] | updated          |
-|   21 | wulf             |    355 |    122 | [0 4 7 7 12] | [0 2 3 0 6] | updated          |
-|   22 | UnaRkW           |    166 |    112 | [14 1 0 0 0] | [9 1 0 0 0] | updated          |
-|   23 | Mystery          |    427 |    110 | [0 4 10 14 14] | [0 1 3 1 5] | updated          |
-|   24 | &39;ShepZ        |     -     |     88 |         -         | [3 3 2 0 1] | new in top      |
-|   25 | linox            |     -     |     69 |         -         | [0 0 0 0 4] | new in top      |
-|   26 | nendecrew Anana$. |     -     |     66 |         -         | [0 1 3 0 1] | new in top      |
-|   27 | dcoy |    231 |     66 | [3 0 4 5 8] | [1 0 0 2 1] | updated          |
-|   28 | WEAREJUMPERS LanMy |    149 |     63 | [0 3 3 2 2] | [0 1 1 1 2] | updated          |
-|   29 | funki            |    374 |     60 | [3 7 7 11 6] | [0 2 0 0 2] | updated          |
-|   30 | Avengers         |    155 |     55 | [0 2 1 8 4] | [0 0 1 3 2] | updated          |
-|   31 | Doctor.          |     98 |     54 | [0 2 5 3 0] | [0 0 4 1 0] | updated          |
-|   32 | poka             |    154 |     54 | [0 2 2 3 3] | [0 1 1 0 1] | updated          |
-|   33 | r A u l          |     -     |     49 |         -         | [1 1 2 1 1] | new in top      |
-|   34 | WEAREJUMPERS chaotic |    143 |     48 | [0 1 1 5 1] | [0 1 0 2 0] | updated          |
-|   35 | UnReal.JumperZ/Diggy |     89 |     44 | [0 0 3 3 2] | [0 0 1 2 2] | updated          |
-|   36 | brian.           |    231 |     44 | [0 3 4 5 11] | [0 0 1 2 1] | updated          |
-|   37 | deletemyexistence |     57 |     37 | [1 1 1 0 3] | [1 1 0 0 2] | updated          |
-|   38 | TOTONESKOCIM:Dwinz |     93 |     37 | [0 1 1 1 2] | [0 0 1 1 1] | updated          |
-|   39 | Dom1natoRRR      |    124 |     33 | [0 1 0 0 2] | [0 0 0 0 1] | updated          |
-|   40 | neverlucky       |    152 |     29 | [1 1 3 2 2] | [0 0 0 1 0] | updated          |
-|   41 | Trickshot        |     38 |     28 | [2 2 0 0 0] | [1 2 0 0 0] | updated          |
-|   42 | Roien            |    149 |     28 | [0 4 4 3 5] | [0 0 0 0 3] | updated          |
-|   43 | Kadel            |     -     |     27 |         -         | [0 0 0 2 1] | new in top      |
-|   44 | Blade / Blade    |     63 |     26 | [0 0 2 0 3] | [0 0 0 0 2] | updated          |
-|   45 | nendecrew TOPinka. |     -     |     26 |         -         | [0 0 0 1 0] | new in top      |
-|   46 | CALUM            |     29 |     25 | [0 1 0 0 1] | [0 1 0 0 1] | updated          |
-|   47 | Khemotoksz       |     56 |     25 | [0 0 0 2 0] | [0 0 0 1 0] | updated          |
-|   48 | ratemap 0        |     -     |     25 |         -         | [0 1 0 0 1] | new in top      |
-|   49 | KappaSquad febo  |    131 |     24 | [0 0 1 2 4] | [0 0 0 0 2] | updated          |
-|   50 | Faker:D&&1       |     -     |     20 |         -         | [0 0 0 0 1] | new in top      |
-|   51 | Jump4LifeBaSeM   |     -     |     20 |         -         | [0 0 1 0 1] | new in top      |
-|   52 | UnReal.JumperZ/Floater |     26 |     19 | [0 0 1 1 0] | [0 0 1 0 0] | updated          |
-|   53 | busko            |     75 |     19 | [0 1 1 2 2] | [0 0 0 2 0] | updated          |
-|   54 | Titan.           |     -     |     18 |         -         | [0 0 1 1 0] | new in top      |
-|   55 | TheCrazyWolf     |     -     |     16 |         -         | [0 1 0 1 0] | new in top      |
-|   56 | kLeiN            |     20 |     15 | [1 0 0 0 0] | [1 0 0 0 0] | updated          |
-|   57 | MusTa            |     83 |     14 | [1 0 5 1 0] | [0 0 1 0 0] | updated          |
-|   58 | ^4               |     14 |     14 | [0 0 0 2 0] | [0 0 0 2 0] | no change          |
-|   59 | AmBB...          |     -     |     14 |         -         | [0 0 0 0 1] | new in top      |
-|   60 | pkm4st3r         |     -     |     13 |         -         | [0 0 0 1 0] | new in top      |
-|   61 | Dutchie          |     13 |     13 | [0 0 0 1 1] | [0 0 0 1 1] | no change          |
-|   62 | Victima          |     -     |     13 |         -         | [0 0 0 1 0] | new in top      |
-|   63 | TheproOne        |     12 |     12 | [0 0 0 1 0] | [0 0 0 1 0] | no change          |
-|   64 | Ikuminusz        |     36 |     12 | [0 1 1 1 1] | [0 0 1 0 0] | updated          |
-|   65 | visio            |     41 |     11 | [0 0 1 1 2] | [0 0 0 1 0] | updated          |
-|   66 | Rob              |     28 |     11 | [0 0 1 0 0] | [0 0 1 0 0] | updated          |
-|   67 | Matyizom         |     49 |     11 | [0 0 1 2 2] | [0 0 0 1 0] | updated          |
-|   68 | tadaima          |     10 |     10 | [1 0 0 0 0] | [1 0 0 0 0] | no change          |
-|   69 | ScBumba          |     -     |     10 |         -         | [0 0 1 0 0] | new in top      |
-|   70 | cessaR,          |     -     |      9 |         -         | [0 1 0 0 0] | new in top      |
-|   71 | lazlo            |      9 |      8 | [0 0 0 1 0] | [0 0 0 1 0] | updated          |
-|   72 | foliasok  kev    |     -     |      8 |         -         | [0 0 0 1 0] | new in top      |
-|   73 | Jimmy            |      8 |      8 | [0 0 1 0 0] | [0 0 1 0 0] | no change          |
-|   74 | Fox              |     14 |      8 | [0 0 1 0 0] | [0 0 1 0 0] | updated          |
-|   75 | idiot2482nade:   |     -     |      7 |         -         | [0 0 0 0 0] | new in top      |
-|   76 | JUMLACKYPER      |     11 |      7 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
-|   77 | FoXy             |      7 |      7 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|   78 | ApLo             |     18 |      7 | [0 0 0 0 1] | [0 0 0 0 0] | updated          |
-|   79 | Leokahun         |      6 |      6 | [0 0 0 0 1] | [0 0 0 0 1] | no change          |
-|   80 | wawd x dezzii    |      6 |      6 | [0 0 0 0 1] | [0 0 0 0 1] | no change          |
-|   81 | ReD              |     29 |      6 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
-|   82 | Kisfiu           |     -     |      5 |         -         | [0 0 0 0 0] | new in top      |
-|   83 | Fury             |      5 |      5 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|   84 | BooK of RA       |      5 |      5 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|   85 | AranyparasztDeres |     -     |      5 |         -         | [0 0 0 0 0] | new in top      |
-|   86 | unkno soldja     |      5 |      5 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|   87 | rybax            |      5 |      5 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|   88 | MerliN           |     -     |      5 |         -         | [0 0 0 0 0] | new in top      |
-|   89 | Deto             |      4 |      4 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|   90 | ^ImmortalJumpers.Greg |     -     |      4 |         -         | [0 0 0 0 0] | new in top      |
-|   91 | Jump4LifePall    |     -     |      4 |         -         | [0 0 0 0 0] | new in top      |
-|   92 | Pat^FPS          |      5 |      4 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
-|   93 | skuby            |      4 |      4 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|   94 | feelthepower  TOMBRADY |     -     |      4 |         -         | [0 0 0 0 0] | new in top      |
-|   95 | oli              |      3 |      3 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|   96 | Panda            |      3 |      3 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|   97 | Martin           |      3 |      3 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|   98 | OUTLAWLayla      |     -     |      3 |         -         | [0 0 0 0 0] | new in top      |
-|   99 | xX1Xx            |     -     |      3 |         -         | [0 0 0 0 0] | new in top      |
-|  100 | JumpStylelordK   |     -     |      3 |         -         | [0 0 0 0 0] | new in top      |
-|  101 | dOxX             |     -     |      3 |         -         | [0 0 0 0 0] | new in top      |
-|  102 | nOiSe            |      4 |      3 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
-|  103 | &39;Gemini       |     -     |      3 |         -         | [0 0 0 0 0] | new in top      |
-|  104 | JHFan533         |     -     |      2 |         -         | [0 0 0 0 0] | new in top      |
-|  105 | WINSTON          |     19 |      2 | [0 1 1 0 0] | [0 0 0 0 0] | updated          |
-|  106 | R E K S I O?     |     -     |      2 |         -         | [0 0 0 0 0] | new in top      |
-|  107 | Mikro            |     -     |      2 |         -         | [0 0 0 0 0] | new in top      |
-|  108 | ntech            |      2 |      2 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|  109 | JoKeR            |      2 |      2 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|  110 | drawax           |      2 |      2 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|  111 | allegedly db     |     18 |      2 | [0 1 0 1 0] | [0 0 0 0 0] | updated          |
-|  112 | CAN              |     -     |      1 |         -         | [0 0 0 0 0] | new in top      |
-|  113 | EpSandro         |     -     |      1 |         -         | [0 0 0 0 0] | new in top      |
-|  114 | UnReal.JumperZ/Cheri |     10 |      1 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
-|  115 | TyFun            |      1 |      1 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|  116 | blaadje/bl444jde/bjd/blade |     14 |      1 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
-|  117 | MyGoodMistake    |      2 |      1 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
-|  118 | Srna             |      1 |      1 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|  119 | squezzy.         |      9 |      1 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
-|  120 | un88x            |     39 |      1 | [0 0 1 0 0] | [0 0 0 0 0] | updated          |
-|  121 | Chemtrail        |      1 |      1 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|  122 | 0x041E           |      1 |      1 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
-|  123 | probably kubi    |     10 |     0     | [1 0 0 0 0] |         -         | removed from top |
-|  124 | Padis            |      2 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  125 | NaRCoTiX:        |      6 |     0     | [0 0 0 0 1] |         -         | removed from top |
-|  126 | Surtric          |      3 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  127 | kung foo man     |      2 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  128 | Kiper            |      1 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  129 | , B a $ O o O :  |      4 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  130 | Arak             |      5 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  131 | JumpersHeavenFan |      1 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  132 | UnnamedPlayer    |      5 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  133 | Nergy.=          |      6 |     0     | [0 0 0 0 1] |         -         | removed from top |
-|  134 | Peter33          |      8 |     0     | [0 0 1 0 0] |         -         | removed from top |
-|  135 | TurtlesNinja     |     18 |     0     | [0 0 0 1 0] |         -         | removed from top |
-|  136 | eni.             |     27 |     0     | [0 1 1 0 0] |         -         | removed from top |
-|  137 | stym             |     20 |     0     | [0 0 1 0 0] |         -         | removed from top |
-|  138 | Nexoo            |     10 |     0     | [1 0 0 0 0] |         -         | removed from top |
-|  139 | Meruem           |     15 |     0     | [0 1 0 0 1] |         -         | removed from top |
-|  140 | WEPLAYWITHSOULNADEMAN |      2 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  141 | OBRN  GAMEBOY?   |     10 |     0     | [0 0 0 1 0] |         -         | removed from top |
-|  142 | Lina&39;         |      9 |     0     | [0 1 0 0 0] |         -         | removed from top |
-|  143 | ^0MaGGoT         |     10 |     0     | [1 0 0 0 0] |         -         | removed from top |
-|  144 | nemesis          |      1 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  145 | ErEzYoOn         |      3 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  146 | Hamutarto        |      3 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  147 | TvK              |      4 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  148 | kciD giB oS evaH I |      6 |     0     | [0 0 0 0 1] |         -         | removed from top |
-|  149 | slofaca.         |      4 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  150 | washed up        |      3 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  151 | IYS ownex        |      1 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  152 | ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã |      6 |     0     | [0 0 0 0 1] |         -         | removed from top |
-|  153 | Colt.45          |      1 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  154 | krilnik          |      2 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  155 | .neverborn xZZZon |     23 |     0     | [0 0 0 1 2] |         -         | removed from top |
-|  156 | JHFan554         |      4 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  157 | Salem            |      8 |     0     | [0 0 1 0 0] |         -         | removed from top |
-|  158 | Lukasz           |     26 |     0     | [0 0 0 1 2] |         -         | removed from top |
-|  159 | Pares928&&1      |      1 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  160 | Bosco            |     13 |     0     | [0 0 1 0 0] |         -         | removed from top |
-|  161 | Sly4561          |      7 |     0     | [0 0 0 1 0] |         -         | removed from top |
-|  162 | UK sold          |      2 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  163 | shadY            |     18 |     0     | [0 0 1 0 1] |         -         | removed from top |
-|  164 | oli//Mr.PfFfFfFf |      1 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  165 | Banana           |      7 |     0     | [0 0 0 1 0] |         -         | removed from top |
-|  166 | Hornet           |      4 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  167 | &39;deathlikeBARIK |      6 |     0     | [0 0 0 0 1] |         -         | removed from top |
-|  168 | aids             |      9 |     0     | [0 0 0 0 1] |         -         | removed from top |
-|  169 | Black Sheep      |      4 |     0     | [0 0 0 0 0] |         -         | removed from top |
-|  170 | kung             |      6 |     0     | [0 0 0 0 1] |         -         | removed from top |
+|    1 | UnReal.JumperZ/Tona |   1058 |   2015 | [84 13 2 3 3] | [151 27 9 7 9] | updated          |
+|    2 | Unknown          |    854 |   1608 | [9 6 23 29 27] | [24 19 40 48 40] | updated          |
+|    3 | wormtongue       |    762 |   1417 | [21 17 16 13 11] | [43 35 29 22 21] | updated          |
+|    4 | UnReal.JumperZ/claay |    626 |   1172 | [6 22 15 11 14] | [15 36 26 24 19] | updated          |
+|    5 | UnReal.JumperZ/picajzl |    582 |   1146 | [7 32 10 5 7] | [11 60 22 16 14] | updated          |
+|    6 | Phylo            |    488 |    903 | [7 13 12 11 6] | [19 25 20 15 10] | updated          |
+|    7 | nendecrew maci.  |    344 |    689 | [1 10 6 5 8] | [7 16 20 13 9] | updated          |
+|    8 | UnReal.JumperZ/Trela |    323 |    655 | [5 8 10 2 6] | [13 16 14 6 14] | updated          |
+|    9 | Pauli            |    296 |    648 | [3 4 9 7 4] | [9 10 16 14 14] | updated          |
+|   10 | Untouch p a d e rSAD |    327 |    586 | [7 3 7 5 7] | [13 8 10 9 14] | updated          |
+|   11 | nendecrew Baket. |    267 |    543 | [0 4 4 4 4] | [0 6 7 6 11] | updated          |
+|   12 | ^ImmortalJumpers.Muki |    301 |    537 | [0 3 7 12 5] | [0 4 15 17 12] | updated          |
+|   13 | UnReal.JumperZ/Gr3y |    217 |    526 | [0 1 2 5 5] | [0 3 10 11 10] | updated          |
+|   14 | Shinji           |    212 |    505 | [0 4 3 7 0] | [1 8 9 16 6] | updated          |
+|   15 | BlueJay          |    221 |    371 | [1 4 4 4 7] | [1 9 7 6 12] | updated          |
+|   16 | CHETELABOIZ n3v0rn1k |    166 |    340 | [0 0 2 3 4] | [0 1 4 7 8] | updated          |
+|   17 | Duck             |    130 |    300 | [0 1 4 3 3] | [0 3 9 6 7] | updated          |
+|   18 | Mystery          |    110 |    270 | [0 1 3 1 5] | [0 3 7 7 10] | updated          |
+|   19 | Kryptah          |    142 |    268 | [2 2 4 4 1] | [2 6 5 7 3] | updated          |
+|   20 | wulf             |    122 |    225 | [0 2 3 0 6] | [0 2 4 5 10] | updated          |
+|   21 | bluzz            |    142 |    211 | [1 2 2 3 2] | [1 2 3 5 2] | updated          |
+|   22 | funki            |     60 |    204 | [0 2 0 0 2] | [2 4 2 6 4] | updated          |
+|   23 | pitterer         |    125 |    194 | [1 1 2 4 2] | [1 2 2 5 5] | updated          |
+|   24 | IzNoGoD          |    144 |    157 | [4 6 1 2 2] | [5 6 1 2 2] | updated          |
+|   25 | linox            |     69 |    149 | [0 0 0 0 4] | [0 0 0 1 9] | updated          |
+|   26 | brian.           |     44 |    145 | [0 0 1 2 1] | [0 2 3 4 5] | updated          |
+|   27 | dcoy |     66 |    141 | [1 0 0 2 1] | [3 0 1 3 5] | updated          |
+|   28 | UnaRkW           |    112 |    122 | [9 1 0 0 0] | [10 1 0 0 0] | updated          |
+|   29 | Avengers         |     55 |    122 | [0 0 1 3 2] | [0 1 1 7 4] | updated          |
+|   30 | WEAREJUMPERS LanMy |     63 |    111 | [0 1 1 1 2] | [0 3 2 1 2] | updated          |
+|   31 | poka             |     54 |    111 | [0 1 1 0 1] | [0 1 2 2 1] | updated          |
+|   32 | nendecrew Anana$. |     66 |    106 | [0 1 3 0 1] | [0 1 4 0 1] | updated          |
+|   33 | r A u l          |     49 |    103 | [1 1 2 1 1] | [2 2 5 2 1] | updated          |
+|   34 | WEAREJUMPERS chaotic |     48 |     99 | [0 1 0 2 0] | [0 1 0 3 0] | updated          |
+|   35 | neverlucky       |     29 |     94 | [0 0 0 1 0] | [0 0 2 1 1] | updated          |
+|   36 | KappaSquad febo  |     24 |     90 | [0 0 0 0 2] | [0 0 0 1 4] | updated          |
+|   37 | &39;ShepZ        |     88 |     88 | [3 3 2 0 1] | [3 3 2 0 1] | no change          |
+|   38 | Roien            |     28 |     77 | [0 0 0 0 3] | [0 1 2 1 4] | updated          |
+|   39 | Dom1natoRRR      |     33 |     75 | [0 0 0 0 1] | [0 0 0 0 2] | updated          |
+|   40 | UnReal.JumperZ/Diggy |     44 |     70 | [0 0 1 2 2] | [0 0 2 3 2] | updated          |
+|   41 | TOTONESKOCIM:Dwinz |     37 |     69 | [0 0 1 1 1] | [0 0 1 1 2] | updated          |
+|   42 | Doctor.          |     54 |     56 | [0 0 4 1 0] | [0 0 4 1 0] | updated          |
+|   43 | deletemyexistence |     37 |     51 | [1 1 0 0 2] | [1 1 1 0 2] | updated          |
+|   44 | nendecrew TOPinka. |     26 |     47 | [0 0 0 1 0] | [0 0 0 1 1] | updated          |
+|   45 | Khemotoksz       |     25 |     46 | [0 0 0 1 0] | [0 0 0 2 0] | updated          |
+|   46 | busko            |     19 |     46 | [0 0 0 2 0] | [0 1 0 2 0] | updated          |
+|   47 | Ikuminusz        |     12 |     36 | [0 0 1 0 0] | [0 1 1 1 1] | updated          |
+|   48 | Matyizom         |     11 |     35 | [0 0 0 1 0] | [0 0 1 2 1] | updated          |
+|   49 | Blade / Blade    |     26 |     33 | [0 0 0 0 2] | [0 0 0 0 2] | updated          |
+|   50 | Kadel            |     27 |     32 | [0 0 0 2 1] | [0 0 0 2 1] | updated          |
+|   51 | Trickshot        |     28 |     28 | [1 2 0 0 0] | [1 2 0 0 0] | no change          |
+|   52 | MusTa            |     14 |     27 | [0 0 1 0 0] | [0 0 2 0 0] | updated          |
+|   53 | Victima          |     13 |     26 | [0 0 0 1 0] | [0 0 0 1 1] | updated          |
+|   54 | AmBB...          |     14 |     26 | [0 0 0 0 1] | [0 0 0 0 1] | updated          |
+|   55 | eni.             |     -     |     25 |         -         | [0 1 1 0 0] | new in top      |
+|   56 | CALUM            |     25 |     25 | [0 1 0 0 1] | [0 1 0 0 1] | no change          |
+|   57 | ratemap 0        |     25 |     25 | [0 1 0 0 1] | [0 1 0 0 1] | no change          |
+|   58 | Jump4LifeBaSeM   |     20 |     24 | [0 0 1 0 1] | [0 0 1 0 1] | updated          |
+|   59 | visio            |     11 |     22 | [0 0 0 1 0] | [0 0 0 1 1] | updated          |
+|   60 | Faker:D&&1       |     20 |     20 | [0 0 0 0 1] | [0 0 0 0 1] | no change          |
+|   61 | UnReal.JumperZ/Floater |     19 |     19 | [0 0 1 0 0] | [0 0 1 0 0] | no change          |
+|   62 | ReD              |      6 |     18 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
+|   63 | Titan.           |     18 |     18 | [0 0 1 1 0] | [0 0 1 1 0] | no change          |
+|   64 | pkm4st3r         |     13 |     16 | [0 0 0 1 0] | [0 0 0 1 0] | updated          |
+|   65 | kLeiN            |     15 |     16 | [1 0 0 0 0] | [1 0 0 0 0] | updated          |
+|   66 | TheCrazyWolf     |     16 |     16 | [0 1 0 1 0] | [0 1 0 1 0] | no change          |
+|   67 | ^4               |     14 |     14 | [0 0 0 2 0] | [0 0 0 2 0] | no change          |
+|   68 | Bosco            |     -     |     13 |         -         | [0 0 1 0 0] | new in top      |
+|   69 | ApLo             |      7 |     13 | [0 0 0 0 0] | [0 0 0 0 1] | updated          |
+|   70 | Dutchie          |     13 |     13 | [0 0 0 1 1] | [0 0 0 1 1] | no change          |
+|   71 | TheproOne        |     12 |     12 | [0 0 0 1 0] | [0 0 0 1 0] | no change          |
+|   72 | AranyparasztDeres |      5 |     12 | [0 0 0 0 0] | [0 0 0 1 0] | updated          |
+|   73 | allegedly db     |      2 |     11 | [0 0 0 0 0] | [0 1 0 0 0] | updated          |
+|   74 | JUMLACKYPER      |      7 |     11 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
+|   75 | Rob              |     11 |     11 | [0 0 1 0 0] | [0 0 1 0 0] | no change          |
+|   76 | Kisfiu           |      5 |     10 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
+|   77 | Nexoo            |     -     |     10 |         -         | [1 0 0 0 0] | new in top      |
+|   78 | OBRN  GAMEBOY?   |     -     |     10 |         -         | [0 0 0 1 0] | new in top      |
+|   79 | tadaima          |     10 |     10 | [1 0 0 0 0] | [1 0 0 0 0] | no change          |
+|   80 | ScBumba          |     10 |     10 | [0 0 1 0 0] | [0 0 1 0 0] | no change          |
+|   81 | shadY            |     -     |     10 |         -         | [0 0 0 0 1] | new in top      |
+|   82 | blaadje/bl444jde/bjd/blade |      1 |      9 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
+|   83 | cessaR,          |      9 |      9 | [0 1 0 0 0] | [0 1 0 0 0] | no change          |
+|   84 | &39;Gemini       |      3 |      9 | [0 0 0 0 0] | [0 0 0 0 1] | updated          |
+|   85 | Lina&39;         |     -     |      9 |         -         | [0 1 0 0 0] | new in top      |
+|   86 | lazlo            |      8 |      8 | [0 0 0 1 0] | [0 0 0 1 0] | no change          |
+|   87 | .neverborn xZZZon |     -     |      8 |         -         | [0 0 0 0 1] | new in top      |
+|   88 | foliasok  kev    |      8 |      8 | [0 0 0 1 0] | [0 0 0 1 0] | no change          |
+|   89 | Salem            |     -     |      8 |         -         | [0 0 1 0 0] | new in top      |
+|   90 | Jimmy            |      8 |      8 | [0 0 1 0 0] | [0 0 1 0 0] | no change          |
+|   91 | Fox              |      8 |      8 | [0 0 1 0 0] | [0 0 1 0 0] | no change          |
+|   92 | Peter33          |     -     |      8 |         -         | [0 0 1 0 0] | new in top      |
+|   93 | FoXy             |      7 |      7 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|   94 | idiot2482nade:   |      7 |      7 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|   95 | stym             |     -     |      6 |         -         | [0 0 0 0 0] | new in top      |
+|   96 | NaRCoTiX:        |     -     |      6 |         -         | [0 0 0 0 1] | new in top      |
+|   97 | wawd x dezzii    |      6 |      6 | [0 0 0 0 1] | [0 0 0 0 1] | no change          |
+|   98 | Leokahun         |      6 |      6 | [0 0 0 0 1] | [0 0 0 0 1] | no change          |
+|   99 | MerliN           |      5 |      5 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  100 | rybax            |      5 |      5 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  101 | UnnamedPlayer    |     -     |      5 |         -         | [0 0 0 0 0] | new in top      |
+|  102 | UnReal.JumperZ/Cheri |      1 |      5 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
+|  103 | unkno soldja     |      5 |      5 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  104 | Fury             |      5 |      5 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  105 | BooK of RA       |      5 |      5 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  106 | skuby            |      4 |      4 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  107 | squezzy.         |      1 |      4 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
+|  108 | Jump4LifePall    |      4 |      4 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  109 | ^ImmortalJumpers.Greg |      4 |      4 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  110 | nOiSe            |      3 |      4 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
+|  111 | feelthepower  TOMBRADY |      4 |      4 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  112 | Pat^FPS          |      4 |      4 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  113 | JHFan554         |     -     |      4 |         -         | [0 0 0 0 0] | new in top      |
+|  114 | Deto             |      4 |      4 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  115 | un88x            |      1 |      3 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
+|  116 | JumpStylelordK   |      3 |      3 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  117 | Arak             |     -     |      3 |         -         | [0 0 0 0 0] | new in top      |
+|  118 | oli              |      3 |      3 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  119 | washed up        |     -     |      3 |         -         | [0 0 0 0 0] | new in top      |
+|  120 | Martin           |      3 |      3 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  121 | Panda            |      3 |      3 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  122 | Hamutarto        |     -     |      3 |         -         | [0 0 0 0 0] | new in top      |
+|  123 | xX1Xx            |      3 |      3 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  124 | OUTLAWLayla      |      3 |      3 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  125 | dOxX             |      3 |      3 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  126 | WINSTON          |      2 |      2 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  127 | Padis            |     -     |      2 |         -         | [0 0 0 0 0] | new in top      |
+|  128 | TurtlesNinja     |     -     |      2 |         -         | [0 0 0 0 0] | new in top      |
+|  129 | MyGoodMistake    |      1 |      2 | [0 0 0 0 0] | [0 0 0 0 0] | updated          |
+|  130 | JHFan533         |      2 |      2 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  131 | ntech            |      2 |      2 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  132 | kung foo man     |     -     |      2 |         -         | [0 0 0 0 0] | new in top      |
+|  133 | Mikro            |      2 |      2 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  134 | drawax           |      2 |      2 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  135 | JoKeR            |      2 |      2 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  136 | R E K S I O?     |      2 |      2 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  137 | Lukasz           |     -     |      2 |         -         | [0 0 0 0 0] | new in top      |
+|  138 | 0x041E           |      1 |      1 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  139 | CAN              |      1 |      1 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  140 | Chemtrail        |      1 |      1 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  141 | TyFun            |      1 |      1 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  142 | Srna             |      1 |      1 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  143 | EpSandro         |      1 |      1 | [0 0 0 0 0] | [0 0 0 0 0] | no change          |
+|  144 | JumpersHeavenFan |     -     |      1 |         -         | [0 0 0 0 0] | new in top      |
 
 ## FPS Category: 250
-| Rank | Player Name           | Old Score | New Score | Old Places (1-5) | New Places (1-5) | Status          |
+| Rank | Player Name           | Old Score | New Score | Old Tops (1-5) | New Tops (1-5) | Status          |
 |------|-----------------------|-----------|-----------|------------------|------------------|-----------------|
 
 ## FPS Category: mix
-| Rank | Player Name           | Old Score | New Score | Old Places (1-5) | New Places (1-5) | Status          |
+| Rank | Player Name           | Old Score | New Score | Old Tops (1-5) | New Tops (1-5) | Status          |
 |------|-----------------------|-----------|-----------|------------------|------------------|-----------------|
 
 ## FPS Category: 43
-| Rank | Player Name           | Old Score | New Score | Old Places (1-5) | New Places (1-5) | Status          |
+| Rank | Player Name           | Old Score | New Score | Old Tops (1-5) | New Tops (1-5) | Status          |
 |------|-----------------------|-----------|-----------|------------------|------------------|-----------------|
 
 ## FPS Category: 76
-| Rank | Player Name           | Old Score | New Score | Old Places (1-5) | New Places (1-5) | Status          |
+| Rank | Player Name           | Old Score | New Score | Old Tops (1-5) | New Tops (1-5) | Status          |
 |------|-----------------------|-----------|-----------|------------------|------------------|-----------------|
 
 ## FPS Category: 333
-| Rank | Player Name           | Old Score | New Score | Old Places (1-5) | New Places (1-5) | Status          |
+| Rank | Player Name           | Old Score | New Score | Old Tops (1-5) | New Tops (1-5) | Status          |
 |------|-----------------------|-----------|-----------|------------------|------------------|-----------------|
 
