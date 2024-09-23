@@ -1,12 +1,12 @@
 {
   "125": {
     "!ratemap 0": {
-      "Places": [0, 1, 0, 0, 1, 0, 0, 0, 0, 0],
-      "Score": 15
+      "Places": [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+      "Score": 9
     },
     "\u0026#39;Gemini": {
-      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
-      "Score": 3
+      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      "Score": 2
     },
     "**MerliN**": {
       "Places": [0, 0, 0, 0, 0, 0, 0, 1, 1, 0],
@@ -37,16 +37,16 @@
       "Score": 7
     },
     "Avengers": {
-      "Places": [0, 0, 1, 3, 1, 0, 0, 0, 2, 0],
-      "Score": 39
+      "Places": [0, 0, 0, 3, 0, 0, 0, 0, 1, 0],
+      "Score": 23
     },
     "Blade / Blade": {
-      "Places": [0, 0, 0, 0, 1, 1, 0, 0, 2, 0],
-      "Score": 15
+      "Places": [0, 0, 0, 0, 1, 0, 0, 0, 1, 0],
+      "Score": 8
     },
     "BlueJay": {
-      "Places": [1, 3, 2, 3, 5, 4, 2, 4, 2, 4],
-      "Score": 152
+      "Places": [1, 3, 2, 2, 5, 2, 2, 2, 1, 2],
+      "Score": 125
     },
     "BooK of RA": {
       "Places": [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
@@ -57,8 +57,8 @@
       "Score": 25
     },
     "CHETELABOIZ n3v0rn1k": {
-      "Places": [0, 0, 1, 1, 3, 3, 4, 8, 3, 5],
-      "Score": 99
+      "Places": [0, 0, 0, 1, 1, 3, 1, 7, 3, 2],
+      "Score": 61
     },
     "Chemtrail": {
       "Places": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -73,12 +73,12 @@
       "Score": 54
     },
     "Dom1natoRRR": {
-      "Places": [0, 0, 0, 0, 1, 3, 0, 1, 1, 3],
-      "Score": 29
+      "Places": [0, 0, 0, 0, 1, 3, 0, 0, 0, 3],
+      "Score": 24
     },
     "Duck": {
-      "Places": [0, 0, 1, 1, 2, 2, 3, 2, 4, 4],
-      "Score": 67
+      "Places": [0, 0, 0, 1, 2, 1, 2, 1, 3, 3],
+      "Score": 44
     },
     "Dutchie": {
       "Places": [0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
@@ -96,10 +96,6 @@
       "Places": [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
       "Score": 8
     },
-    "Ikuminusz": {
-      "Places": [0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
-      "Score": 12
-    },
     "IzNoGoD": {
       "Places": [4, 6, 1, 2, 1, 0, 1, 3, 0, 0],
       "Score": 135
@@ -107,10 +103,6 @@
     "JHFan#533": {
       "Places": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
       "Score": 2
-    },
-    "JUMLACKYPER": {
-      "Places": [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-      "Score": 3
     },
     "Jimmy": {
       "Places": [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
@@ -125,16 +117,16 @@
       "Score": 20
     },
     "Jump4Life|Pall": {
-      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 2, 0],
-      "Score": 4
+      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      "Score": 2
     },
     "Kadel*": {
-      "Places": [0, 0, 0, 2, 1, 0, 0, 0, 1, 0],
-      "Score": 22
+      "Places": [0, 0, 0, 1, 1, 0, 0, 0, 1, 0],
+      "Score": 15
     },
     "KappaSquad febo": {
-      "Places": [0, 0, 0, 0, 0, 0, 0, 1, 3, 0],
-      "Score": 9
+      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      "Score": 2
     },
     "Khemotoksz": {
       "Places": [0, 0, 0, 0, 0, 1, 1, 0, 0, 1],
@@ -145,8 +137,8 @@
       "Score": 5
     },
     "Kryptah": {
-      "Places": [0, 1, 4, 4, 1, 2, 3, 2, 1, 2],
-      "Score": 107
+      "Places": [0, 0, 3, 3, 0, 2, 2, 2, 0, 2],
+      "Score": 71
     },
     "Leokahun": {
       "Places": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
@@ -157,8 +149,8 @@
       "Score": 3
     },
     "Matyizom": {
-      "Places": [0, 0, 0, 1, 0, 0, 0, 0, 0, 1],
-      "Score": 8
+      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+      "Score": 1
     },
     "Mikro#": {
       "Places": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
@@ -173,44 +165,44 @@
       "Score": 1
     },
     "Mystery": {
-      "Places": [0, 0, 3, 0, 5, 3, 1, 1, 0, 3],
-      "Score": 79
+      "Places": [0, 0, 2, 0, 3, 1, 1, 1, 0, 0],
+      "Score": 46
     },
     "Panda": {
       "Places": [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
       "Score": 3
     },
     "Pat^FPS": {
-      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 2, 0],
-      "Score": 4
+      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      "Score": 2
     },
     "Pauli": {
-      "Places": [3, 4, 7, 6, 3, 4, 3, 5, 5, 2],
-      "Score": 241
+      "Places": [1, 1, 3, 2, 2, 1, 3, 3, 4, 2],
+      "Score": 105
     },
     "Phylo": {
-      "Places": [3, 11, 9, 6, 5, 5, 6, 2, 2, 4],
-      "Score": 336
+      "Places": [3, 6, 8, 5, 1, 4, 4, 0, 1, 0],
+      "Score": 227
     },
     "ReD": {
-      "Places": [0, 0, 0, 0, 0, 0, 1, 0, 0, 2],
-      "Score": 6
+      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+      "Score": 2
     },
     "Rob": {
       "Places": [0, 0, 1, 0, 0, 0, 0, 1, 0, 0],
       "Score": 11
     },
     "Roien": {
-      "Places": [0, 0, 0, 0, 1, 0, 0, 1, 1, 1],
-      "Score": 12
+      "Places": [0, 0, 0, 0, 0, 0, 0, 1, 1, 1],
+      "Score": 6
     },
     "Sc|Bumba": {
       "Places": [0, 0, 1, 0, 0, 0, 0, 0, 1, 0],
       "Score": 10
     },
     "Shinji": {
-      "Places": [0, 3, 2, 3, 0, 3, 6, 7, 6, 5],
-      "Score": 141
+      "Places": [0, 2, 1, 2, 0, 0, 4, 6, 4, 4],
+      "Score": 86
     },
     "TOTONESKOCIM:Dwinz": {
       "Places": [0, 0, 1, 1, 1, 0, 0, 3, 1, 1],
@@ -225,68 +217,64 @@
       "Score": 12
     },
     "Titan.!": {
-      "Places": [0, 0, 1, 1, 0, 0, 0, 0, 1, 0],
-      "Score": 17
+      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+      "Score": 2
     },
     "Trickshot": {
-      "Places": [1, 2, 0, 0, 0, 0, 0, 0, 0, 0],
-      "Score": 28
+      "Places": [1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+      "Score": 19
     },
     "TyFun": {
       "Places": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
       "Score": 1
     },
-    "UnReal.JumperZ/Cheri": {
-      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-      "Score": 1
-    },
     "UnReal.JumperZ/Diggy": {
-      "Places": [0, 0, 1, 2, 2, 0, 1, 1, 1, 0],
-      "Score": 43
+      "Places": [0, 0, 0, 1, 2, 0, 1, 1, 0, 0],
+      "Score": 26
     },
     "UnReal.JumperZ/Floater": {
       "Places": [0, 0, 1, 0, 0, 0, 1, 1, 2, 0],
       "Score": 19
     },
     "UnReal.JumperZ/Gr3y!": {
-      "Places": [0, 1, 2, 4, 4, 4, 6, 8, 7, 12],
-      "Score": 171
+      "Places": [0, 0, 0, 3, 2, 0, 3, 4, 2, 9],
+      "Score": 70
     },
     "UnReal.JumperZ/Tona": {
-      "Places": [61, 9, 0, 2, 1, 4, 4, 1, 2, 0],
-      "Score": 754
+      "Places": [34, 9, 0, 1, 1, 2, 2, 0, 1, 0],
+      "Score": 454
     },
     "UnReal.JumperZ/Trela": {
-      "Places": [3, 6, 7, 1, 5, 5, 3, 5, 3, 4],
-      "Score": 239
+      "Places": [0, 4, 4, 1, 3, 3, 3, 4, 3, 1],
+      "Score": 139
     },
     "UnReal.JumperZ/claay": {
-      "Places": [6, 18, 8, 7, 10, 6, 3, 4, 5, 0],
-      "Score": 459
+      "Places": [3, 7, 4, 4, 4, 4, 3, 2, 5, 0],
+      "Score": 225
     },
     "UnReal.JumperZ/picajzl": {
-      "Places": [6, 22, 7, 5, 2, 6, 1, 2, 2, 2],
-      "Score": 407
+      "Places": [6, 14, 4, 2, 1, 5, 1, 0, 1, 1],
+      "Score": 270
     },
     "UnaRkW": {
       "Places": [9, 1, 0, 0, 0, 2, 0, 1, 0, 0],
       "Score": 112
     },
     "Unknown": {
-      "Places": [3, 3, 17, 22, 21, 12, 9, 6, 2, 5],
-      "Score": 596
+      "Places": [1, 3, 12, 17, 17, 5, 5, 5, 2, 3],
+      "Score": 421
     },
     "Untouch p a d e r*SAD": {
-      "Places": [6, 2, 4, 4, 6, 4, 3, 3, 5, 5],
-      "Score": 230
+      "Places": [5, 1, 1, 4, 4, 3, 2, 3, 4, 3],
+      "Score": 162
     },
     "WEAREJUMPERS LanMy": {
-      "Places": [0, 1, 1, 1, 2, 2, 1, 1, 0, 3],
-      "Score": 56
+      "Places": [0, 1, 1, 0, 1, 1, 1, 1, 0, 2],
+      "Score": 37
     },
     "WEAREJUMPERS chaotic": {
-      "Places": [0, 1, 0, 0, 0, 0, 3, 1, 1, 1],
-      "Score": 27
+      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+      "Score": 3
     },
     "[OUTLAW]Layla": {
       "Places": [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
@@ -305,8 +293,8 @@
       "Score": 4
     },
     "^ImmortalJumpers*.*Muki": {
-      "Places": [0, 3, 6, 11, 4, 6, 6, 5, 4, 2],
-      "Score": 255
+      "Places": [0, 2, 6, 7, 2, 4, 5, 4, 4, 2],
+      "Score": 189
     },
     "`\u0026#39;ShepZ": {
       "Places": [3, 3, 2, 0, 1, 1, 1, 0, 0, 0],
@@ -317,24 +305,20 @@
       "Score": 1
     },
     "`~`r A u l`~`": {
-      "Places": [1, 1, 2, 1, 1, 0, 0, 0, 0, 1],
-      "Score": 49
+      "Places": [1, 1, 2, 0, 1, 0, 0, 0, 0, 1],
+      "Score": 42
     },
     "allegedly db": {
       "Places": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
       "Score": 2
     },
-    "blaadje/bl444jde/bjd/blade": {
-      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-      "Score": 1
-    },
     "bluzz": {
-      "Places": [1, 2, 2, 2, 1, 4, 3, 4, 4, 4],
-      "Score": 120
+      "Places": [1, 2, 2, 2, 1, 3, 2, 3, 4, 3],
+      "Score": 107
     },
     "brian.": {
-      "Places": [0, 0, 0, 0, 0, 1, 0, 0, 3, 0],
-      "Score": 11
+      "Places": [0, 0, 0, 0, 0, 1, 0, 0, 2, 0],
+      "Score": 9
     },
     "busko": {
       "Places": [0, 0, 0, 1, 0, 1, 0, 0, 0, 0],
@@ -345,20 +329,16 @@
       "Score": 3
     },
     "deletemyexistence": {
-      "Places": [1, 1, 0, 0, 2, 0, 0, 0, 0, 1],
-      "Score": 32
-    },
-    "feelthepower - TOMBRADY": {
-      "Places": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-      "Score": 4
+      "Places": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+      "Score": 6
     },
     "foliasok - kev": {
       "Places": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
       "Score": 1
     },
     "funki": {
-      "Places": [0, 2, 0, 0, 2, 2, 2, 1, 2, 0],
-      "Score": 55
+      "Places": [0, 2, 0, 0, 0, 2, 1, 0, 1, 0],
+      "Score": 34
     },
     "idiot248_2nade:(": {
       "Places": [0, 0, 0, 0, 0, 1, 0, 0, 1, 0],
@@ -368,57 +348,45 @@
       "Places": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       "Score": 10
     },
-    "lazlo": {
-      "Places": [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-      "Score": 7
-    },
     "linox*": {
-      "Places": [0, 0, 0, 0, 3, 2, 2, 5, 1, 2],
-      "Score": 55
-    },
-    "nOiSe": {
-      "Places": [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-      "Score": 3
+      "Places": [0, 0, 0, 0, 2, 2, 1, 3, 1, 1],
+      "Score": 38
     },
     "nendecrew Anana$.-": {
-      "Places": [0, 0, 2, 0, 1, 1, 0, 3, 3, 0],
-      "Score": 42
+      "Places": [0, 0, 2, 0, 0, 0, 0, 1, 2, 0],
+      "Score": 23
     },
     "nendecrew Baket.-": {
-      "Places": [0, 2, 3, 3, 4, 1, 9, 7, 9, 14],
-      "Score": 181
+      "Places": [0, 2, 0, 0, 4, 1, 8, 4, 5, 11],
+      "Score": 112
     },
     "nendecrew TOPinka.-": {
-      "Places": [0, 0, 0, 1, 0, 0, 1, 1, 2, 0],
-      "Score": 18
+      "Places": [0, 0, 0, 1, 0, 0, 1, 0, 1, 0],
+      "Score": 13
     },
     "nendecrew maci.-": {
-      "Places": [0, 8, 3, 3, 5, 7, 4, 2, 6, 4],
-      "Score": 220
+      "Places": [0, 6, 2, 2, 2, 5, 2, 1, 3, 4],
+      "Score": 142
     },
     "neverlucky": {
-      "Places": [0, 0, 0, 1, 0, 1, 0, 2, 2, 0],
-      "Score": 22
-    },
-    "ntech": {
-      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
-      "Score": 2
+      "Places": [0, 0, 0, 0, 0, 0, 0, 1, 1, 0],
+      "Score": 5
     },
     "oli": {
       "Places": [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
       "Score": 3
     },
     "pitterer": {
-      "Places": [1, 1, 2, 3, 2, 2, 2, 4, 3, 1],
-      "Score": 105
+      "Places": [1, 1, 2, 2, 1, 2, 2, 4, 2, 1],
+      "Score": 90
     },
     "pk_m4st3r": {
-      "Places": [0, 0, 0, 1, 0, 0, 0, 1, 1, 1],
-      "Score": 13
+      "Places": [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+      "Score": 3
     },
     "poka": {
-      "Places": [0, 0, 1, 0, 1, 1, 4, 0, 0, 3],
-      "Score": 38
+      "Places": [0, 0, 1, 0, 0, 1, 2, 0, 0, 1],
+      "Score": 22
     },
     "rybax": {
       "Places": [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
@@ -431,10 +399,6 @@
     "tadaima": {
       "Places": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       "Score": 10
-    },
-    "un88x": {
-      "Places": [0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-      "Score": 1
     },
     "unkno soldja": {
       "Places": [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
@@ -449,20 +413,20 @@
       "Score": 6
     },
     "wormtongue": {
-      "Places": [15, 9, 14, 11, 6, 7, 8, 3, 2, 1],
-      "Score": 537
+      "Places": [10, 5, 8, 8, 5, 6, 6, 1, 0, 1],
+      "Score": 353
     },
     "wulf": {
-      "Places": [0, 1, 2, 0, 5, 1, 6, 2, 3, 3],
-      "Score": 99
+      "Places": [0, 0, 2, 0, 5, 0, 1, 1, 2, 2],
+      "Score": 59
     },
     "|JumpStyle|lord*K*": {
       "Places": [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
       "Score": 3
     },
     "dcoy": {
-      "Places": [1, 0, 0, 2, 1, 1, 3, 1, 1, 1],
-      "Score": 53
+      "Places": [1, 0, 0, 0, 1, 1, 2, 0, 1, 0],
+      "Score": 31
     }
   }
 }
