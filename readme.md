@@ -8,7 +8,7 @@ Top1 will have  10 points, top2 - 9 points, top3 - 8 points and so on
 
 This system is by no mean perfect, I'm open to proposal for improvements.
 
-**Last update: 2024-09-24T23:19:47+08:00**
+**Last update: 2024-09-24T23:20:14+08:00**
 
 # Player Rankings Changes
 
