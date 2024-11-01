@@ -1,12 +1,12 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import leaderBoardData from "src/Data/leaderboards.json";
 import {
   getFixedFps,
   getFixedParams,
   getFpsNoun,
   getFpsNumber,
 } from "src/Functions/helper";
+import leaderBoardData from "../../../../../leaderboards.json";
 import s from "./JhLeaderBoardSection.module.scss";
 import JhLeaderBoardTable from "./JhLeaderBoardTable/JhLeaderBoardTable";
 import LeaderBoardNav from "./LeaderBoardNav/LeaderBoardNav";
