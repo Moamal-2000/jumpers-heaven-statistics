@@ -14,21 +14,27 @@ const HeroSection = () => {
         follows:
       </p>
 
-      <div className={s.listContainer}>
-        <ul className={s.scoreList}>
+      <table className={s.pointsTable}>
+        <thead>
+          <tr>
+            <th>Places</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+
+        <tbody>
           {TOP10.map((place) => {
             const point = Math.abs(parseInt(place) - 11);
+
             return (
-              <li key={place} className={s.scoreItem}>
-                <span className={s.place}>{place}</span>
-                <span>place:</span>
-                <span className={s.point}>{point}</span>
-                <span>points</span>
-              </li>
+              <tr key={place}>
+                <td className={s.place}>{place}</td>
+                <td className={s.point}>{point}p</td>
+              </tr>
             );
           })}
-        </ul>
-      </div>
+        </tbody>
+      </table>
 
       <p className={s.description}>
         This system ensures that higher placements receive more points, with a

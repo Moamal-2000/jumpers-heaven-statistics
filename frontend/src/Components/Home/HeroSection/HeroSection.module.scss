@@ -7,6 +7,12 @@
   border-radius: 10px;
 }
 
+@include small {
+  .heroSection {
+    padding: 20px;
+  }
+}
+
 .heroSection h1 {
   font-size: 4rem;
   font-weight: 700;
@@ -14,10 +20,46 @@
   margin-bottom: 20px;
 }
 
+@include small {
+  .heroSection h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .heroSection h1 {
+    font-size: 2rem;
+  }
+}
+
+@include very-small {
+  .heroSection h1 {
+    font-size: 1.8rem;
+  }
+}
+
 .heroSection h2 {
   font-size: 2.4rem;
   color: #f0f0f0;
   margin-bottom: 30px;
+}
+
+@include small {
+  .heroSection h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .heroSection h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@include very-small {
+  .heroSection h2 {
+    font-size: 1.2rem;
+  }
 }
 
 .heroSection .description {
@@ -27,45 +69,82 @@
   line-height: 1.6;
 }
 
-.heroSection .listContainer {
+@include small {
+  .heroSection .description {
+    font-size: .9rem;
+  }
+}
+
+@include very-small {
+  .heroSection .description {
+    font-size: .8rem;
+  }
+}
+
+.heroSection .pointsTable {
   background: #2a2a2a;
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
+  max-width: 360px;
+  width: 100%;
 }
 
-.heroSection .scoreList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.scoreList .scoreItem {
+.pointsTable tr {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px solid #484848;
+  border-bottom: 1px solid #555555;
+  color: #ffffff;
+  font-size: 1rem;
 
   &:last-child {
     border-bottom: none;
   }
 }
 
-.scoreList .scoreItem span {
-  font-size: 1.2rem;
-  color: #ffffff;
-
-  &.place {
-    font-weight: 700;
-    color: #ffcc00;
-    min-width: 50px;
+@include small {
+  .pointsTable tr {
+    font-size: .9rem;
   }
+}
 
-  &.point {
-    font-weight: 700;
-    color: #29a19c;
-    min-width: 24px;
+@include very-small {
+  .pointsTable tr {
+    font-size: .8rem;
   }
+}
+
+.pointsTable :where(th, td) {
+  width: 60px;
+}
+
+@include small {
+  .pointsTable :where(th, td) {
+    width: 50px;
+  }
+}
+
+@include very-small {
+  .pointsTable :where(th, td) {
+    width: 40px;
+  }
+}
+
+.pointsTable tr td {
+  text-align: left;
+}
+
+tr .place {
+  font-weight: 700;
+  color: #ffcc00;
+  min-width: 50px;
+}
+
+tr .point {
+  font-weight: 700;
+  color: #1cd1cb;
+  min-width: 24px;
 }
 
 .heroSection .note {
