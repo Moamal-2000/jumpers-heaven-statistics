@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { getFpsNumber } from "src/Functions/helper";
 import leaderBoardData from "../../../../../../leaderboards.json";
+import { getFpsNumber } from "src/Functions/helper";
 import s from "./SearchInput.module.scss";
 
 const SearchInput = ({ setLeaderBoard, activeFps }) => {
@@ -28,7 +28,6 @@ const SearchInput = ({ setLeaderBoard, activeFps }) => {
     <form className={s.searchInputWrapper} onSubmit={(e) => e.preventDefault()}>
       <input
         type="text"
-        role="search"
         value={inpValue}
         onChange={handleOnChange}
         placeholder="Search for player name"

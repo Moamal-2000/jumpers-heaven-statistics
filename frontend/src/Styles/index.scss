@@ -19,23 +19,17 @@ main {
 }
 
 .container {
-  width: 80%;
+  width: 900px;
   margin: 0 auto;
 }
 
 @include large {
   .container {
-    width: 85%;
+    width: 94%;
   }
 }
 
 @include medium {
-  .container {
-    width: 90%;
-  }
-}
-
-@include small {
   .container {
     width: 95%;
   }

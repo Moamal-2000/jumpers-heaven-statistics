@@ -1,0 +1,90 @@
+@import "src/Styles/mixins.scss";
+
+.heroSection {
+  margin: 0 auto;
+  padding: 40px;
+  background: #1e1e1e;
+  border-radius: 10px;
+}
+
+.heroSection h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.heroSection h2 {
+  font-size: 2.4rem;
+  color: #f0f0f0;
+  margin-bottom: 30px;
+}
+
+.heroSection .description {
+  font-size: 1.1rem;
+  color: #bdbdbd;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.heroSection .listContainer {
+  background: #2a2a2a;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.heroSection .scoreList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scoreList .scoreItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #484848;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.scoreList .scoreItem span {
+  font-size: 1.2rem;
+  color: #ffffff;
+
+  &.place {
+    font-weight: 700;
+    color: #ffcc00;
+    min-width: 50px;
+  }
+
+  &.point {
+    font-weight: 700;
+    color: #29a19c;
+    min-width: 24px;
+  }
+}
+
+.heroSection .note {
+  margin-top: 30px;
+  font-size: 0.9rem;
+}
+
+.heroSection .white {
+  color: #fff;
+  font-weight: 700;
+}
+
+.heroSection .date {
+  margin-top: 16px;
+  color: #f0f0f0;
+  font-size: 0.9rem;
+}
+
+.heroSection .date time {
+  color: #ffcc00;
+  font-weight: 600;
+}
