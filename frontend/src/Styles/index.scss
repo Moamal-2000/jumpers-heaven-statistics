@@ -1,0 +1,42 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./colors.scss";
+@import "./fonts.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #26292a;
+  font-family: 'SFMono', 'Inter', 'San Francisco', -apple-system, system-ui;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@include large {
+  .container {
+    width: 85%;
+  }
+}
+
+@include medium {
+  .container {
+    width: 90%;
+  }
+}
+
+@include small {
+  .container {
+    width: 95%;
+  }
+}

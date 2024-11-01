@@ -1,0 +1,102 @@
+@import "src/Styles/mixins.scss";
+
+.pageNotFound {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageNotFound img {
+  width: 500px;
+}
+
+@include small {
+  .pageNotFound img {
+    width: 400px;
+  }
+}
+
+@media (max-width: 520px) {
+  .pageNotFound img {
+    width: 300px;
+  }
+}
+
+@include very-small {
+  .pageNotFound img {
+    width: 100%;
+  }
+}
+
+.pageNotFound h1 {
+  margin: 30px 0 20px;
+  font-size: 3rem;
+  text-align: center;
+}
+
+@include small {
+  .pageNotFound h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@include very-small {
+  .pageNotFound h1 {
+    font-size: 1.3rem;
+  }
+}
+
+.pageNotFound p {
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #d3d3d3;
+}
+
+@include small {
+  .pageNotFound p {
+    font-size: .9rem;
+  }
+}
+
+@include very-small {
+  .pageNotFound p {
+    font-size: .8rem;
+    width: 90%;
+    margin-bottom: 40px;
+  }
+}
+
+.pageNotFound a {
+  text-decoration: none;
+  color: #ffc906;
+  border: solid 2px #ffc906;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  font-size: 1rem;
+  transition: background-color .2s ease-in-out;
+
+  &:hover {
+    background-color: #ffc90619;
+  }
+
+  &:active {
+    scale: .995;
+  }
+}
+
+@include small {
+  .pageNotFound a {
+    font-size: .9rem;
+  }
+}
+
+@include very-small {
+  .pageNotFound a {
+    font-size: .8rem;
+  }
+}

@@ -1,0 +1,17 @@
+@import "src/Styles/mixins.scss";
+
+.searchInputWrapper>input {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  max-width: 386px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+@include very-small {
+  .searchInputWrapper>input {
+    width: 100%;
+  }
+}

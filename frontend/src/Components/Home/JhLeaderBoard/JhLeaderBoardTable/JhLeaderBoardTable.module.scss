@@ -1,0 +1,198 @@
+@import "src/Styles/mixins.scss";
+
+.leaderboardWrapper {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.leaderBoardTable {
+  border-collapse: collapse;
+  table-layout: fixed;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.leaderBoardTable tr {
+  flex: 1;
+  display: flex;
+}
+
+@include medium {
+  .leaderBoardTable tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+  }
+}
+
+.leaderBoardTable tr :where(th, td) {
+  flex: 1;
+  text-wrap: nowrap;
+  text-align: left;
+
+  &:first-child {
+    flex: .4;
+  }
+
+  &:nth-child(2) {
+    flex: 1.5;
+  }
+
+  &:last-child {
+    min-width: 400px;
+  }
+}
+
+@include large {
+  .leaderBoardTable tr :where(th, td) {
+    &:nth-child(2) {
+      flex: 1;
+      text-wrap: wrap;
+    }
+
+    &:nth-child(3) {
+      flex: .5;
+    }
+
+    &:last-child {
+      min-width: 420px;
+      text-wrap: wrap;
+      line-height: 1.5;
+      flex: 1;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .leaderBoardTable tr :where(th, td) {
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+      min-width: auto;
+    }
+  }
+}
+
+.leaderBoardTable thead {
+  background-color: #343a40;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color .2s;
+
+  & th {
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    background-color: #495057;
+  }
+}
+
+@include medium {
+  .leaderBoardTable thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+}
+
+.leaderBoardTable tbody.reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.leaderBoardTable tbody tr {
+  &:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  &:hover {
+    background-color: #f2f3f5;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 550px) {
+  .leaderBoardTable tbody tr {
+    padding-top: 10px;
+  }
+}
+
+.leaderBoardTable tbody td {
+  padding: 15px;
+  font-size: .9rem;
+  color: #495057;
+  border-bottom: 1px solid #dee2e6;
+
+  &:first-child {
+    font-weight: bold;
+  }
+}
+
+@include medium {
+  .leaderBoardTable td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+
+  .leaderBoardTable td::before {
+    content: attr(data-label);
+    color: #495057;
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 20px;
+  }
+}
+
+@include small {
+  .leaderBoardTable tbody td {
+    font-size: .8rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .leaderBoardTable tbody td {
+    display: block;
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    text-align: center;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .leaderBoardTable tbody td::before {
+    position: absolute;
+    float: none;
+    left: 50%;
+    translate: -50% 0;
+    top: 0;
+  }
+}
+
+.leaderBoardTable .bracket {
+  font-size: 1.1rem;
+  position: relative;
+  top: 2px;
+}
