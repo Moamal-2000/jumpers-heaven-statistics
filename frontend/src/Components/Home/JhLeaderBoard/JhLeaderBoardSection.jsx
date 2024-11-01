@@ -40,15 +40,15 @@ const JhLeaderBoardSection = () => {
 
   return (
     <section className={s.leaderBoardSection}>
-      <SearchInput
-        setLeaderBoard={setLeaderBoard}
-        activeFps={getFpsNumber(activeFps)}
-      />
-
       <LeaderBoardNav
         navLinks={leaderBoardKeys}
         activeLink={activeFps}
         setActiveLink={setActiveFps}
+      />
+
+      <SearchInput
+        setLeaderBoard={setLeaderBoard}
+        activeFps={getFpsNumber(activeFps)}
       />
 
       {getFpsNumber(activeFps) && (

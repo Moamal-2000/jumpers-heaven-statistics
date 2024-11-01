@@ -8,6 +8,12 @@
   max-width: 386px;
   width: 100%;
   font-size: 1rem;
+  background-color: #fff;
+  color: #495057;
+
+  &::placeholder {
+    color: #495057;
+  }
 }
 
 @include very-small {

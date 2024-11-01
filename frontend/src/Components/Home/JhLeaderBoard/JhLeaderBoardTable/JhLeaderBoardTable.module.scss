@@ -1,6 +1,7 @@
 @import "src/Styles/mixins.scss";
 
 .leaderboardWrapper {
+  min-height: 500px;
   padding: 20px 0;
   display: flex;
   flex-direction: column;
