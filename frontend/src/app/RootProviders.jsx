@@ -1,7 +1,7 @@
 "use client";
 
-import GlobalContextProvider from "@/context/GlobalContext";
-import { store } from "@/redux/store";
+import GlobalContextProvider from "@/Context/GlobalContext";
+import { store } from "@/Redux/store";
 import { Provider } from "react-redux";
 
 const RootProviders = ({ children }) => {

@@ -1,4 +1,4 @@
-import "../styles/globals.scss";
+import "../Styles/globals.scss";
 import RootProviders from "./RootProviders";
 
 export const metadata = {
