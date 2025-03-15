@@ -1,0 +1,51 @@
+.mainNav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mainNav>a {
+  padding: .7rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  border-radius: .5rem;
+  transition: background-color .2s ease;
+
+  &[class="active"] {
+    background-color: #1f2937;
+  }
+
+  &:hover {
+    background-color: #1b2532;
+  }
+}
+
+.mainNav>a>svg {
+  color: #9ca3af;
+  width: 20px;
+  height: 20px;
+}
+
+.mainNav>a[class="active"]>svg {
+  color: #fff;
+}
+
+.mainNav>a:hover>svg {
+  color: #ebebeb;
+}
+
+.mainNav>a>span {
+  color: #9ca3af;
+  font-size: 1rem;
+  font-weight: light;
+  letter-spacing: .6;
+}
+
+.mainNav>a[class="active"]>span {
+  color: #fff;
+}
+
+.mainNav>a:hover>span {
+  color: #ebebeb;
+}
