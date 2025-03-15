@@ -12,7 +12,7 @@
   border-radius: .5rem;
   transition: background-color .2s ease;
 
-  &[class="active"] {
+  &.active {
     background-color: #1f2937;
   }
 
@@ -27,7 +27,7 @@
   height: 20px;
 }
 
-.mainNav>a[class="active"]>svg {
+.mainNav>a.active>svg {
   color: #fff;
 }
 
@@ -42,7 +42,7 @@
   letter-spacing: .6;
 }
 
-.mainNav>a[class="active"]>span {
+.mainNav>a.active>span {
   color: #fff;
 }
 
