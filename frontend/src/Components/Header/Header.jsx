@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SvgIcon from "../Shared/SvgIcon";
 import s from "./Header.module.scss";
+import MainNav from "./MainNav/MainNav";
 
 const Header = () => {
   return (
@@ -10,7 +11,7 @@ const Header = () => {
         <h1>JumpersHeaven</h1>
       </Link>
 
-      {/* <MainNav /> */}
+      <MainNav />
     </header>
   );
 };
