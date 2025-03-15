@@ -1,4 +1,4 @@
-import { iconsData } from "src/Data/iconsData";
+import { iconsData } from "@/Data/iconsData";
 
 const SvgIcon = ({ name }) => {
   const iconData = iconsData.find((iconData) => iconData.name === name);
