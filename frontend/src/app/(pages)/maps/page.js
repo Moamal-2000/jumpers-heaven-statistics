@@ -1,5 +1,5 @@
 const MapsPage = () => {
-  return <main>MapsPage</main>;
+  return <main></main>;
 };
 
 export default MapsPage;

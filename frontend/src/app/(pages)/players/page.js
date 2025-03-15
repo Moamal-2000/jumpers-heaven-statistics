@@ -1,5 +1,5 @@
 const PlayersPage = () => {
-  return <main>PlayersPage</main>;
+  return <main></main>;
 };
 
 export default PlayersPage;
