@@ -8,7 +8,7 @@ const Header = () => {
     <header className={s.header}>
       <Link href="/" className={s.logo}>
         <SvgIcon name="trophy" />
-        <span>JumpersHeaven</span>
+        <h1>JumpersHeaven</h1>
       </Link>
 
       <MainNav />
