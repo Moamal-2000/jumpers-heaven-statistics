@@ -16,7 +16,7 @@
     background-color: #1f2937;
   }
 
-  &:hover {
+  &:not(.active):hover {
     background-color: #1b2532;
   }
 }
@@ -31,7 +31,7 @@
   color: #fff;
 }
 
-.mainNav>a:hover>svg {
+.mainNav>a:not(.active):hover>svg {
   color: #ebebeb;
 }
 
@@ -46,6 +46,6 @@
   color: #fff;
 }
 
-.mainNav>a:hover>span {
+.mainNav>a:not(.active):hover>span {
   color: #ebebeb;
 }
