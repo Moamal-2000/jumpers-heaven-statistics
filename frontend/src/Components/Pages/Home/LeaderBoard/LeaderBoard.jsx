@@ -5,10 +5,12 @@ const LeaderBoard = () => {
   return (
     <table className={s.leaderBoard}>
       <thead>
-        <th className={s.rank}>Rank</th>
-        <th className={s.player}>Player</th>
-        <th className={s.score}>Score</th>
-        <th className={s.tops}>Tops 1-10</th>
+        <tr>
+          <th className={s.rank}>Rank</th>
+          <th className={s.player}>Player</th>
+          <th className={s.score}>Score</th>
+          <th className={s.tops}>Tops 1-10</th>
+        </tr>
       </thead>
 
       <tbody>
