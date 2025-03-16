@@ -1,18 +1,14 @@
-.tbody tr td svg {
-  width: 20px;
-  height: 20px;
-}
-
-.tbody tr td svg[data-type=trophy] {
-  color: #facc15;
-}
-
 .tbody tr {
   width: inherit;
   cursor: pointer;
+  transition: background-color .1s ease;
 
   & .score {
     text-align: center;
+  }
+
+  &:hover {
+    background-color: #1f293778;
   }
 }
 
@@ -38,4 +34,13 @@
 
 .tbody tr td {
   padding: 1rem;
+}
+
+.tbody tr td svg {
+  width: 20px;
+  height: 20px;
+}
+
+.tbody tr td svg[data-type=trophy] {
+  color: #facc15;
 }
