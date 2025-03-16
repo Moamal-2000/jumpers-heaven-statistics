@@ -12,8 +12,6 @@
   color: #fff;
 }
 
-.leaderBoard tbody {}
-
 .leaderBoard :where(thead, tbody) {
   width: inherit;
 }
@@ -29,25 +27,14 @@
   & .player {
     text-align: left;
   }
-
-  & .score {
-    // text-align: right;
-  }
-
-  & .tops {}
 }
 
 .leaderBoard thead tr th {
-  // border: solid 2px red;
   padding: 1rem;
 }
 
 .leaderBoard tbody tr {
   width: inherit;
-
-  & .rank {}
-
-  & .player {}
 
   & .score {
     text-align: center;
@@ -85,6 +72,5 @@
 }
 
 .leaderBoard>tbody>tr td {
-  // border: solid yellow;
   padding: 1rem;
 }
