@@ -1,1 +1,37 @@
 .leaderBoard {}
+
+.leaderBoard thead {}
+
+.leaderBoard tbody {}
+
+.leaderBoard :where(thead, tbody) {}
+
+.leaderBoard thead {
+  & .rank {}
+
+  & .player {}
+
+  & .score {}
+
+  & .tops {}
+}
+
+.leaderBoard tbody tr {
+  & .rank {}
+
+  & .player {}
+
+  & .score {}
+
+  & .tops {}
+}
+
+.leaderBoard tr {}
+
+.leaderBoard tr .rank {}
+
+.leaderBoard tr .player {}
+
+.leaderBoard tr .score {}
+
+.leaderBoard tr .tops {}
