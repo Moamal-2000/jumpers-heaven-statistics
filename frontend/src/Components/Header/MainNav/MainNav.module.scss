@@ -1,7 +1,21 @@
+@use "../../../Styles/mixins" as m;
+
 .mainNav {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+@include m.medium {
+  .mainNav {
+    gap: 14px;
+  }
+}
+
+@include m.small {
+  .mainNav {
+    display: none;
+  }
 }
 
 .mainNav>a {
@@ -21,10 +35,23 @@
   }
 }
 
+@include m.medium {
+  .mainNav>a {
+    padding: .7rem 1.03rem;
+  }
+}
+
 .mainNav>a>svg {
   color: #9ca3af;
   width: 20px;
   height: 20px;
+}
+
+@include m.medium {
+  .mainNav>a>svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .mainNav>a.active>svg {
@@ -40,6 +67,12 @@
   font-size: 1rem;
   font-weight: light;
   letter-spacing: .6;
+}
+
+@include m.medium {
+  .mainNav>a>span {
+    font-size: .9rem;
+  }
 }
 
 .mainNav>a.active>span {

@@ -1,3 +1,5 @@
+@use "../../Styles/mixins" as m;
+
 .header {
   padding: 1rem;
   max-width: 1279px;
@@ -18,14 +20,46 @@
   gap: 8px;
 }
 
+@include m.medium {
+  .header .logo {
+    gap: 6px;
+  }
+}
+
 .header .logo>svg {
   color: #facc15;
   width: 2rem;
   height: 2rem;
 }
 
+@include m.medium {
+  .header .logo>svg {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+}
+
+@include m.small {
+  .header .logo>svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+
 .header .logo>span {
   color: #fff;
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+@include m.medium {
+  .header .logo>span {
+    font-size: 1.4rem;
+  }
+}
+
+@include m.small {
+  .header .logo>span {
+    font-size: 1.2rem;
+  }
 }
