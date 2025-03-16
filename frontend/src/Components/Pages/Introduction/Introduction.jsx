@@ -1,3 +1,4 @@
+import SearchInput from "@/Components/Shared/Inputs/SearchInput/SearchInput";
 import s from "./Introduction.module.scss";
 
 const Introduction = () => {
@@ -6,7 +7,7 @@ const Introduction = () => {
       <h1>Global Rankings</h1>
       <p>Top players ranked by overall performance and achievements</p>
 
-      {/* <SearchInput */}
+      <SearchInput />
     </section>
   );
 };
