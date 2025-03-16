@@ -1,7 +1,7 @@
 const PlayerId = async ({ params }) => {
   const { playerId } = await params;
 
-  return <main>PlayerId</main>;
+  return <main>PlayerId: {playerId}</main>;
 };
 
 export default PlayerId;

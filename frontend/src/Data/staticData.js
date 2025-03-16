@@ -37,3 +37,16 @@ export const GLOBAL_LEADERBOARD = [
   { rank: 9, player: "Dasher", score: 1234, tops: 15, id: 9 },
   { rank: 10, player: "ZoomZoom", score: 1123, tops: 12, id: 10 },
 ];
+
+export const COD_2_COLORS = {
+  1: "red",
+  2: "green",
+  3: "yellow",
+  4: "blue",
+  5: "cyan",
+  6: "magenta",
+  7: "white",
+  8: "gray",
+  9: "gray",
+  0: "black",
+};

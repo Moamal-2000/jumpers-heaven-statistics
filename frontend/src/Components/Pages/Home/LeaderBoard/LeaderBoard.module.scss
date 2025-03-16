@@ -20,11 +20,7 @@
   width: inherit;
   color: #fff;
 
-  & .rank {
-    text-align: left;
-  }
-
-  & .player {
+  & :where(.rank, .player, .tops) {
     text-align: left;
   }
 }
@@ -35,6 +31,6 @@
 
 .leaderBoard tr {
   display: grid;
-  grid-template-columns: 1fr 3fr .2fr 3fr;
+  grid-template-columns: 1fr 3fr 2fr 2.6fr;
   font-weight: 600;
 }
