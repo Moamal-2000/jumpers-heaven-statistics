@@ -10,6 +10,9 @@
 .leaderBoard thead {
   background-color: #1f2937;
   color: #fff;
+  position: sticky;
+  top: 89px;
+  left: 0;
 }
 
 .leaderBoard :where(thead, tbody) {
