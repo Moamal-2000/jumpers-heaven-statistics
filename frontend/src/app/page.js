@@ -1,4 +1,5 @@
 import Introduction from "@/Components/Pages/Home/Introduction/Introduction";
+import LeaderBoard from "@/Components/Pages/Home/LeaderBoard/LeaderBoard";
 import s from "./page.module.scss";
 
 export default async function Home() {
@@ -6,6 +7,7 @@ export default async function Home() {
     <div className="container">
       <main className={s.home}>
         <Introduction />
+        <LeaderBoard />
       </main>
     </div>
   );
