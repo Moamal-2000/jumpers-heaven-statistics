@@ -19,7 +19,7 @@
   }
 }
 
-.tbody tr td:not(:last-child) {
+.tbody tr:not(:last-child) {
   border-bottom: solid 1px #1f2937;
 }
 
