@@ -11,6 +11,7 @@ export const iconsData = [
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        data-type="trophy"
       >
         <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
         <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
@@ -23,17 +24,42 @@ export const iconsData = [
   },
 
   {
-    name: "medal",
+    name: "silver-medal",
     icon: (
       <svg
         width="24"
         height="24"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="currentColor"
+        stroke="#9ca3af"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        data-type="silver-medal"
+      >
+        <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path>
+        <path d="M11 12 5.12 2.2"></path>
+        <path d="m13 12 5.88-9.8"></path>
+        <path d="M8 7h8"></path>
+        <circle cx="12" cy="17" r="5"></circle>
+        <path d="M12 18v-2h-.5"></path>
+      </svg>
+    ),
+  },
+
+  {
+    name: "bronze-medal",
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#d97706"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        data-type="bronze-medal"
       >
         <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path>
         <path d="M11 12 5.12 2.2"></path>

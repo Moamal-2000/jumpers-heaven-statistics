@@ -33,6 +33,15 @@
   padding: 1rem;
 }
 
+.leaderBoard tbody tr td svg {
+  width: 20px;
+  height: 20px;
+}
+
+.leaderBoard tbody tr td svg[data-type=trophy] {
+  color: #facc15;
+}
+
 .leaderBoard tbody tr {
   width: inherit;
 
