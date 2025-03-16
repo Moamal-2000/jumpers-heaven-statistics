@@ -1,37 +1,90 @@
-.leaderBoard {}
+.leaderBoard {
+  margin-top: 32px;
+  width: 100%;
+  padding: 1.5rem;
+  padding-top: 0;
+  border: solid 1px #1f2937;
+  border-radius: 1rem;
+}
 
-.leaderBoard thead {}
+.leaderBoard thead {
+  background-color: #1f2937;
+  color: #fff;
+}
 
 .leaderBoard tbody {}
 
-.leaderBoard :where(thead, tbody) {}
+.leaderBoard :where(thead, tbody) {
+  width: inherit;
+}
 
-.leaderBoard thead {
-  & .rank {}
+.leaderBoard thead tr {
+  width: inherit;
+  color: #fff;
 
-  & .player {}
+  & .rank {
+    text-align: left;
+  }
 
-  & .score {}
+  & .player {
+    text-align: left;
+  }
+
+  & .score {
+    // text-align: right;
+  }
 
   & .tops {}
+}
+
+.leaderBoard thead tr th {
+  // border: solid 2px red;
+  padding: 1rem;
 }
 
 .leaderBoard tbody tr {
+  width: inherit;
+
   & .rank {}
 
   & .player {}
 
-  & .score {}
+  & .score {
+    text-align: center;
+  }
 
-  & .tops {}
+  & .tops {
+    text-align: center;
+  }
 }
 
-.leaderBoard tr {}
+.leaderBoard tbody tr td:not(:last-child) {
+  border-bottom: solid 1px #1f2937;
+}
 
-.leaderBoard tr .rank {}
+.leaderBoard tr {
+  display: grid;
+  grid-template-columns: 1fr 3fr .2fr 3fr;
+  font-weight: 600;
+}
 
-.leaderBoard tr .player {}
+.leaderBoard>tbody>tr .rank {
+  color: #fff;
+}
 
-.leaderBoard tr .score {}
+.leaderBoard>tbody>tr .player {
+  color: #fff;
+}
 
-.leaderBoard tr .tops {}
+.leaderBoard>tbody>tr .score {
+  color: #facc15;
+}
+
+.leaderBoard>tbody>tr .tops {
+  color: #22d3ee;
+}
+
+.leaderBoard>tbody>tr td {
+  // border: solid yellow;
+  padding: 1rem;
+}
