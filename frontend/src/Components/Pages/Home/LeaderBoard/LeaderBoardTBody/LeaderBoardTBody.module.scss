@@ -1,0 +1,44 @@
+.tbody tr td svg {
+  width: 20px;
+  height: 20px;
+}
+
+.tbody tr td svg[data-type=trophy] {
+  color: #facc15;
+}
+
+.tbody tr {
+  width: inherit;
+
+  & .score {
+    text-align: center;
+  }
+
+  & .tops {
+    text-align: center;
+  }
+}
+
+.tbody tr td:not(:last-child) {
+  border-bottom: solid 1px #1f2937;
+}
+
+.tbody tr .rank {
+  color: #fff;
+}
+
+.tbody tr .player {
+  color: #fff;
+}
+
+.tbody tr .score {
+  color: #facc15;
+}
+
+.tbody tr .tops {
+  color: #22d3ee;
+}
+
+.tbody tr td {
+  padding: 1rem;
+}

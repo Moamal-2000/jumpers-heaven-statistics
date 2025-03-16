@@ -33,53 +33,8 @@
   padding: 1rem;
 }
 
-.leaderBoard tbody tr td svg {
-  width: 20px;
-  height: 20px;
-}
-
-.leaderBoard tbody tr td svg[data-type=trophy] {
-  color: #facc15;
-}
-
-.leaderBoard tbody tr {
-  width: inherit;
-
-  & .score {
-    text-align: center;
-  }
-
-  & .tops {
-    text-align: center;
-  }
-}
-
-.leaderBoard tbody tr td:not(:last-child) {
-  border-bottom: solid 1px #1f2937;
-}
-
 .leaderBoard tr {
   display: grid;
   grid-template-columns: 1fr 3fr .2fr 3fr;
   font-weight: 600;
-}
-
-.leaderBoard>tbody>tr .rank {
-  color: #fff;
-}
-
-.leaderBoard>tbody>tr .player {
-  color: #fff;
-}
-
-.leaderBoard>tbody>tr .score {
-  color: #facc15;
-}
-
-.leaderBoard>tbody>tr .tops {
-  color: #22d3ee;
-}
-
-.leaderBoard>tbody>tr td {
-  padding: 1rem;
 }
