@@ -1,0 +1,45 @@
+.input {
+  background-color: #1f2937;
+  position: relative;
+  max-width: 672px;
+  width: 100%;
+  border-radius: .5rem;
+  outline: 2px solid transparent;
+  transition: outline-color .1s ease;
+
+  &:has(:focus) {
+    outline-color: #264d8e;
+  }
+}
+
+.input>input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  display: block;
+  min-height: 48px;
+  color: #e3e6eb;
+  font-size: 1rem;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+}
+
+.input>svg {
+  stroke: #9ca3af;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  translate: 0 -50%;
+  pointer-events: none;
+  transition: stroke .1s ease;
+}
+
+.input:not(:has(:placeholder-shown))>svg {
+  stroke: #e3e6eb;
+}

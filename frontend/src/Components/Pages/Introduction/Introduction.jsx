@@ -7,7 +7,7 @@ const Introduction = () => {
       <h1>Global Rankings</h1>
       <p>Top players ranked by overall performance and achievements</p>
 
-      <SearchInput />
+      <SearchInput placeholder="Search by player name..." />
     </section>
   );
 };

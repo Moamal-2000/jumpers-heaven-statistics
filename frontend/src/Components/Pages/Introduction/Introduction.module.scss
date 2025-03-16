@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: fit-content;
+  width: 100%;
   margin: 0 auto;
   padding: 1.5rem;
   padding-bottom: .5rem;
@@ -18,5 +18,5 @@
 
 .introduction>p {
   color: #9ca3af;
-  margin-top: 6px;
+  margin: 6px 0 10px;
 }
