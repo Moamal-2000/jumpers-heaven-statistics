@@ -77,3 +77,30 @@ export const MAPS = [
     id: 3,
   },
 ];
+
+export const PLAYERS = [
+  {
+    name: "SpeedDemon",
+    avatar: "",
+    totalPoints: 156,
+    mapsCompleted: 24,
+    bestTime: "1:23.456",
+    id: 1,
+  },
+  {
+    name: "JumpMaster",
+    avatar: "",
+    totalPoints: 142,
+    mapsCompleted: 22,
+    bestTime: "1:25.789",
+    id: 2,
+  },
+  {
+    name: "Rocket",
+    avatar: "",
+    totalPoints: 138,
+    mapsCompleted: 20,
+    bestTime: "1:26.345",
+    id: 3,
+  },
+];
