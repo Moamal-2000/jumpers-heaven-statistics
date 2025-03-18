@@ -3,7 +3,12 @@ import Image from "next/image";
 import s from "./Player.module.scss";
 
 const PlayerCard = ({
-  playerData: { name, rank, avatar, totalPoints, mapsCompleted, bestTime },
+  name,
+  rank,
+  avatar,
+  totalPoints,
+  mapsCompleted,
+  bestTime,
 }) => {
   return (
     <div className={s.playerCard}>
