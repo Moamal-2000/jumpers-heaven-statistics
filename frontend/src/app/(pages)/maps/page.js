@@ -1,9 +1,12 @@
 import Maps from "@/Components/Pages/Maps/Maps";
+import s from "./MapsPage.module.scss";
 
 const MapsPage = () => {
   return (
-    <main>
-      <Maps />
+    <main className={s.mapsPage}>
+      <div className="container">
+        <Maps />
+      </div>
     </main>
   );
 };
