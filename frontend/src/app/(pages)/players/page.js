@@ -2,9 +2,11 @@ import Players from "@/Components/Pages/Players/Players";
 
 const PlayersPage = () => {
   return (
-    <main>
-      <Players />
-    </main>
+    <div className="container">
+      <main>
+        <Players />
+      </main>
+    </div>
   );
 };
 
