@@ -13,20 +13,21 @@ const PlayerCard = ({
           {!avatar && <SvgIcon name="users" />}
         </div>
 
-        <div className={s.wrappers}>
+        <div className={s.wrapper}>
           <h2>{name}</h2>
-          <span>Rank #{rank}</span>
+          <span className={s.rank}>Rank #{rank}</span>
         </div>
       </div>
 
       <div className={s.stats}>
         <div className={s.stat}>
           <p>Total Points:</p>
-          <span>{totalPoints}</span>
+          <span className={s.totalPoints}>{totalPoints}</span>
         </div>
 
         <div className={s.stat}>
-          <p>Maps Completed:</p> <span>{completedMaps}</span>
+          <p>Maps Completed:</p>
+          <span className={s.completedMaps}>{completedMaps}</span>
         </div>
 
         <div className={s.stat}>

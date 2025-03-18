@@ -1,1 +1,31 @@
 .playerCard {}
+
+.playerCard .mainInfo {}
+
+.mainInfo .avatar {}
+
+.mainInfo .avatar>img {}
+
+.mainInfo .avatar>svg {}
+
+.mainInfo .wrapper {}
+
+.mainInfo .wrapper>h2 {}
+
+.mainInfo .wrapper>span {}
+
+.playerCard .stats {}
+
+.playerCard .stats .stat {}
+
+.playerCard .stats .stat>p {}
+
+.playerCard .stats .stat>span {}
+
+.playerCard .stats .stat>span {
+  &.rank {}
+
+  &.totalPoints {}
+
+  &.completedMaps {}
+}
