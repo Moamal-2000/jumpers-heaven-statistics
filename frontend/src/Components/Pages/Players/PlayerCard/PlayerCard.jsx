@@ -32,7 +32,7 @@ const PlayerCard = ({
 
         <div className={s.stat}>
           <p>Best Time:</p>
-          <span>{bestTime}</span>
+          <span className={s.bestTime}>{bestTime}</span>
         </div>
       </div>
     </div>

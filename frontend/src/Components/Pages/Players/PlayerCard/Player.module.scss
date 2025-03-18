@@ -34,16 +34,19 @@
   color: #6b7280;
 }
 
-.mainInfo .wrapper {}
+.mainInfo .wrapper>h2 {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
 
-.mainInfo .wrapper>h2 {}
-
-.mainInfo .wrapper>span {}
+.mainInfo .wrapper>span {
+  color: #facc15;
+}
 
 .playerCard .stats {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: .6rem;
 }
 
 .playerCard .stats .stat {
@@ -52,14 +55,21 @@
   justify-content: space-between;
 }
 
-.playerCard .stats .stat>p {}
-
-.playerCard .stats .stat>span {}
+.playerCard .stats .stat>p {
+  color: #d1d5db;
+}
 
 .playerCard .stats .stat>span {
-  &.rank {}
+  &.totalPoints {
+    color: #facc15;
+    font-weight: 400;
+  }
 
-  &.totalPoints {}
+  &.completedMaps {
+    color: #d1d5db;
+  }
 
-  &.completedMaps {}
+  &.bestTime {
+    color: #22d3ee;
+  }
 }
