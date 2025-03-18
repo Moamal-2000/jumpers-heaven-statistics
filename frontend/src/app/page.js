@@ -9,6 +9,9 @@ export default async function Home() {
     { next: { revalidate: 120 } }
   );
 
+  if (!speedRunLeaderboardReq.ok)
+    throw new Error("Failed to fetch speedrun leaderboard data");
+
   const speedRunLeaderboardData = await speedRunLeaderboardReq.json();
 
   return (
