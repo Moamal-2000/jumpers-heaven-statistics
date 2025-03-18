@@ -3,7 +3,7 @@ import Image from "next/image";
 import s from "./Player.module.scss";
 
 const PlayerCard = ({
-  playerData: { name, rank, avatar, totalPoints, completedMaps, bestTime },
+  playerData: { name, rank, avatar, totalPoints, mapsCompleted, bestTime },
 }) => {
   return (
     <div className={s.playerCard}>
@@ -27,7 +27,7 @@ const PlayerCard = ({
 
         <div className={s.stat}>
           <p>Maps Completed:</p>
-          <span className={s.completedMaps}>{completedMaps}</span>
+          <span className={s.completedMaps}>{mapsCompleted}</span>
         </div>
 
         <div className={s.stat}>

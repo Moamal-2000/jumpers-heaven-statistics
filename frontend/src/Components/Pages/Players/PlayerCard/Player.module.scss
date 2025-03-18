@@ -1,12 +1,38 @@
-.playerCard {}
+.playerCard {
+  background-color: #1f2937;
+  border: solid 1px #374151;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
 
-.playerCard .mainInfo {}
+.playerCard .mainInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
 
-.mainInfo .avatar {}
+.mainInfo .avatar {
+  background-color: #374151;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.mainInfo .avatar>img {}
+.mainInfo .avatar>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-.mainInfo .avatar>svg {}
+.mainInfo .avatar>svg {
+  width: 2rem;
+  height: 2rem;
+  color: #6b7280;
+}
 
 .mainInfo .wrapper {}
 
@@ -14,9 +40,17 @@
 
 .mainInfo .wrapper>span {}
 
-.playerCard .stats {}
+.playerCard .stats {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
 
-.playerCard .stats .stat {}
+.playerCard .stats .stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .playerCard .stats .stat>p {}
 
