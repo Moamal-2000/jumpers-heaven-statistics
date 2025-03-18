@@ -50,3 +50,27 @@ export const COD_2_COLORS = {
   9: "gray",
   0: "black",
 };
+
+export const MAPS = [
+  {
+    name: "Desert Run",
+    description: "A fast-paced journey through sandy dunes and ancient ruins",
+    bestTime: "1:23.456",
+    difficulty: "Medium",
+    id: 1,
+  },
+  {
+    name: "City Escape",
+    description: "Navigate through a modern cityscape with precise wall jumps",
+    bestTime: "2:45.789",
+    difficulty: "Hard",
+    id: 2,
+  },
+  {
+    name: "Sky High",
+    description: "Master aerial maneuvers in this cloud-top challenge",
+    bestTime: "3:12.345",
+    difficulty: "Expert",
+    id: 3,
+  },
+];
