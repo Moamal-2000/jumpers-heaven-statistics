@@ -1,5 +1,11 @@
+import Players from "@/Components/Pages/Players/Players";
+
 const PlayersPage = () => {
-  return <main></main>;
+  return (
+    <main>
+      <Players />
+    </main>
+  );
 };
 
 export default PlayersPage;
