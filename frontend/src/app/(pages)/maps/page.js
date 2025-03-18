@@ -3,11 +3,11 @@ import s from "./MapsPage.module.scss";
 
 const MapsPage = () => {
   return (
-    <main className={s.mapsPage}>
-      <div className="container">
+    <div className="container">
+      <main className={s.mapsPage}>
         <Maps />
-      </div>
-    </main>
+      </main>
+    </div>
   );
 };
 
