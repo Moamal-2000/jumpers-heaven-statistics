@@ -12,7 +12,7 @@ export const NAV_LINKS_DATA = [
     id: 2,
   },
   {
-    name: "Player",
+    name: "Players",
     href: "/players",
     iconName: "users",
     id: 3,
