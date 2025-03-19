@@ -36,9 +36,3 @@ export function getColoredName(name) {
     );
   });
 }
-
-export function getModifiedTops(top_list) {
-  const topsArray = Object.values(top_list);
-  const topsFormatted = `[${topsArray.join(", ")}]`;
-  return topsFormatted;
-}

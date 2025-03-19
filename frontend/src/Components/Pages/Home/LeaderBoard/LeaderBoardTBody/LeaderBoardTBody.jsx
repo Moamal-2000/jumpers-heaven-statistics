@@ -1,11 +1,7 @@
 "use client";
 
 import { navigateToPlayerPage } from "@/Functions/navigate";
-import {
-  getColoredName,
-  getModifiedRank,
-  getModifiedTops,
-} from "@/Functions/utils";
+import { getColoredName, getModifiedRank } from "@/Functions/utils";
 import { useRouter } from "next/navigation";
 import s from "./LeaderBoardTBody.module.scss";
 
@@ -17,7 +13,6 @@ const LeaderBoardTBody = ({ leaderboardData }) => {
       {Object.values(leaderboardData)?.map(
         ({ player_name, score, top_list, player_id }, index) => {
           const modifiedRank = getModifiedRank(index + 1);
-          const modifiedTops = getModifiedTops(top_list);
           const modifiedPlayerName = getColoredName(player_name);
 
           return (
@@ -28,7 +23,7 @@ const LeaderBoardTBody = ({ leaderboardData }) => {
               <td className={s.rank}>{modifiedRank}</td>
               <td className={s.player}>{modifiedPlayerName}</td>
               <td className={s.score}>{score}</td>
-              <td className={s.tops}>{modifiedTops}</td>
+              <td className={s.tops}></td>
             </tr>
           );
         }
