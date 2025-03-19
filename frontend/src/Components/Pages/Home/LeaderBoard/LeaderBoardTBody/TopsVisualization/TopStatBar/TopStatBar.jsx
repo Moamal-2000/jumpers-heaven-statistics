@@ -12,7 +12,7 @@ const TopStatBar = ({ top, times, mapsCount, maxFinishTimes }) => {
   return (
     <div className={s.statBarWrapper}>
       <p className={s.toolTip}>
-        {times} times in position {top}
+        {times} times in position #{top}
       </p>
 
       <span className={s.top}>#{top}</span>

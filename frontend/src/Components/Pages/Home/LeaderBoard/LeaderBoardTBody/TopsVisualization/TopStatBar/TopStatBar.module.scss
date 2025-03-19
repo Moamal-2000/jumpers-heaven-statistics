@@ -8,11 +8,27 @@
 }
 
 .statBarWrapper .toolTip {
-  display: none;
   position: absolute;
   left: 50%;
   translate: -50%;
-  top: -20px;
+  top: -32px;
+  background-color: #111827;
+  color: #fff;
+  font-weight: 400;
+  font-size: .75rem;
+  line-height: 1rem;
+  padding: .25rem;
+  border-radius: .25rem;
+  white-space: nowrap;
+  z-index: 11;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+
+.statBarWrapper:hover .toolTip {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .statBarWrapper :where(.top, .times) {
