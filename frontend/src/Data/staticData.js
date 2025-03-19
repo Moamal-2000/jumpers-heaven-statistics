@@ -104,3 +104,5 @@ export const PLAYERS = [
     id: 3,
   },
 ];
+
+export const TOP_STATS_COLOR = ["#facc15", "#c0c0c0", "#cd7f32"];

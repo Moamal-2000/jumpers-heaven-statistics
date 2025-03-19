@@ -1,10 +1,9 @@
+import { TOP_STATS_COLOR } from "@/Data/staticData";
 import s from "./TopStatBar.module.scss";
-
-const topStatColors = ["#facc15", "#c0c0c0", "#cd7f32"];
 
 const TopStatBar = ({ top, times, mapsCount, maxFinishTimes }) => {
   const statsBarStyles = {
-    backgroundColor: topStatColors[top - 1],
+    backgroundColor: TOP_STATS_COLOR[top - 1],
     height: `${(times / maxFinishTimes) * 100}%`,
   };
 
