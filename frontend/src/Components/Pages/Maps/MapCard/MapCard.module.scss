@@ -1,9 +1,18 @@
+@use "../../../../Styles/mixins" as m;
+
 .mapCard {
   padding: 1.5rem;
   border-radius: .75rem;
   border: solid 1px #374151;
   background-color: #1f2937;
   width: 100%;
+}
+
+@include m.small {
+  .mapCard {
+    padding: 0;
+    border-radius: .75rem .75rem;
+  }
 }
 
 .imgHolder {
@@ -14,6 +23,21 @@
   justify-content: center;
   border-radius: .5rem;
   margin-bottom: 1rem;
+}
+
+@include m.medium {
+  .imgHolder {
+    aspect-ratio: 1.5/1;
+    height: auto;
+  }
+}
+
+@include m.small {
+  .imgHolder {
+    aspect-ratio: 1.6/1;
+    border-radius: .6rem .6rem 0 0;
+    margin-bottom: 0;
+  }
 }
 
 .imgHolder>img {
@@ -28,12 +52,24 @@
   height: 48px;
 }
 
+@include m.small {
+  .mapInfo {
+    padding: 1rem;
+  }
+}
+
 .mapInfo>h2 {
   color: #fff;
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.75rem;
   margin-bottom: .5rem;
+}
+
+@include m.very-small {
+  .mapInfo>h2 {
+    font-size: 1.2rem;
+  }
 }
 
 .mapInfo>p {
@@ -46,6 +82,14 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+@include m.very-small {
+  .mapInfo .mapDetails {
+    flex-direction: column;
+    align-items: start;
+    gap: .3rem;
+  }
 }
 
 .mapDetails>div {
