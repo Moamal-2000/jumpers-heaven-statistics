@@ -1,13 +1,13 @@
 @use "../../Styles/mixins" as m;
 
 .header {
-  padding: 1.4rem 1rem;
   max-width: 1279px;
+  width: 100%;
   min-height: 72px;
+  padding: 1.4rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   position: fixed;
   left: 50%;
   translate: -50% 0;
@@ -50,7 +50,7 @@
 
 .header .logo>span {
   color: #fff;
-  font-size: 1.5rem !important;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 

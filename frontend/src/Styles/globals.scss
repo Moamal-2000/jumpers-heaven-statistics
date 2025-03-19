@@ -32,51 +32,12 @@ main {
 }
 
 .container {
-  width: 1279px;
+  max-width: 1279px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-@media (max-width: 1280px) {
-  main {
-    width: 1199px;
-  }
-
-  .container {
-    width: 1199px;
-  }
-}
-
-@media (max-width: 1200px) {
-  main {
-    width: 991px;
-  }
-
-  .container {
-    width: 991px;
-  }
-}
-
-@media (max-width: 992px) {
-  main {
-    width: 767px;
-  }
-
-  .container {
-    width: 767px;
-  }
-}
-
-@media (max-width: 768px) {
-  main {
-    width: 100%;
-  }
-
-  .container {
-    width: 100%;
-  }
 }
 
 .red {
