@@ -1,12 +1,11 @@
 import s from "./TopStatBar.module.scss";
 
-const topStatColors = ["#ffd700", "#c0c0c0", "#cd7f32"];
+const topStatColors = ["#facc15", "#c0c0c0", "#cd7f32"];
 
 const TopStatBar = ({ top, times, mapsCount, maxFinishTimes }) => {
   const statsBarStyles = {
     backgroundColor: topStatColors[top - 1],
     height: `${(times / maxFinishTimes) * 100}%`,
-    opacity: 0.8,
   };
 
   return (
