@@ -1,13 +1,12 @@
 import s from "./TopStatBar.module.scss";
 
 const topStatColors = ["#ffd700", "#c0c0c0", "#cd7f32"];
-const jumpersHeavenMapCount = 560;
 
-const TopStatBar = ({ top, times }) => {
+const TopStatBar = ({ top, times, mapsCount, maxFinishTimes }) => {
   const statsBarStyles = {
     backgroundColor: topStatColors[top - 1],
+    height: `${(times / maxFinishTimes) * 100}%`,
     opacity: 0.8,
-    height: "640px",
   };
 
   return (

@@ -9,16 +9,24 @@ export default async function Home() {
     { next: { revalidate: 120 } }
   );
 
+  const mapsCountReq = await fetch(jhApis({}).mapsCount, {
+    next: { revalidate: 120 },
+  });
+
   if (!speedRunLeaderboardReq.ok)
     throw new Error("Failed to fetch speedrun leaderboard data");
 
   const speedRunLeaderboardData = await speedRunLeaderboardReq.json();
+  const mapsCountRes = await mapsCountReq.json();
 
   return (
     <div className="container">
       <main className={s.home}>
         <Introduction />
-        <LeaderBoard leaderboardData={speedRunLeaderboardData} />
+        <LeaderBoard
+          leaderboardData={speedRunLeaderboardData}
+          mapsCount={mapsCountRes?.count}
+        />
       </main>
     </div>
   );

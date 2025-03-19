@@ -18,5 +18,6 @@ export const jhApis = ({
     globalLeaderboard: `${domain}/leaderboard/getGlobalLeaderboard?fps=${fps}`,
     playerTops: `${domain}/leaderboard/getPlayerTops?fps=${fps}&playerid=${playerId}`,
     speedRunLeaderboard: `${domain}/leaderboard/speedrun?fps=${fps}&limit=${limit}`,
+    mapsCount: `${domain}/map/count`,
   };
 };

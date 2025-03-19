@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import s from "./LeaderBoardTBody.module.scss";
 import TopsVisualization from "./TopsVisualization/TopsVisualization";
 
-const LeaderBoardTBody = ({ leaderboardData }) => {
+const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
   const router = useRouter();
 
   return (
@@ -25,7 +25,11 @@ const LeaderBoardTBody = ({ leaderboardData }) => {
               <td className={s.player}>{modifiedPlayerName}</td>
               <td className={s.score}>{score}</td>
               <td className={s.tops}>
-                <TopsVisualization topsList={top_list} />
+                <TopsVisualization
+                  topsList={top_list}
+                  mapsCount={mapsCount}
+                  leaderboardData={leaderboardData}
+                />
               </td>
             </tr>
           );

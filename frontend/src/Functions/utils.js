@@ -36,3 +36,8 @@ export function getColoredName(name) {
     );
   });
 }
+
+export function getMaxFinishTimesFrom(bestPlayer) {
+  const maxFinishTimes = Math.max(...Object.values(bestPlayer.top_list));
+  return maxFinishTimes;
+}

@@ -1,7 +1,7 @@
 import s from "./LeaderBoard.module.scss";
 import LeaderBoardTBody from "./LeaderBoardTBody/LeaderBoardTBody";
 
-const LeaderBoard = ({ leaderboardData }) => {
+const LeaderBoard = ({ leaderboardData, mapsCount }) => {
   return (
     <table className={s.leaderBoard}>
       <thead>
@@ -13,7 +13,10 @@ const LeaderBoard = ({ leaderboardData }) => {
         </tr>
       </thead>
 
-      <LeaderBoardTBody leaderboardData={leaderboardData} />
+      <LeaderBoardTBody
+        leaderboardData={leaderboardData}
+        mapsCount={mapsCount}
+      />
     </table>
   );
 };
