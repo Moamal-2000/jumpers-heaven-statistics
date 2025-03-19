@@ -13,6 +13,7 @@
   position: sticky;
   top: 89px;
   left: 0;
+  z-index: 10;
 }
 
 .leaderBoard :where(thead, tbody) {
@@ -34,6 +35,6 @@
 
 .leaderBoard tr {
   display: grid;
-  grid-template-columns: 1fr 3fr 2fr 2.6fr;
+  grid-template-columns: 1fr 2fr 1fr 3fr;
   font-weight: 600;
 }

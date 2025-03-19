@@ -40,9 +40,3 @@
   color: #9ca3af;
   margin: 6px 0 10px;
 }
-
-@include m.small {
-  .introduction>p {
-    // font-size: .9rem;
-  }
-}

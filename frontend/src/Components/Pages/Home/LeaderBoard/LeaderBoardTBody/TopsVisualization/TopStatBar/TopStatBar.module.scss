@@ -1,28 +1,45 @@
-.statBarWrapper {}
+.statBarWrapper {
+  height: 64px;
+  width: 43px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  position: relative;
+}
 
 .statBarWrapper .toolTip {
   display: none;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: -20px;
 }
 
-.statBar {
+.statBarWrapper :where(.top, .times) {
+  color: #fff;
+  font-size: .75rem;
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  z-index: 1;
+}
+
+.statBarWrapper .top {
+  font-weight: 500;
+  top: .25rem;
+}
+
+.statBarWrapper .times {
+  font-weight: 700;
+  bottom: .25rem;
+}
+
+.statBarWrapper .statBar {
   background-color: #3e98c7;
-  width: 43px;
-  height: 100px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: .25rem 0;
   border-radius: 4px;
-}
-
-.statBar .top {
-  color: #fff;
-  font-size: .75rem;
-}
-
-.statBar .times {
-  color: #fff;
-  font-weight: 700;
-  font-size: .75rem;
 }
