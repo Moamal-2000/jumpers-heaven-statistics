@@ -4,6 +4,7 @@ import { navigateToPlayerPage } from "@/Functions/navigate";
 import { getColoredName, getModifiedRank } from "@/Functions/utils";
 import { useRouter } from "next/navigation";
 import s from "./LeaderBoardTBody.module.scss";
+import TopsVisualization from "./TopsVisualization/TopsVisualization";
 
 const LeaderBoardTBody = ({ leaderboardData }) => {
   const router = useRouter();
@@ -23,7 +24,9 @@ const LeaderBoardTBody = ({ leaderboardData }) => {
               <td className={s.rank}>{modifiedRank}</td>
               <td className={s.player}>{modifiedPlayerName}</td>
               <td className={s.score}>{score}</td>
-              <td className={s.tops}></td>
+              <td className={s.tops}>
+                <TopsVisualization topsList={top_list} />
+              </td>
             </tr>
           );
         }
