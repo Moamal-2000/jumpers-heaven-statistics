@@ -46,7 +46,7 @@ export const COD_2_COLORS = {
   5: "cyan",
   6: "magenta",
   7: "white",
-  8: "gray",
+  8: "purple",
   9: "gray",
   0: "black",
 };
