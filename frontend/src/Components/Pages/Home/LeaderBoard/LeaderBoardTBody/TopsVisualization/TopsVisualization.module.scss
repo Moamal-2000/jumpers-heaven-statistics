@@ -2,3 +2,29 @@
   display: flex;
   gap: 4px;
 }
+
+.tops .expandButton {
+  cursor: pointer;
+  border: none;
+  background-color: #1f2937;
+  fill: #fff;
+  border-radius: .25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.active {
+    rotate: 180deg;
+
+    >svg {
+      fill: #00b906;
+    }
+  }
+
+}
+
+.tops .expandButton>svg {
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+}

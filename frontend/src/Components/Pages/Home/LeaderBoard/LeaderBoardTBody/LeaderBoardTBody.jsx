@@ -16,15 +16,29 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
           const modifiedRank = getModifiedRank(index + 1);
           const modifiedPlayerName = getColoredName(player_name);
 
+          function handleRowClick(e) {
+            const isButtonElement = e.target.tagName === "BUTTON";
+            if (isButtonElement) return;
+
+            navigateToPlayerPage(router, player_id);
+          }
+
           return (
             <tr
               key={player_id}
-              onClick={() => navigateToPlayerPage(router, player_id)}
+              onClick={handleRowClick}
+              data-type="player-stats-row"
             >
-              <td className={s.rank}>{modifiedRank}</td>
-              <td className={s.player}>{modifiedPlayerName}</td>
-              <td className={s.score}>{score}</td>
-              <td className={s.tops}>
+              <td className={s.rank} data-type="player-stats-rank">
+                {modifiedRank}
+              </td>
+              <td className={s.player} data-type="player-stats-name">
+                {modifiedPlayerName}
+              </td>
+              <td className={s.score} data-type="player-stats-score">
+                {score}
+              </td>
+              <td className={s.tops} data-type="player-stats-tops">
                 <TopsVisualization
                   topsList={top_list}
                   mapsCount={mapsCount}
