@@ -10,6 +10,11 @@
   &:hover {
     background-color: #1f293778;
   }
+
+  &:active {
+    background-color: #2e3b4c78;
+  }
+
 }
 
 .tbody tr:not(:last-child) {
