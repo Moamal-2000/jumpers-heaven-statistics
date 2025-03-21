@@ -4,8 +4,15 @@ import SvgIcon from "../../SvgIcon";
 import s from "./SearchInput.module.scss";
 
 const SearchInput = ({ placeholder }) => {
+  function handleSearch(event) {
+    event.preventDefault();
+
+    const formEle = event.currentTarget;
+    const inputValue = new FormData(formEle).get("search-player");
+  }
+
   return (
-    <form className={s.input} onClick={focusOnInput}>
+    <form className={s.input} onClick={focusOnInput} onSubmit={handleSearch}>
       <button type="submit" className={s.searchButton}>
         <SvgIcon name="search" />
       </button>
