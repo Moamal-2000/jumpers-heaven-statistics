@@ -13,6 +13,7 @@ const ExpandTopStatBtn = ({ showMoreStats, setShowMoreStats }) => {
       type="button"
       onClick={handleExpandTopsStat}
       className={`${s.expandButton} ${activeClass}`}
+      aria-label="Expand stats bars"
     >
       <SvgIcon name="right-arrow" />
     </button>
