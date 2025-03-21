@@ -24,15 +24,21 @@
   align-items: center;
   gap: .5rem;
   border-radius: .5rem;
-  transition: background-color .2s ease;
+  transition: background-color .1s ease;
 
-  &.active {
-    background-color: #1f2937;
+  &.active,
+  &:hover {
+    background-color: #242f3d;
   }
 
-  &:not(.active):hover {
-    background-color: #1b2532;
+  &:active {
+    background-color: #334152;
   }
+
+  &.active:hover {
+    background-color: #334152;
+  }
+
 }
 
 @include m.medium {
