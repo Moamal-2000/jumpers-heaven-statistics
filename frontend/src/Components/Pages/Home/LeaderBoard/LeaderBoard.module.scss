@@ -6,6 +6,7 @@
   border: solid 1px #1f2937;
   border-radius: 1rem;
   user-select: none;
+  cursor: pointer;
 }
 
 .leaderBoard thead {
@@ -15,6 +16,11 @@
   top: 89px;
   left: 0;
   z-index: 10;
+  transition: background-color .1s ease;
+
+  &:hover {
+    background-color: #263140;
+  }
 }
 
 .leaderBoard :where(thead, tbody) {

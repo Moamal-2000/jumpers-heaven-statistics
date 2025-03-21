@@ -6,11 +6,12 @@ import { useRouter } from "next/navigation";
 import s from "./LeaderBoardTBody.module.scss";
 import TopsVisualization from "./TopsVisualization/TopsVisualization";
 
-const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
+const LeaderBoardTBody = ({ leaderboardData, mapsCount, isReverseTable }) => {
+  const reverseClass = isReverseTable ? s.reverse : "";
   const router = useRouter();
 
   return (
-    <tbody className={s.tbody}>
+    <tbody className={`${s.tbody} ${reverseClass}`}>
       {leaderboardData?.map(
         ({ player_name, score, top_list, player_id }, index) => {
           const modifiedRank = getModifiedRank(index + 1);
