@@ -12,6 +12,39 @@
   }
 }
 
+.searchButton {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  translate: 0 -50%;
+  cursor: pointer;
+}
+
+.searchButton svg {
+  stroke: #9ca3af;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: stroke .1s ease;
+}
+
+.input:not(:has(:placeholder-shown)) .searchButton svg {
+  stroke: #e3e6eb;
+}
+
+.input:not(:has(:placeholder-shown)) .searchButton:hover svg {
+  stroke: #f3f3f3;
+}
+
+.searchButton:hover svg {
+  stroke: #f3f3f3;
+}
+
 .input>input {
   background-color: transparent;
   border: none;
@@ -26,20 +59,4 @@
   &::placeholder {
     color: #9ca3af;
   }
-}
-
-.input>svg {
-  stroke: #9ca3af;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  translate: 0 -50%;
-  cursor: pointer;
-  transition: stroke .1s ease;
-}
-
-.input:not(:has(:placeholder-shown))>svg {
-  stroke: #e3e6eb;
 }

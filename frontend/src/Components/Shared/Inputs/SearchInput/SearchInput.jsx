@@ -5,10 +5,18 @@ import s from "./SearchInput.module.scss";
 
 const SearchInput = ({ placeholder }) => {
   return (
-    <div className={s.input} onClick={focusOnInput}>
-      <SvgIcon name="search" />
-      <input type="text" placeholder={placeholder} />
-    </div>
+    <form className={s.input} onClick={focusOnInput}>
+      <button type="submit" className={s.searchButton}>
+        <SvgIcon name="search" />
+      </button>
+
+      <input
+        type="text"
+        placeholder={placeholder}
+        name="search-player"
+        role="search"
+      />
+    </form>
   );
 };
 
