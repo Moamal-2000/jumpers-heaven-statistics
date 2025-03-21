@@ -9,8 +9,7 @@ const PlayerId = async ({ params }) => {
     { next: { revalidate: 120 } }
   );
   const playersData = await playersReq.json();
-  const playersDataArr = Object.values(playersData);
-  const playerData = playersDataArr.find(
+  const playerData = playersData.find(
     ({ player_id }) => player_id === playerId
   );
   const { player_name, score, top_list } = playerData;
