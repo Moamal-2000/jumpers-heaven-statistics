@@ -8,7 +8,9 @@ const FiltersSection = () => {
       <FilterCard title="Leaderboard Type">
         <LeaderBoardFilters />
       </FilterCard>
-      <FilterCard title="FPS Status"></FilterCard>
+      <FilterCard title="FPS Status">
+        <FpsFilters />
+      </FilterCard>
       <FilterCard title="Players Region"></FilterCard>
       <FilterCard title="Last seen"></FilterCard>
       <FilterCard title="Player Status"></FilterCard>
