@@ -8,6 +8,7 @@ const LeaderBoardFilters = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
+  const leaderboardUrlQuery = searchParams.get("leaderboard");
 
   function setQueryFilter(filterQuery) {
     const createdQuery = createQueryString(
@@ -21,11 +22,22 @@ const LeaderBoardFilters = () => {
 
   return (
     <div className={s.filters}>
-      {LEADERBOARD_FILTERS_DATA.map(({ text, id }) => (
-        <button type="button" key={id} onClick={() => setQueryFilter(text)}>
-          {text}
-        </button>
-      ))}
+      {LEADERBOARD_FILTERS_DATA.map(({ text, id }) => {
+        const fixedUrlQuery = leaderboardUrlQuery ? leaderboardUrlQuery : "all";
+        const activeClass =
+          fixedUrlQuery === text.toLowerCase() ? s.active : "";
+
+        return (
+          <button
+            type="button"
+            key={id}
+            onClick={() => setQueryFilter(text)}
+            className={activeClass}
+          >
+            {text}
+          </button>
+        );
+      })}
     </div>
   );
 };
