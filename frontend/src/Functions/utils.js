@@ -41,3 +41,9 @@ export function getMaxFinishTimesFrom(bestPlayer) {
   const maxFinishTimes = Math.max(...Object.values(bestPlayer.top_list));
   return maxFinishTimes;
 }
+
+export function createQueryString(name, value, searchParams) {
+  const params = new URLSearchParams(searchParams.toString());
+  params.set(name, value);
+  return params.toString();
+}
