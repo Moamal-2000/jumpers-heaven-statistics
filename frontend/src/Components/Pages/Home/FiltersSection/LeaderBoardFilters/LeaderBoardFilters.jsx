@@ -12,7 +12,7 @@ const LeaderBoardFilters = () => {
   function setQueryFilter(filterQuery) {
     const createdQuery = createQueryString(
       "leaderboard",
-      filterQuery,
+      filterQuery.toLowerCase(),
       searchParams
     );
 
