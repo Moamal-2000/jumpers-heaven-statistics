@@ -3,6 +3,7 @@ import s from "./FiltersSection.module.scss";
 import FpsFilters from "./FpsFilters/FpsFilters";
 import LeaderBoardFilters from "./LeaderBoardFilters/LeaderBoardFilters";
 import RegionFilters from "./RegionFilters/RegionFilters";
+import LastSeenFilters from "./LastSeenFilters/LastSeenFilters";
 
 const FiltersSection = () => {
   return (
@@ -16,7 +17,9 @@ const FiltersSection = () => {
       <FilterCard title="Players Region">
         <RegionFilters />
       </FilterCard>
-      <FilterCard title="Last seen"></FilterCard>
+      <FilterCard title="Last seen">
+        <LastSeenFilters />
+      </FilterCard>
       <FilterCard title="Player Status"></FilterCard>
       <FilterCard title="Stats Filter"></FilterCard>
     </section>
