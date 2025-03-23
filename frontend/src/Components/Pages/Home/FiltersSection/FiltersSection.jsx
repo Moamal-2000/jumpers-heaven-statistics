@@ -1,10 +1,11 @@
 import FilterCard from "@/Components/Shared/Cards/FilterCard/FilterCard";
 import s from "./FiltersSection.module.scss";
 import FpsFilters from "./FpsFilters/FpsFilters";
-import LeaderBoardFilters from "./LeaderBoardFilters/LeaderBoardFilters";
-import RegionFilters from "./RegionFilters/RegionFilters";
 import LastSeenFilters from "./LastSeenFilters/LastSeenFilters";
+import LeaderBoardFilters from "./LeaderBoardFilters/LeaderBoardFilters";
 import PlayerStatusFilters from "./PlayerStatusFilters/PlayerStatusFilters";
+import RegionFilters from "./RegionFilters/RegionFilters";
+import StatsFilters from "./StatsFilters/StatsFilters";
 
 const FiltersSection = () => {
   return (
@@ -12,19 +13,26 @@ const FiltersSection = () => {
       <FilterCard title="Leaderboard Type">
         <LeaderBoardFilters />
       </FilterCard>
+
       <FilterCard title="FPS Status">
         <FpsFilters />
       </FilterCard>
+
       <FilterCard title="Players Region">
         <RegionFilters />
       </FilterCard>
+
       <FilterCard title="Last seen">
         <LastSeenFilters />
       </FilterCard>
+
       <FilterCard title="Player Status">
         <PlayerStatusFilters />
       </FilterCard>
-      <FilterCard title="Stats Filter"></FilterCard>
+
+      <FilterCard title="Stats Filter">
+        <StatsFilters />
+      </FilterCard>
     </section>
   );
 };
