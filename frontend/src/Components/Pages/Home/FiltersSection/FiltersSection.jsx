@@ -6,17 +6,14 @@ import LeaderBoardFilters from "./LeaderBoardFilters/LeaderBoardFilters";
 import PlayerStatusFilters from "./PlayerStatusFilters/PlayerStatusFilters";
 import RegionFilters from "./RegionFilters/RegionFilters";
 import StatsFilters from "./StatsFilters/StatsFilters";
-import { Suspense } from "react";
 
 const FiltersSection = () => {
   return (
     <section className={s.filtersSection}>
       <FilterCard title="Leaderboard Type">
-        <Suspense >
         <LeaderBoardFilters />
-        </Suspense>
       </FilterCard>
-{/* 
+
       <FilterCard title="FPS Status">
         <FpsFilters />
       </FilterCard>
@@ -35,7 +32,7 @@ const FiltersSection = () => {
 
       <FilterCard title="Stats Filter">
         <StatsFilters />
-      </FilterCard> */}
+      </FilterCard>
     </section>
   );
 };
