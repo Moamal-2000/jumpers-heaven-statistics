@@ -1,0 +1,38 @@
+.card {
+  background-color: #151923;
+  border: 1px solid #2A3040;
+  border-radius: 1rem;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+  max-width: 520px;
+  position: relative;
+  transition: background-color .3s, border-color .3s, translate .3s;
+
+  &:hover {
+    background-color: #1d2230;
+    border-color: rgb(255, 183, 0);
+    translate: 0 -2px;
+  }
+}
+
+.card::before {
+  position: absolute;
+  left: 24px;
+  top: 28px;
+
+  content: "";
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(135deg, #FFB800, #FF9000);
+  border-radius: 2px;
+  display: block;
+}
+
+.card>h2 {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 24px;
+  margin-left: 14px;
+}
