@@ -4,6 +4,7 @@ import FpsFilters from "./FpsFilters/FpsFilters";
 import LeaderBoardFilters from "./LeaderBoardFilters/LeaderBoardFilters";
 import RegionFilters from "./RegionFilters/RegionFilters";
 import LastSeenFilters from "./LastSeenFilters/LastSeenFilters";
+import PlayerStatusFilters from "./PlayerStatusFilters/PlayerStatusFilters";
 
 const FiltersSection = () => {
   return (
@@ -20,7 +21,9 @@ const FiltersSection = () => {
       <FilterCard title="Last seen">
         <LastSeenFilters />
       </FilterCard>
-      <FilterCard title="Player Status"></FilterCard>
+      <FilterCard title="Player Status">
+        <PlayerStatusFilters />
+      </FilterCard>
       <FilterCard title="Stats Filter"></FilterCard>
     </section>
   );
