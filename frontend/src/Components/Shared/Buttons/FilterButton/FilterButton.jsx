@@ -13,13 +13,13 @@ export function FilterButton({ text, queryName, urlQuery, defaultUrlQuery }) {
   const activeClass = fixedUrlQuery === text.toLowerCase() ? s.active : "";
 
   function setQueryFilter() {
-    const createdQuery = createQueryString(
+    createQueryString(
       queryName,
       text.toLowerCase(),
-      searchParams
+      searchParams,
+      router,
+      pathname
     );
-
-    router.push(`${pathname}?${createdQuery}`);
   }
 
   return (
