@@ -3,9 +3,9 @@
 import { createQueryString, removeQueryString } from "@/Functions/utils";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
-import s from "./CustomCheckbox.module.scss";
+import s from "./CustomLabeledCheckbox.module.scss";
 
-const CustomCheckbox = ({ name, queryName }) => {
+const CustomLabeledCheckbox = ({ name, queryName }) => {
   const [isChecked, setIsChecked] = useState(false);
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -35,4 +35,4 @@ const CustomCheckbox = ({ name, queryName }) => {
   );
 };
 
-export default CustomCheckbox;
+export default CustomLabeledCheckbox;
