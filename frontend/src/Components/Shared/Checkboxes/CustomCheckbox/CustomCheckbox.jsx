@@ -1,6 +1,6 @@
 "use client";
 
-import { createQueryString } from "@/Functions/utils";
+import { createQueryString, removeQueryString } from "@/Functions/utils";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import s from "./CustomCheckbox.module.scss";
@@ -13,9 +13,13 @@ const CustomCheckbox = ({ name, queryName }) => {
 
   function handleChange() {
     setIsChecked((prevValue) => !prevValue);
-    const createdQuery = createQueryString(queryName, !isChecked, searchParams);
 
-    router.push(`${pathname}?${createdQuery}`);
+    if (isChecked) {
+      removeQueryString(queryName, searchParams, router, pathname);
+      return;
+    }
+
+    createQueryString(queryName, !isChecked, searchParams, router, pathname);
   }
 
   return (

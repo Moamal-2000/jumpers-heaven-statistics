@@ -42,8 +42,14 @@ export function getMaxFinishTimesFrom(bestPlayer) {
   return maxFinishTimes;
 }
 
-export function createQueryString(name, value, searchParams) {
+export function createQueryString(name, value, searchParams, router, pathname) {
   const params = new URLSearchParams(searchParams.toString());
   params.set(name, value);
-  return params.toString();
+  router.push(`${pathname}?${params.toString()}`);
+}
+
+export function removeQueryString(queryName, searchParams, router, pathname) {
+  const params = new URLSearchParams(searchParams.toString());
+  params.delete(queryName);
+  router.push(`${pathname}?${params.toString()}`);
 }
