@@ -5,11 +5,10 @@ import LeaderBoard from "@/Components/Pages/Home/LeaderBoard/LeaderBoard";
 import s from "./page.module.scss";
 
 export default async function Home() {
-  const leaderboardReq = await fetch(jhApis({ limit: 20 }).skilledLeaderboard);
-  const mapsCountReq = await fetch(jhApis({}).mapsCount);
-
-  const speedRunLeaderboardData = await leaderboardReq.json();
-  const mapsCountRes = await mapsCountReq.json();
+  const [leaderboardData, mapsCount] = await Promise.all([
+    (await fetch(jhApis({ limit: 20 }).skilledLeaderboard)).json(),
+    (await fetch(jhApis({}).mapsCount)).json(),
+  ]);
 
   return (
     <div className="container">
@@ -17,8 +16,8 @@ export default async function Home() {
         <Introduction />
         <FiltersSection />
         <LeaderBoard
-          leaderboardData={speedRunLeaderboardData}
-          mapsCount={mapsCountRes?.count}
+          leaderboardData={leaderboardData}
+          mapsCount={mapsCount?.count}
         />
       </main>
     </div>
