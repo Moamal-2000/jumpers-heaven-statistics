@@ -6,6 +6,7 @@ const PlayerStatusFilters = () => {
     <div className={s.filters}>
       <CustomLabeledCheckbox
         name="detailed-stats-checkbox"
+        labelText="Show Detailed Stats"
         queryName="detailed-stats"
       />
     </div>

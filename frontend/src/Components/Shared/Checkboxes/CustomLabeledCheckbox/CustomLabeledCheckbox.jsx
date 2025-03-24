@@ -5,7 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import s from "./CustomLabeledCheckbox.module.scss";
 
-const CustomLabeledCheckbox = ({ name, queryName }) => {
+const CustomLabeledCheckbox = ({ name, labelText, queryName }) => {
   const [isChecked, setIsChecked] = useState(false);
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -23,7 +23,15 @@ const CustomLabeledCheckbox = ({ name, queryName }) => {
   }
 
   return (
-    <div className={s.customCheckbox} aria-checked={isChecked} role="switch">
+    <div className={s.labeledCheckbox}>
+      <label htmlFor={name}>{labelText}</label>
+
+      <div
+        className={s.customCheckbox}
+        aria-checked={isChecked}
+        role="switch"
+      />
+
       <input
         type="checkbox"
         name={name}
