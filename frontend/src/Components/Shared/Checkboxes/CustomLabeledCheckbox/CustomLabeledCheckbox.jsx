@@ -6,10 +6,12 @@ import { useState } from "react";
 import s from "./CustomLabeledCheckbox.module.scss";
 
 const CustomLabeledCheckbox = ({ name, labelText, queryName }) => {
-  const [isChecked, setIsChecked] = useState(false);
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
+
+  const hasTrueValue = searchParams.get(queryName) === "true";
+  const [isChecked, setIsChecked] = useState(false || hasTrueValue);
 
   function handleChange() {
     setIsChecked((prevValue) => !prevValue);
