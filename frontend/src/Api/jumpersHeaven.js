@@ -15,9 +15,10 @@ export const jhApis = ({
     allMaps: `${domain}/map/getAll`,
     playerIdByName: `${domain}/player/getIdFromName?name=${name}&limit=${limit}`,
     playerMapFinishCount: `${domain}/player/getMapFinishCount?playerid=${playerId}&cpid=${cpId}&fps=${fps}`,
-    globalLeaderboard: `${domain}/leaderboard/getGlobalLeaderboard?fps=${fps}`,
+    skilledLeaderboard: `${domain}/leaderboard/jump-skill?fps=${fps}`,
     playerTops: `${domain}/leaderboard/getPlayerTops?fps=${fps}&playerid=${playerId}`,
     speedRunLeaderboard: `${domain}/leaderboard/speedrun?fps=${fps}&limit=${limit}`,
     mapsCount: `${domain}/map/count`,
+    
   };
 };

@@ -5,19 +5,10 @@ import LeaderBoard from "@/Components/Pages/Home/LeaderBoard/LeaderBoard";
 import s from "./page.module.scss";
 
 export default async function Home() {
-  const speedRunLeaderboardReq = await fetch(
-    jhApis({ fps: 125, limit: 20 }).speedRunLeaderboard,
-    { next: { revalidate: 120 } }
-  );
+  const leaderboardReq = await fetch(jhApis({ limit: 20 }).skilledLeaderboard);
+  const mapsCountReq = await fetch(jhApis({}).mapsCount);
 
-  const mapsCountReq = await fetch(jhApis({}).mapsCount, {
-    next: { revalidate: 120 },
-  });
-
-  if (!speedRunLeaderboardReq.ok)
-    throw new Error("Failed to fetch speedrun leaderboard data");
-
-  const speedRunLeaderboardData = await speedRunLeaderboardReq.json();
+  const speedRunLeaderboardData = await leaderboardReq.json();
   const mapsCountRes = await mapsCountReq.json();
 
   return (
