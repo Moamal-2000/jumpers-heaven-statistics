@@ -1,6 +1,6 @@
 "use client";
 
-import { createQueryString } from "@/Functions/utils";
+import { createQueryString, removeQueryString } from "@/Functions/utils";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import s from "./FilterButton.module.scss";
 
@@ -13,13 +13,15 @@ export function FilterButton({ text, queryName, urlQuery, defaultUrlQuery }) {
   const activeClass = fixedUrlQuery === text.toLowerCase() ? s.active : "";
 
   function setQueryFilter() {
-    createQueryString(
-      queryName,
-      text.toLowerCase(),
-      searchParams,
-      router,
-      pathname
-    );
+    const filterNoun = text.toLowerCase();
+    const isDefaultUrlQuery = filterNoun === defaultUrlQuery;
+
+    if (isDefaultUrlQuery) {
+      removeQueryString(queryName, searchParams, router, pathname);
+      return;
+    }
+
+    createQueryString(queryName, filterNoun, searchParams, router, pathname);
   }
 
   return (
