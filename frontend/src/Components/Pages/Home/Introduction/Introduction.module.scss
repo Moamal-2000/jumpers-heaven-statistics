@@ -7,7 +7,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 1.5rem;
-  padding-bottom: .5rem;
+  padding-bottom: 36px;
   text-align: center;
 }
 
@@ -18,25 +18,51 @@
 }
 
 .introduction>h1 {
-  color: #dca30b;
-  font-weight: 600;
-  letter-spacing: -.4px;
-  font-size: 2.5rem;
+  background: linear-gradient(135deg, #FFB800, #FF9000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: 800;
+  letter-spacing: -.5px;
 }
 
-@include m.medium {
+@include m.small {
   .introduction>h1 {
     font-size: 2.4rem;
   }
 }
 
-@include m.small {
+@include m.very-small {
   .introduction>h1 {
     font-size: 2rem;
   }
 }
 
 .introduction>p {
-  color: #9ca3af;
-  margin: 6px 0 10px;
+  color: #9AA3B2;
+  font-size: 1.1rem;
+  margin-top: 0;
+  font-weight: 400;
+  margin: 6px 0 40px;
+  position: relative;
+}
+
+@include m.small {
+  .introduction>p {
+    font-size: 1rem;
+  }
+}
+
+.introduction>p::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  bottom: -12px;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(135deg, #FFB800, #FF9000);
+  border-radius: 2px;
 }

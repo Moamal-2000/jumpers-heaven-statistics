@@ -1,14 +1,18 @@
 .input {
-  background-color: #1f2937;
+  background-color: #151923;
+  color: #fff;
   position: relative;
   max-width: 672px;
   width: 100%;
-  border-radius: .5rem;
   outline: 2px solid transparent;
   transition: outline-color .1s ease;
+  border: 1px solid #151923;
+  border-radius: 12px;
+  transition: border-color .2s, box-shadow .2s;
 
   &:has(:focus) {
-    outline-color: #264d8e;
+    border-color: #FFB800;
+    box-shadow: 0 0 0 3px rgba(255, 184, 0, .2);
   }
 }
 
@@ -26,7 +30,7 @@
 }
 
 .searchButton svg {
-  stroke: #9ca3af;
+  stroke: #757575;
   width: 100%;
   height: 100%;
   pointer-events: none;
@@ -50,13 +54,13 @@
   border: none;
   outline: none;
   width: 100%;
-  padding: 12px 16px 12px 48px;
+  padding: 14px 15px 14px 46px;
   display: block;
   min-height: 48px;
   color: #e3e6eb;
   font-size: 1rem;
 
   &::placeholder {
-    color: #9ca3af;
+    color: #757575;
   }
 }
