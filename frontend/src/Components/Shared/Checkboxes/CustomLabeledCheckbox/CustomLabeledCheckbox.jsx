@@ -11,7 +11,7 @@ const CustomLabeledCheckbox = ({ name, labelText, queryName }) => {
   const router = useRouter();
 
   const hasTrueValue = searchParams.get(queryName) === "true";
-  const [isChecked, setIsChecked] = useState(false || hasTrueValue);
+  const [isChecked, setIsChecked] = useState(hasTrueValue);
 
   function handleChange() {
     setIsChecked((prevValue) => !prevValue);
