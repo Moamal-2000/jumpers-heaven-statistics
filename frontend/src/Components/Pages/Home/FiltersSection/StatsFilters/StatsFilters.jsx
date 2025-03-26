@@ -1,7 +1,26 @@
+"use client";
+
+import FilterButton from "@/Components/Shared/Buttons/FilterButton/FilterButton";
+import { useSearchParams } from "next/navigation";
 import s from "./StatsFilters.module.scss";
 
 const StatsFilters = () => {
-  return <div className={s.filters}></div>;
+  const searchParams = useSearchParams();
+  const statusUrlQuery = searchParams.get("status");
+
+  return (
+    <div className={s.filters}>
+      {STATUS_FILTERS_DATA.map(({ text, id }) => (
+        <FilterButton
+          defaultUrlQuery="maps"
+          queryName="status"
+          key={id}
+          text={text}
+          urlQuery={statusUrlQuery}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default StatsFilters;
@@ -9,22 +28,18 @@ export default StatsFilters;
 const STATUS_FILTERS_DATA = [
   {
     text: "Maps",
-    statNumber: "500+",
     id: 1,
   },
   {
     text: "Win Rate",
-    statNumber: "60%",
     id: 2,
   },
   {
     text: "Points",
-    statNumber: "2000+",
     id: 3,
   },
   {
     text: "Hours",
-    statNumber: "100+",
     id: 4,
   },
 ];

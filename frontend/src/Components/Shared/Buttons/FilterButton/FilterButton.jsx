@@ -10,10 +10,10 @@ export function FilterButton({ text, queryName, urlQuery, defaultUrlQuery }) {
   const router = useRouter();
 
   const fixedUrlQuery = urlQuery ? urlQuery : defaultUrlQuery;
-  const activeClass = fixedUrlQuery === text.toLowerCase() ? s.active : "";
+  const activeClass = fixedUrlQuery === text?.toLowerCase() ? s.active : "";
 
   function setQueryFilter() {
-    const filterNoun = text.toLowerCase();
+    const filterNoun = text?.toLowerCase();
     const isDefaultUrlQuery = filterNoun === defaultUrlQuery;
 
     if (isDefaultUrlQuery) {
