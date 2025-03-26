@@ -6,14 +6,22 @@ import ExpandTopStatBtn from "./ExpandTopStatBtn/ExpandTopStatBtn";
 import TopStatBar from "./TopStatBar/TopStatBar";
 import s from "./TopsVisualization.module.scss";
 
-const TopsVisualization = ({ topsList, mapsCount, leaderboardData }) => {
+const TopsVisualization = ({
+  topsList,
+  mapsCount,
+  leaderboardData,
+  isSkilledLeaderboard,
+}) => {
   const [showMoreStats, setShowMoreStats] = useState(false);
   const maxFinishTimes = getMaxFinishTimesFrom(leaderboardData[0]);
   const topsEntries = Object.entries(topsList);
+  const modifiedTopsEntries = isSkilledLeaderboard
+    ? topsEntries.reverse()
+    : topsEntries;
 
   return (
     <div className={s.tops}>
-      {topsEntries.map((topStat, index) => {
+      {modifiedTopsEntries.map((topStat, index) => {
         if (!showMoreStats && index >= 3) return;
 
         return (

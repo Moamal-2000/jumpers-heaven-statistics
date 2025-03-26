@@ -32,6 +32,7 @@ const LeaderBoard = ({ leaderboardData, mapsCount }) => {
         leaderboardData={leaderboardData}
         mapsCount={mapsCount}
         isReverseTable={isReverseTable}
+        isSkilledLeaderboard={isSkilledLeaderboard}
       />
     </table>
   );

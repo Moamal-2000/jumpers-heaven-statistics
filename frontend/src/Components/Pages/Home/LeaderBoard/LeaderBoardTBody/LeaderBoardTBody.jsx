@@ -6,7 +6,12 @@ import { useRouter } from "next/navigation";
 import s from "./LeaderBoardTBody.module.scss";
 import TopsVisualization from "./TopsVisualization/TopsVisualization";
 
-const LeaderBoardTBody = ({ leaderboardData, mapsCount, isReverseTable }) => {
+const LeaderBoardTBody = ({
+  leaderboardData,
+  mapsCount,
+  isReverseTable,
+  isSkilledLeaderboard,
+}) => {
   const reverseClass = isReverseTable ? s.reverse : "";
   const router = useRouter();
 
@@ -44,6 +49,7 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount, isReverseTable }) => {
                   topsList={top_list}
                   mapsCount={mapsCount}
                   leaderboardData={leaderboardData}
+                  isSkilledLeaderboard={isSkilledLeaderboard}
                 />
               </td>
             </tr>
