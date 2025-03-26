@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import s from "./LeaderBoard.module.scss";
 import LeaderBoardTBody from "./LeaderBoardTBody/LeaderBoardTBody";
 
@@ -28,12 +28,14 @@ const LeaderBoard = ({ leaderboardData, mapsCount }) => {
         </tr>
       </thead>
 
-      <LeaderBoardTBody
-        leaderboardData={leaderboardData}
-        mapsCount={mapsCount}
-        isReverseTable={isReverseTable}
-        isSkilledLeaderboard={isSkilledLeaderboard}
-      />
+      <Suspense>
+        <LeaderBoardTBody
+          leaderboardData={leaderboardData}
+          mapsCount={mapsCount}
+          isReverseTable={isReverseTable}
+          isSkilledLeaderboard={isSkilledLeaderboard}
+        />
+      </Suspense>
     </table>
   );
 };
