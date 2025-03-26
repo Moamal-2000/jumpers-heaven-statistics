@@ -17,9 +17,17 @@
 }
 
 .header .logo {
+  outline: none;
+  border-bottom: solid 2px transparent;
   display: flex;
   align-items: center;
   gap: 8px;
+  border-radius: 1px;
+  padding-bottom: 12px;
+
+  &:focus-visible {
+    border-color: #facc15;
+  }
 }
 
 @include m.medium {
@@ -52,6 +60,13 @@
   color: #fff;
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+.header .logo:focus-visible>span {
+  background: linear-gradient(135deg, #ffb800, #ff9000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #0000;
 }
 
 @include m.medium {
