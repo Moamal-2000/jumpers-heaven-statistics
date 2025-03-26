@@ -16,27 +16,27 @@ const LeaderBoard = ({ leaderboardData, mapsCount }) => {
   }
 
   return (
-    <table className={s.leaderBoard}>
-      <thead>
-        <tr onClick={toggleReverseTable}>
-          <th className={s.rank}>Rank</th>
-          <th className={s.player}>Player</th>
-          <th className={s.score}>Total score</th>
-          <th className={s.tops}>
-            {isSkilledLeaderboard ? "points difficulty" : "Tops 1-10"}
-          </th>
-        </tr>
-      </thead>
+    <Suspense>
+      <table className={s.leaderBoard}>
+        <thead>
+          <tr onClick={toggleReverseTable}>
+            <th className={s.rank}>Rank</th>
+            <th className={s.player}>Player</th>
+            <th className={s.score}>Total score</th>
+            <th className={s.tops}>
+              {isSkilledLeaderboard ? "points difficulty" : "Tops 1-10"}
+            </th>
+          </tr>
+        </thead>
 
-      <Suspense>
         <LeaderBoardTBody
           leaderboardData={leaderboardData}
           mapsCount={mapsCount}
           isReverseTable={isReverseTable}
           isSkilledLeaderboard={isSkilledLeaderboard}
         />
-      </Suspense>
-    </table>
+      </table>
+    </Suspense>
   );
 };
 
