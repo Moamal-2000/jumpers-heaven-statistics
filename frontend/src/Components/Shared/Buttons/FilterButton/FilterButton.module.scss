@@ -7,7 +7,8 @@
   cursor: pointer;
   font-size: .95rem;
   font-weight: 500;
-  transition: background-color .2s, color .2s;
+  outline: solid 2px transparent;
+  transition: background-color .2s, color .2s, outline-color .1s;
 
   &:hover {
     background-color: #2C344A;
@@ -19,5 +20,9 @@
     background: linear-gradient(135deg, #FFB800, #FF9000);
     box-shadow: 0 4px 10px rgba(255, 184, 0, .3);
     color: #000;
+  }
+
+  &:focus-visible {
+    outline-color: #fff;
   }
 }
