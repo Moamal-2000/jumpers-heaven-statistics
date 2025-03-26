@@ -1,0 +1,26 @@
+.thead {
+  background-color: #1f2937;
+  color: #fff;
+  position: sticky;
+  top: 89px;
+  left: 0;
+  z-index: 10;
+  transition: background-color .1s ease;
+
+  &:hover {
+    background-color: #263140;
+  }
+}
+
+.thead tr {
+  width: inherit;
+  color: #fff;
+
+  & :where(.rank, .player, .tops) {
+    text-align: left;
+  }
+}
+
+.thead tr th {
+  padding: 1rem;
+}

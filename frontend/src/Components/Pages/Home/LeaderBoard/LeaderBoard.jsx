@@ -1,42 +1,23 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import s from "./LeaderBoard.module.scss";
 import LeaderBoardTBody from "./LeaderBoardTBody/LeaderBoardTBody";
+import LeaderBoardTHead from "./LeaderBoardTHead/LeaderBoardTHead";
 
 const LeaderBoard = ({ leaderboardData, mapsCount }) => {
   const [isReverseTable, setIsReverseTable] = useState(false);
-  const searchParams = useSearchParams();
-  const leaderboardType = searchParams.get("leaderboard");
-  const isSkilledLeaderboard = leaderboardType === "skilled";
-
-  function toggleReverseTable() {
-    setIsReverseTable((prevState) => !prevState);
-  }
 
   return (
-    <Suspense>
-      <table className={s.leaderBoard}>
-        <thead>
-          <tr onClick={toggleReverseTable}>
-            <th className={s.rank}>Rank</th>
-            <th className={s.player}>Player</th>
-            <th className={s.score}>Total score</th>
-            <th className={s.tops}>
-              {isSkilledLeaderboard ? "points difficulty" : "Tops 1-10"}
-            </th>
-          </tr>
-        </thead>
+    <table className={s.leaderBoard}>
+      <LeaderBoardTHead setIsReverseTable={setIsReverseTable} />
 
-        <LeaderBoardTBody
-          leaderboardData={leaderboardData}
-          mapsCount={mapsCount}
-          isReverseTable={isReverseTable}
-          isSkilledLeaderboard={isSkilledLeaderboard}
-        />
-      </table>
-    </Suspense>
+      <LeaderBoardTBody
+        leaderboardData={leaderboardData}
+        mapsCount={mapsCount}
+        isReverseTable={isReverseTable}
+      />
+    </table>
   );
 };
 

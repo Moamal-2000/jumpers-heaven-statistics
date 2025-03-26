@@ -10,18 +10,17 @@ const TopsVisualization = ({
   topsList,
   mapsCount,
   leaderboardData,
-  isSkilledLeaderboard,
 }) => {
   const [showMoreStats, setShowMoreStats] = useState(false);
   const maxFinishTimes = getMaxFinishTimesFrom(leaderboardData[0]);
   const topsEntries = Object.entries(topsList);
-  const modifiedTopsEntries = isSkilledLeaderboard
-    ? topsEntries.reverse()
-    : topsEntries;
+  // const modifiedTopsEntries = isSkilledLeaderboard
+  //   ? topsEntries.reverse()
+  //   : topsEntries;
 
   return (
     <div className={s.tops}>
-      {modifiedTopsEntries.map((topStat, index) => {
+      {topsEntries.map((topStat, index) => {
         if (!showMoreStats && index >= 3) return;
 
         return (
