@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import s from "./LeaderBoard.module.scss";
 import LeaderBoardTBody from "./LeaderBoardTBody/LeaderBoardTBody";
 import LeaderBoardTHead from "./LeaderBoardTHead/LeaderBoardTHead";
@@ -10,7 +10,9 @@ const LeaderBoard = ({ leaderboardData, mapsCount }) => {
 
   return (
     <table className={s.leaderBoard}>
-      <LeaderBoardTHead setIsReverseTable={setIsReverseTable} />
+      <Suspense>
+        <LeaderBoardTHead setIsReverseTable={setIsReverseTable} />
+      </Suspense>
 
       <LeaderBoardTBody
         leaderboardData={leaderboardData}
