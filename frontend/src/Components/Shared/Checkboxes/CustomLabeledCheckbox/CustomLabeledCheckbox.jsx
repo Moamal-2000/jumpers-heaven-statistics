@@ -13,7 +13,7 @@ const CustomLabeledCheckbox = ({ name, labelText, queryName }) => {
   const hasTrueValue = searchParams.get(queryName) === "true";
   const [isChecked, setIsChecked] = useState(hasTrueValue);
 
-  function handleChange() {
+  function updateCheckboxState() {
     setIsChecked((prevValue) => !prevValue);
 
     if (isChecked) {
@@ -24,22 +24,24 @@ const CustomLabeledCheckbox = ({ name, labelText, queryName }) => {
     createQueryString(queryName, !isChecked, searchParams, router, pathname);
   }
 
+  function handleKeyDown(event) {
+    const isEnterKey = event.code === "Enter" || event.keyCode === 13;
+    if (isEnterKey) updateCheckboxState();
+  }
+
   return (
     <div className={s.labeledCheckbox}>
       <label htmlFor={name}>{labelText}</label>
 
-      <div
-        className={s.customCheckbox}
-        aria-checked={isChecked}
-        role="switch"
-      />
+      <div className={s.customCheckbox} aria-checked={isChecked} />
 
       <input
         type="checkbox"
         name={name}
         id={name}
         checked={isChecked}
-        onChange={handleChange}
+        onChange={updateCheckboxState}
+        onKeyDown={handleKeyDown}
       />
     </div>
   );
