@@ -1,26 +1,25 @@
 "use client";
 
 import { getMaxFinishTimesFrom } from "@/Functions/utils";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import ExpandTopStatBtn from "./ExpandTopStatBtn/ExpandTopStatBtn";
 import TopStatBar from "./TopStatBar/TopStatBar";
 import s from "./TopsVisualization.module.scss";
 
-const TopsVisualization = ({
-  topsList,
-  mapsCount,
-  leaderboardData,
-}) => {
+const TopsVisualization = ({ topsList, mapsCount, leaderboardData }) => {
   const [showMoreStats, setShowMoreStats] = useState(false);
   const maxFinishTimes = getMaxFinishTimesFrom(leaderboardData[0]);
   const topsEntries = Object.entries(topsList);
-  // const modifiedTopsEntries = isSkilledLeaderboard
-  //   ? topsEntries.reverse()
-  //   : topsEntries;
+  const searchParams = useSearchParams();
+  const isSkilledLeaderboard = searchParams.get("leaderboard") === "skilled";
+  const modifiedTopsEntries = isSkilledLeaderboard
+    ? topsEntries.toReversed()
+    : topsEntries;
 
   return (
     <div className={s.tops}>
-      {topsEntries.map((topStat, index) => {
+      {modifiedTopsEntries.map((topStat, index) => {
         if (!showMoreStats && index >= 3) return;
 
         return (
