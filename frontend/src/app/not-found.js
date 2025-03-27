@@ -1,10 +1,11 @@
 "use client";
 
+import s from "@/Components/Pages/NotFoundPage/NotFoundPage.module.scss";
+import NotFoundPageList from "@/Components/Pages/NotFoundPage/NotFoundPageList/NotFoundPageList";
 import { updateGlobalState } from "@/Redux/slices/globalSlice";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import s from "./NotFoundPage.module.scss";
 
 const NotFoundPage = () => {
   const dispatch = useDispatch();
@@ -24,17 +25,7 @@ const NotFoundPage = () => {
         {`It looks like the page you're searching for doesn’t exist or may have been moved.`}
       </p>
 
-      <ul className={s.list}>
-        <li>Double-check the URL for any typos.</li>
-        <li>Use the navigation menu to find what you need.</li>
-        <li>
-          Return to the{" "}
-          <Link href="/" className={s.link}>
-            homepage
-          </Link>{" "}
-          and start fresh.
-        </li>
-      </ul>
+      <NotFoundPageList />
 
       <Link href="/" className={s.returnHomeBtn}>
         Return to Home page
