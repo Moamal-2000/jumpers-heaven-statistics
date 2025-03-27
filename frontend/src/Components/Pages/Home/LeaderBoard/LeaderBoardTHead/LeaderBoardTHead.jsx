@@ -19,7 +19,7 @@ const LeaderBoardTHead = ({ setIsReverseTable }) => {
         <th className={s.player}>Player</th>
         <th className={s.score}>Total score</th>
         <th className={s.tops}>
-          {isSkilledLeaderboard ? "points difficulty" : "Tops 1-10"}
+          {isSkilledLeaderboard ? "Points per difficulty" : "Tops 1-10"}
         </th>
       </tr>
     </thead>
