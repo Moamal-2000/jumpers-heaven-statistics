@@ -9,7 +9,7 @@ const TopStatBar = ({
   isSkilledLeaderboard,
 }) => {
   const tooltipText = isSkilledLeaderboard
-    ? `Earned ${times} score from difficulty ${top}`
+    ? `Earnt ${times} points over ${top} difficulty maps`
     : `${times} times in position #${top}`;
 
   const statsBarStyles = getStatsBarStyles({
