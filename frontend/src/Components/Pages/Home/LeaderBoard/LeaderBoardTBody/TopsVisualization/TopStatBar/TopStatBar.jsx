@@ -1,7 +1,16 @@
 import { TOP_STATS_COLOR } from "@/Data/staticData";
 import s from "./TopStatBar.module.scss";
 
-const TopStatBar = ({ top, times, mapsCount, maxFinishTimes }) => {
+const TopStatBar = ({
+  top,
+  times,
+  mapsCount,
+  maxFinishTimes,
+  isSkilledLeaderboard,
+}) => {
+  const tooltipText = isSkilledLeaderboard
+    ? `Earned ${times} score from difficulty ${top}`
+    : `${times} times in position #${top}`;
   const statsBarStyles = {
     backgroundColor: TOP_STATS_COLOR[top - 1],
     height: `${(times / maxFinishTimes) * 100}%`,
@@ -9,9 +18,7 @@ const TopStatBar = ({ top, times, mapsCount, maxFinishTimes }) => {
 
   return (
     <div className={s.statBarWrapper}>
-      <p className={s.toolTip}>
-        {times} times in position #{top}
-      </p>
+      <p className={s.toolTip}>{tooltipText}</p>
 
       <span className={s.top}>#{top}</span>
       <span className={s.times}>{times}</span>

@@ -28,6 +28,7 @@ const TopsVisualization = ({ topsList, mapsCount, leaderboardData }) => {
             times={topStat[1]}
             mapsCount={mapsCount}
             maxFinishTimes={maxFinishTimes}
+            isSkilledLeaderboard={isSkilledLeaderboard}
             key={`stat-bar-${index}`}
           />
         );
