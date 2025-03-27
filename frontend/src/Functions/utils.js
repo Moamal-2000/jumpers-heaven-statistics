@@ -61,14 +61,10 @@ export function getStatsBarStyles({
   maxFinishTimes,
   mapsCount,
 }) {
-  const statBarColor = isSkilledLeaderboard
+  const backgroundColor = isSkilledLeaderboard
     ? TOP_STATS_COLOR[9 - top]
     : TOP_STATS_COLOR[top - 1];
+  const height = `${(times / maxFinishTimes) * 100}%`;
 
-  const statsBarStyles = {
-    backgroundColor: statBarColor,
-    height: `${(times / maxFinishTimes) * 100}%`,
-  };
-
-  return statsBarStyles;
+  return { backgroundColor, height };
 }
