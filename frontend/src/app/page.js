@@ -6,9 +6,12 @@ import { Suspense } from "react";
 import s from "./page.module.scss";
 
 export default async function Home() {
+  const skilledLeaderboardUrl = jhApis({ limit: 20 }).leaderboard
+    .getSkilledLeaderboard;
+
   const [leaderboardData, mapsCount] = await Promise.all([
-    (await fetch(jhApis({ limit: 20 }).skilledLeaderboard)).json(),
-    (await fetch(jhApis({}).mapsCount)).json(),
+    (await fetch(skilledLeaderboardUrl)).json(),
+    (await fetch(jhApis({}).map.getMapsCount)).json(),
   ]);
 
   return (

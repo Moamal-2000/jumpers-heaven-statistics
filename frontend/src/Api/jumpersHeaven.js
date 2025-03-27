@@ -10,14 +10,21 @@ export const jhApis = ({
   const domain = "https://jhstats.fly.dev/api/v1";
 
   return {
-    mostFinished: `${domain}/map/getMostFinished?fps=${fps}&limit=${limit}`,
-    mapPlayersPlayTime: `${domain}/map/getPlayersPlaytime?fps=${fps}&limit=${limit}&mapid=${mapId}&ender=${ender}`,
-    allMaps: `${domain}/map/getAll`,
-    playerIdByName: `${domain}/player/getIdFromName?name=${name}&limit=${limit}`,
-    playerMapFinishCount: `${domain}/player/getMapFinishCount?playerid=${playerId}&cpid=${cpId}&fps=${fps}`,
-    skilledLeaderboard: `${domain}/leaderboard/jump-skill?fps=${fps}`,
-    speedRunLeaderboard: `${domain}/leaderboard/speed-skill?fps=${fps}&limit=${limit}`,
-    playerTops: `${domain}/leaderboard/getPlayerTops?fps=${fps}&playerid=${playerId}`,
-    mapsCount: `${domain}/map/count`,
+    map: {
+      getAllMaps: `${domain}/map/all`,
+      getMapsCount: `${domain}/map/count`,
+      getTops: `${domain}/map/tops?cpid=${cpId}&fps=${fps}&limit=${limit}`,
+    },
+    player: {
+      getAllTops: `${domain}/player/all-tops?fps=${fps}&limit=${limit}`,
+      getTops: `${domain}/player/tops?fps=${fps}&playerid=${playerId}&limit=${limit}`,
+      getJumpScores: `${domain}/player/jump-scores?fps=${fps}&playerid=${playerId}`,
+    },
+    leaderboard: {
+      getSkilledLeaderboard: `${domain}/leaderboard/jump-skill?fps=${fps}`,
+      getSpeedRunLeaderboard: `${domain}/leaderboard/speed-skill?fps=${fps}&limit=${limit}`,
+      getDefragLeaderboard: `${domain}/leaderboard/defrag-skill?fps=${fps}`,
+      getSurfLeaderboard: `${domain}/leaderboard/surf-skill?fps=${fps}`,
+    },
   };
 };

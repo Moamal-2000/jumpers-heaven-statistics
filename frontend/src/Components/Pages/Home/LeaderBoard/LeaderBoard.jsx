@@ -12,11 +12,11 @@ const LeaderBoard = ({ leaderboardData, mapsCount }) => {
   const { leaderboard } = useSelector((s) => s.global);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (leaderboard.length !== 0) return;
+  // useEffect(() => {
+  //   if (leaderboard.length !== 0) return;
 
-    dispatch(fetchLeaderboard());
-  }, []);
+  //   dispatch(fetchLeaderboard());
+  // }, []);
 
   return (
     <table className={s.leaderBoard}>
