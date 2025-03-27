@@ -7,6 +7,8 @@ import ExpandTopStatBtn from "./ExpandTopStatBtn/ExpandTopStatBtn";
 import TopStatBar from "./TopStatBar/TopStatBar";
 import s from "./TopsVisualization.module.scss";
 
+let render = false;
+
 const TopsVisualization = ({ topsList, mapsCount, leaderboardData }) => {
   const [showMoreStats, setShowMoreStats] = useState(false);
   const maxFinishTimes = getMaxFinishTimesFrom(leaderboardData[0]);

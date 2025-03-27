@@ -11,8 +11,13 @@ const TopStatBar = ({
   const tooltipText = isSkilledLeaderboard
     ? `Earned ${times} score from difficulty ${top}`
     : `${times} times in position #${top}`;
+
+  const statBarColor = isSkilledLeaderboard
+    ? TOP_STATS_COLOR[9 - top]
+    : TOP_STATS_COLOR[top - 1];
+
   const statsBarStyles = {
-    backgroundColor: TOP_STATS_COLOR[top - 1],
+    backgroundColor: statBarColor,
     height: `${(times / maxFinishTimes) * 100}%`,
   };
 
