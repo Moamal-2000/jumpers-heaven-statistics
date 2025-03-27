@@ -2,6 +2,7 @@ import { jhApis } from "@/Api/jumpersHeaven";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  isNotFoundPage: false,
   leaderboard: [],
 };
 
@@ -18,7 +19,11 @@ export const fetchLeaderboard = createAsyncThunk(
 export const globalSlice = createSlice({
   initialState,
   name: "globalSlice",
-  reducers: {},
+  reducers: {
+    updateGlobalState: (state, { payload }) => {
+      state[payload.key] = payload.value;
+    },
+  },
   extraReducers: ({ addCase }) => {
     addCase(fetchLeaderboard.fulfilled, (state, action) => {
       state.leaderboard = action.payload;
@@ -27,4 +32,4 @@ export const globalSlice = createSlice({
 });
 
 export default globalSlice.reducer;
-export const {} = globalSlice.actions;
+export const { updateGlobalState } = globalSlice.actions;

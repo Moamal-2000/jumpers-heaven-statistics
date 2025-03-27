@@ -1,4 +1,5 @@
 import Header from "@/Components/Header/Header";
+import LayoutLayer from "@/Components/Shared/LayoutLayer/LayoutLayer";
 import "../Styles/globals.scss";
 import RootProviders from "./RootProviders";
 
@@ -12,8 +13,10 @@ export default function RootLayout({ children }) {
     <RootProviders>
       <html lang="en">
         <body>
-          <Header />
-          {children}
+          <LayoutLayer>
+            <Header />
+            {children}
+          </LayoutLayer>
         </body>
       </html>
     </RootProviders>

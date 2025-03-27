@@ -9,7 +9,6 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
   font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -35,9 +34,6 @@ main {
   max-width: 1279px;
   width: 100%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .red {

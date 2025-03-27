@@ -1,19 +1,25 @@
 @use "../../Styles/mixins" as m;
 
 .header {
-  max-width: 1279px;
   width: 100%;
   min-height: 72px;
-  padding: 1.4rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: fixed;
   left: 50%;
   translate: -50% 0;
   top: 0;
-  background-color: var(--background);
   z-index: 100;
+  background-color: #0a0d12;
+
+  &.v2 {
+    background: transparent;
+  }
+}
+
+.header [data-container] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 1rem;
 }
 
 .header .logo {
