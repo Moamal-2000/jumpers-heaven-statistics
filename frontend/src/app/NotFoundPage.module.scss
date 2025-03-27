@@ -1,9 +1,117 @@
-.notFoundPage {}
+.notFoundPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-.text404 {}
+.errorCode {
+  font-size: 12rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #F5D452, #FFE985);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+  line-height: .9;
+  text-shadow: 0 10px 15px rgba(245, 212, 82, .3);
+}
 
-.title {}
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #E2E8F0;
+  background: linear-gradient(45deg, #E2E8F0, #8B97A8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-.description {}
+.description {
+  max-width: 360px;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  text-align: center;
+  font-weight: 500;
+  color: #c4c8ce;
+}
 
-.returnHomeBtn {}
+.list {
+  list-style: none;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.list>li {
+  color: #E2E8F0;
+  background: linear-gradient(45deg, #E2E8F0, #99a5b5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &::before {
+    content: '🔹';
+  }
+}
+
+.list>li .link {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: #f5d452;
+  position: relative;
+  transition: color .3s ease;
+
+  &:hover {
+    background-color: #ffcc00;
+  }
+}
+
+.list>li .link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: inherit;
+  width: 100%;
+  height: 1px;
+}
+
+.returnHomeBtn {
+  border: solid 2px #F5D452;
+  background-color: #F5D452;
+  color: #0E1116;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  transition: translate .2s ease, box-shadow .2s ease;
+
+  &:hover {
+    translate: 0 -1px;
+    box-shadow: 0 8px 10px rgba(245, 212, 82, .4);
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  &:active::before {}
+}
+
+.returnHomeBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, .6),
+      transparent);
+  transition: left .4s;
+}

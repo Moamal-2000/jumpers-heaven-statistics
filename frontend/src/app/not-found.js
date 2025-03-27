@@ -18,13 +18,27 @@ const NotFoundPage = () => {
 
   return (
     <main className={s.notFoundPage}>
-      <h1 className={s.text404}>404</h1>
+      <h1 className={s.errorCode}>404</h1>
       <h2 className={s.title}>Page Not Found</h2>
       <p className={s.description}>
-        {`The page you're looking for doesn't exist or has been moved. Don't
-        worry, we'll help you get back to the main site or find what you need.`}
+        {`It looks like the page you're searching for doesn’t exist or may have been moved.`}
       </p>
-      <Link href="/" className={s.returnHomeBtn}>Return to Home page</Link>
+
+      <ul className={s.list}>
+        <li>Double-check the URL for any typos.</li>
+        <li>Use the navigation menu to find what you need.</li>
+        <li>
+          Return to the{" "}
+          <Link href="/" className={s.link}>
+            homepage
+          </Link>{" "}
+          and start fresh.
+        </li>
+      </ul>
+
+      <Link href="/" className={s.returnHomeBtn}>
+        Return to Home page
+      </Link>
     </main>
   );
 };
