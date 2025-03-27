@@ -1,5 +1,5 @@
 import SvgIcon from "@/Components/Shared/SvgIcon";
-import { COD_2_COLORS } from "@/Data/staticData";
+import { COD_2_COLORS, TOP_STATS_COLOR } from "@/Data/staticData";
 
 export function getModifiedRank(rank) {
   const isTop1 = rank === 1;
@@ -52,4 +52,23 @@ export function removeQueryString(queryName, searchParams, router, pathname) {
   const params = new URLSearchParams(searchParams.toString());
   params.delete(queryName?.toLowerCase());
   router.push(`${pathname}?${params.toString()}`, { scroll: false });
+}
+
+export function getStatsBarStyles({
+  isSkilledLeaderboard,
+  top,
+  times,
+  maxFinishTimes,
+  mapsCount,
+}) {
+  const statBarColor = isSkilledLeaderboard
+    ? TOP_STATS_COLOR[9 - top]
+    : TOP_STATS_COLOR[top - 1];
+
+  const statsBarStyles = {
+    backgroundColor: statBarColor,
+    height: `${(times / maxFinishTimes) * 100}%`,
+  };
+
+  return statsBarStyles;
 }

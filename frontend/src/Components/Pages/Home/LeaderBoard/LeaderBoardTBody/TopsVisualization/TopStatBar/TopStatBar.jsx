@@ -1,4 +1,4 @@
-import { TOP_STATS_COLOR } from "@/Data/staticData";
+import { getStatsBarStyles } from "@/Functions/utils";
 import s from "./TopStatBar.module.scss";
 
 const TopStatBar = ({
@@ -12,14 +12,13 @@ const TopStatBar = ({
     ? `Earned ${times} score from difficulty ${top}`
     : `${times} times in position #${top}`;
 
-  const statBarColor = isSkilledLeaderboard
-    ? TOP_STATS_COLOR[9 - top]
-    : TOP_STATS_COLOR[top - 1];
-
-  const statsBarStyles = {
-    backgroundColor: statBarColor,
-    height: `${(times / maxFinishTimes) * 100}%`,
-  };
+  const statsBarStyles = getStatsBarStyles({
+    isSkilledLeaderboard,
+    top,
+    times,
+    maxFinishTimes,
+    mapsCount,
+  });
 
   return (
     <div className={s.statBarWrapper}>
