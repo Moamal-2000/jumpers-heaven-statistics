@@ -1,4 +1,4 @@
-import { jhApis } from "@/Api/jumpersHeaven";
+import { jhApis, testApi } from "@/Api/jumpersHeaven";
 import FiltersSection from "@/Components/Pages/Home/FiltersSection/FiltersSection";
 import Introduction from "@/Components/Pages/Home/Introduction/Introduction";
 import LeaderBoard from "@/Components/Pages/Home/LeaderBoard/LeaderBoard";
