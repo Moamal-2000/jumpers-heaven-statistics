@@ -28,9 +28,7 @@
   }
 }
 
-.numberButton {
-  &.active {
-    background: linear-gradient(135deg, #FFB800, #FF9000);
-    color: #000;
-  }
+.numberButton.active {
+  background: linear-gradient(135deg, #FFB800, #FF9000);
+  color: #000;
 }
