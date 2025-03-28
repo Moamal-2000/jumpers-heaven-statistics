@@ -33,13 +33,14 @@ const CustomLabeledCheckbox = ({ name, labelText, queryName }) => {
     <div className={s.labeledCheckbox}>
       <label htmlFor={name}>{labelText}</label>
 
-      <div className={s.customCheckbox} aria-checked={isChecked} />
+      <div className={s.customCheckbox} />
 
       <input
         type="checkbox"
         name={name}
         id={name}
         checked={isChecked}
+        aria-checked={isChecked}
         onChange={updateCheckboxState}
         onKeyDown={handleKeyDown}
       />

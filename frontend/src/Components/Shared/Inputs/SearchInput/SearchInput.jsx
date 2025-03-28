@@ -12,17 +12,17 @@ const SearchInput = ({ placeholder }) => {
   }
 
   return (
-    <form className={s.input} onClick={focusOnInput} onSubmit={handleSearch}>
-      <button type="submit" className={s.searchButton}>
+    <form
+      className={s.input}
+      onClick={focusOnInput}
+      onSubmit={handleSearch}
+      role="search"
+    >
+      <button type="submit" className={s.searchButton} aria-label="search icon">
         <SvgIcon name="search" />
       </button>
 
-      <input
-        type="text"
-        placeholder={placeholder}
-        name="search-player"
-        role="search"
-      />
+      <input type="text" placeholder={placeholder} name="search-player" />
     </form>
   );
 };
