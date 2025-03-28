@@ -1,12 +1,15 @@
-.leaderBoard {
-  margin-top: 32px;
-  width: 100%;
+.leaderboardWrapper {
+  background-color: #151923;
+  margin: 30px 0 40px;
   padding: 1.5rem;
-  padding-top: 0;
+  border-radius: 16px;
+  overflow: hidden;
   border: solid 1px #1f2937;
-  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
+}
+
+.leaderBoard {
   user-select: none;
-  cursor: pointer;
 }
 
 .leaderBoard :where(thead, tbody) {
