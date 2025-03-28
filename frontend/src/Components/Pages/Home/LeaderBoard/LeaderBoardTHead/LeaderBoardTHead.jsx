@@ -3,18 +3,14 @@
 import { useSearchParams } from "next/navigation";
 import s from "./LeaderBoardTHead.module.scss";
 
-const LeaderBoardTHead = ({ setIsReverseTable }) => {
+const LeaderBoardTHead = () => {
   const searchParams = useSearchParams();
   const leaderboardType = searchParams.get("leaderboard");
   const isSkilledLeaderboard = leaderboardType === "skilled";
 
-  function toggleReverseTable() {
-    setIsReverseTable((prevState) => !prevState);
-  }
-
   return (
     <thead className={s.thead}>
-      <tr onClick={toggleReverseTable}>
+      <tr>
         <th className={s.rank} data-sortable>
           <span>Rank</span>
         </th>

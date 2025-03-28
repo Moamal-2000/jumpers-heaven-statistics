@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./LeaderBoard.module.scss";
 import LeaderBoardTBody from "./LeaderBoardTBody/LeaderBoardTBody";
@@ -8,7 +7,6 @@ import LeaderBoardTHead from "./LeaderBoardTHead/LeaderBoardTHead";
 import LeaderboardHeader from "./LeaderboardHeader/LeaderboardHeader";
 
 const LeaderBoard = ({ leaderboardData, mapsCount }) => {
-  const [isReverseTable, setIsReverseTable] = useState(false);
   const { leaderboard } = useSelector((s) => s.global);
   const dispatch = useDispatch();
 
@@ -23,7 +21,7 @@ const LeaderBoard = ({ leaderboardData, mapsCount }) => {
       <LeaderboardHeader />
 
       <table className={s.leaderBoard}>
-        <LeaderBoardTHead setIsReverseTable={setIsReverseTable} />
+        <LeaderBoardTHead />
 
         <LeaderBoardTBody
           leaderboardData={leaderboardData}
