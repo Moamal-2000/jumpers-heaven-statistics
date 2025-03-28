@@ -27,3 +27,27 @@
   letter-spacing: .5px;
   position: relative;
 }
+
+.thead tr th[data-sortable] {
+  cursor: pointer;
+
+  &:hover {
+    color: #FFB800;
+  }
+}
+
+.thead tr th[data-sortable] span {
+  position: relative;
+  width: max-content;
+  transition: color .1s;
+}
+
+.thead tr th[data-sortable] span::after {
+  content: "↕";
+  position: absolute;
+  right: -20px;
+  bottom: 2px;
+  opacity: .5;
+  font-size: 1rem;
+  transition: color .1s;
+}
