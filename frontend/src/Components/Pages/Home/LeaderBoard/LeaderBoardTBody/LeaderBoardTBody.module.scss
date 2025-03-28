@@ -17,17 +17,12 @@
   }
 
   &:hover {
-    background-color: #1f293778;
+    background-color: #242b3b;
   }
-
-  &:active {
-    background-color: #2e3b4c78;
-  }
-
 }
 
 .tbody tr:not(:last-child) {
-  border-bottom: solid 1px #1f2937;
+  border-bottom: solid 1px #2A3040;
 }
 
 .tbody tr .rank {
@@ -38,12 +33,10 @@
   color: #fff;
 }
 
-.tbody tr .score {
-  color: #facc15;
-}
+.tbody tr .score {}
 
 .tbody tr td {
-  padding: 1rem;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
 }

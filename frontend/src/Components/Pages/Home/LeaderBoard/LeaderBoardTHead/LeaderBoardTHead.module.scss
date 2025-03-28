@@ -1,15 +1,11 @@
 .thead {
-  background-color: #1f2937;
+  background-color: #151923;
   color: #fff;
   position: sticky;
-  top: 0;
+  top: 90px;
   left: 0;
   z-index: 10;
-  transition: background-color .1s ease;
-
-  &:hover {
-    background-color: #263140;
-  }
+  transition: background-color .3s;
 }
 
 .thead tr {
@@ -22,5 +18,12 @@
 }
 
 .thead tr th {
-  padding: 1rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid #2A3040;
+  color: #9AA3B2;
+  padding: 24px 20px;
+  font-weight: 600;
+  font-size: .9rem;
+  letter-spacing: .5px;
+  position: relative;
 }
