@@ -18,7 +18,7 @@ const LeaderBoard = ({ leaderboardData, mapsCount }) => {
 
   return (
     <div className={s.leaderboardWrapper}>
-      <LeaderboardHeader />
+      <LeaderboardHeader leaderboardData={leaderboardData} />
 
       <table className={s.leaderBoard}>
         <LeaderBoardTHead />
