@@ -1,11 +1,11 @@
 "use client";
 
-import { fetchLeaderboard } from "@/Redux/slices/globalSlice";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./LeaderBoard.module.scss";
 import LeaderBoardTBody from "./LeaderBoardTBody/LeaderBoardTBody";
 import LeaderBoardTHead from "./LeaderBoardTHead/LeaderBoardTHead";
+import LeaderboardHeader from "./LeaderboardHeader/LeaderboardHeader";
 
 const LeaderBoard = ({ leaderboardData, mapsCount }) => {
   const [isReverseTable, setIsReverseTable] = useState(false);
@@ -19,15 +19,19 @@ const LeaderBoard = ({ leaderboardData, mapsCount }) => {
   // }, []);
 
   return (
-    <table className={s.leaderBoard}>
-      <LeaderBoardTHead setIsReverseTable={setIsReverseTable} />
+    <div className={s.leaderboardWrapper}>
+      <LeaderboardHeader />
 
-      <LeaderBoardTBody
-        leaderboardData={leaderboardData}
-        mapsCount={mapsCount}
-        isReverseTable={isReverseTable}
-      />
-    </table>
+      <table className={s.leaderBoard}>
+        <LeaderBoardTHead setIsReverseTable={setIsReverseTable} />
+
+        <LeaderBoardTBody
+          leaderboardData={leaderboardData}
+          mapsCount={mapsCount}
+          isReverseTable={isReverseTable}
+        />
+      </table>
+    </div>
   );
 };
 
