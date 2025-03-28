@@ -23,9 +23,33 @@ const Pagination = ({ data }) => {
     );
   }
 
+  function previousPage() {
+    if (+activePagination === 1) return;
+
+    createQueryString(
+      "leaderboard-pagination",
+      activePagination - 1,
+      searchParams,
+      router,
+      pathname
+    );
+  }
+
+  function nextPage() {
+    if (+activePagination === numberOfPages) return;
+
+    createQueryString(
+      "leaderboard-pagination",
+      activePagination + 1,
+      searchParams,
+      router,
+      pathname
+    );
+  }
+
   return (
     <div className={s.pagination}>
-      <button type="button" className={s.arrowButton}>
+      <button type="button" className={s.arrowButton} onClick={previousPage}>
         ←
       </button>
 
@@ -48,7 +72,7 @@ const Pagination = ({ data }) => {
         );
       })}
 
-      <button type="button" className={s.arrowButton}>
+      <button type="button" className={s.arrowButton} onClick={nextPage}>
         →
       </button>
     </div>
