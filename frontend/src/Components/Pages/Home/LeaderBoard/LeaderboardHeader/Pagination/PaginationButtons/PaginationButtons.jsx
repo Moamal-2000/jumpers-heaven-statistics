@@ -1,7 +1,7 @@
 "use client";
 
-import { PAGINATION_DISPLAY_LIMIT } from "@/Data/constants";
 import { createQueryString } from "@/Functions/utils";
+import { shouldRenderPaginationBtn } from "@/Functions/validation";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import s from "./PaginationButtons.module.scss";
 
@@ -24,23 +24,11 @@ const PaginationButtons = ({ numberOfPages }) => {
 
   return paginationButtons?.map((_, index) => {
     const currentPage = +activePagination || 1;
-    const last3Buttons = [numberOfPages, numberOfPages - 1, numberOfPages - 2];
-
-    const isOneOfTheLastButtons = last3Buttons.includes(index + 1);
-    const shouldAlwaysShowLastThree = currentPage >= numberOfPages - 2;
-
-    const startPage = Math.max(
-      1,
-      currentPage - Math.floor(PAGINATION_DISPLAY_LIMIT / 2)
-    );
-    const endPage = Math.min(
+    const shouldRender = shouldRenderPaginationBtn(
       numberOfPages,
-      startPage + PAGINATION_DISPLAY_LIMIT - 1
+      index,
+      currentPage
     );
-
-    const isInRange = index + 1 >= startPage && index + 1 <= endPage;
-    const shouldRender =
-      isInRange || (shouldAlwaysShowLastThree && isOneOfTheLastButtons);
 
     if (!shouldRender) return;
 
