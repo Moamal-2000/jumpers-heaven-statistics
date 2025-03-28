@@ -41,6 +41,7 @@ const PaginationButtons = ({ numberOfPages }) => {
         key={index}
         className={`${s.numberButton} ${activeClass}`}
         onClick={() => changePage(index + 1)}
+        aria-label={`pagination ${index + 1}`}
       >
         {index + 1}
       </button>
