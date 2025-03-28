@@ -26,7 +26,6 @@ const LeaderBoard = ({ leaderboardData, mapsCount }) => {
         <LeaderBoardTBody
           leaderboardData={leaderboardData}
           mapsCount={mapsCount}
-          isReverseTable={isReverseTable}
         />
       </table>
     </div>
