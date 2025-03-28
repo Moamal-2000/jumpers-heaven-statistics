@@ -1,8 +1,9 @@
 .leaderboardWrapper {
-  background-color: #151923;
+  width: 100%;
   margin: 30px 0 40px;
   padding: 1.5rem;
   border-radius: 16px;
+  background-color: #151923;
   border: solid 1px #1f2937;
   box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
   position: relative;
@@ -19,6 +20,7 @@
 
 .leaderBoard {
   user-select: none;
+  width: inherit;
 }
 
 .leaderBoard :where(thead, tbody) {
@@ -27,6 +29,6 @@
 
 .leaderBoard tr {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 3.2fr;
+  grid-template-columns: 1fr 2.5fr 1fr 1fr 1fr 5fr;
   font-weight: 600;
 }

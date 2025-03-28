@@ -29,6 +29,8 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount, isReverseTable }) => {
               <td className={s.player} data-type="player-stats-name">
                 <span onClick={handlePlayerClick}>{modifiedPlayerName}</span>
               </td>
+              <td className={s.rating}>0</td>
+              <td className={s.maps}>0</td>
               <td className={s.score} data-type="player-stats-score">
                 {score}
               </td>

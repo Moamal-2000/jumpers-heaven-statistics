@@ -36,7 +36,19 @@
   }
 }
 
-.tbody tr .score {}
+.tbody tr .rating {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #FFB800;
+}
+
+.tbody tr :where(.rating, .maps, .score) {
+  justify-content: center;
+}
+
+.tbody tr .score {
+  font-weight: normal;
+}
 
 .tbody tr td {
   padding: 16px 20px;
