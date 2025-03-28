@@ -9,7 +9,6 @@
 
 .tbody tr {
   width: inherit;
-  cursor: pointer;
   transition: background-color .1s ease;
 
   & .score {
@@ -31,6 +30,10 @@
 
 .tbody tr .player {
   color: #fff;
+
+  &>span {
+    cursor: pointer;
+  }
 }
 
 .tbody tr .score {}
