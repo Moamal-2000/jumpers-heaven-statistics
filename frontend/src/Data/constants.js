@@ -1,1 +1,2 @@
 export const PAGINATION_ITEMS_PER_PAGE = 5;
+export const PAGINATION_DISPLAY_LIMIT = 5;

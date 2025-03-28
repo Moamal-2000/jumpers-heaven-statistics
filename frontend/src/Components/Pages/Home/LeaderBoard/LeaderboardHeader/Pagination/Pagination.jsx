@@ -1,6 +1,9 @@
 "use client";
 
-import { PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
+import {
+  PAGINATION_DISPLAY_LIMIT,
+  PAGINATION_ITEMS_PER_PAGE,
+} from "@/Data/constants";
 import { createQueryString } from "@/Functions/utils";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import s from "./Pagination.module.scss";
@@ -28,7 +31,7 @@ const Pagination = ({ data }) => {
 
     createQueryString(
       "leaderboard-pagination",
-      activePagination - 1,
+      +activePagination - 1,
       searchParams,
       router,
       pathname
@@ -40,7 +43,7 @@ const Pagination = ({ data }) => {
 
     createQueryString(
       "leaderboard-pagination",
-      activePagination + 1,
+      +activePagination + 1,
       searchParams,
       router,
       pathname
@@ -54,11 +57,33 @@ const Pagination = ({ data }) => {
       </button>
 
       {paginationButtons.map((_, index) => {
-        const isActiveButton = +activePagination === index + 1;
-        const isFirstButton = index + 1 === 1;
-        const shouldBeActive =
-          isActiveButton || (isFirstButton && !activePagination);
-        const activeClass = shouldBeActive ? s.active : "";
+        const currentPage = +activePagination || 1;
+        const last3Buttons = [
+          numberOfPages,
+          numberOfPages - 1,
+          numberOfPages - 2,
+        ];
+
+        const isOneOfTheLastButtons = last3Buttons.includes(index + 1);
+        const shouldAlwaysShowLastThree = currentPage >= numberOfPages - 2;
+
+        const startPage = Math.max(
+          1,
+          currentPage - Math.floor(PAGINATION_DISPLAY_LIMIT / 2)
+        );
+        const endPage = Math.min(
+          numberOfPages,
+          startPage + PAGINATION_DISPLAY_LIMIT - 1
+        );
+
+        const isInRange = index + 1 >= startPage && index + 1 <= endPage;
+        const shouldRender =
+          isInRange || (shouldAlwaysShowLastThree && isOneOfTheLastButtons);
+
+        if (!shouldRender) return;
+
+        const isActiveButton = currentPage === index + 1;
+        const activeClass = isActiveButton ? s.active : "";
 
         return (
           <button
