@@ -5,9 +5,9 @@ import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./LeaderBoard.module.scss";
+import LeaderboardHeader from "./LeaderboardHeader/LeaderboardHeader";
 import LeaderBoardTBody from "./LeaderBoardTBody/LeaderBoardTBody";
 import LeaderBoardTHead from "./LeaderBoardTHead/LeaderBoardTHead";
-import LeaderboardHeader from "./LeaderboardHeader/LeaderboardHeader";
 
 const LeaderBoard = ({ leaderboardData, mapsCount }) => {
   const { leaderboard } = useSelector((s) => s.leaderboard);
