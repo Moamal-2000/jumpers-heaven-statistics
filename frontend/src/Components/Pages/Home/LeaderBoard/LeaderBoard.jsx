@@ -33,20 +33,3 @@ const LeaderBoard = ({ leaderboardData, mapsCount }) => {
 };
 
 export default LeaderBoard;
-
-// export function getUrlParamsObject(stringUrlParams) {
-//   const object = {};
-//   const queries = stringUrlParams.split("&");
-//   const queryNames = queries.map((query) => query.split("=")[0]);
-//   const queryValues = queries.map((query) => query.split("=")[1]);
-
-//   queryNames.forEach(
-//     (queryName, index) => (object[queryName] = queryValues[index])
-//   );
-
-//   console.log(object);
-// }
-
-// const stringUrlParams = "fps=76&leaderboard=speedrun&last-seen=this+month";
-
-// getUrlParamsObject(stringUrlParams);
