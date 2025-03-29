@@ -5,6 +5,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   leaderboard: [],
   loading: false,
+  error: false,
 };
 
 export const fetchLeaderboard = createAsyncThunk(
@@ -12,7 +13,7 @@ export const fetchLeaderboard = createAsyncThunk(
   async (paramsObject) => {
     const paginationNumber = paramsObject?.["leaderboard-pagination"] || 1;
     const leaderboardUrl =
-      jhApis(paramsObject).leaderboard.getSpeedRunLeaderboard;
+      "dkede" + jhApis(paramsObject).leaderboard.getSpeedRunLeaderboard;
 
     const res = await fetch(leaderboardUrl);
     const data = await res.json();
@@ -33,9 +34,15 @@ export const leaderboardSlice = createSlice({
     addCase(fetchLeaderboard.fulfilled, (state, action) => {
       state.leaderboard = action.payload;
       state.loading = false;
-    }).addCase(fetchLeaderboard.pending, (state) => {
-      state.loading = true;
-    });
+      state.error = false;
+    })
+      .addCase(fetchLeaderboard.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(fetchLeaderboard.rejected, (state) => {
+        state.error = true;
+      });
   },
 });
 

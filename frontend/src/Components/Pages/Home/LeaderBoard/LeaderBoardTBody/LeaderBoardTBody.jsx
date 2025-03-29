@@ -8,18 +8,25 @@ import s from "./LeaderBoardTBody.module.scss";
 import TopsVisualization from "./TopsVisualization/TopsVisualization";
 
 const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
-  const { loading } = useSelector((s) => s.leaderboard);
+  const { loading, error } = useSelector((s) => s.leaderboard);
   const router = useRouter();
 
   return (
     <tbody className={`${s.tbody}`}>
-      {loading && (
+      {loading && !error && (
         <tr>
           <td>Loading leaderboard...</td>
         </tr>
       )}
 
+      {error && (
+        <tr>
+          <td>Error while getting data.</td>
+        </tr>
+      )}
+
       {!loading &&
+        !error &&
         leaderboardData?.map(
           ({ player_name, score, top_list, rank, player_id }) => {
             const modifiedRank = getModifiedRank(rank);
