@@ -1,4 +1,5 @@
 import SvgIcon from "@/Components/Shared/SvgIcon";
+import { PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
 import { COD_2_COLORS, TOP_STATS_COLOR } from "@/Data/staticData";
 
 export function getModifiedRank(rank) {
@@ -67,4 +68,12 @@ export function getStatsBarStyles({
   const height = `${(times / maxFinishTimes) * 100}%`;
 
   return { backgroundColor, height };
+}
+
+export function paginateData(items, pageNumber = 1) {
+  const page = Math.max(1, parseInt(pageNumber, 10) || 1);
+  const startIndex = PAGINATION_ITEMS_PER_PAGE * (page - 1);
+  const endIndex = startIndex + PAGINATION_ITEMS_PER_PAGE;
+
+  return items.slice(startIndex, endIndex);
 }
