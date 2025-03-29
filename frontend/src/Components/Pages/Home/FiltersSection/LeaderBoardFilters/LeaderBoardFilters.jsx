@@ -16,7 +16,7 @@ const LeaderBoardFilters = () => {
           text={text}
           queryName="leaderboard"
           urlQuery={leaderboardUrlQuery}
-          defaultUrlQuery="all"
+          defaultUrlQuery="speedrun"
         />
       ))}
     </div>
@@ -27,15 +27,11 @@ export default LeaderBoardFilters;
 
 const LEADERBOARD_FILTERS_DATA = [
   {
-    text: "All",
+    text: "Speedrun",
     id: 1,
   },
   {
-    text: "Speedrun",
-    id: 2,
-  },
-  {
     text: "Skilled",
-    id: 3,
+    id: 2,
   },
 ];
