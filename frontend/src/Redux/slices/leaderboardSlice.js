@@ -4,6 +4,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   leaderboard: [],
+  loading: false,
 };
 
 export const fetchLeaderboard = createAsyncThunk(
@@ -31,6 +32,9 @@ export const leaderboardSlice = createSlice({
   extraReducers: ({ addCase }) => {
     addCase(fetchLeaderboard.fulfilled, (state, action) => {
       state.leaderboard = action.payload;
+      state.loading = false;
+    }).addCase(fetchLeaderboard.pending, (state) => {
+      state.loading = true;
     });
   },
 });
