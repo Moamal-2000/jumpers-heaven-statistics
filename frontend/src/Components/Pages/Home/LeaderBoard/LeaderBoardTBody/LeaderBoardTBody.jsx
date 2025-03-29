@@ -12,8 +12,8 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
   return (
     <tbody className={`${s.tbody}`}>
       {leaderboardData?.map(
-        ({ player_name, score, top_list, player_id }, index) => {
-          const modifiedRank = getModifiedRank(index + 1);
+        ({ player_name, score, top_list, rank, player_id }) => {
+          const modifiedRank = getModifiedRank(rank);
           const modifiedPlayerName = getColoredName(player_name);
 
           function handlePlayerClick() {
