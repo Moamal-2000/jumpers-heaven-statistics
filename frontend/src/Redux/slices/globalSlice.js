@@ -8,8 +8,10 @@ const initialState = {
 
 export const fetchLeaderboard = createAsyncThunk(
   "data/fetchLeaderboard",
-  async () => {
-    const res = await fetch(jhApis({ limit: 20 }).speedRunLeaderboard);
+  async (paramsObject) => {
+    const res = await fetch(
+      jhApis(paramsObject).leaderboard.getSpeedRunLeaderboard
+    );
 
     const data = await res.json();
     return data;
