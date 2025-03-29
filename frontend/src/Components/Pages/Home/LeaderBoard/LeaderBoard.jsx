@@ -1,6 +1,6 @@
 "use client";
 
-import { fetchLeaderboard } from "@/Redux/slices/globalSlice";
+import { fetchLeaderboard } from "@/Redux/slices/leaderboardSlice";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,7 +10,7 @@ import LeaderBoardTHead from "./LeaderBoardTHead/LeaderBoardTHead";
 import LeaderboardHeader from "./LeaderboardHeader/LeaderboardHeader";
 
 const LeaderBoard = ({ leaderboardData, mapsCount }) => {
-  const { leaderboard } = useSelector((s) => s.global);
+  const { leaderboard } = useSelector((s) => s.leaderboard);
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
   const paramsObject = Object.fromEntries(searchParams.entries());
