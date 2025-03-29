@@ -12,7 +12,7 @@ const StatsFilters = () => {
     <div className={s.filters}>
       {STATUS_FILTERS_DATA.map(({ text, id }) => (
         <FilterButton
-          defaultUrlQuery="maps"
+          defaultUrlQuery="ranks"
           queryName="status"
           key={id}
           text={text}
@@ -27,19 +27,11 @@ export default StatsFilters;
 
 const STATUS_FILTERS_DATA = [
   {
-    text: "Maps",
+    text: "Ranks",
     id: 1,
   },
   {
-    text: "Win Rate",
+    text: "Maps",
     id: 2,
-  },
-  {
-    text: "Points",
-    id: 3,
-  },
-  {
-    text: "Hours",
-    id: 4,
   },
 ];
