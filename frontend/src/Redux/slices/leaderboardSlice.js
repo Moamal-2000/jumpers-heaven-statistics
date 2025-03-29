@@ -1,4 +1,5 @@
 import { jhApis } from "@/Api/jumpersHeaven";
+import { paginateData } from "@/Functions/utils";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -8,12 +9,14 @@ const initialState = {
 export const fetchLeaderboard = createAsyncThunk(
   "leaderboardSlice/fetchLeaderboard",
   async (paramsObject) => {
-    const res = await fetch(
-      jhApis(paramsObject).leaderboard.getSpeedRunLeaderboard
-    );
+    const paginationNumber = paramsObject?.["leaderboard-pagination"] || 1;
+    const leaderboardUrl =
+      jhApis(paramsObject).leaderboard.getSpeedRunLeaderboard;
 
+    const res = await fetch(leaderboardUrl);
     const data = await res.json();
-    return data;
+
+    return paginateData(data, paginationNumber);
   }
 );
 
