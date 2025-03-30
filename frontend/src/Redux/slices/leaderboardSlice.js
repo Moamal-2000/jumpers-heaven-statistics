@@ -13,7 +13,7 @@ export const fetchLeaderboard = createAsyncThunk(
   async (paramsObject) => {
     const paginationNumber = paramsObject?.["leaderboard-pagination"] || 1;
     const leaderboardUrl =
-      "dkede" + jhApis(paramsObject).leaderboard.getSpeedRunLeaderboard;
+      jhApis(paramsObject).leaderboard.getSpeedRunLeaderboard;
 
     const res = await fetch(leaderboardUrl);
     const data = await res.json();
