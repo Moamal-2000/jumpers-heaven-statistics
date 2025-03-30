@@ -34,4 +34,12 @@ const LEADERBOARD_FILTERS_DATA = [
     text: "Skilled",
     id: 2,
   },
+  {
+    text: "Defrag",
+    id: 3,
+  },
+  {
+    text: "Surf",
+    id: 4,
+  },
 ];

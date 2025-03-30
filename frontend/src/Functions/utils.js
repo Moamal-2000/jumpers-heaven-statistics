@@ -84,6 +84,8 @@ export function getLeaderboardUrl(paramsObject) {
   const leaderboardUrls = {
     speedrun: jhApis(paramsObject).leaderboard.getSpeedRunLeaderboard,
     skilled: jhApis(paramsObject).leaderboard.getSkilledLeaderboard,
+    defrag: jhApis(paramsObject).leaderboard.getDefragLeaderboard,
+    surf: jhApis(paramsObject).leaderboard.getSurfLeaderboard,
   };
 
   return leaderboardUrls[leaderboardType];
