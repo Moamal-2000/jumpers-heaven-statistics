@@ -1,5 +1,6 @@
 "use client";
 
+import { paginateData } from "@/Functions/utils";
 import { fetchLeaderboard } from "@/Redux/slices/leaderboardSlice";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
@@ -10,15 +11,22 @@ import LeaderBoardTBody from "./LeaderBoardTBody/LeaderBoardTBody";
 import LeaderBoardTHead from "./LeaderBoardTHead/LeaderBoardTHead";
 
 const LeaderBoard = ({ mapsCount }) => {
-  const { paginationLeaderboard } = useSelector((s) => s.leaderboard);
+  const { leaderboardData } = useSelector((s) => s.leaderboard);
   const { tryFetchAgain } = useSelector((s) => s.global);
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
   const paramsObject = Object.fromEntries(searchParams.entries());
+  const leaderboardType = searchParams.get("leaderboard") || "speedrun";
+
+  const paginationNumber = paramsObject?.["leaderboard-pagination"] || 1;
+  const paginationLeaderboardData = paginateData(
+    leaderboardData,
+    paginationNumber
+  );
 
   useEffect(() => {
     dispatch(fetchLeaderboard(paramsObject));
-  }, [searchParams, tryFetchAgain]);
+  }, [leaderboardType, tryFetchAgain]);
 
   return (
     <div className={s.leaderboardWrapper}>
@@ -27,7 +35,7 @@ const LeaderBoard = ({ mapsCount }) => {
       <table className={s.leaderBoard}>
         <LeaderBoardTHead />
         <LeaderBoardTBody
-          leaderboardData={paginationLeaderboard}
+          leaderboardData={paginationLeaderboardData}
           mapsCount={mapsCount}
         />
       </table>

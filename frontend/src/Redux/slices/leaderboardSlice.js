@@ -1,8 +1,7 @@
-import { getLeaderboardUrl, paginateData } from "@/Functions/utils";
+import { getLeaderboardUrl } from "@/Functions/utils";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  paginationLeaderboard: [],
   leaderboardData: [],
   loading: false,
   error: false,
@@ -11,17 +10,13 @@ const initialState = {
 export const fetchLeaderboard = createAsyncThunk(
   "leaderboardSlice/fetchLeaderboard",
   async (paramsObject) => {
-    const paginationNumber = paramsObject?.["leaderboard-pagination"] || 1;
     const leaderboardUrl = getLeaderboardUrl(paramsObject);
 
     const response = await fetch(leaderboardUrl);
     const leaderboardData = await response.json();
-    const paginationLeaderboardData = paginateData(
-      leaderboardData,
-      paginationNumber
-    );
 
-    return { leaderboardData, paginationLeaderboardData };
+    if (!response.ok) throw new Error("Error while fetching leaderboard data");
+    return leaderboardData;
   }
 );
 
@@ -34,9 +29,8 @@ export const leaderboardSlice = createSlice({
     },
   },
   extraReducers: ({ addCase }) => {
-    addCase(fetchLeaderboard.fulfilled, (state, { payload }) => {
-      state.paginationLeaderboard = payload.paginationLeaderboardData;
-      state.leaderboardData = payload.leaderboardData;
+    addCase(fetchLeaderboard.fulfilled, (state, action) => {
+      state.leaderboardData = action.payload;
       state.loading = false;
       state.error = false;
     })
