@@ -38,16 +38,6 @@
   border-radius: 20px;
   cursor: pointer;
   transition: background-color .3s;
-
-  &[aria-checked=true] {
-    &::before {
-      translate: 24px -50%;
-    }
-
-    &::after {
-      opacity: 1;
-    }
-  }
 }
 
 .customCheckbox::before {
@@ -79,6 +69,16 @@
   background-image: linear-gradient(135deg, #FFB800, #FF9000);
   opacity: 0;
   transition: opacity .3s .2s;
+}
+
+.labeledCheckbox:has([aria-checked=true]) .customCheckbox {
+  &::before {
+    translate: 24px -50%;
+  }
+
+  &::after {
+    opacity: 1;
+  }
 }
 
 .labeledCheckbox>input {
