@@ -5,12 +5,12 @@ const PlayerId = async ({ params }) => {
   const { playerId } = await params;
 
   const playersReq = await fetch(
-    jhApis({ fps: 125, limit: 20 }).speedRunLeaderboard,
-    { next: { revalidate: 120 } }
+    jhApis({ fps: 125 }).leaderboard.getSpeedRunLeaderboard
   );
+
   const playersData = await playersReq.json();
   const playerData = playersData.find(
-    ({ player_id }) => player_id === playerId
+    ({ player_id }) => +player_id === +playerId
   );
   const { player_name, score, top_list } = playerData;
 
