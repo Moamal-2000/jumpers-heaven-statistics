@@ -16,7 +16,7 @@ const FpsFilters = () => {
           text={text}
           queryName="fps"
           urlQuery={fpsUrlQuery}
-          defaultUrlQuery="mix"
+          defaultUrlQuery="125"
         />
       ))}
     </div>
@@ -27,27 +27,27 @@ export default FpsFilters;
 
 const FPS_FILTERS_DATA = [
   {
-    text: "Mix",
+    text: "43",
     id: 1,
   },
   {
-    text: "43",
+    text: "76",
     id: 2,
   },
   {
-    text: "76",
+    text: "125",
     id: 3,
   },
   {
-    text: "125",
+    text: "250",
     id: 4,
   },
   {
-    text: "250",
+    text: "333",
     id: 5,
   },
   {
-    text: "333",
+    text: "Mix",
     id: 6,
   },
 ];
