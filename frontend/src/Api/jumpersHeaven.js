@@ -27,7 +27,10 @@ export const jhApis = ({
     },
     leaderboard: {
       getSkilledLeaderboard: generateUrl("/leaderboard/jump-skill", { fps }),
-      getSpeedRunLeaderboard: generateUrl("/leaderboard/speed-skill", { fps, limit }),
+      getSpeedRunLeaderboard: generateUrl("/leaderboard/speed-skill", {
+        fps,
+        limit,
+      }),
       getDefragLeaderboard: generateUrl("/leaderboard/defrag-skill", { fps }),
       getSurfLeaderboard: generateUrl("/leaderboard/surf-skill", { fps }),
     },

@@ -1,3 +1,4 @@
+import { jhApis } from "@/Api/jumpersHeaven";
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
 import { COD_2_COLORS, TOP_STATS_COLOR } from "@/Data/staticData";
@@ -76,4 +77,14 @@ export function paginateData(items, pageNumber = 1) {
   const endIndex = startIndex + PAGINATION_ITEMS_PER_PAGE;
 
   return items.slice(startIndex, endIndex);
+}
+
+export function getLeaderboardUrl(paramsObject) {
+  const leaderboardType = paramsObject?.["leaderboard"] || "speedrun";
+  const leaderboardUrls = {
+    speedrun: jhApis(paramsObject).leaderboard.getSpeedRunLeaderboard,
+    skilled: jhApis(paramsObject).leaderboard.getSkilledLeaderboard,
+  };
+
+  return leaderboardUrls[leaderboardType];
 }
