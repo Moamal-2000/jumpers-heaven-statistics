@@ -16,9 +16,6 @@ const LeaderBoardTHead = () => {
         </th>
         <th className={s.player}>Player</th>
         <th className={s.rating}>Rating</th>
-        <th className={s.maps} data-sortable>
-          <span>Maps</span>
-        </th>
         <th className={s.score}>Points</th>
         <th className={s.tops}>
           {isSkilledLeaderboard ? "Points per difficulty" : "Tops 1-10"}

@@ -38,7 +38,6 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
                   <span onClick={handlePlayerClick}>{modifiedPlayerName}</span>
                 </td>
                 <td className={s.rating}>{(+rating * 0.1).toFixed(2)}</td>
-                <td className={s.maps}>0</td>
                 <td className={s.score} data-type="player-stats-score">
                   {score}
                 </td>
