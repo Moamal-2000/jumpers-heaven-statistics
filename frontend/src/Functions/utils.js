@@ -90,3 +90,5 @@ export function getLeaderboardUrl(paramsObject) {
 
   return leaderboardUrls[leaderboardType];
 }
+
+export const isEmptyObj = (obj) => Object.keys(obj).length === 0;

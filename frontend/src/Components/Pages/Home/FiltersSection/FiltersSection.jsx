@@ -1,3 +1,5 @@
+"use client";
+
 import FilterCard from "@/Components/Shared/Cards/FilterCard/FilterCard";
 import s from "./FiltersSection.module.scss";
 import FpsFilters from "./FpsFilters/FpsFilters";
@@ -8,6 +10,30 @@ import RegionFilters from "./RegionFilters/RegionFilters";
 import StatsFilters from "./StatsFilters/StatsFilters";
 
 const FiltersSection = () => {
+  // const searchParams = useSearchParams();
+  // const pathname = usePathname();
+  // const router = useRouter();
+
+  // useEffect(() => {
+  //   const paramsSession = sessionStorage.getItem("homeSearchParams") || "{}";
+  //   console.log("paramsSession", paramsSession);
+  //   const paramsSessionObject = JSON.parse(paramsSession);
+  //   const isEmptyParamsSession = isEmptyObj(paramsSessionObject);
+  //   const urlParams = new URLSearchParams(paramsSessionObject);
+
+  //   if (!isEmptyParamsSession) {
+  //     // router.push(`${pathname}/${urlParams.toString()}`, {
+  //     //   scroll: false,
+  //     // });
+  //     return;
+  //   }
+
+  //   const paramsObject = Object.fromEntries(searchParams.entries());
+  //   const paramsObjectString = JSON.stringify(paramsObject);
+
+  //   sessionStorage.setItem("homeSearchParams", paramsObjectString);
+  // }, [searchParams]);
+
   return (
     <section className={s.filtersSection}>
       {FILTERS_COMPONENTS_DATA.map(({ title, filtersComponent, id }) => (
