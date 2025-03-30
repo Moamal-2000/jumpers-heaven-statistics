@@ -25,7 +25,6 @@ const LeaderBoard = ({ leaderboardData, mapsCount }) => {
 
       <table className={s.leaderBoard}>
         <LeaderBoardTHead />
-
         <LeaderBoardTBody leaderboardData={leaderboard} mapsCount={mapsCount} />
       </table>
     </div>

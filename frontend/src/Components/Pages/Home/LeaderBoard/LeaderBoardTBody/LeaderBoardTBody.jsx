@@ -1,10 +1,10 @@
 "use client";
 
-import SvgIcon from "@/Components/Shared/SvgIcon";
 import { navigateToPlayerPage } from "@/Functions/navigate";
 import { getColoredName, getModifiedRank } from "@/Functions/utils";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
+import LeaderBoardLoading from "./LeaderBoardLoading/LeaderBoardLoading";
 import s from "./LeaderBoardTBody.module.scss";
 import TopsVisualization from "./TopsVisualization/TopsVisualization";
 
@@ -14,15 +14,7 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
 
   return (
     <tbody className={`${s.tbody}`}>
-      {loading && !error && (
-        <tr className={s.loader} data-loader>
-          <td>
-            <SvgIcon name="animated-spinner" />
-            <b className={s.title}>Loading leaderboard...</b>
-            <p className={s.description}>Fetching the latest leaderboard</p>
-          </td>
-        </tr>
-      )}
+      {loading && !error && <LeaderBoardLoading />}
 
       {error && (
         <tr>
