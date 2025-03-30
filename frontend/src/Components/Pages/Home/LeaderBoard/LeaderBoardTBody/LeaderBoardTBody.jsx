@@ -4,6 +4,7 @@ import { navigateToPlayerPage } from "@/Functions/navigate";
 import { getColoredName, getModifiedRank } from "@/Functions/utils";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
+import LeaderBoardError from "./LeaderBoardError/LeaderBoardError";
 import LeaderBoardLoading from "./LeaderBoardLoading/LeaderBoardLoading";
 import s from "./LeaderBoardTBody.module.scss";
 import TopsVisualization from "./TopsVisualization/TopsVisualization";
@@ -16,11 +17,7 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
     <tbody className={`${s.tbody}`}>
       {loading && !error && <LeaderBoardLoading />}
 
-      {error && (
-        <tr>
-          <td>Error while getting data.</td>
-        </tr>
-      )}
+      {error && <LeaderBoardError />}
 
       {!loading &&
         !error &&
