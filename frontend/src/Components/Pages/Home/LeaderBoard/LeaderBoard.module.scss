@@ -34,6 +34,7 @@
   font-weight: 600;
 }
 
-.leaderBoard:has([data-loader]) tbody tr {
+.leaderBoard:has([data-loader]) tbody tr,
+.leaderBoard:has([data-error]) tbody tr {
   grid-template-columns: 1fr 0 0 0 0 0;
 }

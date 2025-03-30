@@ -14,9 +14,10 @@
   }
 }
 
-.tbody:not(:has([data-loader])) tr:hover {
+.tbody tr[data-type=player-stats-row]:hover {
   background-color: #242b3b;
 }
+
 
 .tbody tr:not(:last-child) {
   border-bottom: solid 1px #2A3040;

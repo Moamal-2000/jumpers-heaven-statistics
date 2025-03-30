@@ -16,7 +16,6 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
   return (
     <tbody className={`${s.tbody}`}>
       {loading && !error && <LeaderBoardLoading />}
-
       {error && <LeaderBoardError />}
 
       {!loading &&
