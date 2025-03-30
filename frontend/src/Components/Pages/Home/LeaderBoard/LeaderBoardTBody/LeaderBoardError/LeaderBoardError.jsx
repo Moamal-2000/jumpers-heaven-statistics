@@ -1,7 +1,19 @@
+"use client";
+
 import SvgIcon from "@/Components/Shared/SvgIcon";
+import { updateGlobalState } from "@/Redux/slices/globalSlice";
+import { useDispatch, useSelector } from "react-redux";
 import s from "./LeaderBoardError.module.scss";
 
 const LeaderBoardError = () => {
+  const { tryFetchAgain } = useSelector((s) => s.global);
+  const dispatch = useDispatch();
+
+  function handleRetryButton() {
+    const payload = { key: "tryFetchAgain", value: tryFetchAgain + 1 };
+    dispatch(updateGlobalState(payload));
+  }
+
   return (
     <tr className={s.error} data-error>
       <td>
@@ -12,7 +24,11 @@ const LeaderBoardError = () => {
           internet connection and tap retry.
         </p>
 
-        <button type="button" className={s.retryBtn}>
+        <button
+          type="button"
+          className={s.retryBtn}
+          onClick={handleRetryButton}
+        >
           <SvgIcon name="retry" />
           <span>Retry</span>
         </button>

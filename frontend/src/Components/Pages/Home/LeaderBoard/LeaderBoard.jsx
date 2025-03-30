@@ -11,13 +11,14 @@ import LeaderBoardTHead from "./LeaderBoardTHead/LeaderBoardTHead";
 
 const LeaderBoard = ({ leaderboardData, mapsCount }) => {
   const { leaderboard } = useSelector((s) => s.leaderboard);
+  const { tryFetchAgain } = useSelector((s) => s.global);
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
   const paramsObject = Object.fromEntries(searchParams.entries());
 
   useEffect(() => {
     dispatch(fetchLeaderboard(paramsObject));
-  }, [searchParams]);
+  }, [searchParams, tryFetchAgain]);
 
   return (
     <div className={s.leaderboardWrapper}>

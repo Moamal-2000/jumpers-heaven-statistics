@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isNotFoundPage: false,
+  tryFetchAgain: 0,
 };
 
 export const globalSlice = createSlice({
