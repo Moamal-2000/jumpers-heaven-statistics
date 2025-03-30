@@ -9,8 +9,8 @@ import LeaderboardHeader from "./LeaderboardHeader/LeaderboardHeader";
 import LeaderBoardTBody from "./LeaderBoardTBody/LeaderBoardTBody";
 import LeaderBoardTHead from "./LeaderBoardTHead/LeaderBoardTHead";
 
-const LeaderBoard = ({ leaderboardData, mapsCount }) => {
-  const { leaderboard } = useSelector((s) => s.leaderboard);
+const LeaderBoard = ({ mapsCount }) => {
+  const { paginationLeaderboard } = useSelector((s) => s.leaderboard);
   const { tryFetchAgain } = useSelector((s) => s.global);
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
@@ -22,11 +22,14 @@ const LeaderBoard = ({ leaderboardData, mapsCount }) => {
 
   return (
     <div className={s.leaderboardWrapper}>
-      <LeaderboardHeader leaderboardData={leaderboardData} />
+      <LeaderboardHeader />
 
       <table className={s.leaderBoard}>
         <LeaderBoardTHead />
-        <LeaderBoardTBody leaderboardData={leaderboard} mapsCount={mapsCount} />
+        <LeaderBoardTBody
+          leaderboardData={paginationLeaderboard}
+          mapsCount={mapsCount}
+        />
       </table>
     </div>
   );

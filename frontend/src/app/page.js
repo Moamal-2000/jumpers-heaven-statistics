@@ -6,11 +6,7 @@ import { Suspense } from "react";
 import s from "./page.module.scss";
 
 export default async function Home() {
-  const skilledLeaderboardUrl = jhApis({ limit: 20 }).leaderboard
-    .getSkilledLeaderboard;
-
-  const [leaderboardData, mapsCount] = await Promise.all([
-    (await fetch(skilledLeaderboardUrl)).json(),
+  const [mapsCount] = await Promise.all([
     (await fetch(jhApis({}).map.getMapsCount)).json(),
   ]);
 
@@ -20,10 +16,7 @@ export default async function Home() {
         <Introduction />
         <FiltersSection />
         <Suspense>
-          <LeaderBoard
-            leaderboardData={leaderboardData}
-            mapsCount={mapsCount?.count}
-          />
+          <LeaderBoard mapsCount={mapsCount?.count} />
         </Suspense>
       </main>
     </div>
