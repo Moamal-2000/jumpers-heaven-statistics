@@ -17,6 +17,7 @@ const LeaderBoard = ({ mapsCount }) => {
   const searchParams = useSearchParams();
   const paramsObject = Object.fromEntries(searchParams.entries());
   const leaderboardType = searchParams.get("leaderboard") || "speedrun";
+  const fpsType = searchParams.get("fps") || "125";
 
   const paginationNumber = paramsObject?.["leaderboard-pagination"] || 1;
   const paginationLeaderboardData = paginateData(
@@ -26,7 +27,7 @@ const LeaderBoard = ({ mapsCount }) => {
 
   useEffect(() => {
     dispatch(fetchLeaderboard(paramsObject));
-  }, [leaderboardType, tryFetchAgain]);
+  }, [leaderboardType, fpsType, tryFetchAgain]);
 
   return (
     <div className={s.leaderboardWrapper}>
