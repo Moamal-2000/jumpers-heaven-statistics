@@ -16,10 +16,10 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
   return (
     <tbody className={`${s.tbody}`}>
       {loading && !error && <LeaderBoardLoading />}
-      {!error && <LeaderBoardError />}
+      {error && <LeaderBoardError />}
 
       {!loading &&
-        error &&
+        !error &&
         leaderboardData?.map(
           ({ player_name, score, top_list, rank, player_id }) => {
             const modifiedRank = getModifiedRank(rank);
