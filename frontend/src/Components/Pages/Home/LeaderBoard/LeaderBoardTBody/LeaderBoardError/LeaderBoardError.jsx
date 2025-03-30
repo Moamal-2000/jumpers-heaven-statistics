@@ -1,3 +1,4 @@
+import SvgIcon from "@/Components/Shared/SvgIcon";
 import s from "./LeaderBoardError.module.scss";
 
 const LeaderBoardError = () => {
@@ -10,6 +11,11 @@ const LeaderBoardError = () => {
           We're having trouble fetching the latest player rankings. Check your
           internet connection and tap retry.
         </p>
+
+        <button type="button" className={s.retryBtn}>
+          <SvgIcon name="retry" />
+          <span>Retry</span>
+        </button>
       </td>
     </tr>
   );
