@@ -21,7 +21,7 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
       {!loading &&
         !error &&
         leaderboardData?.map(
-          ({ player_name, score, top_list, rank, player_id }) => {
+          ({ player_name, rating, score, top_list, rank, player_id }) => {
             const modifiedRank = getModifiedRank(rank);
             const modifiedPlayerName = getColoredName(player_name);
 
@@ -37,7 +37,7 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
                 <td className={s.player} data-type="player-stats-name">
                   <span onClick={handlePlayerClick}>{modifiedPlayerName}</span>
                 </td>
-                <td className={s.rating}>0</td>
+                <td className={s.rating}>{(+rating * 0.1).toFixed(2)}</td>
                 <td className={s.maps}>0</td>
                 <td className={s.score} data-type="player-stats-score">
                   {score}
