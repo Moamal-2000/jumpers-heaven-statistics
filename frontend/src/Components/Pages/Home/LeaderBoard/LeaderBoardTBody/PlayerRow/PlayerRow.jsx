@@ -1,5 +1,5 @@
+import CountryImage from "@/Components/Shared/CountryImage";
 import { getColoredName, getModifiedRank } from "@/Functions/utils";
-import Image from "next/image";
 import TopsVisualization from "../TopsVisualization/TopsVisualization";
 import s from "./PlayerRow.module.scss";
 
@@ -26,14 +26,7 @@ const PlayerRow = ({
 
       <td className={s.player} data-type="player-stats-name">
         <span className={s.playerCountry}>
-          <Image
-            width="32"
-            height="32"
-            src={`/countryFlags/${country.toLowerCase()}.svg`}
-            alt={`country flag ${country}`}
-            title={country}
-            onError={(event) => (event.target.src = "/country-placeholder.svg")}
-          />
+          <CountryImage country={country} />
         </span>
         <span onClick={handlePlayerClick}>{modifiedPlayerName}</span>
       </td>
