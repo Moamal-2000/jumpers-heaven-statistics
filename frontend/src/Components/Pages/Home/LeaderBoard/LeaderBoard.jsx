@@ -38,12 +38,7 @@ const LeaderBoard = ({ mapsCount }) => {
     if (node) observer.current.observe(node);
   });
 
-  useEffect(() => {
-    dispatch(fetchLeaderboard(paramsObject));
-    setPaginationNumber(1);
-  }, [leaderboardType, fpsType, tryFetchAgain]);
-
-  useEffect(() => {
+  function addDataOnScroll() {
     const paginationLeaderboardData = paginateData(
       leaderboardData,
       paginationNumber
@@ -55,6 +50,15 @@ const LeaderBoard = ({ mapsCount }) => {
         value: [...leaderboardScroll, ...paginationLeaderboardData],
       })
     );
+  }
+
+  useEffect(() => {
+    dispatch(fetchLeaderboard(paramsObject));
+    setPaginationNumber(1);
+  }, [leaderboardType, fpsType, tryFetchAgain]);
+
+  useEffect(() => {
+    addDataOnScroll();
   }, [paginationNumber]);
 
   return (
