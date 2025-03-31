@@ -52,6 +52,9 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
                       src={`/countryFlags/${country.toLowerCase()}.svg`}
                       alt={`country flag ${country}`}
                       title={country}
+                      onError={(event) =>
+                        (event.target.src = "/country-placeholder.svg")
+                      }
                     />
                   </span>
                   <span onClick={handlePlayerClick}>{modifiedPlayerName}</span>
