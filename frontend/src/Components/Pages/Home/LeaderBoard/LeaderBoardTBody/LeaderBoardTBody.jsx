@@ -2,6 +2,7 @@
 
 import { navigateToPlayerPage } from "@/Functions/navigate";
 import { getColoredName, getModifiedRank } from "@/Functions/utils";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import LeaderBoardError from "./LeaderBoardError/LeaderBoardError";
@@ -21,7 +22,15 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
       {!loading &&
         !error &&
         leaderboardData?.map(
-          ({ player_name, rating, score, top_list, rank, player_id }) => {
+          ({
+            player_name,
+            country,
+            rating,
+            score,
+            top_list,
+            rank,
+            player_id,
+          }) => {
             const modifiedRank = getModifiedRank(rank);
             const modifiedPlayerName = getColoredName(player_name);
 
@@ -34,13 +43,26 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount }) => {
                 <td className={s.rank} data-type="player-stats-rank">
                   {modifiedRank}
                 </td>
+
                 <td className={s.player} data-type="player-stats-name">
+                  <span className={s.playerCountry}>
+                    <Image
+                      width="32"
+                      height="32"
+                      src={`/countryFlags/${country.toLowerCase()}.svg`}
+                      alt={`country flag ${country}`}
+                      title={country}
+                    />
+                  </span>
                   <span onClick={handlePlayerClick}>{modifiedPlayerName}</span>
                 </td>
+
                 <td className={s.rating}>{(+rating * 0.1).toFixed(2)}</td>
+
                 <td className={s.score} data-type="player-stats-score">
                   {score}
                 </td>
+
                 <td className={s.tops} data-type="player-stats-tops">
                   <TopsVisualization
                     topsList={top_list}

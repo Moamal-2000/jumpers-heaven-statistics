@@ -35,6 +35,29 @@
   }
 }
 
+.tbody tr .player .playerCountry {
+  --size: 32px;
+  min-width: var(--size);
+  min-height: var(--size);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: #343a40;
+  color: #fff;
+  border: 2px solid #2a2e39;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.tbody tr .player .playerCountry>img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
 .tbody tr .rating {
   font-weight: 700;
   font-size: 1.1rem;
