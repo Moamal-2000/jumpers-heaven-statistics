@@ -7,7 +7,6 @@ import LastSeenFilters from "./LastSeenFilters/LastSeenFilters";
 import LeaderBoardFilters from "./LeaderBoardFilters/LeaderBoardFilters";
 import PlayerStatusFilters from "./PlayerStatusFilters/PlayerStatusFilters";
 import RegionFilters from "./RegionFilters/RegionFilters";
-import StatsFilters from "./StatsFilters/StatsFilters";
 
 const FiltersSection = () => {
   // const searchParams = useSearchParams();
@@ -72,10 +71,5 @@ const FILTERS_COMPONENTS_DATA = [
     title: "Player Status",
     filtersComponent: <PlayerStatusFilters />,
     id: 5,
-  },
-  {
-    title: "Stats Filter",
-    filtersComponent: <StatsFilters />,
-    id: 6,
   },
 ];
