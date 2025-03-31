@@ -1,9 +1,12 @@
 "use client";
 
 import { paginateData } from "@/Functions/utils";
-import { fetchLeaderboard } from "@/Redux/slices/leaderboardSlice";
+import {
+  fetchLeaderboard,
+  updateLeaderboardState,
+} from "@/Redux/slices/leaderboardSlice";
 import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./LeaderBoard.module.scss";
 import LeaderboardHeader from "./LeaderboardHeader/LeaderboardHeader";
@@ -11,7 +14,9 @@ import LeaderBoardTBody from "./LeaderBoardTBody/LeaderBoardTBody";
 import LeaderBoardTHead from "./LeaderBoardTHead/LeaderBoardTHead";
 
 const LeaderBoard = ({ mapsCount }) => {
-  const { leaderboardData } = useSelector((s) => s.leaderboard);
+  const { leaderboardData, leaderboardScroll } = useSelector(
+    (s) => s.leaderboard
+  );
   const { tryFetchAgain } = useSelector((s) => s.global);
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
@@ -19,15 +24,38 @@ const LeaderBoard = ({ mapsCount }) => {
   const leaderboardType = searchParams.get("leaderboard") || "speedrun";
   const fpsType = searchParams.get("fps") || "125";
 
-  const paginationNumber = paramsObject?.["leaderboard-pagination"] || 1;
-  const paginationLeaderboardData = paginateData(
-    leaderboardData,
-    paginationNumber
-  );
+  const [paginationNumber, setPaginationNumber] = useState(1);
+
+  const observer = useRef();
+  const lastPlayerRef = useCallback((node) => {
+    if (observer.current) observer.current.disconnect();
+
+    observer.current = new IntersectionObserver((entries) => {
+      if (entries[0]?.isIntersecting)
+        setPaginationNumber((prevValue) => prevValue + 1);
+    });
+
+    if (node) observer.current.observe(node);
+  });
 
   useEffect(() => {
     dispatch(fetchLeaderboard(paramsObject));
+    setPaginationNumber(1);
   }, [leaderboardType, fpsType, tryFetchAgain]);
+
+  useEffect(() => {
+    const paginationLeaderboardData = paginateData(
+      leaderboardData,
+      paginationNumber
+    );
+
+    dispatch(
+      updateLeaderboardState({
+        key: "leaderboardScroll",
+        value: [...leaderboardScroll, ...paginationLeaderboardData],
+      })
+    );
+  }, [paginationNumber]);
 
   return (
     <div className={s.leaderboardWrapper}>
@@ -36,8 +64,9 @@ const LeaderBoard = ({ mapsCount }) => {
       <table className={s.leaderBoard}>
         <LeaderBoardTHead />
         <LeaderBoardTBody
-          leaderboardData={paginationLeaderboardData}
+          leaderboardData={leaderboardScroll}
           mapsCount={mapsCount}
+          lastPlayerRef={lastPlayerRef}
         />
       </table>
     </div>
