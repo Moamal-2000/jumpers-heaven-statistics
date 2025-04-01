@@ -1,6 +1,6 @@
 "use client";
 
-import { paginateData } from "@/Functions/utils";
+import { getIsLastPagination, paginateData } from "@/Functions/utils";
 import {
   fetchLeaderboard,
   updateLeaderboardState,
@@ -25,9 +25,16 @@ const LeaderBoard = ({ mapsCount }) => {
   const fpsType = searchParams.get("fps") || "125";
 
   const [paginationNumber, setPaginationNumber] = useState(1);
-
   const observer = useRef();
+
   const lastPlayerRef = useCallback((node) => {
+    const isLastPagination = getIsLastPagination(
+      leaderboardData,
+      paginationNumber
+    );
+
+    if (isLastPagination) return;
+
     if (observer.current) observer.current.disconnect();
 
     observer.current = new IntersectionObserver((entries) => {
@@ -58,7 +65,12 @@ const LeaderBoard = ({ mapsCount }) => {
   }, [leaderboardType, fpsType, tryFetchAgain]);
 
   useEffect(() => {
-    addDataOnScroll();
+    const isLastPagination = getIsLastPagination(
+      leaderboardData,
+      paginationNumber
+    );
+
+    if (!isLastPagination) addDataOnScroll();
   }, [paginationNumber]);
 
   return (

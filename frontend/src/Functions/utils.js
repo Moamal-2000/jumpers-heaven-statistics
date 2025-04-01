@@ -92,3 +92,11 @@ export function getLeaderboardUrl(paramsObject) {
 }
 
 export const isEmptyObj = (obj) => Object.keys(obj).length === 0;
+
+export function getIsLastPagination(leaderboardData, paginationNumber) {
+  const lastLeaderboardPagination = Math.ceil(
+    leaderboardData?.length / PAGINATION_ITEMS_PER_PAGE
+  );
+
+  return paginationNumber > lastLeaderboardPagination;
+}
