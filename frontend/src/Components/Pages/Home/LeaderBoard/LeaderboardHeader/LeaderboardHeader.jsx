@@ -4,6 +4,9 @@ const LeaderboardHeader = () => {
   return (
     <header className={s.header}>
       <h3>Top Players</h3>
+      <button type="button" className={s.showAllBtn}>
+        Show All
+      </button>
     </header>
   );
 };

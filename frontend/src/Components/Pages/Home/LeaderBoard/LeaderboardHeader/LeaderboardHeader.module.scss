@@ -9,3 +9,21 @@
   font-size: 1.4rem;
   font-weight: 700;
 }
+
+.header .showAllBtn {
+  background-color: #1e2029;
+  border: 1px solid #ffcc33;
+  color: #ffcc33;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: .87rem;
+  cursor: pointer;
+  position: relative;
+  top: 2px;
+  transition: background-color .2s;
+
+  &:hover {
+    background-color: #2a2b36;
+  }
+}
