@@ -6,8 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "optimize-svgs": "svgo -f public/countryFlags/ -o public/countryFlags/"
+    "lint": "next lint"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
@@ -21,7 +20,6 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "eslint": "^9",
-    "eslint-config-next": "15.2.2",
-    "svgo": "^3.3.2"
+    "eslint-config-next": "15.2.2"
   }
 }
