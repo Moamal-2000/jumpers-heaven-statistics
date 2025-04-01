@@ -1,14 +1,25 @@
 "use client";
 
+import { updateGlobalState } from "@/Redux/slices/globalSlice";
 import { useSearchParams } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
 import s from "./LeaderBoardTHead.module.scss";
 
 const LeaderBoardTHead = () => {
+  const { isLeaderboardReversed } = useSelector((s) => s.global);
+  const dispatch = useDispatch();
   const searchParams = useSearchParams();
   const leaderboardType = searchParams.get("leaderboard");
   const isSkilledLeaderboard = leaderboardType === "skilled";
 
-  const isLeaderboardReversed = false;
+  function reverseLeaderboard() {
+    dispatch(
+      updateGlobalState({
+        key: "isLeaderboardReversed",
+        value: !isLeaderboardReversed,
+      })
+    );
+  }
 
   return (
     <thead className={s.thead}>
@@ -20,6 +31,7 @@ const LeaderBoardTHead = () => {
           aria-label={`Sort leaderboard by rank ${
             isLeaderboardReversed ? "descending" : "ascending"
           }`}
+          onClick={reverseLeaderboard}
         >
           <span>Rank</span>
         </th>

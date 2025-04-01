@@ -9,11 +9,13 @@ import s from "./LeaderBoardTBody.module.scss";
 import PlayerRow from "./PlayerRow/PlayerRow";
 
 const LeaderBoardTBody = ({ leaderboardData, mapsCount, lastPlayerRef }) => {
+  const { isLeaderboardReversed } = useSelector((s) => s.global);
   const { loading, error } = useSelector((s) => s.leaderboard);
   const router = useRouter();
+  const reverseClass = isLeaderboardReversed ? s.reverse : "";
 
   return (
-    <tbody className={`${s.tbody}`}>
+    <tbody className={`${s.tbody} ${reverseClass}`}>
       {loading && !error && <LeaderBoardLoading />}
       {error && <LeaderBoardError />}
 

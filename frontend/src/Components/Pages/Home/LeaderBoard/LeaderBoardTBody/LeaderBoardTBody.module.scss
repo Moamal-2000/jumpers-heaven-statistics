@@ -3,6 +3,10 @@
   flex-direction: column;
   min-height: 483.2px;
   position: relative;
+
+  &.reverse {
+    flex-direction: column-reverse;
+  }
 }
 
 .tbody tr {

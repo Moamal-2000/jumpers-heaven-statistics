@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isNotFoundPage: false,
+  isLeaderboardReversed: false,
   tryFetchAgain: 0,
 };
 
