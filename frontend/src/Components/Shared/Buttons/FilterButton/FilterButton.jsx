@@ -12,6 +12,10 @@ export function FilterButton({ text, queryName, urlQuery, defaultUrlQuery }) {
   const fixedUrlQuery = urlQuery ? urlQuery : defaultUrlQuery;
   const activeClass = fixedUrlQuery === text?.toLowerCase() ? s.active : "";
 
+  const ariaLabel = activeClass
+    ? `The leaderboard currently filtered by ${text}`
+    : `Filter the leaderboard by ${text}`;
+
   function setQueryFilter() {
     const filterNoun = text?.toLowerCase();
     const isDefaultUrlQuery = filterNoun === defaultUrlQuery;
@@ -29,6 +33,7 @@ export function FilterButton({ text, queryName, urlQuery, defaultUrlQuery }) {
       type="button"
       className={`${s.button} ${activeClass}`}
       onClick={setQueryFilter}
+      aria-label={ariaLabel}
     >
       {text}
     </button>
