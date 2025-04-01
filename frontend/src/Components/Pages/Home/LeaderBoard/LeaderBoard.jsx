@@ -51,6 +51,11 @@ const LeaderBoard = ({ mapsCount }) => {
       paginationNumber
     );
 
+    const isLastPagination = getIsLastPagination(
+      leaderboardData,
+      paginationNumber
+    );
+
     dispatch(
       updateLeaderboardState({
         key: "leaderboardScroll",
@@ -70,12 +75,15 @@ const LeaderBoard = ({ mapsCount }) => {
       paginationNumber
     );
 
-    if (!isLastPagination) addDataOnScroll();
+    // In this case the handleShowAll() is activated already
+    const isSameArrayReference = leaderboardScroll === leaderboardData;
+
+    if (!isLastPagination && !isSameArrayReference) addDataOnScroll();
   }, [paginationNumber]);
 
   return (
     <div className={s.leaderboardWrapper}>
-      <LeaderboardHeader />
+      <LeaderboardHeader setPaginationNumber={setPaginationNumber} />
 
       <table className={s.leaderBoard}>
         <LeaderBoardTHead />
