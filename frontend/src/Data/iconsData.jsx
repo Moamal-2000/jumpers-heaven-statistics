@@ -3,14 +3,11 @@ export const iconsData = [
     name: "trophy",
     icon: (
       <svg
-        width="24"
-        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
-        strokeLinejoin="round"
         data-type="trophy"
       >
         <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
@@ -27,14 +24,11 @@ export const iconsData = [
     name: "silver-medal",
     icon: (
       <svg
-        width="24"
-        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="#9ca3af"
         strokeWidth="2"
         strokeLinecap="round"
-        strokeLinejoin="round"
         data-type="silver-medal"
       >
         <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path>
@@ -51,14 +45,11 @@ export const iconsData = [
     name: "bronze-medal",
     icon: (
       <svg
-        width="24"
-        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="#d97706"
         strokeWidth="2"
         strokeLinecap="round"
-        strokeLinejoin="round"
         data-type="bronze-medal"
       >
         <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path>
@@ -75,14 +66,10 @@ export const iconsData = [
     name: "home",
     icon: (
       <svg
-        width="24"
-        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
       >
         <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
         <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -94,14 +81,10 @@ export const iconsData = [
     name: "map",
     icon: (
       <svg
-        width="24"
-        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
       >
         <path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"></path>
         <path d="M15 5.764v15"></path>
@@ -114,14 +97,11 @@ export const iconsData = [
     name: "users",
     icon: (
       <svg
-        width="24"
-        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
-        strokeLinejoin="round"
       >
         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
         <circle cx="9" cy="7" r="4"></circle>
@@ -135,14 +115,11 @@ export const iconsData = [
     name: "exclamation-mark",
     icon: (
       <svg
-        width="24"
-        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
-        strokeLinejoin="round"
       >
         <circle cx="12" cy="12" r="10"></circle>
         <path d="M12 16v-4"></path>
@@ -155,14 +132,11 @@ export const iconsData = [
     name: "search",
     icon: (
       <svg
-        width="24"
-        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
-        strokeLinejoin="round"
       >
         <circle cx="11" cy="11" r="8"></circle>
         <path d="m21 21-4.3-4.3"></path>
@@ -174,13 +148,10 @@ export const iconsData = [
     name: "star",
     icon: (
       <svg
-        width="24"
-        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
-        strokeLinecap="round"
         strokeLinejoin="round"
       >
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -192,14 +163,11 @@ export const iconsData = [
     name: "timer",
     icon: (
       <svg
-        width="24"
-        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
-        strokeLinejoin="round"
       >
         <circle cx="12" cy="12" r="10"></circle>
         <polyline points="12 6 12 12 16 14"></polyline>
@@ -210,7 +178,7 @@ export const iconsData = [
   {
     name: "right-arrow",
     icon: (
-      <svg viewBox="0 0 320 512" data-type="right-arrow">
+      <svg data-type="right-arrow" viewBox="0 0 320 512">
         <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
       </svg>
     ),
@@ -252,13 +220,8 @@ export const iconsData = [
   {
     name: "retry",
     icon: (
-      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-        ></path>
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 0 0 4.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 0 1-15.357-2m15.357 2H15" />
       </svg>
     ),
   },
