@@ -8,10 +8,19 @@ const LeaderBoardTHead = () => {
   const leaderboardType = searchParams.get("leaderboard");
   const isSkilledLeaderboard = leaderboardType === "skilled";
 
+  const isLeaderboardReversed = false;
+
   return (
     <thead className={s.thead}>
       <tr>
-        <th className={s.rank} data-sortable>
+        <th
+          className={s.rank}
+          data-sortable
+          tabIndex="0"
+          aria-label={`Sort leaderboard by rank ${
+            isLeaderboardReversed ? "descending" : "ascending"
+          }`}
+        >
           <span>Rank</span>
         </th>
         <th className={s.player}>Player</th>
