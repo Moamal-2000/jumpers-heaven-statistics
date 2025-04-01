@@ -17,7 +17,7 @@ const LeaderBoard = ({ mapsCount }) => {
   const { leaderboardData, leaderboardScroll } = useSelector(
     (s) => s.leaderboard
   );
-  const { tryFetchAgain } = useSelector((s) => s.global);
+  const { tryFetchAgain, isLeaderboardReversed } = useSelector((s) => s.global);
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
   const paramsObject = Object.fromEntries(searchParams.entries());
@@ -28,6 +28,7 @@ const LeaderBoard = ({ mapsCount }) => {
   const observer = useRef();
 
   const lastPlayerRef = useCallback((node) => {
+    if (isLeaderboardReversed) return;
     const isLastPagination = getIsLastPagination(
       leaderboardData,
       paginationNumber
@@ -47,11 +48,6 @@ const LeaderBoard = ({ mapsCount }) => {
 
   function addDataOnScroll() {
     const paginationLeaderboardData = paginateData(
-      leaderboardData,
-      paginationNumber
-    );
-
-    const isLastPagination = getIsLastPagination(
       leaderboardData,
       paginationNumber
     );

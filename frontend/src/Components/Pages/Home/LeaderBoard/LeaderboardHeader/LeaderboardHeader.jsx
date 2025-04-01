@@ -2,11 +2,15 @@
 
 import { PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
 import { updateLeaderboardState } from "@/Redux/slices/leaderboardSlice";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./LeaderboardHeader.module.scss";
 
 const LeaderboardHeader = ({ setPaginationNumber }) => {
-  const { leaderboardData } = useSelector((s) => s.leaderboard);
+  const { isLeaderboardReversed } = useSelector((s) => s.global);
+  const { leaderboardData, leaderboardScroll } = useSelector(
+    (s) => s.leaderboard
+  );
   const dispatch = useDispatch();
 
   function handleShowAll() {
@@ -25,6 +29,12 @@ const LeaderboardHeader = ({ setPaginationNumber }) => {
 
     setPaginationNumber(lastLeaderboardPagination);
   }
+
+  useEffect(() => {
+    const isSameArrayReference = leaderboardScroll === leaderboardData;
+
+    if (!isSameArrayReference) handleShowAll();
+  }, [isLeaderboardReversed]);
 
   return (
     <header className={s.header}>

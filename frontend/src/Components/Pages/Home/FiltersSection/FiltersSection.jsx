@@ -2,11 +2,16 @@
 
 import FilterCard from "@/Components/Shared/Cards/FilterCard/FilterCard";
 import { FILTERS_COMPONENTS_DATA } from "@/Data/filters";
+import { updateGlobalState } from "@/Redux/slices/globalSlice";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import FilterButtons from "./FilterButtons/FilterButtons";
 import s from "./FiltersSection.module.scss";
 
 const FiltersSection = () => {
-  // const searchParams = useSearchParams();
+  const searchParams = useSearchParams();
+  const dispatch = useDispatch();
   // const pathname = usePathname();
   // const router = useRouter();
 
@@ -29,6 +34,10 @@ const FiltersSection = () => {
 
   //   sessionStorage.setItem("homeSearchParams", paramsObjectString);
   // }, [searchParams]);
+
+  useEffect(() => {
+    dispatch(updateGlobalState({ key: "isLeaderboardReversed", value: false }));
+  }, [searchParams]);
 
   return (
     <section className={s.filtersSection}>
