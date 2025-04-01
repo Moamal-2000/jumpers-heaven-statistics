@@ -26,7 +26,12 @@ const SearchInput = ({ placeholder }) => {
         <SvgIcon name="search" />
       </button>
 
-      <input type="text" placeholder={placeholder} name="search-player" />
+      <input
+        type="text"
+        placeholder={placeholder}
+        name="search-player"
+        aria-label="Enter player name to search"
+      />
     </form>
   );
 };
