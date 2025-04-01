@@ -18,7 +18,11 @@ const SearchInput = ({ placeholder }) => {
       onSubmit={handleSearch}
       role="search"
     >
-      <button type="submit" className={s.searchButton} aria-label="search icon">
+      <button
+        type="submit"
+        className={s.searchButton}
+        aria-label="Search for a player by name"
+      >
         <SvgIcon name="search" />
       </button>
 
