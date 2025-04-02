@@ -14,8 +14,8 @@ export default async function Home() {
     <div className="container">
       <main className={s.home}>
         <Introduction />
-        <FiltersSection />
         <Suspense>
+          <FiltersSection />
           <LeaderBoard mapsCount={mapsCount?.count} />
         </Suspense>
       </main>

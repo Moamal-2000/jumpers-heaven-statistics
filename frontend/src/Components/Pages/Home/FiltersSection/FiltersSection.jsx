@@ -4,7 +4,7 @@ import FilterCard from "@/Components/Shared/Cards/FilterCard/FilterCard";
 import { FILTERS_COMPONENTS_DATA } from "@/Data/filters";
 import { updateGlobalState } from "@/Redux/slices/globalSlice";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import FilterButtons from "./FilterButtons/FilterButtons";
 import s from "./FiltersSection.module.scss";
@@ -40,37 +40,35 @@ const FiltersSection = () => {
   }, [searchParams]);
 
   return (
-    <Suspense>
-      <section className={s.filtersSection}>
-        {FILTERS_COMPONENTS_DATA.map(
-          ({
-            title,
-            queryName,
-            defaultUrlQuery,
-            filtersData,
-            id,
-            filtersComponent,
-          }) => {
-            if (filtersComponent)
-              return (
-                <FilterCard key={id} title={title}>
-                  {filtersComponent}
-                </FilterCard>
-              );
-
+    <section className={s.filtersSection}>
+      {FILTERS_COMPONENTS_DATA.map(
+        ({
+          title,
+          queryName,
+          defaultUrlQuery,
+          filtersData,
+          id,
+          filtersComponent,
+        }) => {
+          if (filtersComponent)
             return (
               <FilterCard key={id} title={title}>
-                <FilterButtons
-                  queryName={queryName.toLowerCase()}
-                  defaultUrlQuery={defaultUrlQuery.toLowerCase()}
-                  filtersData={filtersData}
-                />
+                {filtersComponent}
               </FilterCard>
             );
-          }
-        )}
-      </section>
-    </Suspense>
+
+          return (
+            <FilterCard key={id} title={title}>
+              <FilterButtons
+                queryName={queryName.toLowerCase()}
+                defaultUrlQuery={defaultUrlQuery.toLowerCase()}
+                filtersData={filtersData}
+              />
+            </FilterCard>
+          );
+        }
+      )}
+    </section>
   );
 };
 
