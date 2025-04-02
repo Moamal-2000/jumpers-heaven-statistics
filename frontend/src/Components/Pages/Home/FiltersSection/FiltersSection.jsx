@@ -12,28 +12,6 @@ import s from "./FiltersSection.module.scss";
 const FiltersSection = () => {
   const searchParams = useSearchParams();
   const dispatch = useDispatch();
-  // const pathname = usePathname();
-  // const router = useRouter();
-
-  // useEffect(() => {
-  //   const paramsSession = sessionStorage.getItem("homeSearchParams") || "{}";
-  //   console.log("paramsSession", paramsSession);
-  //   const paramsSessionObject = JSON.parse(paramsSession);
-  //   const isEmptyParamsSession = isEmptyObj(paramsSessionObject);
-  //   const urlParams = new URLSearchParams(paramsSessionObject);
-
-  //   if (!isEmptyParamsSession) {
-  //     // router.push(`${pathname}/${urlParams.toString()}`, {
-  //     //   scroll: false,
-  //     // });
-  //     return;
-  //   }
-
-  //   const paramsObject = Object.fromEntries(searchParams.entries());
-  //   const paramsObjectString = JSON.stringify(paramsObject);
-
-  //   sessionStorage.setItem("homeSearchParams", paramsObjectString);
-  // }, [searchParams]);
 
   useEffect(() => {
     dispatch(updateGlobalState({ key: "isLeaderboardReversed", value: false }));
