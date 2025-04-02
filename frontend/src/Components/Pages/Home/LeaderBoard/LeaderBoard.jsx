@@ -70,7 +70,7 @@ const LeaderBoard = ({ mapsCount }) => {
     const isSameArrayReference = leaderboardScroll === leaderboardData;
 
     const shouldShowMoreData =
-      (!isLastPagination && !isSameArrayReference) || allDataDisplayed;
+      !isLastPagination && !isSameArrayReference && !allDataDisplayed;
 
     if (shouldShowMoreData) addDataOnScroll();
   }
