@@ -1,0 +1,10 @@
+.rank {
+  outline: solid 1px transparent;
+  outline-offset: -14px;
+  border-radius: 18px;
+  transition: outline-color .2s;
+
+  &:focus {
+    outline-color: #feb700;
+  }
+}

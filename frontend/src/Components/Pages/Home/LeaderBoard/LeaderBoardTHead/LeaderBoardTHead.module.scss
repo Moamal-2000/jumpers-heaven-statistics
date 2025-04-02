@@ -31,7 +31,8 @@
 .thead tr th[data-sortable] {
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: #FFB800;
   }
 }
