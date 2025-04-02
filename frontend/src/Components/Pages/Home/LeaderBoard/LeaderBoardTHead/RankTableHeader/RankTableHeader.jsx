@@ -17,6 +17,11 @@ const RankTableHeader = ({ text }) => {
     );
   }
 
+  function handleKeyDown(event) {
+    const isEnterKey = event.code === "Enter" && event.keyCode === 13;
+    if (isEnterKey) reverseLeaderboard();
+  }
+
   return (
     <th
       className={s.rank}
@@ -26,6 +31,7 @@ const RankTableHeader = ({ text }) => {
         isLeaderboardReversed ? "descending" : "ascending"
       }`}
       onClick={reverseLeaderboard}
+      onKeyDown={handleKeyDown}
     >
       <span>{text}</span>
     </th>
