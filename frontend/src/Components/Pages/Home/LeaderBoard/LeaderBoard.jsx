@@ -1,12 +1,13 @@
 "use client";
 
 import { getIsLastPagination, paginateData } from "@/Functions/utils";
+import useInfiniteScroll from "@/Hooks/App/useInfiniteScroll";
 import {
   fetchLeaderboard,
   updateLeaderboardState,
 } from "@/Redux/slices/leaderboardSlice";
 import { useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./LeaderBoard.module.scss";
 import LeaderboardHeader from "./LeaderboardHeader/LeaderboardHeader";
@@ -24,27 +25,11 @@ const LeaderBoard = ({ mapsCount }) => {
   const leaderboardType = searchParams.get("leaderboard") || "speedrun";
   const fpsType = searchParams.get("fps") || "125";
 
-  const [paginationNumber, setPaginationNumber] = useState(1);
-  const observer = useRef();
-
-  const lastPlayerRef = useCallback((node) => {
-    if (isLeaderboardReversed) return;
-    const isLastPagination = getIsLastPagination(
-      leaderboardData,
-      paginationNumber
-    );
-
-    if (isLastPagination) return;
-
-    if (observer.current) observer.current.disconnect();
-
-    observer.current = new IntersectionObserver((entries) => {
-      if (entries[0]?.isIntersecting)
-        setPaginationNumber((prevValue) => prevValue + 1);
-    });
-
-    if (node) observer.current.observe(node);
-  });
+  const {
+    paginationNumber,
+    setPaginationNumber,
+    lastElementRef: lastPlayerRef,
+  } = useInfiniteScroll(leaderboardData, isLeaderboardReversed);
 
   function addDataOnScroll() {
     const paginationLeaderboardData = paginateData(
