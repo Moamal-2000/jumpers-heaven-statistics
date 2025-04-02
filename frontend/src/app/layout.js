@@ -1,4 +1,5 @@
 import Header from "@/Components/Header/Header";
+import ScrollToTopBtn from "@/Components/Shared/Buttons/ScrollToTopBtn/ScrollToTopBtn";
 import LayoutLayer from "@/Components/Shared/LayoutLayer/LayoutLayer";
 import "../Styles/globals.scss";
 import RootProviders from "./RootProviders";
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
           <LayoutLayer>
             <Header />
             {children}
+            <ScrollToTopBtn />
           </LayoutLayer>
         </body>
       </html>
