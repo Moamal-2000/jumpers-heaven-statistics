@@ -1,7 +1,6 @@
 "use client";
 
-import useEventListener from "@/Hooks/Helper/useEventListener";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SvgIcon from "../../SvgIcon";
 import s from "./ScrollToTopBtn.module.scss";
 
@@ -9,15 +8,14 @@ const ScrollToTopBtn = () => {
   const [displayButton, setDisplayButton] = useState(false);
   const activeClass = displayButton ? s.active : "";
 
-  useEventListener(
-    window,
-    "scroll",
-    () => {
-      const shouldShowTheButton = window.scrollY > 1600;
-      setDisplayButton(shouldShowTheButton);
-    },
-    []
-  );
+  useEffect(() => {
+    const handleScroll = () => {
+      setDisplayButton(window.scrollY > 1600);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   function handleClick() {
     if (window) window.scrollTo({ top: 0, behavior: "smooth" });
