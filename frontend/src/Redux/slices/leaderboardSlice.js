@@ -4,6 +4,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   leaderboardData: [],
   leaderboardScroll: [],
+  firstChunkLeaderboard: [],
+  allDataDisplayed: [],
   loading: false,
   error: false,
 };
@@ -35,6 +37,7 @@ export const leaderboardSlice = createSlice({
 
       state.leaderboardData = action.payload;
       state.leaderboardScroll = paginationLeaderboardData;
+      state.firstChunkLeaderboard = paginationLeaderboardData;
       state.loading = false;
       state.error = false;
     })

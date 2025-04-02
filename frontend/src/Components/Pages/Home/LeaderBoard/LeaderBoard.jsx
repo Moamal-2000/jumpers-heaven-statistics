@@ -14,7 +14,7 @@ import LeaderBoardTBody from "./LeaderBoardTBody/LeaderBoardTBody";
 import LeaderBoardTHead from "./LeaderBoardTHead/LeaderBoardTHead";
 
 const LeaderBoard = ({ mapsCount }) => {
-  const { leaderboardData, leaderboardScroll } = useSelector(
+  const { leaderboardData, leaderboardScroll, allDataDisplayed } = useSelector(
     (s) => s.leaderboard
   );
   const { tryFetchAgain, isLeaderboardReversed } = useSelector((s) => s.global);
@@ -60,12 +60,7 @@ const LeaderBoard = ({ mapsCount }) => {
     );
   }
 
-  useEffect(() => {
-    dispatch(fetchLeaderboard(paramsObject));
-    setPaginationNumber(1);
-  }, [leaderboardType, fpsType, tryFetchAgain]);
-
-  useEffect(() => {
+  function checkAndLoadMoreData() {
     const isLastPagination = getIsLastPagination(
       leaderboardData,
       paginationNumber
@@ -74,12 +69,31 @@ const LeaderBoard = ({ mapsCount }) => {
     // In this case the handleShowAll() is activated already
     const isSameArrayReference = leaderboardScroll === leaderboardData;
 
-    if (!isLastPagination && !isSameArrayReference) addDataOnScroll();
+    const shouldShowMoreData =
+      (!isLastPagination && !isSameArrayReference) || allDataDisplayed;
+
+    if (shouldShowMoreData) addDataOnScroll();
+  }
+
+  function getLeaderboardData() {
+    dispatch(fetchLeaderboard(paramsObject));
+    setPaginationNumber(1);
+  }
+
+  useEffect(() => {
+    getLeaderboardData();
+  }, [leaderboardType, fpsType, tryFetchAgain]);
+
+  useEffect(() => {
+    checkAndLoadMoreData();
   }, [paginationNumber]);
 
   return (
     <div className={s.leaderboardWrapper}>
-      <LeaderboardHeader setPaginationNumber={setPaginationNumber} />
+      <LeaderboardHeader
+        paginationNumber={paginationNumber}
+        setPaginationNumber={setPaginationNumber}
+      />
 
       <table className={s.leaderBoard}>
         <LeaderBoardTHead />
