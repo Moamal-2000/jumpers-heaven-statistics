@@ -19,8 +19,16 @@ const ScrollToTopBtn = () => {
     []
   );
 
+  function handleClick() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
-    <button type="button" className={`${s.button} ${activeClass}`}>
+    <button
+      type="button"
+      className={`${s.button} ${activeClass}`}
+      onClick={handleClick}
+    >
       <SvgIcon name="right-arrow" />
     </button>
   );
