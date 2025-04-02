@@ -10,7 +10,7 @@ const ScrollToTopBtn = () => {
   const activeClass = displayButton ? s.active : "";
 
   useEventListener(
-    document,
+    window,
     "scroll",
     () => {
       const shouldShowTheButton = window.scrollY > 1600;
@@ -20,7 +20,7 @@ const ScrollToTopBtn = () => {
   );
 
   function handleClick() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (window) window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   return (
