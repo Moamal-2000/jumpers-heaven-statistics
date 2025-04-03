@@ -29,9 +29,8 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount, lastPlayerRef }) => {
 
           if (leaderboardData.length === index + 1)
             return (
-              <Suspense>
+              <Suspense key={playerData.player_id}>
                 <PlayerRow
-                  key={playerData.player_id}
                   playerData={playerData}
                   mapsCount={mapsCount}
                   leaderboardData={leaderboardData}
@@ -42,9 +41,8 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount, lastPlayerRef }) => {
             );
 
           return (
-            <Suspense>
+            <Suspense key={playerData.player_id}>
               <PlayerRow
-                key={playerData.player_id}
                 playerData={playerData}
                 mapsCount={mapsCount}
                 leaderboardData={leaderboardData}
