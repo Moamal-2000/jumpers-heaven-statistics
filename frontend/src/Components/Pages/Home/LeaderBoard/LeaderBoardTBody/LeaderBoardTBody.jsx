@@ -2,6 +2,7 @@
 
 import { navigateToPlayerPage } from "@/Functions/navigate";
 import { useRouter } from "next/navigation";
+import { Suspense } from "react";
 import { useSelector } from "react-redux";
 import LeaderBoardError from "./LeaderBoardError/LeaderBoardError";
 import LeaderBoardLoading from "./LeaderBoardLoading/LeaderBoardLoading";
@@ -28,24 +29,28 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount, lastPlayerRef }) => {
 
           if (leaderboardData.length === index + 1)
             return (
+              <Suspense>
+                <PlayerRow
+                  key={playerData.player_id}
+                  playerData={playerData}
+                  mapsCount={mapsCount}
+                  leaderboardData={leaderboardData}
+                  lastPlayerRef={lastPlayerRef}
+                  handlePlayerClick={handlePlayerClick}
+                />
+              </Suspense>
+            );
+
+          return (
+            <Suspense>
               <PlayerRow
                 key={playerData.player_id}
                 playerData={playerData}
                 mapsCount={mapsCount}
                 leaderboardData={leaderboardData}
-                lastPlayerRef={lastPlayerRef}
                 handlePlayerClick={handlePlayerClick}
               />
-            );
-
-          return (
-            <PlayerRow
-              key={playerData.player_id}
-              playerData={playerData}
-              mapsCount={mapsCount}
-              leaderboardData={leaderboardData}
-              handlePlayerClick={handlePlayerClick}
-            />
+            </Suspense>
           );
         })}
     </tbody>

@@ -1,5 +1,6 @@
 import CountryImage from "@/Components/Shared/CountryImage";
 import { getColoredName, getModifiedRank } from "@/Functions/utils";
+import { useSearchParams } from "next/navigation";
 import TopsVisualization from "../TopsVisualization/TopsVisualization";
 import s from "./PlayerRow.module.scss";
 
@@ -13,6 +14,8 @@ const PlayerRow = ({
   const { player_name, country, rating, score, top_list, rank } = playerData;
   const modifiedRank = getModifiedRank(rank);
   const modifiedPlayerName = getColoredName(player_name);
+  const searchParams = useSearchParams();
+  const isSkilledLeaderboard = searchParams.get("leaderboard") === "skilled";
 
   return (
     <tr
@@ -42,7 +45,9 @@ const PlayerRow = ({
       <td
         className={s.tops}
         data-type="player-stats-tops"
-        data-text="Tops 1-10"
+        data-text={`${
+          isSkilledLeaderboard ? "Points per difficulty" : "Tops 1-10"
+        }`}
       >
         <TopsVisualization
           topsList={top_list}
