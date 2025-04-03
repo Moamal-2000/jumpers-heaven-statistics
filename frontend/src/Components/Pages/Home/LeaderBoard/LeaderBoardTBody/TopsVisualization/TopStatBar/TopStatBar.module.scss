@@ -1,3 +1,5 @@
+@use "@/Styles/mixins" as m;
+
 .statBarWrapper {
   height: 64px;
   width: 38px;
@@ -24,6 +26,12 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity .2s ease;
+}
+
+@include m.small {
+  .statBarWrapper .toolTip {
+    display: none;
+  }
 }
 
 .statBarWrapper:hover .toolTip {

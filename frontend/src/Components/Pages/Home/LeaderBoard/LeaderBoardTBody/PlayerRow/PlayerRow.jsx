@@ -31,7 +31,7 @@ const PlayerRow = ({
         <span className={s.playerCountry}>
           <CountryImage country={country} />
         </span>
-        <span onClick={handlePlayerClick}>{modifiedPlayerName}</span>
+        <span className={s.playerName} onClick={handlePlayerClick}>{modifiedPlayerName}</span>
       </td>
 
       <td className={s.rating} data-text="Rating">

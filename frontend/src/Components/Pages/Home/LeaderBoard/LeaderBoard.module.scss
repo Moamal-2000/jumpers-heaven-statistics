@@ -109,3 +109,19 @@
     translate: -50% 0;
   }
 }
+
+@include m.small {
+  .leaderBoard tr td {
+    font-size: .9rem !important;
+  }
+}
+
+@include m.small {
+  .leaderBoard tr td::before {
+    font-size: .9rem;
+    top: 0;
+    left: 50%;
+    translate: -50% 0;
+    padding-bottom: 0;
+  }
+}

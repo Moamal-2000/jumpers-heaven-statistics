@@ -1,5 +1,12 @@
 @use "@/Styles/mixins" as m;
 
+@include m.small {
+  .playerRow td {
+    min-height: 106px;
+    align-items: flex-end !important;
+  }
+}
+
 .playerRow .rank {
   color: #fff;
 }
@@ -15,6 +22,12 @@
   .playerRow .rank svg {
     width: 34px !important;
     height: 34px !important;
+  }
+}
+
+@include m.small {
+  .playerRow .rank {
+    min-height: 130px;
   }
 }
 
@@ -44,6 +57,13 @@
   cursor: auto;
 }
 
+@include m.small {
+  .playerRow .player .playerName {
+    position: relative;
+    top: -6px;
+  }
+}
+
 .playerRow .player .playerCountry>img {
   width: 100%;
   height: 100%;
@@ -67,7 +87,12 @@
 @include m.medium {
   .playerRow .tops {
     align-items: flex-end;
-
     height: 150px;
+  }
+}
+
+@media (max-width: 540px) {
+  .playerRow .tops {
+    display: none;
   }
 }
