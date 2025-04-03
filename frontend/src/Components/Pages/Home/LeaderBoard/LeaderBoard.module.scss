@@ -102,4 +102,10 @@
     font-size: 1rem;
     letter-spacing: .5px;
   }
+
+  .leaderBoard tr td:last-child::before {
+    top: 0;
+    left: 50%;
+    translate: -50% 0;
+  }
 }
