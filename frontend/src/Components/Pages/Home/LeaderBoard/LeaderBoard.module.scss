@@ -1,3 +1,5 @@
+@use "@/Styles/mixins" as m;
+
 .leaderboardWrapper {
   width: 100%;
   min-height: 661.6px;
@@ -19,6 +21,18 @@
   }
 }
 
+@media (max-width: 1300px) {
+  .leaderboardWrapper {
+    background-color: transparent;
+    padding: 1.5rem 0;
+    border: none;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
 .leaderBoard {
   user-select: none;
   width: inherit;
@@ -28,13 +42,64 @@
   width: inherit;
 }
 
+@media (max-width: 1300px) {
+  .leaderBoard thead {
+    display: none;
+  }
+}
+
 .leaderBoard tr {
   display: grid;
   grid-template-columns: 1fr 2.5fr 1fr 1fr 5.2fr;
   font-weight: 600;
 }
 
+@media (max-width: 1300px) {
+  .leaderBoard tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1d222f;
+    gap: 10px;
+    border-radius: 10px;
+  }
+}
+
 .leaderBoard:has([data-loader]) tbody tr,
 .leaderBoard:has([data-error]) tbody tr {
   grid-template-columns: 1fr 0 0 0 0 0;
+}
+
+@media (max-width: 1300px) {
+
+  .leaderBoard:has([data-loader]) tbody tr,
+  .leaderBoard:has([data-error]) tbody tr {
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 1300px) {
+  .leaderBoard tr td {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .leaderBoard tr td:not(:last-child) {
+    border-bottom: 1px solid #373f53;
+  }
+
+  .leaderBoard tr td::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    text-transform: uppercase;
+    color: #9AA3B2;
+    padding: 24px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: .5px;
+  }
 }

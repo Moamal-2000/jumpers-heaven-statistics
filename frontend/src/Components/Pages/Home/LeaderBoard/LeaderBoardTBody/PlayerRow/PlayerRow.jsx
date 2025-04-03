@@ -20,24 +20,30 @@ const PlayerRow = ({
       ref={lastPlayerRef}
       data-type="player-stats-row"
     >
-      <td className={s.rank} data-type="player-stats-rank">
+      <td className={s.rank} data-type="player-stats-rank" data-text="Rank">
         {modifiedRank}
       </td>
 
-      <td className={s.player} data-type="player-stats-name">
+      <td className={s.player} data-type="player-stats-name" data-text="Player">
         <span className={s.playerCountry}>
           <CountryImage country={country} />
         </span>
         <span onClick={handlePlayerClick}>{modifiedPlayerName}</span>
       </td>
 
-      <td className={s.rating}>{(+rating * 0.1).toFixed(2)}</td>
+      <td className={s.rating} data-text="Rating">
+        {(+rating * 0.1).toFixed(2)}
+      </td>
 
-      <td className={s.score} data-type="player-stats-score">
+      <td className={s.score} data-type="player-stats-score" data-text="Points">
         {score}
       </td>
 
-      <td className={s.tops} data-type="player-stats-tops">
+      <td
+        className={s.tops}
+        data-type="player-stats-tops"
+        data-text="Tops 1-10"
+      >
         <TopsVisualization
           topsList={top_list}
           mapsCount={mapsCount}

@@ -9,6 +9,14 @@
   }
 }
 
+@media (max-width: 1300px) {
+  .tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
 .tbody tr {
   width: inherit;
   transition: background-color .1s ease;
@@ -22,6 +30,11 @@
   background-color: #242b3b;
 }
 
+@media (max-width: 1300px) {
+  .tbody tr[data-type=player-stats-row]:hover {
+    background-color: #1d222f;
+  }
+}
 
 .tbody tr:not(:last-child) {
   border-bottom: solid 1px #2A3040;

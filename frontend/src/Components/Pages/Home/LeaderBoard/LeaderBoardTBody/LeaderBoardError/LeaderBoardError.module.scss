@@ -14,6 +14,15 @@
   translate: -50% -50%;
 }
 
+@media (max-width: 1300px) {
+  .error td {
+    position: relative !important;
+    left: 0;
+    top: 50%;
+    translate: 0 95px;
+  }
+}
+
 .errorIcon {
   width: 120px;
   height: 120px;
