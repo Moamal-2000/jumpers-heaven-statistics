@@ -17,7 +17,8 @@ const LeaderBoardError = () => {
   return (
     <tr className={s.error} data-error>
       <td>
-        <div className={s.errorIcon}></div>
+        <div className={s.errorIcon} />
+
         <b className={s.title}>Rankings Not Loading</b>
         <p className={s.description}>
           We're having trouble fetching the latest player rankings. Check your

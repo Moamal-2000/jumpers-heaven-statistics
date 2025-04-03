@@ -12,15 +12,19 @@
   align-items: center;
   cursor: pointer;
   opacity: 0;
-  visibility: hidden;
   z-index: 1000;
-  overflow: hidden;
-  transition: all .3s cubic-bezier(0.16, 1, .3, 1);
+  pointer-events: none;
+  translate: 0 20px;
+  transition:
+    opacity .3s cubic-bezier(0.16, 1, .3, 1),
+    translate 1s cubic-bezier(0.16, 1, .3, 1),
+    background .3s cubic-bezier(0.16, 1, .3, 1),
+    border-color .3s cubic-bezier(0.16, 1, .3, 1);
 
   &.active {
     opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    translate: 0;
+    pointer-events: all;
   }
 
   &:hover {

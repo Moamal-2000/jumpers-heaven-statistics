@@ -37,7 +37,6 @@
       rgba(239, 68, 68, .1) 0%,
       transparent 70%);
   animation: subtle-pulse 2s infinite;
-  transition: all 0.3s ease;
 }
 
 .errorIcon::before {
@@ -56,7 +55,7 @@
   margin-bottom: 12px;
   max-width: 400px;
   text-align: center;
-  transition: all .3s ease;
+  transition: translate .3s ease, color .3s ease;
 }
 
 .error:hover .title {
@@ -75,7 +74,7 @@
   margin-bottom: 24px;
   opacity: 0;
   translate: 0 20px;
-  transition: all .5s ease;
+  transition: translate .5s ease, opacity .5s ease;
 }
 
 .error:hover .description {
@@ -99,7 +98,10 @@
   gap: 10px;
   position: relative;
   overflow: hidden;
-  transition: all .3s ease;
+  transition:
+    background-color .3s ease,
+    translate .3s ease,
+    box-shadow .3s ease;
 }
 
 .retryBtn:hover {
@@ -119,7 +121,7 @@
       transparent,
       rgba(255, 255, 255, 0.3),
       transparent);
-  transition: all .6s ease;
+  transition: left .6s ease;
 }
 
 .retryBtn:hover::before {
