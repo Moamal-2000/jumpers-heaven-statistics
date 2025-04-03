@@ -1,1 +1,19 @@
-.footer {}
+.footer {
+  margin-top: 40px;
+  padding: 48px 24px;
+  position: relative;
+}
+
+.footer .line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  opacity: 60%;
+  width: 100%;
+
+  background-image: linear-gradient(to right,
+      transparent 0,
+      oklch(79.5% 0.184 86.047) 50%,
+      transparent 100%);
+}
