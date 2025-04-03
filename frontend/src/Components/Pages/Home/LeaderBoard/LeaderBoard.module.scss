@@ -102,7 +102,9 @@
     font-size: 1rem;
     letter-spacing: .5px;
   }
+}
 
+@include m.medium {
   .leaderBoard tr td:last-child::before {
     top: 0;
     left: 50%;
