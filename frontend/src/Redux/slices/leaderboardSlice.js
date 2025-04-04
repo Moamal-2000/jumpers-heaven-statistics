@@ -1,7 +1,6 @@
 import {
-  getCountryName,
   getLeaderboardUrl,
-  getRegionByCountry,
+  getModifiedLeaderboard,
   paginateData,
 } from "@/Functions/utils";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
@@ -38,18 +37,12 @@ export const leaderboardSlice = createSlice({
   },
   extraReducers: ({ addCase }) => {
     addCase(fetchLeaderboard.fulfilled, (state, action) => {
-      const paginationLeaderboardData = paginateData(action.payload, 1);
-      const modifiedLeaderboardData = paginationLeaderboardData.map(
-        (player) => {
-          player.countryName = getCountryName(player.country);
-          player.region = getRegionByCountry(player.country);
-          return player;
-        }
-      );
+      const paginationLeaderboard = paginateData(action.payload, 1);
+      const modifiedLeaderboard = getModifiedLeaderboard(paginationLeaderboard);
 
       state.leaderboardData = action.payload;
-      state.leaderboardScroll = modifiedLeaderboardData;
-      state.firstChunkLeaderboard = modifiedLeaderboardData;
+      state.leaderboardScroll = modifiedLeaderboard;
+      state.firstChunkLeaderboard = modifiedLeaderboard;
       state.loading = false;
       state.error = false;
     })
