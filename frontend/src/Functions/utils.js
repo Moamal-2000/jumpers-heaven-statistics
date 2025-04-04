@@ -11,8 +11,9 @@ import {
 export function getModifiedRank(rank) {
   const isTop1 = rank === 1;
   const isTop3 = rank <= 3;
+  const isBelowTop3 = !(isTop1 || isTop3);
 
-  if (!(isTop1 || isTop3)) return `#${rank}`;
+  if (isBelowTop3) return `#${rank}`;
 
   return isTop1 ? <SvgIcon name="trophy" /> : <MedalIcon rank={rank} />;
 }
@@ -51,12 +52,14 @@ export function getMaxFinishTimesFrom(bestPlayer) {
 
 export function createQueryString(name, value, searchParams, router, pathname) {
   const params = new URLSearchParams(searchParams.toString());
+
   params.set(name?.toLowerCase(), String(value)?.toLowerCase());
   router.push(`${pathname}?${params.toString()}`, { scroll: false });
 }
 
 export function removeQueryString(queryName, searchParams, router, pathname) {
   const params = new URLSearchParams(searchParams.toString());
+
   params.delete(queryName?.toLowerCase());
   router.push(`${pathname}?${params.toString()}`, { scroll: false });
 }
@@ -94,8 +97,6 @@ export function getLeaderboardUrl(paramsObject) {
 
   return leaderboardUrls[leaderboardType];
 }
-
-export const isEmptyObj = (obj) => Object.keys(obj).length === 0;
 
 export function getIsLastPagination(leaderboardData, paginationNumber) {
   const lastLeaderboardPagination = Math.ceil(
