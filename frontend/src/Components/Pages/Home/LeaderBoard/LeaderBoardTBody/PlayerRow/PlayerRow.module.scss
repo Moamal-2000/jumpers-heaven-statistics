@@ -44,16 +44,3 @@
 .playerRow .score {
   font-weight: normal;
 }
-
-@include m.medium {
-  .playerRow .tops {
-    align-items: flex-end;
-    height: 150px;
-  }
-}
-
-@media (max-width: 540px) {
-  .playerRow .tops {
-    display: none;
-  }
-}

@@ -1,0 +1,14 @@
+@use "@/Styles/mixins" as m;
+
+@include m.medium {
+  .tops {
+    align-items: flex-end;
+    height: 150px;
+  }
+}
+
+@media (max-width: 540px) {
+  .tops {
+    display: none;
+  }
+}

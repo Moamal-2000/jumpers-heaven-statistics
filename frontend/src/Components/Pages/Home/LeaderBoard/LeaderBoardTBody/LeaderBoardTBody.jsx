@@ -7,7 +7,7 @@ import LeaderBoardLoading from "./LeaderBoardLoading/LeaderBoardLoading";
 import s from "./LeaderBoardTBody.module.scss";
 import PlayerRow from "./PlayerRow/PlayerRow";
 
-const LeaderBoardTBody = ({ leaderboardData, mapsCount, lastPlayerRef }) => {
+const LeaderBoardTBody = ({ leaderboardData, lastPlayerRef }) => {
   const { isLeaderboardReversed } = useSelector((s) => s.global);
   const { loading, error } = useSelector((s) => s.leaderboard);
   const reverseClass = isLeaderboardReversed ? s.reverse : "";
@@ -25,7 +25,6 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount, lastPlayerRef }) => {
               <Suspense key={playerData.player_id}>
                 <PlayerRow
                   playerData={playerData}
-                  mapsCount={mapsCount}
                   leaderboardData={leaderboardData}
                   lastPlayerRef={lastPlayerRef}
                 />
@@ -36,7 +35,6 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount, lastPlayerRef }) => {
             <Suspense key={playerData.player_id}>
               <PlayerRow
                 playerData={playerData}
-                mapsCount={mapsCount}
                 leaderboardData={leaderboardData}
               />
             </Suspense>

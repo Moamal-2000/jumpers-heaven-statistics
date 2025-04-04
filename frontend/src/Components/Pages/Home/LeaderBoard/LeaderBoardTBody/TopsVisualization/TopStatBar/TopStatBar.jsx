@@ -4,7 +4,6 @@ import s from "./TopStatBar.module.scss";
 const TopStatBar = ({
   top,
   times,
-  mapsCount,
   maxFinishTimes,
   isSkilledLeaderboard,
 }) => {
@@ -17,7 +16,6 @@ const TopStatBar = ({
     top,
     times,
     maxFinishTimes,
-    mapsCount,
   });
 
   return (

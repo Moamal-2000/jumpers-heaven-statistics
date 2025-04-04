@@ -1,20 +1,12 @@
 import { getModifiedRank } from "@/Functions/utils";
-import { useSearchParams } from "next/navigation";
-import TopsVisualization from "../TopsVisualization/TopsVisualization";
 import PlayerNameCell from "./PlayerNameCell/PlayerNameCell";
 import s from "./PlayerRow.module.scss";
+import TopsCell from "./TopsCell/TopsCell";
 
-const PlayerRow = ({
-  playerData,
-  mapsCount,
-  leaderboardData,
-  lastPlayerRef,
-}) => {
+const PlayerRow = ({ playerData, leaderboardData, lastPlayerRef }) => {
   const { player_name, country, rating, score, top_list, rank, countryName } =
     playerData;
   const modifiedRank = getModifiedRank(rank);
-  const searchParams = useSearchParams();
-  const isSkilledLeaderboard = searchParams.get("leaderboard") === "skilled";
 
   return (
     <tr
@@ -41,19 +33,7 @@ const PlayerRow = ({
         {score}
       </td>
 
-      <td
-        className={s.tops}
-        data-type="player-stats-tops"
-        data-text={`${
-          isSkilledLeaderboard ? "Points per difficulty" : "Tops 1-10"
-        }`}
-      >
-        <TopsVisualization
-          topsList={top_list}
-          mapsCount={mapsCount}
-          leaderboardData={leaderboardData}
-        />
-      </td>
+      <TopsCell topList={top_list} leaderboardData={leaderboardData} />
     </tr>
   );
 };

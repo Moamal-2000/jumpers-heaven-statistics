@@ -66,7 +66,6 @@ export function getStatsBarStyles({
   top,
   times,
   maxFinishTimes,
-  mapsCount,
 }) {
   const backgroundColor = isSkilledLeaderboard
     ? TOP_STATS_COLOR[9 - top]

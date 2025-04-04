@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import TopStatBar from "./TopStatBar/TopStatBar";
 import s from "./TopsVisualization.module.scss";
 
-const TopsVisualization = ({ topsList, mapsCount, leaderboardData }) => {
+const TopsVisualization = ({ topsList, leaderboardData }) => {
   const maxFinishTimes = getMaxFinishTimesFrom(leaderboardData[0]);
   const topsEntries = Object.entries(topsList);
   const searchParams = useSearchParams();
@@ -21,7 +21,6 @@ const TopsVisualization = ({ topsList, mapsCount, leaderboardData }) => {
           <TopStatBar
             top={topStat[0]}
             times={topStat[1]}
-            mapsCount={mapsCount}
             maxFinishTimes={maxFinishTimes}
             isSkilledLeaderboard={isSkilledLeaderboard}
             key={`stat-bar-${index}`}

@@ -14,7 +14,7 @@ import LeaderboardHeader from "./LeaderboardHeader/LeaderboardHeader";
 import LeaderBoardTBody from "./LeaderBoardTBody/LeaderBoardTBody";
 import LeaderBoardTHead from "./LeaderBoardTHead/LeaderBoardTHead";
 
-const LeaderBoard = ({ mapsCount }) => {
+const LeaderBoard = () => {
   const { leaderboardData, leaderboardScroll, allDataDisplayed } = useSelector(
     (s) => s.leaderboard
   );
@@ -84,7 +84,6 @@ const LeaderBoard = ({ mapsCount }) => {
         <LeaderBoardTHead />
         <LeaderBoardTBody
           leaderboardData={leaderboardScroll}
-          mapsCount={mapsCount}
           lastPlayerRef={lastPlayerRef}
         />
       </table>
