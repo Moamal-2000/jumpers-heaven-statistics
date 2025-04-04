@@ -11,7 +11,8 @@ const PlayerRow = ({
   lastPlayerRef,
   handlePlayerClick,
 }) => {
-  const { player_name, country, rating, score, top_list, rank } = playerData;
+  const { player_name, country, rating, score, top_list, rank, countryName } =
+    playerData;
   const modifiedRank = getModifiedRank(rank);
   const modifiedPlayerName = getColoredName(player_name);
   const searchParams = useSearchParams();
@@ -29,9 +30,11 @@ const PlayerRow = ({
 
       <td className={s.player} data-type="player-stats-name" data-text="Player">
         <span className={s.playerCountry}>
-          <CountryImage country={country} />
+          <CountryImage country={country} countryName={countryName} />
         </span>
-        <span className={s.playerName} onClick={handlePlayerClick}>{modifiedPlayerName}</span>
+        <span className={s.playerName} onClick={handlePlayerClick}>
+          {modifiedPlayerName}
+        </span>
       </td>
 
       <td className={s.rating} data-text="Rating">

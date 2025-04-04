@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const CountryImage = ({ country, size = 32 }) => {
+const CountryImage = ({ country, countryName, size = 32 }) => {
   const [src, setSrc] = useState(`/countryFlags/${country.toLowerCase()}.svg`);
-  const [alt, setAlt] = useState(`country flag ${country}`);
-  const [title, setTitle] = useState(country);
+  const [alt, setAlt] = useState(`country flag ${countryName}`);
+  const [title, setTitle] = useState(countryName);
 
   function handleError() {
     setSrc("/country-placeholder.svg");
