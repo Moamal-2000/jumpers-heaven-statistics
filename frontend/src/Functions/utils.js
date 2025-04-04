@@ -116,6 +116,6 @@ export function getRegionByCountry(countryCode) {
   return "Unknown Region";
 }
 
-function getCountryName(countryCode) {
+export function getCountryName(countryCode) {
   return COUNTRIES_BY_CODE[countryCode.toUpperCase()] || "Unknown Country";
 }
