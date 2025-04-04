@@ -1,7 +1,19 @@
 import s from "./MapCard.module.scss";
 
 const MapCard = ({
-  mapData: { name, description, bestTime, difficulty, img },
+  mapData: {
+    name,
+    types,
+    classification,
+    img,
+    rate,
+    description,
+    info,
+    compilationRate,
+    author,
+    isOnline,
+    release,
+  },
 }) => {
   return <div className={s.mapCard}></div>;
 };
