@@ -2,6 +2,7 @@ import Link from "next/link";
 import SvgIcon from "../Shared/SvgIcon";
 import s from "./Footer.module.scss";
 import FooterNav from "./FooterNav/FooterNav";
+import FooterMenusButtons from "./FooterMenusButtons/FooterMenusButtons";
 
 const Footer = () => {
   return (
@@ -22,11 +23,7 @@ const Footer = () => {
               multiple titles
             </p>
 
-            <div className={s.menus}>
-              <button type="button" className={s.serversButton}>
-                Servers Online
-              </button>
-            </div>
+            <FooterMenusButtons />
           </div>
 
           <div className={s.rightSide}>
