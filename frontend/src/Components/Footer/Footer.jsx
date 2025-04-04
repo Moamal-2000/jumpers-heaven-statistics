@@ -20,6 +20,12 @@ const Footer = () => {
               Defrag, Surf, Speedrun, and other movement-based game modes across
               multiple titles
             </p>
+
+            <div className={s.menus}>
+              <button type="button" className={s.serversButton}>
+                Servers Online
+              </button>
+            </div>
           </div>
 
           <div className={s.rightSide}>
