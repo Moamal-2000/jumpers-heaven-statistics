@@ -67,20 +67,28 @@ export const FILTERS_COMPONENTS_DATA = [
         id: 1,
       },
       {
-        text: "NA",
+        text: "North America",
         id: 2,
       },
       {
-        text: "EU",
+        text: "Europe",
         id: 3,
       },
       {
-        text: "ASIA",
+        text: "Asia",
         id: 4,
       },
       {
-        text: "OCE",
+        text: "Oceania",
         id: 5,
+      },
+      {
+        text: "South America",
+        id: 6,
+      },
+      {
+        text: "Africa",
+        id: 7,
       },
     ],
     id: 3,
