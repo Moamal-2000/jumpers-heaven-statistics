@@ -1,8 +1,8 @@
 "use client";
 
 import CountryImage from "@/Components/Shared/CountryImage";
+import { getColoredName } from "@/Functions/components";
 import { navigateToPlayerPage } from "@/Functions/navigate";
-import { getColoredName } from "@/Functions/utils";
 import { useRouter } from "next/navigation";
 import s from "./PlayerNameCell.module.scss";
 

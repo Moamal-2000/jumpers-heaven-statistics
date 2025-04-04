@@ -1,4 +1,4 @@
-import { getModifiedRank } from "@/Functions/utils";
+import { getModifiedRank } from "@/Functions/components";
 import PlayerNameCell from "./PlayerNameCell/PlayerNameCell";
 import s from "./PlayerRow.module.scss";
 import TopsCell from "./TopsCell/TopsCell";

@@ -1,5 +1,5 @@
 import { jhApis } from "@/Api/jumpersHeaven";
-import { getColoredName } from "@/Functions/utils";
+import { getColoredName } from "@/Functions/components";
 
 const PlayerId = async ({ params }) => {
   const { playerId } = await params;
