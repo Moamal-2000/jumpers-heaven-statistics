@@ -29,7 +29,19 @@ const PlayerRow = ({
       </td>
 
       <td className={s.player} data-type="player-stats-name" data-text="Player">
-        <span className={s.playerCountry}>
+        <span
+          className={s.playerCountry}
+          style={{
+            borderColor:
+              rank === 1
+                ? "#ffc107"
+                : rank === 2
+                ? "#c0c0c0"
+                : rank === 3
+                ? "#cd7f32"
+                : "",
+          }}
+        >
           <CountryImage country={country} countryName={countryName} />
         </span>
         <span className={s.playerName} onClick={handlePlayerClick}>
