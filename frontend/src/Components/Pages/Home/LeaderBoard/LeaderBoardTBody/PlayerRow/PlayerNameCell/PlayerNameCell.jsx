@@ -8,6 +8,7 @@ import s from "./PlayerNameCell.module.scss";
 
 const PlayerNameCell = ({ player, rank, country, countryName }) => {
   const modifiedPlayerName = getColoredName(player);
+  const rankClass = s["rank" + rank];
   const router = useRouter();
 
   function handlePlayerClick() {
@@ -15,20 +16,12 @@ const PlayerNameCell = ({ player, rank, country, countryName }) => {
   }
 
   return (
-    <td className={s.player} data-type="player-stats-name" data-text="Player">
-      <span
-        className={s.playerCountry}
-        style={{
-          borderColor:
-            rank === 1
-              ? "#ffc107"
-              : rank === 2
-              ? "#c0c0c0"
-              : rank === 3
-              ? "#cd7f32"
-              : "",
-        }}
-      >
+    <td
+      className={`${s.player} ${rankClass}`}
+      data-type="player-stats-name"
+      data-text="Player"
+    >
+      <span className={s.playerCountry}>
         <CountryImage country={country} countryName={countryName} />
       </span>
       <span className={s.playerName} onClick={handlePlayerClick}>

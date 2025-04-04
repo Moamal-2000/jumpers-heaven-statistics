@@ -33,6 +33,21 @@
   }
 }
 
+.player.rank1 .playerCountry {
+  border-color: #ffc107;
+  box-shadow: 0 0 6px #ffc107;
+}
+
+.player.rank2 .playerCountry {
+  border-color: #c0c0c0;
+  box-shadow: 0 0 6px #c0c0c0;
+}
+
+.player.rank3 .playerCountry {
+  border-color: #cd7f32;
+  box-shadow: 0 0 6px #cd7f32;
+}
+
 .player .playerCountry>img {
   width: 100%;
   height: 100%;
