@@ -1,7 +1,7 @@
 import { jhApis } from "@/Api/jumpersHeaven";
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
-import { COD_2_COLORS, TOP_STATS_COLOR } from "@/Data/staticData";
+import { COD_2_COLORS, REGIONS, TOP_STATS_COLOR } from "@/Data/staticData";
 
 export function getModifiedRank(rank) {
   const isTop1 = rank === 1;
@@ -99,4 +99,14 @@ export function getIsLastPagination(leaderboardData, paginationNumber) {
   );
 
   return paginationNumber > lastLeaderboardPagination;
+}
+
+export function getRegionByCountry(countryCode) {
+  const upperCaseCode = countryCode.toUpperCase();
+
+  for (const [region, countries] of Object.entries(REGIONS)) {
+    if (countries.includes(upperCaseCode)) return region;
+  }
+
+  return "Unknown Region";
 }
