@@ -56,15 +56,3 @@
     font-size: 1rem;
   }
 }
-
-.introduction>p::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  translate: -50% 0;
-  bottom: -12px;
-  width: 120px;
-  height: 4px;
-  background: linear-gradient(135deg, #FFB800, #FF9000);
-  border-radius: 2px;
-}
