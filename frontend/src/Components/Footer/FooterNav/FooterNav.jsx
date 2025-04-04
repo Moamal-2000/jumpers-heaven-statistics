@@ -1,29 +1,29 @@
+"use client";
+
 import SvgIcon from "@/Components/Shared/SvgIcon";
+import { NAV_LINKS_DATA } from "@/Data/staticData";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import s from "./FooterNav.module.scss";
 
 const FooterNav = () => {
+  const currentPage = usePathname();
+
   return (
     <nav className={s.navigation}>
       <h3>Navigation</h3>
 
       <div className={s.links}>
-        <Link href="/">
-          <SvgIcon name="home" />
-          <span>Home</span>
-        </Link>
-        <Link href="/maps">
-          <SvgIcon name="home" />
-          <span>Maps</span>
-        </Link>
-        <Link href="/players">
-          <SvgIcon name="home" />
-          <span>Players</span>
-        </Link>
-        <Link href="/about">
-          <SvgIcon name="home" />
-          <span>About</span>
-        </Link>
+        {NAV_LINKS_DATA.map(({ name, href, iconName, id }) => (
+          <Link
+            key={id}
+            href={href}
+            className={currentPage === href ? s.active : ""}
+          >
+            <SvgIcon name={iconName} />
+            <span>{name}</span>
+          </Link>
+        ))}
       </div>
     </nav>
   );
