@@ -47,12 +47,12 @@ export const MAPS = [
     rate: 4.8,
     description:
       "An icy mountain challenge with slippery surfaces and crystal formations requiring precise movement and timing.",
-    info: {
-      bestTime: "1:24.852",
-      completions: "1,248",
-      checkpoints: 6,
-      avgAttempts: 24,
-    },
+    info: [
+      { text: "Best Time", result: "1:24.852", id: 1 },
+      { text: "Completions", result: "1,248", id: 2 },
+      { text: "Checkpoints", result: 6, id: 3 },
+      { text: "Avg Attempts", result: 24, id: 4 },
+    ],
     compilationRate: "27%",
     author: "JumpMaster",
     isOnline: true,
@@ -67,12 +67,12 @@ export const MAPS = [
     rate: 4.9,
     description:
       "Navigate through a cyberpunk cityscape with neon lights and advanced momentum mechanics. Perfect for skilled players.",
-    info: {
-      bestTime: "2:32.419",
-      completions: "3,574",
-      checkpoints: 12,
-      avgAttempts: 15,
-    },
+    info: [
+      { text: "Best Time", result: "2:32.419", id: 1 },
+      { text: "Completions", result: "3,574", id: 2 },
+      { text: "Checkpoints", result: 12, id: 3 },
+      { text: "Avg Attempts", result: 15, id: 4 },
+    ],
     compilationRate: "58%",
     author: "NeonXtreme",
     isOnline: false,
@@ -87,12 +87,12 @@ export const MAPS = [
     rate: 4.7,
     description:
       "A beginner-friendly surf map with smooth ramps and gentle curves. Perfect for learning surf mechanics and building speed control.",
-    info: {
-      bestTime: "0:58.762",
-      completions: "8,962",
-      checkpoints: 5,
-      avgAttempts: null,
-    },
+    info: [
+      { text: "Best Time", result: "0:58.762", id: 1 },
+      { text: "Completions", result: "8,962", id: 2 },
+      { text: "Checkpoints", result: 5, id: 3 },
+      { text: "Avg Attempts", result: null, id: 4 },
+    ],
     compilationRate: null,
     author: null,
     isOnline: null,
