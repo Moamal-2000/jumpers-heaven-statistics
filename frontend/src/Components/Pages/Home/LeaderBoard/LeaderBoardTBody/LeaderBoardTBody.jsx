@@ -1,7 +1,5 @@
 "use client";
 
-import { navigateToPlayerPage } from "@/Functions/navigate";
-import { useRouter } from "next/navigation";
 import { Suspense } from "react";
 import { useSelector } from "react-redux";
 import LeaderBoardError from "./LeaderBoardError/LeaderBoardError";
@@ -12,7 +10,6 @@ import PlayerRow from "./PlayerRow/PlayerRow";
 const LeaderBoardTBody = ({ leaderboardData, mapsCount, lastPlayerRef }) => {
   const { isLeaderboardReversed } = useSelector((s) => s.global);
   const { loading, error } = useSelector((s) => s.leaderboard);
-  const router = useRouter();
   const reverseClass = isLeaderboardReversed ? s.reverse : "";
 
   return (
@@ -23,10 +20,6 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount, lastPlayerRef }) => {
       {!loading &&
         !error &&
         leaderboardData?.map((playerData, index) => {
-          function handlePlayerClick() {
-            navigateToPlayerPage(router, playerData.player_id);
-          }
-
           if (leaderboardData.length === index + 1)
             return (
               <Suspense key={playerData.player_id}>
@@ -35,7 +28,6 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount, lastPlayerRef }) => {
                   mapsCount={mapsCount}
                   leaderboardData={leaderboardData}
                   lastPlayerRef={lastPlayerRef}
-                  handlePlayerClick={handlePlayerClick}
                 />
               </Suspense>
             );
@@ -46,7 +38,6 @@ const LeaderBoardTBody = ({ leaderboardData, mapsCount, lastPlayerRef }) => {
                 playerData={playerData}
                 mapsCount={mapsCount}
                 leaderboardData={leaderboardData}
-                handlePlayerClick={handlePlayerClick}
               />
             </Suspense>
           );
