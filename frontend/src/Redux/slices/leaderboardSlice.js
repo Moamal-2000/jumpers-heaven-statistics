@@ -1,8 +1,4 @@
-import {
-  getLeaderboardUrl,
-  getModifiedLeaderboard,
-  paginateData,
-} from "@/Functions/utils";
+import { getLeaderboardUrl, paginateData } from "@/Functions/utils";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -38,11 +34,10 @@ export const leaderboardSlice = createSlice({
   extraReducers: ({ addCase }) => {
     addCase(fetchLeaderboard.fulfilled, (state, action) => {
       const paginationLeaderboard = paginateData(action.payload, 1);
-      const modifiedLeaderboard = getModifiedLeaderboard(paginationLeaderboard);
 
       state.leaderboardData = action.payload;
-      state.leaderboardScroll = modifiedLeaderboard;
-      state.firstChunkLeaderboard = modifiedLeaderboard;
+      state.leaderboardScroll = paginationLeaderboard;
+      state.firstChunkLeaderboard = paginationLeaderboard;
       state.loading = false;
       state.error = false;
     })

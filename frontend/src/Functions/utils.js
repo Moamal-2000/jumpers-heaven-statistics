@@ -119,11 +119,3 @@ export function getRegionByCountry(countryCode) {
 export function getCountryName(countryCode) {
   return COUNTRIES_BY_CODE[countryCode.toUpperCase()] || "Unknown Country";
 }
-
-export function getModifiedLeaderboard(data) {
-  return data.map((player) => {
-    player.countryName = getCountryName(player.country);
-    player.region = getRegionByCountry(player.country);
-    return player;
-  });
-}
