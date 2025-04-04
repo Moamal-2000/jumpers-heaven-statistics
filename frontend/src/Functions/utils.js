@@ -1,7 +1,12 @@
 import { jhApis } from "@/Api/jumpersHeaven";
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
-import { COD_2_COLORS, REGIONS, TOP_STATS_COLOR } from "@/Data/staticData";
+import {
+  COD_2_COLORS,
+  COUNTRIES_BY_CODE,
+  REGIONS,
+  TOP_STATS_COLOR,
+} from "@/Data/staticData";
 
 export function getModifiedRank(rank) {
   const isTop1 = rank === 1;
@@ -109,4 +114,8 @@ export function getRegionByCountry(countryCode) {
   }
 
   return "Unknown Region";
+}
+
+function getCountryName(countryCode) {
+  return COUNTRIES_BY_CODE[countryCode.toUpperCase()] || "Unknown Country";
 }
