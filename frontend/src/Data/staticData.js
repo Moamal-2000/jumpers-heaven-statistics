@@ -316,7 +316,6 @@ export const REGIONS = {
     "TV",
     "VU",
   ],
-  Antarctica: ["AQ"],
 };
 
 export const COUNTRIES_BY_CODE = {

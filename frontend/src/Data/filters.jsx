@@ -6,22 +6,10 @@ export const FILTERS_COMPONENTS_DATA = [
     queryName: "leaderboard",
     defaultUrlQuery: "speedrun",
     filtersData: [
-      {
-        text: "Speedrun",
-        id: 1,
-      },
-      {
-        text: "Skilled",
-        id: 2,
-      },
-      {
-        text: "Defrag",
-        id: 3,
-      },
-      {
-        text: "Surf",
-        id: 4,
-      },
+      { text: "Speedrun", id: 1 },
+      { text: "Skilled", id: 2 },
+      { text: "Defrag", id: 3 },
+      { text: "Surf", id: 4 },
     ],
     id: 1,
   },
@@ -30,30 +18,12 @@ export const FILTERS_COMPONENTS_DATA = [
     queryName: "fps",
     defaultUrlQuery: "125",
     filtersData: [
-      {
-        text: "43",
-        id: 1,
-      },
-      {
-        text: "76",
-        id: 2,
-      },
-      {
-        text: "125",
-        id: 3,
-      },
-      {
-        text: "250",
-        id: 4,
-      },
-      {
-        text: "333",
-        id: 5,
-      },
-      {
-        text: "Mix",
-        id: 6,
-      },
+      { text: "43", id: 1 },
+      { text: "76", id: 2 },
+      { text: "125", id: 3 },
+      { text: "250", id: 4 },
+      { text: "333", id: 5 },
+      { text: "Mix", id: 6 },
     ],
     id: 2,
   },
@@ -62,34 +32,13 @@ export const FILTERS_COMPONENTS_DATA = [
     queryName: "Region",
     defaultUrlQuery: "global",
     filtersData: [
-      {
-        text: "Global",
-        id: 1,
-      },
-      {
-        text: "North America",
-        id: 2,
-      },
-      {
-        text: "Europe",
-        id: 3,
-      },
-      {
-        text: "Asia",
-        id: 4,
-      },
-      {
-        text: "Oceania",
-        id: 5,
-      },
-      {
-        text: "South America",
-        id: 6,
-      },
-      {
-        text: "Africa",
-        id: 7,
-      },
+      { text: "Global", id: 1 },
+      { text: "North America", id: 2 },
+      { text: "Europe", id: 3 },
+      { text: "Asia", id: 4 },
+      { text: "Oceania", id: 5 },
+      { text: "South America", id: 6 },
+      { text: "Africa", id: 7 },
     ],
     id: 3,
   },
@@ -98,22 +47,10 @@ export const FILTERS_COMPONENTS_DATA = [
     queryName: "last-seen",
     defaultUrlQuery: "All time",
     filtersData: [
-      {
-        text: "All time",
-        id: 1,
-      },
-      {
-        text: "This Month",
-        id: 2,
-      },
-      {
-        text: "This Week",
-        id: 3,
-      },
-      {
-        text: "Today",
-        id: 4,
-      },
+      { text: "All time", id: 1 },
+      { text: "This Month", id: 2 },
+      { text: "This Week", id: 3 },
+      { text: "Today", id: 4 },
     ],
     id: 4,
   },
