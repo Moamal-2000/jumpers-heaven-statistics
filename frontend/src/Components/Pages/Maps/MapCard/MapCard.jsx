@@ -66,15 +66,7 @@ const MapCard = ({
           <div className={s.authorAndRelease}>
             <div className={s.authorWrapper}>
               <span className={s.ShortName}>JM</span>
-
-              <div className={s.authorInfo}>
-                <span className={s.name}>{author}</span>
-
-                <div className={s.statusWrapper}>
-                  <div className={s.onlineStatusDot}></div>
-                  <span>{isOnline ? "On" : "Off"}line</span>
-                </div>
-              </div>
+              <span className={s.authorName}>{author}</span>
             </div>
 
             <div className={s.releaseBox}>
