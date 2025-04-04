@@ -1,0 +1,42 @@
+.navigation {
+  min-width: 240px;
+  margin-right: 100px;
+}
+
+.navigation>h3 {
+  color: #FBBF24;
+  font-weight: 500;
+  font-size: 1.125rem;
+  margin-bottom: 16px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(234, 179, 8, 0.2);
+}
+
+.navigation .links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navigation .links>a {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #d1d5dc;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    color: #FBBF24;
+    background: linear-gradient(90deg,
+        rgba(252, 211, 77, 0.1) 0%,
+        rgba(252, 211, 77, 0) 100%);
+  }
+}
+
+.navigation .links>a>svg {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 8px;
+}
