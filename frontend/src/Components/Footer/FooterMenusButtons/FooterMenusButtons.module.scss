@@ -1,0 +1,39 @@
+.menus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.menus>* {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px 24px;
+  background-color: #1F2937;
+  color: #d1d5dc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background-color: #374151;
+  }
+}
+
+.menus .serversButton {
+  position: relative;
+  padding-left: calc(24px + 18px);
+}
+
+.menus .serversButton::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  translate: 0 -50%;
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #34D399;
+}

@@ -1,9 +1,13 @@
-import s from './FooterMenusButtons.module.scss'
+import s from "./FooterMenusButtons.module.scss";
 
 const FooterMenusButtons = () => {
   return (
-    <div>FooterMenusButtons</div>
-  )
-}
+    <div className={s.menus}>
+      <button type="button" className={s.serversButton}>
+        Servers Online
+      </button>
+    </div>
+  );
+};
 
-export default FooterMenusButtons
+export default FooterMenusButtons;
