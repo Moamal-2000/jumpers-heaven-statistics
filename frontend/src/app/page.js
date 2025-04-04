@@ -16,7 +16,7 @@ export default async function Home() {
         <Introduction />
         <Suspense>
           <FiltersSection />
-          {/* <LeaderBoard mapsCount={mapsCount?.count} /> */}
+          <LeaderBoard mapsCount={mapsCount?.count} />
         </Suspense>
       </main>
     </div>

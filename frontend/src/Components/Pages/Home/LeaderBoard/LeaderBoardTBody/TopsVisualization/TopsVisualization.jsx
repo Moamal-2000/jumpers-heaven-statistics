@@ -2,13 +2,10 @@
 
 import { getMaxFinishTimesFrom } from "@/Functions/utils";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
-import ExpandTopStatBtn from "./ExpandTopStatBtn/ExpandTopStatBtn";
 import TopStatBar from "./TopStatBar/TopStatBar";
 import s from "./TopsVisualization.module.scss";
 
 const TopsVisualization = ({ topsList, mapsCount, leaderboardData }) => {
-  const [showMoreStats, setShowMoreStats] = useState(false);
   const maxFinishTimes = getMaxFinishTimesFrom(leaderboardData[0]);
   const topsEntries = Object.entries(topsList);
   const searchParams = useSearchParams();
@@ -20,8 +17,6 @@ const TopsVisualization = ({ topsList, mapsCount, leaderboardData }) => {
   return (
     <div className={s.tops}>
       {modifiedTopsEntries.map((topStat, index) => {
-        if (!showMoreStats && index >= 3) return;
-
         return (
           <TopStatBar
             top={topStat[0]}
@@ -33,11 +28,6 @@ const TopsVisualization = ({ topsList, mapsCount, leaderboardData }) => {
           />
         );
       })}
-
-      <ExpandTopStatBtn
-        showMoreStats={showMoreStats}
-        setShowMoreStats={setShowMoreStats}
-      />
     </div>
   );
 };
