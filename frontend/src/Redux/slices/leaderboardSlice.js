@@ -1,3 +1,4 @@
+import { getLastSeenLeaderboard } from "@/Functions/filters";
 import { getLeaderboardUrl, paginateData } from "@/Functions/utils";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
@@ -14,11 +15,16 @@ export const fetchLeaderboard = createAsyncThunk(
   "leaderboardSlice/fetchLeaderboard",
   async (paramsObject) => {
     const leaderboardUrl = getLeaderboardUrl(paramsObject);
+    const lastSeenFilter = paramsObject?.["last-seen"];
 
     const response = await fetch(leaderboardUrl);
     const leaderboardData = await response.json();
 
     if (!response.ok) throw new Error("Error while fetching leaderboard data");
+
+    if (!!lastSeenFilter)
+      return getLastSeenLeaderboard(leaderboardData, lastSeenFilter);
+
     return leaderboardData;
   }
 );
