@@ -15,23 +15,28 @@ const initialState = {
 export const fetchLeaderboard = createAsyncThunk(
   "leaderboardSlice/fetchLeaderboard",
   async (paramsObject) => {
-    const leaderboardUrl = getLeaderboardUrl(paramsObject);
-    const lastSeenFilter = paramsObject?.["last-seen"];
-    const response = await fetch(leaderboardUrl, {
-      headers: { Accept: "application/msgpack" },
-    });
+    try {
+      const leaderboardUrl = getLeaderboardUrl(paramsObject);
+      const lastSeenFilter = paramsObject?.["last-seen"];
+      const response = await fetch(leaderboardUrl, {
+        headers: { Accept: "application/msgpack" },
+      });
 
-    const bufferResponse = await response.arrayBuffer();
-    const uint8Array = new Uint8Array(bufferResponse);
-    const decompressed = inflate(uint8Array);
-    const leaderboardData = decode(decompressed);
+      const bufferResponse = await response.arrayBuffer();
+      const uint8Array = new Uint8Array(bufferResponse);
+      const decompressed = inflate(uint8Array);
+      const leaderboardData = decode(decompressed);
 
-    if (!response.ok) throw new Error("Error while fetching leaderboard data");
+      if (!response.ok)
+        throw new Error("Error while fetching leaderboard data");
 
-    if (!!lastSeenFilter)
-      return getLastSeenLeaderboard(leaderboardData, lastSeenFilter);
+      if (!!lastSeenFilter)
+        return getLastSeenLeaderboard(leaderboardData, lastSeenFilter);
 
-    return leaderboardData;
+      return leaderboardData;
+    } catch (error) {
+      console.error(error);
+    }
   }
 );
 
