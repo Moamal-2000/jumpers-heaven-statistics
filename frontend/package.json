@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
+    "msgpackr": "^1.11.2",
     "next": "15.2.4",
     "npm-check-updates": "^17.1.16",
     "react": "^19.1.0",
