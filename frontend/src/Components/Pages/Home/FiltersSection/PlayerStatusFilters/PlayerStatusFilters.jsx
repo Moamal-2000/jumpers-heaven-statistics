@@ -25,22 +25,4 @@ const PLAYERS_STATUS_FILTERS_DATA = [
     queryName: "detailed-stats",
     id: 1,
   },
-  {
-    name: "pro-players-checkbox",
-    labelText: "Include Pro Players",
-    queryName: "pro-players",
-    id: 2,
-  },
-  {
-    name: "player-progress-checkbox",
-    labelText: "Show Player Progress",
-    queryName: "player-progress",
-    id: 3,
-  },
-  {
-    name: "retired-players-checkbox",
-    labelText: "Show Retired Players",
-    queryName: "retired-players",
-    id: 4,
-  },
 ];

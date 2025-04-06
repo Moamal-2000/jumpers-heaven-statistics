@@ -43,7 +43,7 @@ export const FILTERS_COMPONENTS_DATA = [
     id: 3,
   },
   {
-    title: "Last seen",
+    title: "Last Seen",
     queryName: "last-seen",
     defaultUrlQuery: "All time",
     filtersData: [
