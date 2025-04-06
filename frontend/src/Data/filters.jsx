@@ -23,7 +23,6 @@ export const FILTERS_COMPONENTS_DATA = [
       { text: "125", id: 3 },
       { text: "250", id: 4 },
       { text: "333", id: 5 },
-      { text: "Mix", id: 6 },
     ],
     id: 2,
   },
