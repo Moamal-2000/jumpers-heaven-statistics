@@ -1,3 +1,4 @@
+import { getLastSeenLeaderboard } from "@/Functions/filters";
 import { getLeaderboardUrl, paginateData } from "@/Functions/utils";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { decode } from "msgpackr";
