@@ -2,6 +2,7 @@
 
 import { PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
 import { updateLeaderboardState } from "@/Redux/slices/leaderboardSlice";
+import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./LeaderboardHeader.module.scss";
@@ -15,6 +16,11 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
     allDataDisplayed,
   } = useSelector((s) => s.leaderboard);
   const dispatch = useDispatch();
+  const searchParams = useSearchParams();
+  const isLastSeenLeader = !!searchParams.get("last-seen");
+  const leaderboardTitle = isLastSeenLeader
+    ? "Last Seen Players"
+    : "Top Players";
 
   function handleClick() {
     if (allDataDisplayed) {
@@ -77,7 +83,7 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
 
   return (
     <header className={s.header}>
-      <h3>Top Players</h3>
+      <h3>{leaderboardTitle}</h3>
       <button type="button" className={s.showAllBtn} onClick={handleClick}>
         {allDataDisplayed ? "Show Less" : "Show All"}
       </button>
