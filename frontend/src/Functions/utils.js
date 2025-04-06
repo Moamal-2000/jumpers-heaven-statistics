@@ -3,7 +3,7 @@ import { PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
 import { COUNTRIES_BY_CODE, REGIONS, TOP_STATS_COLOR } from "@/Data/staticData";
 
 export function getMaxFinishTimesFrom(bestPlayer) {
-  const maxFinishTimes = Math.max(...Object.values(bestPlayer.top_list));
+  const maxFinishTimes = Math.max(...Object.values(bestPlayer.TopList));
   return maxFinishTimes;
 }
 

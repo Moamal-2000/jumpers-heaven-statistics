@@ -4,9 +4,8 @@ import s from "./PlayerRow.module.scss";
 import TopsCell from "./TopsCell/TopsCell";
 
 const PlayerRow = ({ playerData, leaderboardData, lastPlayerRef }) => {
-  const { player_name, country_code, country, rating, score, top_list, rank } =
-    playerData;
-  const modifiedRank = getModifiedRank(rank);
+  const { Rating, Score, TopList, Rank } = playerData;
+  const modifiedRank = getModifiedRank(Rank);
 
   return (
     <tr
@@ -18,22 +17,17 @@ const PlayerRow = ({ playerData, leaderboardData, lastPlayerRef }) => {
         {modifiedRank}
       </td>
 
-      <PlayerNameCell
-        player={player_name}
-        rank={rank}
-        countryCode={country_code}
-        countryName={country}
-      />
+      <PlayerNameCell playerData={playerData} />
 
       <td className={s.rating} data-text="Rating">
-        {(+rating * 0.1).toFixed(2)}
+        {(+Rating * 0.1).toFixed(2)}
       </td>
 
       <td className={s.score} data-type="player-stats-score" data-text="Points">
-        {score}
+        {Score}
       </td>
 
-      <TopsCell topList={top_list} leaderboardData={leaderboardData} />
+      <TopsCell topList={TopList} leaderboardData={leaderboardData} />
     </tr>
   );
 };

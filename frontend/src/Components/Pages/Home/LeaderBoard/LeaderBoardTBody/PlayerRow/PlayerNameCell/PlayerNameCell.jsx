@@ -6,13 +6,14 @@ import { navigateToPlayerPage } from "@/Functions/navigate";
 import { useRouter } from "next/navigation";
 import s from "./PlayerNameCell.module.scss";
 
-const PlayerNameCell = ({ player, rank, countryCode, countryName }) => {
-  const modifiedPlayerName = getColoredName(player);
-  const rankClass = s["rank" + rank];
+const PlayerNameCell = ({ playerData }) => {
+  const { PlayerName, Rank, CountryCode, Country, PlayerID } = playerData;
+  const modifiedPlayerName = getColoredName(PlayerName);
+  const rankClass = s["rank" + Rank];
   const router = useRouter();
 
   function handlePlayerClick() {
-    navigateToPlayerPage(router, playerData.player_id);
+    navigateToPlayerPage(router, PlayerID);
   }
 
   return (
@@ -22,7 +23,7 @@ const PlayerNameCell = ({ player, rank, countryCode, countryName }) => {
       data-text="Player"
     >
       <span className={s.playerCountry}>
-        <CountryImage countryCode={countryCode} countryName={countryName} />
+        <CountryImage countryCode={CountryCode} countryName={Country} />
       </span>
       <span className={s.playerName} onClick={handlePlayerClick}>
         {modifiedPlayerName}
