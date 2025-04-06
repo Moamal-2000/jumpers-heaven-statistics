@@ -47,9 +47,10 @@ export const FILTERS_COMPONENTS_DATA = [
     defaultUrlQuery: "All time",
     filtersData: [
       { text: "All time", id: 1 },
-      { text: "This Month", id: 2 },
+      { text: "Today", id: 2 },
       { text: "This Week", id: 3 },
-      { text: "Today", id: 4 },
+      { text: "This Month", id: 4 },
+      { text: "Long Time", id: 5 },
     ],
     id: 4,
   },
