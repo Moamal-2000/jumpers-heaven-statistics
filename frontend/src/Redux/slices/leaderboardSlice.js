@@ -1,6 +1,7 @@
-import { getLastSeenLeaderboard } from "@/Functions/filters";
 import { getLeaderboardUrl, paginateData } from "@/Functions/utils";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { decode } from "msgpackr";
+import { inflate } from "pako";
 
 const initialState = {
   leaderboardData: [],
@@ -16,9 +17,14 @@ export const fetchLeaderboard = createAsyncThunk(
   async (paramsObject) => {
     const leaderboardUrl = getLeaderboardUrl(paramsObject);
     const lastSeenFilter = paramsObject?.["last-seen"];
+    const response = await fetch(leaderboardUrl, {
+      headers: { Accept: "application/msgpack" },
+    });
 
-    const response = await fetch(leaderboardUrl);
-    const leaderboardData = await response.json();
+    const bufferResponse = await response.arrayBuffer();
+    const uint8Array = new Uint8Array(bufferResponse);
+    const decompressed = inflate(uint8Array);
+    const leaderboardData = decode(decompressed);
 
     if (!response.ok) throw new Error("Error while fetching leaderboard data");
 

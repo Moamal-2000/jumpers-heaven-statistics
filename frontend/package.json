@@ -13,6 +13,7 @@
     "msgpackr": "^1.11.2",
     "next": "15.2.4",
     "npm-check-updates": "^17.1.16",
+    "pako": "^2.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-redux": "^9.2.0",

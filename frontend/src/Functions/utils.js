@@ -40,7 +40,7 @@ export function paginateData(items, pageNumber = 1) {
   const startIndex = PAGINATION_ITEMS_PER_PAGE * (page - 1);
   const endIndex = startIndex + PAGINATION_ITEMS_PER_PAGE;
 
-  return items.slice(startIndex, endIndex);
+  return items?.slice(startIndex, endIndex);
 }
 
 export function getLeaderboardUrl(paramsObject) {
