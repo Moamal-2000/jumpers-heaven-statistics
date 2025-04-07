@@ -31,6 +31,8 @@ const Footer = () => {
           </div>
         </section>
 
+        <hr className={s.sectionsLine} />
+
         <section className={s.statistics}>
           <div className={s.dateWrapper}>
             <div className={s.iconHolder}>
