@@ -4,12 +4,14 @@ import s from "./Footer.module.scss";
 import FooterMenusButtons from "./FooterMenusButtons/FooterMenusButtons";
 import FooterNav from "./FooterNav/FooterNav";
 import FooterStats from "./FooterStats/FooterStats";
+import FooterContent from "./FooterContent/FooterContent";
 
 const Footer = () => {
   return (
     <footer className={s.footer}>
       <div className={s.line} />
       <div className="container">
+        <FooterContent />
         <section className={s.wrapper}>
           <div className={s.leftSide}>
             <Link href="/" className={s.logo}>
