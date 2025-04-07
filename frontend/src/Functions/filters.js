@@ -18,5 +18,5 @@ export function getIsPlayerKey(lastSeen, filterKey) {
 
 export function getLastSeenLeaderboard(data, filterKey) {
   if (!filterKey) return data;
-  return data.filter((item) => getIsPlayerKey(item.last_seen, filterKey));
+  return data.filter((item) => getIsPlayerKey(item.LastSeen, filterKey));
 }
