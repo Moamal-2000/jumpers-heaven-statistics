@@ -1,7 +1,19 @@
+"use client";
+
 import SvgIcon from "@/Components/Shared/SvgIcon";
+import { getJumpersHeavenStats } from "@/Redux/slices/globalSlice";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import s from "./FooterStats.module.scss";
 
 const FooterStats = () => {
+  const dispatch = useDispatch();
+  const { statistics } = useSelector((s) => s.global);
+
+  useEffect(() => {
+    dispatch(getJumpersHeavenStats());
+  }, []);
+
   return (
     <section className={s.statsSection}>
       <div className={s.dateWrapper}>
@@ -17,17 +29,17 @@ const FooterStats = () => {
 
       <div className={s.statsWrapper}>
         <div className={s.stat}>
-          <b className={s.number}>42,761</b>
+          <b className={s.number}>???</b>
           <span className={s.title}>Players</span>
         </div>
 
         <div className={s.stat}>
-          <b className={s.number}>359</b>
+          <b className={s.number}>{statistics?.mapsCount}</b>
           <span className={s.title}>Maps</span>
         </div>
 
         <div className={s.stat}>
-          <b className={s.number}>183,409</b>
+          <b className={s.number}>???</b>
           <span className={s.title}>Records</span>
         </div>
       </div>

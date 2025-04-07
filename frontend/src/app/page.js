@@ -11,7 +11,7 @@ export default async function Home() {
         <Introduction />
         <Suspense>
           <FiltersSection />
-          <LeaderBoard />
+          {/* <LeaderBoard /> */}
         </Suspense>
       </main>
     </div>
