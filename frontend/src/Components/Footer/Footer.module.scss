@@ -6,6 +6,8 @@
 }
 
 .footer .line {
+  border: none;
+  outline: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -18,45 +20,6 @@
       oklch(79.5% 0.184 86.047) 50%,
       transparent 100%);
 }
-
-.footer .wrapper {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-// Left side
-.footer .wrapper .leftSide {}
-
-.footer .wrapper .leftSide .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-
-.footer .wrapper .leftSide .logo>svg {
-  width: 42px;
-  height: 42px;
-  color: #facc15;
-}
-
-.footer .wrapper .leftSide .logo>span {
-  color: #FBBF24;
-  font-weight: 700;
-  font-size: 1.8rem;
-  text-shadow: 0 0 10px rgba(252, 211, 77, 0.5);
-}
-
-.footer .wrapper .leftSide .description {
-  font-size: .9rem;
-  color: #9CA3AF;
-  margin-bottom: 24px;
-  max-width: 512px;
-}
-
-// Right side
-.footer .wrapper .rightSide {}
 
 .sectionsLine {
   border: none;

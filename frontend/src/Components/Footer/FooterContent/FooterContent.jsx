@@ -1,9 +1,32 @@
-import s from './FooterContent.module.scss'
+import SvgIcon from "@/Components/Shared/SvgIcon";
+import Link from "next/link";
+import FooterMenusButtons from "../FooterMenusButtons/FooterMenusButtons";
+import FooterNav from "../FooterNav/FooterNav";
+import s from "./FooterContent.module.scss";
 
 const FooterContent = () => {
   return (
-    <div>FooterContent</div>
-  )
-}
+    <section className={s.contentSection}>
+      <div className={s.leftSide}>
+        <Link href="/" className={s.logo}>
+          <SvgIcon name="trophy" />
+          <span>JumpersHeaven</span>
+        </Link>
 
-export default FooterContent
+        <p className={s.description}>
+          The premier competitive platform tracking records, stats, and building
+          community for jumping game enthusiasts. Supporting Defrag, Surf,
+          Speedrun, and other movement-based game modes across multiple titles
+        </p>
+
+        <FooterMenusButtons />
+      </div>
+
+      <div className={s.rightSide}>
+        <FooterNav />
+      </div>
+    </section>
+  );
+};
+
+export default FooterContent;

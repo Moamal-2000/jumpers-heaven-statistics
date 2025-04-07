@@ -1,0 +1,38 @@
+.contentSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+// Left side
+.contentSection .leftSide {}
+
+.contentSection .leftSide .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.contentSection .leftSide .logo>svg {
+  width: 42px;
+  height: 42px;
+  color: #facc15;
+}
+
+.contentSection .leftSide .logo>span {
+  color: #FBBF24;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px rgba(252, 211, 77, 0.5);
+}
+
+.contentSection .leftSide .description {
+  font-size: .9rem;
+  color: #9CA3AF;
+  margin-bottom: 24px;
+  max-width: 512px;
+}
+
+// Right side
+.contentSection .rightSide {}
