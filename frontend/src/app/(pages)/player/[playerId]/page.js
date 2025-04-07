@@ -1,20 +1,16 @@
 import { jhApis } from "@/Api/jumpersHeaven";
 import { getColoredName } from "@/Functions/components";
-import { decode } from "msgpackr";
-import { inflate } from "pako";
+import { decodeAsyncData } from "@/Functions/utils";
 
 const PlayerId = async ({ params }) => {
   const { playerId } = await params;
 
-  const playersReq = await fetch(
+  const playersResponse = await fetch(
     jhApis({ fps: 125 }).leaderboard.getSpeedRunLeaderboard,
     { headers: { Accept: "application/msgpack" } }
   );
 
-  const bufferResponse = await playersReq.arrayBuffer();
-  const uint8Array = new Uint8Array(bufferResponse);
-  const decompressed = inflate(uint8Array);
-  const playersData = decode(decompressed);
+  const playersData = await decodeAsyncData(playersResponse);
   const playerData = playersData.find(
     ({ PlayerID }) => +PlayerID === +playerId
   );

@@ -1,6 +1,8 @@
 import { jhApis } from "@/Api/jumpersHeaven";
 import { PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
 import { COUNTRIES_BY_CODE, REGIONS, TOP_STATS_COLOR } from "@/Data/staticData";
+import { decode } from "msgpackr";
+import { inflate } from "pako";
 
 export function getMaxFinishTimesFrom(bestPlayer) {
   const maxFinishTimes = Math.max(...Object.values(bestPlayer.TopList));
@@ -75,4 +77,11 @@ export function getRegionByCountry(countryCode) {
 
 export function getCountryName(countryCode) {
   return COUNTRIES_BY_CODE[countryCode.toUpperCase()] || "Unknown Country";
+}
+
+export async function decodeAsyncData(response) {
+  const buffer = await response.arrayBuffer();
+  const uint8Array = new Uint8Array(buffer);
+  const decompressed = inflate(uint8Array);
+  return decode(decompressed);
 }
