@@ -10,12 +10,13 @@ const FilterButtons = ({ filtersData, queryName, defaultUrlQuery }) => {
 
   return (
     <div className={s.filters}>
-      {filtersData.map(({ text, queryValue, id }) => (
+      {filtersData.map(({ text, queryValue, toolTip, id }) => (
         <FilterButton
           key={id}
           text={text}
           queryValue={queryValue}
           queryName={queryName}
+          toolTip={toolTip}
           urlQuery={urlQuery}
           defaultUrlQuery={defaultUrlQuery}
         />

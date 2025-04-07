@@ -8,6 +8,7 @@ export function FilterButton({
   text,
   queryName,
   queryValue,
+  toolTip,
   urlQuery,
   defaultUrlQuery,
 }) {
@@ -48,7 +49,8 @@ export function FilterButton({
       onClick={handleClick}
       aria-label={ariaLabel}
     >
-      {text}
+      {toolTip && <p className={s.toolTip}>{toolTip}</p>}
+      <span>{text}</span>
     </button>
   );
 }
