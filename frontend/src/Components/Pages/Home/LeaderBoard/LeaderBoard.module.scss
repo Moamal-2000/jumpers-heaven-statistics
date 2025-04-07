@@ -19,6 +19,12 @@
       background-color: #191e2a;
     }
   }
+
+  &.collapse {
+    min-height: auto;
+    height: 83px;
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 1300px) {
@@ -36,6 +42,10 @@
 .leaderBoard {
   user-select: none;
   width: inherit;
+}
+
+.leaderboardWrapper.collapse .leaderBoard {
+  pointer-events: none;
 }
 
 .leaderBoard :where(thead, tbody) {

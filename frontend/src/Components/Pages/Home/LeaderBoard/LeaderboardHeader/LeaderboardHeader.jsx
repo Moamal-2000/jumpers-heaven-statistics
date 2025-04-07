@@ -1,6 +1,7 @@
 "use client";
 
 import { PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
+import { updateGlobalState } from "@/Redux/slices/globalSlice";
 import { updateLeaderboardState } from "@/Redux/slices/leaderboardSlice";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
@@ -62,7 +63,14 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
     setPaginationNumber(1);
   }
 
-  function handleExpandBtn() {}
+  function handleExpandBtn() {
+    dispatch(
+      updateGlobalState({
+        key: "isLeaderboardExpanded",
+        value: !isLeaderboardExpanded,
+      })
+    );
+  }
 
   useEffect(() => {
     const lastLeaderboardPagination = Math.ceil(

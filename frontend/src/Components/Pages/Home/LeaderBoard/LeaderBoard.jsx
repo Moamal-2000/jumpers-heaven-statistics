@@ -18,7 +18,8 @@ const LeaderBoard = () => {
   const { leaderboardData, leaderboardScroll, allDataDisplayed } = useSelector(
     (s) => s.leaderboard
   );
-  const { tryFetchAgain, isLeaderboardReversed } = useSelector((s) => s.global);
+  const { tryFetchAgain, isLeaderboardReversed, isLeaderboardExpanded } =
+    useSelector((s) => s.global);
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
   const paramsObject = Object.fromEntries(searchParams.entries());
@@ -26,6 +27,7 @@ const LeaderBoard = () => {
   const fpsType = searchParams.get("fps") || "125";
   const lastSeenType = searchParams.get("last-seen") || "All time";
   const regionFilter = searchParams.get("region") || "Global";
+  const collapseClass = isLeaderboardExpanded ? "" : s.collapse;
 
   const {
     paginationNumber,
@@ -57,7 +59,10 @@ const LeaderBoard = () => {
     const isSameArrayReference = leaderboardScroll === leaderboardData;
 
     const shouldShowMoreData =
-      !isLastPagination && !isSameArrayReference && !allDataDisplayed;
+      !isLastPagination &&
+      !isSameArrayReference &&
+      !allDataDisplayed &&
+      isLeaderboardExpanded;
 
     if (shouldShowMoreData) addDataOnScroll();
   }
@@ -76,7 +81,7 @@ const LeaderBoard = () => {
   }, [paginationNumber]);
 
   return (
-    <div className={s.leaderboardWrapper}>
+    <div className={`${s.leaderboardWrapper} ${collapseClass}`}>
       <LeaderboardHeader
         paginationNumber={paginationNumber}
         setPaginationNumber={setPaginationNumber}
