@@ -15,6 +15,7 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
     firstChunkLeaderboard,
     allDataDisplayed,
   } = useSelector((s) => s.leaderboard);
+  const { isLeaderboardExpanded } = useSelector((s) => s.global);
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
   const isLastSeenLeader = !!searchParams.get("last-seen");
@@ -22,7 +23,7 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
     ? "Last Seen Players"
     : "Top Players";
 
-  function handleClick() {
+  function handleShowAllBtn() {
     if (allDataDisplayed) {
       handleShowLess();
       return;
@@ -61,6 +62,8 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
     setPaginationNumber(1);
   }
 
+  function handleExpandBtn() {}
+
   useEffect(() => {
     const lastLeaderboardPagination = Math.ceil(
       leaderboardData?.length / PAGINATION_ITEMS_PER_PAGE
@@ -77,16 +80,26 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
 
   useEffect(() => {
     const isSameArrayReference = leaderboardScroll === leaderboardData;
-
     if (!isSameArrayReference) handleShowAll();
   }, [isLeaderboardReversed]);
 
   return (
     <header className={s.header}>
       <h3>{leaderboardTitle}</h3>
-      <button type="button" className={s.showAllBtn} onClick={handleClick}>
-        {allDataDisplayed ? "Show Less" : "Show All"}
-      </button>
+
+      <div className={s.buttons}>
+        <button type="button" className={s.expandBtn} onClick={handleExpandBtn}>
+          {isLeaderboardExpanded ? "Minimize" : "Maximize"}
+        </button>
+
+        <button
+          type="button"
+          className={s.showAllBtn}
+          onClick={handleShowAllBtn}
+        >
+          {allDataDisplayed ? "Show Less" : "Show All"}
+        </button>
+      </div>
     </header>
   );
 };

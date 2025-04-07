@@ -5,6 +5,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   isNotFoundPage: false,
   isLeaderboardReversed: false,
+  isLeaderboardExpanded: true,
   tryFetchAgain: 0,
   statistics: {},
 };

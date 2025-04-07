@@ -16,7 +16,13 @@
   font-weight: 700;
 }
 
-.header .showAllBtn {
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.buttons button {
   background-color: #1e2029;
   border: 1px solid #ffcc33;
   color: #ffcc33;
