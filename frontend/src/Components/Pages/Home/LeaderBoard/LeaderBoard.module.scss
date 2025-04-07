@@ -46,6 +46,7 @@
 
 .leaderboardWrapper.collapse .leaderBoard {
   pointer-events: none;
+  display: none;
 }
 
 .leaderBoard :where(thead, tbody) {
