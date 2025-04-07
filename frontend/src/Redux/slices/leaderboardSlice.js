@@ -1,4 +1,7 @@
-import { getLastSeenLeaderboard } from "@/Functions/filters";
+import {
+  getLastSeenLeaderboard,
+  getRegionLeaderboard,
+} from "@/Functions/filters";
 import {
   decodeAsyncData,
   getLeaderboardUrl,
@@ -19,25 +22,24 @@ export const fetchLeaderboard = createAsyncThunk(
   "leaderboardSlice/fetchLeaderboard",
   async (paramsObject) => {
     try {
+      let leaderboard = [];
+
       const leaderboardUrl = getLeaderboardUrl(paramsObject);
       const lastSeenFilter = paramsObject?.["last-seen"];
+      const regionFilter = paramsObject?.["region"];
+
       const response = await fetch(leaderboardUrl, {
         headers: { Accept: "application/msgpack" },
       });
       const leaderboardData = await decodeAsyncData(response);
+      leaderboard = leaderboardData;
 
-      if (!response.ok)
-        throw new Error("Error while fetching leaderboard data");
+      if (!!lastSeenFilter)
+        leaderboard = getLastSeenLeaderboard(leaderboard, lastSeenFilter);
+      if (!!regionFilter)
+        leaderboard = getRegionLeaderboard(leaderboard, regionFilter);
 
-      if (!!lastSeenFilter) {
-        const lastSeenLeaderboard = getLastSeenLeaderboard(
-          leaderboardData,
-          lastSeenFilter
-        );
-        return lastSeenLeaderboard;
-      }
-
-      return leaderboardData;
+      return leaderboard;
     } catch (error) {
       console.error(error);
     }

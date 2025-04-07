@@ -20,3 +20,11 @@ export function getLastSeenLeaderboard(data, filterKey) {
   if (!filterKey) return data;
   return data.filter((item) => getIsPlayerKey(item.LastSeen, filterKey));
 }
+
+export function getRegionLeaderboard(data, filterKey) {
+  const filteredData = data.filter(
+    (item) => item?.Region?.toLowerCase() === filterKey
+  );
+
+  return filteredData;
+}

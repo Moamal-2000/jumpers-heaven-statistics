@@ -25,6 +25,7 @@ const LeaderBoard = () => {
   const leaderboardType = searchParams.get("leaderboard") || "speedrun";
   const fpsType = searchParams.get("fps") || "125";
   const lastSeenType = searchParams.get("last-seen") || "All time";
+  const regionFilter = searchParams.get("region") || "Global";
 
   const {
     paginationNumber,
@@ -68,7 +69,7 @@ const LeaderBoard = () => {
 
   useEffect(() => {
     getLeaderboardData();
-  }, [leaderboardType, fpsType, lastSeenType, tryFetchAgain]);
+  }, [leaderboardType, fpsType, lastSeenType, regionFilter, tryFetchAgain]);
 
   useEffect(() => {
     checkAndLoadMoreData();
