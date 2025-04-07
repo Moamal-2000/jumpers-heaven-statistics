@@ -1,5 +1,3 @@
-import PlayerStatusFilters from "@/Components/Pages/Home/FiltersSection/PlayerStatusFilters/PlayerStatusFilters";
-
 export const FILTERS_COMPONENTS_DATA = [
   {
     title: "Leaderboard Type",
@@ -53,10 +51,5 @@ export const FILTERS_COMPONENTS_DATA = [
       { text: "Long Time", id: 5 },
     ],
     id: 4,
-  },
-  {
-    title: "Player Status",
-    filtersComponent: <PlayerStatusFilters />,
-    id: 5,
   },
 ];
