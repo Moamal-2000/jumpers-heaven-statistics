@@ -20,21 +20,7 @@ const FiltersSection = () => {
   return (
     <section className={s.filtersSection}>
       {FILTERS_COMPONENTS_DATA.map(
-        ({
-          title,
-          queryName,
-          defaultUrlQuery,
-          filtersData,
-          id,
-          filtersComponent,
-        }) => {
-          if (filtersComponent)
-            return (
-              <FilterCard key={id} title={title}>
-                {filtersComponent}
-              </FilterCard>
-            );
-
+        ({ title, queryName, defaultUrlQuery, filtersData, id }) => {
           return (
             <FilterCard key={id} title={title}>
               <FilterButtons

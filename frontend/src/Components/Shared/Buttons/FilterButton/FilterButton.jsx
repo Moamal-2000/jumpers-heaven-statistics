@@ -4,39 +4,53 @@ import { createQueryString, removeQueryString } from "@/Functions/utils";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import s from "./FilterButton.module.scss";
 
-export function FilterButton({ text, queryName, urlQuery, defaultUrlQuery }) {
+export function FilterButton({
+  text,
+  queryName,
+  queryValue,
+  urlQuery,
+  defaultUrlQuery,
+}) {
+  const isRegionFilter = queryName === "region";
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
 
-  const fixedUrlQuery = urlQuery ? urlQuery : defaultUrlQuery;
-  const activeClass = fixedUrlQuery === text?.toLowerCase() ? s.active : "";
+  const textValue = text?.toLowerCase();
+  const regionValue = queryValue?.toLowerCase();
+  const currentValue = urlQuery || defaultUrlQuery;
 
-  const ariaLabel = activeClass
+  const isActive = isRegionFilter
+    ? regionValue === currentValue
+    : currentValue === textValue;
+
+  const ariaLabel = isActive
     ? `The leaderboard currently filtered by ${text}`
     : `Filter the leaderboard by ${text}`;
 
-  function setQueryFilter() {
-    const filterNoun = text?.toLowerCase();
-    const isDefaultUrlQuery = filterNoun === defaultUrlQuery;
+  const handleClick = () => {
+    const value = isRegionFilter ? regionValue : textValue;
+    if (!value) return;
 
-    if (isDefaultUrlQuery) {
+    const isDefault = value === defaultUrlQuery;
+
+    if (isDefault) {
       removeQueryString(queryName, searchParams, router, pathname);
-      return;
+    } else {
+      createQueryString(queryName, value, searchParams, router, pathname);
     }
-
-    createQueryString(queryName, filterNoun, searchParams, router, pathname);
-  }
+  };
 
   return (
     <button
       type="button"
-      className={`${s.button} ${activeClass}`}
-      onClick={setQueryFilter}
+      className={`${s.button} ${isActive ? s.active : ""}`}
+      onClick={handleClick}
       aria-label={ariaLabel}
     >
       {text}
     </button>
   );
 }
+
 export default FilterButton;
