@@ -1,3 +1,4 @@
+import CopyRights from "./CopyRights/CopyRights";
 import s from "./Footer.module.scss";
 import FooterContent from "./FooterContent/FooterContent";
 import FooterStats from "./FooterStats/FooterStats";
@@ -11,6 +12,7 @@ const Footer = () => {
         <FooterContent />
         <hr className={s.sectionsLine} />
         <FooterStats />
+        <CopyRights />
       </div>
     </footer>
   );
