@@ -1,5 +1,6 @@
 "use client";
 
+import { WEBSITE_NAME } from "@/Data/constants";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import SvgIcon from "../Shared/SvgIcon";
@@ -15,7 +16,7 @@ const Header = () => {
       <div className="container" data-container>
         <Link href="/" className={s.logo}>
           <SvgIcon name="trophy" />
-          <span>JumpersHeaven</span>
+          <span>{WEBSITE_NAME}</span>
         </Link>
 
         <MainNav />

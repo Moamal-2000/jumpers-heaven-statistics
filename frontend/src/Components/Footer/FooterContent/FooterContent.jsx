@@ -1,4 +1,5 @@
 import SvgIcon from "@/Components/Shared/SvgIcon";
+import { WEBSITE_NAME } from "@/Data/constants";
 import Link from "next/link";
 import FooterMenusButtons from "../FooterMenusButtons/FooterMenusButtons";
 import FooterNav from "../FooterNav/FooterNav";
@@ -10,7 +11,7 @@ const FooterContent = () => {
       <div className={s.leftSide}>
         <Link href="/" className={s.logo}>
           <SvgIcon name="trophy" />
-          <span>JumpersHeaven</span>
+          <span>{WEBSITE_NAME}</span>
         </Link>
 
         <p className={s.description}>
