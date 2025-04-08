@@ -25,6 +25,8 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
   const leaderboardTitle = isLastSeenLeader
     ? "Last Seen Players"
     : "Top Players";
+  const isLeaderboardUnavailable =
+    loading || error || leaderboardData.length === 0;
 
   function handleShowAllBtn() {
     if (allDataDisplayed) {
@@ -102,7 +104,7 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
           type="button"
           className={s.expandBtn}
           onClick={handleExpandBtn}
-          disabled={loading || error}
+          disabled={isLeaderboardUnavailable}
         >
           {isLeaderboardExpanded ? "Minimize" : "Maximize"}
         </button>
@@ -111,7 +113,7 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
           type="button"
           className={s.showAllBtn}
           onClick={handleShowAllBtn}
-          disabled={loading || error}
+          disabled={isLeaderboardUnavailable}
         >
           {allDataDisplayed ? "Show Less" : "Show All"}
         </button>
