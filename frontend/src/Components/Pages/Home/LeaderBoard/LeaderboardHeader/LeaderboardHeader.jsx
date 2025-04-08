@@ -1,7 +1,6 @@
 "use client";
 
 import { PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
-import { updateGlobalState } from "@/Redux/slices/globalSlice";
 import { updateLeaderboardState } from "@/Redux/slices/leaderboardSlice";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
@@ -10,78 +9,15 @@ import s from "./LeaderboardHeader.module.scss";
 import LeaderboardHeaderBtns from "./LeaderboardHeaderBtns/LeaderboardHeaderBtns";
 
 const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
-  const { isLeaderboardReversed } = useSelector((s) => s.global);
-  const {
-    leaderboardData,
-    leaderboardScroll,
-    firstChunkLeaderboard,
-    allDataDisplayed,
-    loading,
-    error,
-  } = useSelector((s) => s.leaderboard);
-  const { isLeaderboardExpanded } = useSelector((s) => s.global);
+  const { leaderboardData, leaderboardScroll } = useSelector(
+    (s) => s.leaderboard
+  );
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
   const isLastSeenLeader = !!searchParams.get("last-seen");
   const leaderboardTitle = isLastSeenLeader
     ? "Last Seen Players"
     : "Top Players";
-  const isLeaderboardUnavailable =
-    loading || error || leaderboardData.length === 0;
-  const showAllBtnNoun =
-    leaderboardData.length === 0
-      ? "Show All"
-      : allDataDisplayed
-      ? "Show Less"
-      : "Show All";
-
-  function handleShowAllBtn() {
-    if (allDataDisplayed) {
-      handleShowLess();
-      return;
-    }
-
-    handleShowAll();
-  }
-
-  function handleShowAll() {
-    if (leaderboardData?.length <= 0) return;
-
-    const lastLeaderboardPagination = Math.ceil(
-      leaderboardData?.length / PAGINATION_ITEMS_PER_PAGE
-    );
-
-    dispatch(
-      updateLeaderboardState({
-        key: "leaderboardScroll",
-        value: leaderboardData,
-      })
-    );
-
-    setPaginationNumber(lastLeaderboardPagination);
-  }
-
-  function handleShowLess() {
-    if (leaderboardData?.length <= 0) return;
-
-    dispatch(
-      updateLeaderboardState({
-        key: "leaderboardScroll",
-        value: firstChunkLeaderboard,
-      })
-    );
-
-    setPaginationNumber(1);
-  }
-
-  function handleExpandBtn() {
-    dispatch(
-      updateGlobalState({
-        key: "isLeaderboardExpanded",
-        value: !isLeaderboardExpanded,
-      })
-    );
-  }
 
   useEffect(() => {
     const lastLeaderboardPagination = Math.ceil(
@@ -97,35 +33,10 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
     );
   }, [leaderboardScroll]);
 
-  useEffect(() => {
-    const isSameArrayReference = leaderboardScroll === leaderboardData;
-    if (!isSameArrayReference) handleShowAll();
-  }, [isLeaderboardReversed]);
-
   return (
     <header className={s.header}>
       <h3>{leaderboardTitle}</h3>
-
-      <LeaderboardHeaderBtns />
-      <div className={s.buttons}>
-        <button
-          type="button"
-          className={s.expandBtn}
-          onClick={handleExpandBtn}
-          disabled={isLeaderboardUnavailable}
-        >
-          {isLeaderboardExpanded ? "Minimize" : "Maximize"}
-        </button>
-
-        <button
-          type="button"
-          className={s.showAllBtn}
-          onClick={handleShowAllBtn}
-          disabled={isLeaderboardUnavailable}
-        >
-          {showAllBtnNoun}
-        </button>
-      </div>
+      <LeaderboardHeaderBtns setPaginationNumber={setPaginationNumber} />
     </header>
   );
 };
