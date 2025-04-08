@@ -15,12 +15,8 @@ const FooterNav = () => {
 
       <ul className={s.links}>
         {NAV_LINKS_DATA.map(({ name, href, iconName, id }) => (
-          <li>
-            <Link
-              key={id}
-              href={href}
-              className={currentPage === href ? s.active : ""}
-            >
+          <li key={id}>
+            <Link href={href} className={currentPage === href ? s.active : ""}>
               <SvgIcon name={iconName} />
               <span>{name}</span>
             </Link>
