@@ -1,8 +1,12 @@
+@use "@/Styles/mixins" as m;
+
 .header {
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px 50px;
 }
 
 @media (max-width: 1300px) {
@@ -14,6 +18,7 @@
 .header>h3 {
   font-size: 1.4rem;
   font-weight: 700;
+  text-wrap: nowrap;
 }
 
 .buttons {
