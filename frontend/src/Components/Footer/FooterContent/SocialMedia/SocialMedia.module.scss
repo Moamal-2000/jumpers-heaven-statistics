@@ -1,9 +1,53 @@
 .socialMediaNav {}
 
-.socialMediaNav ul {}
+.socialMediaNav .title {
+  font-size: .875rem;
+  color: #9EA3B0;
+  text-align: center;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
 
-.socialMediaNav ul li {}
+.socialMediaNav ul {
+  list-style: none;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
 
-.socialMediaNav ul li a {}
+.socialMediaNav ul li a {
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+  background-color: #1A202C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition:
+    translate .2s ease,
+    background-color .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+  border: 1px solid rgba(255, 215, 0, .15);
 
-.socialMediaNav ul li a svg {}
+  &:hover {
+    translate: 0 -1px;
+    background-color: #232D3F;
+    border-color: rgba(255, 215, 0, .5);
+    box-shadow: 0 2px 8px rgba(255, 215, 0, .2);
+
+    & svg {
+      fill: #FFD700;
+    }
+  }
+}
+
+.socialMediaNav ul li a svg {
+  width: 20px;
+  height: 20px;
+  fill: #9EA3B0;
+  transition: fill .2s ease;
+}
