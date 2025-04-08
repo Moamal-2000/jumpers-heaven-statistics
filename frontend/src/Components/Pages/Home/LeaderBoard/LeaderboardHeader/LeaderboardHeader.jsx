@@ -15,6 +15,8 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
     leaderboardScroll,
     firstChunkLeaderboard,
     allDataDisplayed,
+    loading,
+    error,
   } = useSelector((s) => s.leaderboard);
   const { isLeaderboardExpanded } = useSelector((s) => s.global);
   const dispatch = useDispatch();
@@ -96,7 +98,12 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
       <h3>{leaderboardTitle}</h3>
 
       <div className={s.buttons}>
-        <button type="button" className={s.expandBtn} onClick={handleExpandBtn}>
+        <button
+          type="button"
+          className={s.expandBtn}
+          onClick={handleExpandBtn}
+          disabled={loading || error}
+        >
           {isLeaderboardExpanded ? "Minimize" : "Maximize"}
         </button>
 
@@ -104,6 +111,7 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
           type="button"
           className={s.showAllBtn}
           onClick={handleShowAllBtn}
+          disabled={loading || error}
         >
           {allDataDisplayed ? "Show Less" : "Show All"}
         </button>

@@ -35,7 +35,13 @@
   top: 2px;
   transition: background-color .2s;
 
-  &:hover {
+  &:not(:disabled):hover {
     background-color: #2a2b36;
+  }
+
+  &:disabled {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    cursor: not-allowed;
   }
 }
