@@ -497,4 +497,14 @@ export const SOCIAL_MEDIA_DATA = [
     link: "",
     id: 2,
   },
+  {
+    iconName: "github",
+    link: "",
+    id: 3,
+  },
+  {
+    iconName: "twitter",
+    link: "",
+    id: 4,
+  }
 ];
