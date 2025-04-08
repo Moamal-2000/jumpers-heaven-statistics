@@ -1,4 +1,8 @@
-.socialMediaNav {}
+.socialMediaNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 
 .socialMediaNav .title {
   font-size: .875rem;

@@ -22,7 +22,7 @@ const FooterStats = () => {
         </div>
 
         <div className={s.info}>
-          <p className={s.title}>Leaderboard last updated:</p>
+          <p className={s.title}>We last updated the site data on:</p>
           <p className={s.date}>April 2, 2025 at 08:45 GMT</p>
         </div>
       </div>

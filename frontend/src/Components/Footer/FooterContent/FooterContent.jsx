@@ -23,9 +23,8 @@ const FooterContent = () => {
 
         <FooterMenusButtons />
       </div>
-
-      <SocialMedia />
       <FooterNav />
+      <SocialMedia />
     </section>
   );
 };

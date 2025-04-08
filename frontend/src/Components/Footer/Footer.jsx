@@ -12,6 +12,7 @@ const Footer = () => {
         <FooterContent />
         <hr className={s.sectionsLine} />
         <FooterStats />
+
         <CopyRights />
       </div>
     </footer>
