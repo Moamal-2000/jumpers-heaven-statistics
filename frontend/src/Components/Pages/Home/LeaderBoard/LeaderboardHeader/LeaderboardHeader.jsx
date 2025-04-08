@@ -19,7 +19,7 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
     ? "Last Seen Players"
     : "Top Players";
 
-  useEffect(() => {
+  function updateAllDataDisplayedStatus() {
     const lastLeaderboardPagination = Math.ceil(
       leaderboardData?.length / PAGINATION_ITEMS_PER_PAGE
     );
@@ -31,6 +31,10 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
         value: isLastPagination,
       })
     );
+  }
+
+  useEffect(() => {
+    updateAllDataDisplayedStatus();
   }, [leaderboardScroll]);
 
   return (
