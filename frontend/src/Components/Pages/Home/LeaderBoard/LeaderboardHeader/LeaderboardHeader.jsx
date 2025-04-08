@@ -27,6 +27,12 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
     : "Top Players";
   const isLeaderboardUnavailable =
     loading || error || leaderboardData.length === 0;
+  const showAllBtnNoun =
+    leaderboardData.length === 0
+      ? "Show All"
+      : allDataDisplayed
+      ? "Show Less"
+      : "Show All";
 
   function handleShowAllBtn() {
     if (allDataDisplayed) {
@@ -115,7 +121,7 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
           onClick={handleShowAllBtn}
           disabled={isLeaderboardUnavailable}
         >
-          {allDataDisplayed ? "Show Less" : "Show All"}
+          {showAllBtnNoun}
         </button>
       </div>
     </header>
