@@ -10,7 +10,12 @@ const SocialMedia = () => {
       <ul>
         {SOCIAL_MEDIA_DATA.map(({ iconName, link, id }) => (
           <li className={s.media} key={id}>
-            <a href={link} target="_blank" title={iconName}>
+            <a
+              href={link}
+              target="_blank"
+              title={iconName}
+              data-icon={iconName}
+            >
               <SvgIcon name={iconName} />
             </a>
           </li>

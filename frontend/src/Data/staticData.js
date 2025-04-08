@@ -494,17 +494,22 @@ export const SOCIAL_MEDIA_DATA = [
   },
   {
     iconName: "youtube",
-    link: "",
+    link: "https://www.youtube.com/user/JumpersHeaven",
     id: 2,
   },
   {
     iconName: "github",
-    link: "",
+    link: "https://github.com/Moamal-2000/JHLeaderboard",
     id: 3,
   },
   {
     iconName: "twitter",
-    link: "",
+    link: "https://x.com/JumpersHeaven",
     id: 4,
+  },
+  {
+    iconName: "jumpersHeaven",
+    link: "https://www.jumpersheaven.com",
+    id: 5,
   }
 ];
