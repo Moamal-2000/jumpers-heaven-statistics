@@ -7,6 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./LeaderboardHeader.module.scss";
+import LeaderboardHeaderBtns from "./LeaderboardHeaderBtns/LeaderboardHeaderBtns";
 
 const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
   const { isLeaderboardReversed } = useSelector((s) => s.global);
@@ -105,6 +106,7 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
     <header className={s.header}>
       <h3>{leaderboardTitle}</h3>
 
+      <LeaderboardHeaderBtns />
       <div className={s.buttons}>
         <button
           type="button"
