@@ -485,3 +485,16 @@ export const COUNTRIES_BY_CODE = {
   WS: "Samoa",
   SM: "San Marino",
 };
+
+export const SOCIAL_MEDIA_DATA = [
+  {
+    iconName: "discord",
+    link: "",
+    id: 1,
+  },
+  {
+    iconName: "youtube",
+    link: "",
+    id: 2,
+  },
+];
