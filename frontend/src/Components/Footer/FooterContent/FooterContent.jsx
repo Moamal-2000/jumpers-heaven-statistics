@@ -4,6 +4,7 @@ import Link from "next/link";
 import FooterMenusButtons from "../FooterMenusButtons/FooterMenusButtons";
 import FooterNav from "../FooterNav/FooterNav";
 import s from "./FooterContent.module.scss";
+import SocialMedia from "./SocialMedia/SocialMedia";
 
 const FooterContent = () => {
   return (
@@ -23,9 +24,8 @@ const FooterContent = () => {
         <FooterMenusButtons />
       </div>
 
-      <div className={s.rightSide}>
-        <FooterNav />
-      </div>
+      <SocialMedia />
+      <FooterNav />
     </section>
   );
 };
