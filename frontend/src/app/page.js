@@ -9,7 +9,7 @@ export default async function Home() {
       <main className={s.home}>
         <Suspense>
           <FiltersSection />
-          {/* <LeaderBoard /> */}
+          <LeaderBoard />
         </Suspense>
       </main>
     </div>
