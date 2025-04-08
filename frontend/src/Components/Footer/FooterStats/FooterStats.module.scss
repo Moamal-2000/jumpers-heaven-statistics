@@ -1,10 +1,21 @@
+@use "@/Styles/mixins" as m;
+
 .statsSection {
   background-image: linear-gradient(0, #19243c 15%, #101828 100%);
   border-radius: 10px;
   padding: 25px 40px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 30px 70px;
+  flex-wrap: wrap;
+}
+
+@include m.small {
+  .statsSection {
+    justify-content: center;
+    padding: 25px 12px 15px;
+  }
 }
 
 .statsSection .dateWrapper {
@@ -29,13 +40,30 @@
   color: #eab308;
 }
 
+@include m.very-small {
+  .statsSection .dateWrapper .iconHolder {
+    display: none;
+  }
+}
+
 .statsSection .dateWrapper .info {
   font-size: 1.1rem;
   color: #94a3b8;
   line-height: 1.5;
 }
 
-.statsSection .dateWrapper .info .title {}
+@include m.small {
+  .statsSection .dateWrapper .info {
+    font-size: 1rem;
+  }
+}
+
+@include m.very-small {
+  .statsSection .dateWrapper .info {
+    text-align: center;
+    font-size: .9rem;
+  }
+}
 
 .statsSection .dateWrapper .info .date {
   color: #eab308;
@@ -50,6 +78,18 @@
   gap: 60px;
 }
 
+@include m.small {
+  .statsSection .statsWrapper {
+    gap: 40px;
+  }
+}
+
+@include m.very-small {
+  .statsSection .statsWrapper {
+    gap: 30px;
+  }
+}
+
 .statsSection .statsWrapper .stat {
   display: flex;
   flex-direction: column;
@@ -57,13 +97,25 @@
 }
 
 .statsSection .statsWrapper .stat .number {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: bold;
   color: #eab308;
   margin-bottom: 5px;
 }
 
+@include m.very-small {
+  .statsSection .statsWrapper .stat .number {
+    font-size: 1.4rem;
+  }
+}
+
 .statsSection .statsWrapper .stat .title {
-  font-size: 14px;
+  font-size: .875rem;
   color: #94a3b8;
+}
+
+@include m.very-small {
+  .statsSection .statsWrapper .stat .title {
+    font-size: .8rem;
+  }
 }

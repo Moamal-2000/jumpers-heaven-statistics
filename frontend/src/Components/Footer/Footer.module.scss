@@ -1,3 +1,5 @@
+@use "@/Styles/mixins" as m;
+
 .footer {
   margin-top: 40px;
   padding: 48px 24px 80px;
@@ -25,4 +27,10 @@
   border: none;
   border-top: 1px solid #2a3346;
   margin: 40px 0;
+}
+
+@include m.small {
+  .sectionsLine {
+    margin: 20px 0;
+  }
 }

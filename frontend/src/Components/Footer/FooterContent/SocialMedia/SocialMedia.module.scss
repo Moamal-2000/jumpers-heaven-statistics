@@ -1,3 +1,5 @@
+@use "@/Styles/mixins" as m;
+
 .socialMediaNav {
   display: flex;
   flex-direction: column;
@@ -14,12 +16,24 @@
   font-weight: 500;
 }
 
+@include m.small {
+  .socialMediaNav .title {
+    margin-bottom: 0;
+  }
+}
+
 .socialMediaNav ul {
   list-style: none;
   margin: 20px 0;
   display: flex;
   justify-content: center;
   gap: 16px;
+}
+
+@include m.small {
+  .socialMediaNav ul {
+    flex-wrap: wrap;
+  }
 }
 
 .socialMediaNav ul li a {

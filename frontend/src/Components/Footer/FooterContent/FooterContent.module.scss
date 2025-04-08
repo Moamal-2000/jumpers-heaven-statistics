@@ -1,7 +1,29 @@
+@use "@/Styles/mixins" as m;
+
 .contentSection {
   display: flex;
   justify-content: space-between;
   gap: 40px;
+}
+
+@include m.medium {
+  .contentSection {
+    flex-wrap: wrap;
+  }
+}
+
+@include m.small {
+  .contentSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contentSection .leftSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .contentSection .leftSide .logo {
@@ -17,6 +39,13 @@
   color: #facc15;
 }
 
+@include m.small {
+  .contentSection .leftSide .logo>svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
 .contentSection .leftSide .logo>span {
   color: #FBBF24;
   font-weight: 700;
@@ -24,9 +53,28 @@
   text-shadow: 0 0 10px rgba(252, 211, 77, 0.5);
 }
 
+@include m.small {
+  .contentSection .leftSide .logo>span {
+    font-size: 1.6rem;
+  }
+}
+
 .contentSection .leftSide .description {
   font-size: .9rem;
   color: #9CA3AF;
   margin-bottom: 24px;
   max-width: 512px;
+}
+
+@include m.small {
+  .contentSection .leftSide .description {
+    text-align: center;
+  }
+}
+
+@include m.very-small {
+  .contentSection .leftSide .description {
+    font-size: .8rem;
+    text-wrap: balance;
+  }
 }

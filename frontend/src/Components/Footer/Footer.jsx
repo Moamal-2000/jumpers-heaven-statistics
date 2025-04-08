@@ -8,11 +8,10 @@ const Footer = () => {
     <footer className={s.footer}>
       <hr className={s.line} />
 
-      <div className="container">
+      <div className="container" data-container>
         <FooterContent />
         <hr className={s.sectionsLine} />
         <FooterStats />
-
         <CopyRights />
       </div>
     </footer>

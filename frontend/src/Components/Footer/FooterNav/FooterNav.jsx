@@ -13,18 +13,20 @@ const FooterNav = () => {
     <nav className={s.navigation}>
       <h3>Navigation</h3>
 
-      <div className={s.links}>
+      <ul className={s.links}>
         {NAV_LINKS_DATA.map(({ name, href, iconName, id }) => (
-          <Link
-            key={id}
-            href={href}
-            className={currentPage === href ? s.active : ""}
-          >
-            <SvgIcon name={iconName} />
-            <span>{name}</span>
-          </Link>
+          <li>
+            <Link
+              key={id}
+              href={href}
+              className={currentPage === href ? s.active : ""}
+            >
+              <SvgIcon name={iconName} />
+              <span>{name}</span>
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </nav>
   );
 };
