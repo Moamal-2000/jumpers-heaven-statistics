@@ -1,4 +1,3 @@
-import CountryImage from "@/Components/Shared/CountryImage";
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import Image from "next/image";
 import s from "./MapCard.module.scss";
@@ -15,6 +14,8 @@ const MapCard = ({
     author,
     release,
     videos,
+    countryCode,
+    countryName,
   },
 }) => {
   return (
@@ -43,7 +44,7 @@ const MapCard = ({
         </div>
 
         <div className={s.videos}>
-          {videos.map(({ type, icon, id }) => (
+          {videos?.map(({ type, icon, id }) => (
             <div className={s.video} key={id}>
               <SvgIcon name={icon} />
               <span className={s.type}>{type}</span>
@@ -76,7 +77,11 @@ const MapCard = ({
         <div className={s.authorAndRelease}>
           <div className={s.authorWrapper}>
             <div className={s.countryFlag}>
-              <CountryImage countryCode={countryCode} size={64} />
+              {/* <CountryImage
+                countryCode={countryCode}
+                countryName={countryName}
+                size={64}
+              /> */}
             </div>
             <span className={s.authorName}>{author}</span>
           </div>
