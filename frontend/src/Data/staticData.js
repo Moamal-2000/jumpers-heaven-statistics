@@ -48,10 +48,10 @@ export const MAPS = [
     description:
       "An icy mountain challenge with slippery surfaces and crystal formations requiring precise movement and timing.",
     info: [
-      { text: "Best Time", result: "1:24.852", icon: "⏱", id: 1 },
-      { text: "Completions", result: "1,248", icon: "✓", id: 2 },
-      { text: "Checkpoints", result: 6, icon: "◆", id: 3 },
-      { text: "Avg Attempts", result: 24, icon: "↻", id: 4 },
+      { title: "Best Time", result: "1:24.852", icon: "⏱", id: 1 },
+      { title: "Completions", result: "1,248", icon: "✓", id: 2 },
+      { title: "Checkpoints", result: 6, icon: "◆", id: 3 },
+      { title: "Avg Attempts", result: 24, icon: "↻", id: 4 },
     ],
     compilationRate: "27%",
     author: "JumpMaster",
@@ -67,10 +67,10 @@ export const MAPS = [
     description:
       "Navigate through a cyberpunk cityscape with neon lights and advanced momentum mechanics. Perfect for skilled players.",
     info: [
-      { text: "Best Time", result: "2:32.419", icon: "⏱", id: 1 },
-      { text: "Completions", result: "3,574", icon: "✓", id: 2 },
-      { text: "Checkpoints", result: 12, icon: "◆", id: 3 },
-      { text: "Avg Attempts", result: 15, icon: "↻", id: 4 },
+      { title: "Best Time", result: "2:32.419", icon: "⏱", id: 1 },
+      { title: "Completions", result: "3,574", icon: "✓", id: 2 },
+      { title: "Checkpoints", result: 12, icon: "◆", id: 3 },
+      { title: "Avg Attempts", result: 15, icon: "↻", id: 4 },
     ],
     compilationRate: "58%",
     author: "NeonXtreme",
@@ -86,10 +86,10 @@ export const MAPS = [
     description:
       "A beginner-friendly surf map with smooth ramps and gentle curves. Perfect for learning surf mechanics and building speed control.",
     info: [
-      { text: "Best Time", result: "0:58.762", icon: "⏱", id: 1 },
-      { text: "Completions", result: "8,962", icon: "✓", id: 2 },
-      { text: "Checkpoints", result: 5, icon: "◆", id: 3 },
-      { text: "Avg Attempts", result: null, icon: "↻", id: 4 },
+      { title: "Best Time", result: "0:58.762", icon: "⏱", id: 1 },
+      { title: "Completions", result: "8,962", icon: "✓", id: 2 },
+      { title: "Checkpoints", result: 5, icon: "◆", id: 3 },
+      { title: "Avg Attempts", result: null, icon: "↻", id: 4 },
     ],
     compilationRate: null,
     author: null,
@@ -511,5 +511,5 @@ export const SOCIAL_MEDIA_DATA = [
     iconName: "jumpersHeaven",
     link: "https://www.jumpersheaven.com",
     id: 5,
-  }
+  },
 ];

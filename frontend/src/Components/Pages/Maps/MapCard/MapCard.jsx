@@ -6,7 +6,7 @@ const MapCard = ({
   mapData: {
     name,
     types,
-    classification,
+    classifications,
     img,
     rate,
     info,
@@ -24,7 +24,15 @@ const MapCard = ({
         <Image src={img} alt={name} fill={true} />
 
         <div className={s.layer}>
-          <span className={s.classification}>{classification}</span>
+          <div className={s.classifications}>
+            <span className={s.classification}>New</span>
+            <span className={s.classification}>Featured</span>
+            {classifications?.map(({ text, id }) => (
+              <span className={s.classification} key={id}>
+                {text}
+              </span>
+            ))}
+          </div>
 
           <div className={s.types}>
             {types?.map((type) => (
@@ -44,6 +52,14 @@ const MapCard = ({
         </div>
 
         <div className={s.videos}>
+          <div className={s.video}>
+            <SvgIcon name="home" />
+            <span className={s.type}>Shorts</span>
+          </div>
+          <div className={s.video}>
+            <SvgIcon name="home" />
+            <span className={s.type}>Shorts</span>
+          </div>
           {videos?.map(({ type, icon, id }) => (
             <div className={s.video} key={id}>
               <SvgIcon name={icon} />
@@ -57,10 +73,10 @@ const MapCard = ({
             <div className={s.card} key={id}>
               <div className={s.titleWrapper}>
                 <span className={s.iconHolder}>{icon}</span>
-                <h3>{title}</h3>
+                <span className={s.title}>{title}</span>
               </div>
 
-              <span className={s.result}>{result}</span>
+              <p className={s.result}>{result}</p>
             </div>
           ))}
         </div>
@@ -71,7 +87,9 @@ const MapCard = ({
             <span className={s.rate}>{compilationRate}</span>
           </div>
 
-          <div className={s.rateLine}></div>
+          <div className={s.progressBar}>
+            <div className={s.progressLine}></div>
+          </div>
         </div>
 
         <div className={s.authorAndRelease}>
@@ -88,7 +106,7 @@ const MapCard = ({
 
           <div className={s.releaseBox}>
             <div className={s.title}>Released</div>
-            <span className={s.date}>{release}</span>
+            <p className={s.date}>{release}</p>
           </div>
         </div>
       </section>

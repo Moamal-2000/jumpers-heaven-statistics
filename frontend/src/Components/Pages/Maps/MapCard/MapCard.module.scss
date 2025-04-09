@@ -1,79 +1,335 @@
 @use "@/Styles/mixins" as m;
 
 .mapCard {
-  padding: 1.5rem;
-  border-radius: .75rem;
-  border: solid 1px #374151;
-  background-color: #1f2937;
-  width: 100%;
+  background-color: #1a202c;
+  border-radius: 12px;
+  border: 1px solid #2D3748;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+  transition: all .3s ease;
+  position: relative;
 }
 
-.mapCard .imgHolder {}
+.mapCard .imgHolder {
+  position: relative;
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+}
 
-.mapCard .imgHolder>img {}
+.mapCard .imgHolder>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s ease;
+  filter: brightness(.9);
+}
 
-.mapCard .imgHolder .layer {}
+.mapCard .imgHolder .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2) 60%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
 
-.mapCard .imgHolder .layer .classification {}
+.mapCard .imgHolder .layer .classifications {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+}
 
-.mapCard .imgHolder .layer .types {}
+.mapCard .imgHolder .layer .classifications .classification {
+  background-color: #FFC107;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.95;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
 
-.mapCard .imgHolder .layer .types>span {}
+.mapCard .imgHolder .layer .types {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+  transition: all 0.3s ease;
+  transform: translateY(5px);
+  opacity: 0.9;
+}
 
-.mapCard .content {}
+.mapCard .imgHolder .layer .types>span {
+  background-color: #e53e3e;
+  backdrop-filter: blur(4px);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
 
-.mapCard .content .nameAndRating {}
+.mapCard .content {
+  padding: 24px;
+}
 
-.mapCard .content .nameAndRating h2 {}
+.mapCard .content .nameAndRating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
 
-.mapCard .content .nameAndRating .rateWrapper {}
+.mapCard .content .nameAndRating h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  letter-spacing: -0.3px;
+  position: relative;
+  padding-left: 2px;
+}
 
-.mapCard .content .nameAndRating .rateWrapper .star {}
+.mapCard .content .nameAndRating .rateWrapper {
+  display: flex;
+  align-items: center;
+  background-color: rgba(45, 55, 72, 0.7);
+  border-radius: 20px;
+  padding: 6px 12px;
+  transition: all 0.3s ease;
+}
+
+.mapCard .content .nameAndRating .rateWrapper .star {
+  color: #FFC107;
+  font-size: 14px;
+  margin-right: 6px;
+}
 
 .mapCard .content .nameAndRating .rateWrapper .rate {}
 
-.mapCard .content .videos {}
+.mapCard .content .videos {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
 
-.mapCard .content .videos .video {}
+.mapCard .content .videos .video {
+  display: flex;
+  align-items: center;
+  background-color: rgba(45, 55, 72, 0.5);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 100px;
+  justify-content: center;
+  border-left: 3px solid #FF0000;
+}
 
-.mapCard .content .videos .video>svg {}
+.mapCard .content .videos .video>svg {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
 
 .mapCard .content .videos .video .type {}
 
-.mapCard .infoCards {}
+.mapCard .infoCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
 
-.mapCard .infoCards .card {}
+.mapCard .infoCards .card {
+  background-color: rgba(45, 55, 72, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(74, 85, 104, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
 
-.mapCard .infoCards .card .titleWrapper {}
+.mapCard .infoCards .card .titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
 
-.mapCard .infoCards .card .titleWrapper .iconHolder {}
+.mapCard .infoCards .card .titleWrapper .iconHolder {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background-color: rgba(90, 103, 216, 0.15);
+  color: #818CF8;
+  transition: all 0.3s ease;
+}
 
-.mapCard .infoCards .card .titleWrapper>h3 {}
+.mapCard .infoCards .card .titleWrapper .title {
+  color: #A0AEC0;
+  font-size: 12px;
+  font-weight: 500;
+}
 
-.mapCard .infoCards .card .result {}
+.mapCard .infoCards .card .result {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 50px;
+  margin: 8px 0 0 0;
+  transition: all 0.3s ease;
+}
 
-.mapCard .content .completionRate {}
+.mapCard .content .completionRate {
+  margin-bottom: 26px;
+}
 
-.mapCard .content .completionRate .textWrapper {}
+.mapCard .content .completionRate .textWrapper {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
 
-.mapCard .content .completionRate .textWrapper .text {}
+.mapCard .content .completionRate .textWrapper .text {
+  color: #A0AEC0;
+  font-weight: 500;
+}
 
-.mapCard .content .completionRate .textWrapper .rate {}
+.mapCard .content .completionRate .textWrapper .rate {
+  color: white;
+  font-weight: 600;
+}
 
-.mapCard .content .completionRate .rateLine {}
+.mapCard .content .completionRate .progressBar {
+  width: 100%;
+  background-color: rgba(45, 55, 72, 0.7);
+  border-radius: 12px;
+  height: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
 
-.mapCard .authorAndRelease {}
+.mapCard .content .completionRate .progressLine {
+  height: 12px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #E53E3E, #FFC107);
+  width: 27%;
+  transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
-.mapCard .authorAndRelease .authorWrapper {}
+.mapCard .content .completionRate .progressLine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  animation: shine 2s infinite;
+}
 
-.mapCard .authorAndRelease .authorWrapper .countryFlag {}
+.mapCard .authorAndRelease {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid rgba(45, 55, 72, 0.7);
+}
 
-.mapCard .authorAndRelease .authorWrapper .countryFlag>img {}
+.mapCard .authorAndRelease .authorWrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 
-.mapCard .authorAndRelease .authorWrapper .authorName {}
+.mapCard .authorAndRelease .authorWrapper .countryFlag {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border: 2px solid #4A5568;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
 
-.mapCard .authorAndRelease .releaseBox {}
+.mapCard .authorAndRelease .authorWrapper .countryFlag>img {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+}
 
-.mapCard .authorAndRelease .releaseBox .title {}
+.mapCard .authorAndRelease .authorWrapper .authorName {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-.mapCard .authorAndRelease .releaseBox .date {}
+.mapCard .authorAndRelease .releaseBox {
+  background-color: rgba(45, 55, 72, 0.7);
+  border-radius: 8px;
+  padding: 8px 14px;
+  transition: all 0.3s ease;
+}
+
+.mapCard .authorAndRelease .releaseBox .title {
+  color: #A0AEC0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.mapCard .authorAndRelease .releaseBox .date {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 2px 0 0 0;
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
