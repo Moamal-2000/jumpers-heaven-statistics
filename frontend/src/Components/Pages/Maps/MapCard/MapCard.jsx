@@ -1,3 +1,5 @@
+import CountryImage from "@/Components/Shared/CountryImage";
+import SvgIcon from "@/Components/Shared/SvgIcon";
 import Image from "next/image";
 import s from "./MapCard.module.scss";
 
@@ -8,12 +10,11 @@ const MapCard = ({
     classification,
     img,
     rate,
-    description,
     info,
     compilationRate,
     author,
-    isOnline,
     release,
+    videos,
   },
 }) => {
   return (
@@ -23,59 +24,69 @@ const MapCard = ({
 
         <div className={s.layer}>
           <span className={s.classification}>{classification}</span>
+
           <div className={s.types}>
             {types?.map((type) => (
               <span key={type}>{type}</span>
             ))}
           </div>
         </div>
-
-        <section className={s.content}>
-          <div className={s.nameAndRating}>
-            <h2>{name}</h2>
-            <div className={s.rateWrapper}>
-              <span className={s.star}>★</span>
-              <span className={s.rate}>{rate}</span>
-            </div>
-          </div>
-
-          <p className={s.description}>{description}</p>
-
-          <div className={s.infoCards}>
-            {info?.map(({ text, result, icon, id }) => (
-              <div className={s.card} key={id}>
-                <div className={s.titleWrapper}>
-                  <span className={s.iconHolder}>{icon}</span>
-                  <h3>{text}</h3>
-                </div>
-
-                <span className={s.result}>{result}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className={s.completionRate}>
-            <div className={s.textWrapper}>
-              <span className={s.text}>Completion Rate</span>
-              <span className={s.rate}>{compilationRate}</span>
-            </div>
-
-            <div className={s.rateLine}></div>
-          </div>
-
-          <div className={s.authorAndRelease}>
-            <div className={s.authorWrapper}>
-              <span className={s.ShortName}>JM</span>
-              <span className={s.authorName}>{author}</span>
-            </div>
-
-            <div className={s.releaseBox}>
-              <div className={s.title}>Released</div>
-              <span className={s.date}>{release}</span>
-            </div>
-          </div>
-        </section>
       </div>
+
+      <section className={s.content}>
+        <div className={s.nameAndRating}>
+          <h2>{name}</h2>
+          <div className={s.rateWrapper}>
+            <span className={s.star}>★</span>
+            <span className={s.rate}>{rate}</span>
+          </div>
+        </div>
+
+        <div className={s.videos}>
+          {videos.map(({ type, icon, id }) => (
+            <div className={s.video} key={id}>
+              <SvgIcon name={icon} />
+              <span className={s.type}>{type}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className={s.infoCards}>
+          {info?.map(({ title, result, icon, id }) => (
+            <div className={s.card} key={id}>
+              <div className={s.titleWrapper}>
+                <span className={s.iconHolder}>{icon}</span>
+                <h3>{title}</h3>
+              </div>
+
+              <span className={s.result}>{result}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className={s.completionRate}>
+          <div className={s.textWrapper}>
+            <span className={s.text}>Completion Rate</span>
+            <span className={s.rate}>{compilationRate}</span>
+          </div>
+
+          <div className={s.rateLine}></div>
+        </div>
+
+        <div className={s.authorAndRelease}>
+          <div className={s.authorWrapper}>
+            <div className={s.countryFlag}>
+              <CountryImage countryCode={countryCode} size={64} />
+            </div>
+            <span className={s.authorName}>{author}</span>
+          </div>
+
+          <div className={s.releaseBox}>
+            <div className={s.title}>Released</div>
+            <span className={s.date}>{release}</span>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
