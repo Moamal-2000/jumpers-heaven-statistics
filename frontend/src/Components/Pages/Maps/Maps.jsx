@@ -16,8 +16,8 @@ const Maps = () => {
 
   return (
     <section className={s.mapsSection}>
-      {maps.map((mapData) => (
-        <MapCard key={mapData.id} mapData={mapData} />
+      {maps.slice(0, 9).map((mapData) => (
+        <MapCard key={mapData.ID} mapData={mapData} />
       ))}
     </section>
   );

@@ -1,33 +1,30 @@
 import SvgIcon from "@/Components/Shared/SvgIcon";
-import Image from "next/image";
 import s from "./MapCard.module.scss";
 
-const MapCard = ({
-  mapData: {
-    name,
-    types,
-    classifications,
-    img,
-    rate,
-    info,
-    compilationRate,
-    author,
-    release,
-    videos,
-    countryCode,
-    countryName,
-  },
-}) => {
+const MapCard = ({ mapData }) => {
+  const {
+    Author,
+    Difficulty,
+    Name,
+    Types,
+    Classifications,
+    Rate,
+    Info,
+    CompilationRate,
+    Released,
+    Videos,
+    CountryCode,
+    CountryName,
+  } = mapData;
+
   return (
     <div className={s.mapCard}>
       <div className={s.imgHolder}>
-        <Image src={img} alt={name} fill={true} />
+        {/* <Image src={`maps/${Name}`} alt={Name} fill={true} /> */}
 
         <div className={s.layer}>
           <div className={s.classifications}>
-            <span className={s.classification}>New</span>
-            <span className={s.classification}>Featured</span>
-            {classifications?.map(({ text, id }) => (
+            {Classifications?.map(({ text, id }) => (
               <span className={s.classification} key={id}>
                 {text}
               </span>
@@ -35,7 +32,7 @@ const MapCard = ({
           </div>
 
           <div className={s.types}>
-            {types?.map((type) => (
+            {Types?.map((type) => (
               <span key={type}>{type}</span>
             ))}
           </div>
@@ -44,23 +41,15 @@ const MapCard = ({
 
       <section className={s.content}>
         <div className={s.nameAndRating}>
-          <h2>{name}</h2>
+          <h2>{Name}</h2>
           <div className={s.rateWrapper}>
             <span className={s.star}>★</span>
-            <span className={s.rate}>{rate}</span>
+            <span className={s.rate}>{Rate ? Rate : "?"}</span>
           </div>
         </div>
 
         <div className={s.videos}>
-          <div className={s.video}>
-            <SvgIcon name="home" />
-            <span className={s.type}>Shorts</span>
-          </div>
-          <div className={s.video}>
-            <SvgIcon name="home" />
-            <span className={s.type}>Shorts</span>
-          </div>
-          {videos?.map(({ type, icon, id }) => (
+          {Videos?.map(({ type, icon, id }) => (
             <div className={s.video} key={id}>
               <SvgIcon name={icon} />
               <span className={s.type}>{type}</span>
@@ -69,7 +58,7 @@ const MapCard = ({
         </div>
 
         <div className={s.infoCards}>
-          {info?.map(({ title, result, icon, id }) => (
+          {Info?.map(({ title, result, icon, id }) => (
             <div className={s.card} key={id}>
               <div className={s.titleWrapper}>
                 <span className={s.iconHolder}>{icon}</span>
@@ -84,7 +73,7 @@ const MapCard = ({
         <div className={s.completionRate}>
           <div className={s.textWrapper}>
             <span className={s.text}>Completion Rate</span>
-            <span className={s.rate}>{compilationRate}</span>
+            <span className={s.rate}>{CompilationRate}</span>
           </div>
 
           <div className={s.progressBar}>
@@ -96,17 +85,17 @@ const MapCard = ({
           <div className={s.authorWrapper}>
             <div className={s.countryFlag}>
               {/* <CountryImage
-                countryCode={countryCode}
-                countryName={countryName}
+                countryCode={CountryCode}
+                countryName={CountryName}
                 size={64}
               /> */}
             </div>
-            <span className={s.authorName}>{author}</span>
+            <span className={s.authorName}>{Author}</span>
           </div>
 
           <div className={s.releaseBox}>
             <div className={s.title}>Released</div>
-            <p className={s.date}>{release}</p>
+            <p className={s.date}>{Released}</p>
           </div>
         </div>
       </section>
