@@ -5,8 +5,8 @@
   border-radius: 12px;
   border: 1px solid #2D3748;
   box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
-  transition: all .3s ease;
   position: relative;
+  transition: all .3s ease;
 }
 
 .mapCard .imgHolder {
@@ -20,22 +20,22 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(3);
+  -webkit-filter: brightness(3);
   transition: transform .7s ease;
-  filter: brightness(.9);
 }
 
 .mapCard .imgHolder .layer {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2) 60%, transparent);
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, .9),
+      rgba(0, 0, 0, .2) 60%,
+      transparent);
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.9;
-  transition: opacity 0.3s ease;
+  transition: opacity .3s ease;
 }
 
 .mapCard .imgHolder .layer .classifications {
@@ -56,9 +56,8 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  opacity: 0.95;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+  transition: all .3s ease;
 }
 
 .mapCard .imgHolder .layer .types {
@@ -67,22 +66,22 @@
   left: 16px;
   display: flex;
   gap: 8px;
-  transition: all 0.3s ease;
-  transform: translateY(5px);
-  opacity: 0.9;
+  translate: 0 5px;
+  transition: all .3s ease;
 }
 
 .mapCard .imgHolder .layer .types>span {
   background-color: #e53e3e;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   color: white;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
   text-transform: uppercase;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
 }
 
 .mapCard .content {
@@ -99,9 +98,9 @@
 .mapCard .content .nameAndRating h2 {
   font-size: 22px;
   font-weight: 700;
-  color: white;
+  color: #fff;
   margin: 0;
-  letter-spacing: -0.3px;
+  letter-spacing: -.3px;
   position: relative;
   padding-left: 2px;
 }
@@ -109,10 +108,10 @@
 .mapCard .content .nameAndRating .rateWrapper {
   display: flex;
   align-items: center;
-  background-color: rgba(45, 55, 72, 0.7);
+  background-color: rgba(45, 55, 72, .7);
   border-radius: 20px;
   padding: 6px 12px;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
 
 .mapCard .content .nameAndRating .rateWrapper .star {
@@ -132,19 +131,19 @@
 }
 
 .mapCard .content .videos .video {
+  background-color: rgba(45, 55, 72, .5);
+  color: #fff;
   display: flex;
   align-items: center;
-  background-color: rgba(45, 55, 72, 0.5);
   border-radius: 8px;
   padding: 8px 14px;
   font-size: 13px;
-  color: white;
   text-decoration: none;
-  transition: all 0.2s ease;
   flex: 1;
   min-width: 100px;
   justify-content: center;
   border-left: 3px solid #FF0000;
+  transition: all .2s ease;
 }
 
 .mapCard .content .videos .video>svg {
@@ -163,12 +162,13 @@
 }
 
 .mapCard .infoCards .card {
-  background-color: rgba(45, 55, 72, 0.3);
+  background-color: rgba(45, 55, 72, .3);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(74, 85, 104, 0.2);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(74, 85, 104, .2);
   border-radius: 8px;
   padding: 16px;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
 
 .mapCard .infoCards .card .titleWrapper {
@@ -186,9 +186,9 @@
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  background-color: rgba(90, 103, 216, 0.15);
+  background-color: rgba(90, 103, 216, .15);
   color: #818CF8;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
 
 .mapCard .infoCards .card .titleWrapper .title {
@@ -198,12 +198,12 @@
 }
 
 .mapCard .infoCards .card .result {
-  color: white;
+  color: #fff;
   font-size: 20px;
   font-weight: 600;
   padding-left: 50px;
   margin: 8px 0 0 0;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
 
 .mapCard .content .completionRate {
@@ -213,7 +213,7 @@
 .mapCard .content .completionRate .textWrapper {
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: .8rem;
   margin-bottom: 10px;
 }
 
@@ -223,17 +223,17 @@
 }
 
 .mapCard .content .completionRate .textWrapper .rate {
-  color: white;
+  color: #fff;
   font-weight: 600;
 }
 
 .mapCard .content .completionRate .progressBar {
   width: 100%;
-  background-color: rgba(45, 55, 72, 0.7);
+  background-color: rgba(45, 55, 72, .7);
   border-radius: 12px;
   height: 12px;
   overflow: hidden;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
   position: relative;
 }
 
@@ -244,19 +244,16 @@
   overflow: hidden;
   background: linear-gradient(90deg, #E53E3E, #FFC107);
   width: 27%;
-  transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: width 1s cubic-bezier(.175, .885, .32, 1.275);
 }
 
 .mapCard .content .completionRate .progressLine::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: linear-gradient(90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0) 0,
+      rgba(255, 255, 255, .2) 50%,
       rgba(255, 255, 255, 0) 100%);
   animation: shine 2s infinite;
 }
@@ -266,7 +263,7 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 20px;
-  border-top: 1px solid rgba(45, 55, 72, 0.7);
+  border-top: 1px solid rgba(45, 55, 72, .7);
 }
 
 .mapCard .authorAndRelease .authorWrapper {
@@ -282,13 +279,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fff;
   font-size: 18px;
   font-weight: 600;
   border: 2px solid #4A5568;
-  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  transition: all .3s ease;
 }
 
 .mapCard .authorAndRelease .authorWrapper .countryFlag>img {
@@ -298,18 +295,18 @@
 }
 
 .mapCard .authorAndRelease .authorWrapper .authorName {
-  color: white;
+  color: #fff;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color .3s ease;
 }
 
 .mapCard .authorAndRelease .releaseBox {
-  background-color: rgba(45, 55, 72, 0.7);
+  background-color: rgba(45, 55, 72, .7);
   border-radius: 8px;
   padding: 8px 14px;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
 
 .mapCard .authorAndRelease .releaseBox .title {
@@ -319,7 +316,7 @@
 }
 
 .mapCard .authorAndRelease .releaseBox .date {
-  color: white;
+  color: #fff;
   font-size: 14px;
   font-weight: 600;
   margin: 2px 0 0 0;

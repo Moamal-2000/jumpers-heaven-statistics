@@ -1,4 +1,5 @@
 import SvgIcon from "@/Components/Shared/SvgIcon";
+import Image from "next/image";
 import s from "./MapCard.module.scss";
 
 const MapCard = ({ mapData }) => {
@@ -20,7 +21,7 @@ const MapCard = ({ mapData }) => {
   return (
     <div className={s.mapCard}>
       <div className={s.imgHolder}>
-        {/* <Image src={`maps/${Name}`} alt={Name} fill={true} /> */}
+        <Image src={`/maps/${Name}.jpg`} alt={Name} fill={true} />
 
         <div className={s.layer}>
           <div className={s.classifications}>
