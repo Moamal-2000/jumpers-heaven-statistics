@@ -2,7 +2,7 @@ import SvgIcon from "@/Components/Shared/SvgIcon";
 import Image from "next/image";
 import s from "./MapCard.module.scss";
 
-const MapCard = ({ mapData }) => {
+const MapCard = ({ mapData, lastMapRef }) => {
   const {
     Author,
     Difficulty,
@@ -19,7 +19,7 @@ const MapCard = ({ mapData }) => {
   } = mapData;
 
   return (
-    <div className={s.mapCard}>
+    <div className={s.mapCard} ref={lastMapRef}>
       <div className={s.imgHolder}>
         <Image src={`/maps/${Name}.jpg`} alt={Name} fill={true} />
 

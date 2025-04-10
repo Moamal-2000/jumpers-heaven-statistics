@@ -57,12 +57,9 @@ export function getLeaderboardUrl(paramsObject) {
   return leaderboardUrls[leaderboardType];
 }
 
-export function getIsLastPagination(leaderboardData, paginationNumber) {
-  const lastLeaderboardPagination = Math.ceil(
-    leaderboardData?.length / PAGINATION_ITEMS_PER_PAGE
-  );
-
-  return paginationNumber > lastLeaderboardPagination;
+export function getIsLastPagination(data, paginationNumber) {
+  const lastPagination = Math.ceil(data?.length / PAGINATION_ITEMS_PER_PAGE);
+  return paginationNumber > lastPagination;
 }
 
 export function getRegionByCountry(countryCode) {

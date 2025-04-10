@@ -1,9 +1,10 @@
 import { jhApis } from "@/Api/jumpersHeaven";
-import { decodeAsyncData } from "@/Functions/utils";
+import { decodeAsyncData, paginateData } from "@/Functions/utils";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  maps: [],
+  mapsData: [],
+  mapsScroll: [],
 };
 
 export const fetchMaps = createAsyncThunk("globalSlice/fetchMaps", async () => {
@@ -30,7 +31,12 @@ export const mapsSlice = createSlice({
   extraReducers: ({ addCase }) => {
     addCase(fetchMaps.pending, (state, action) => {})
       .addCase(fetchMaps.fulfilled, (state, action) => {
-        state.maps = action.payload;
+        const paginationMaps = paginateData(action.payload, 1);
+
+        state.mapsData = action.payload;
+        state.mapsScroll = paginationMaps;
+        state.loading = false;
+        state.error = false;
       })
       .addCase(fetchMaps.rejected, (state, action) => {});
   },
