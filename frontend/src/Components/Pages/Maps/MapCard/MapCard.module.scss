@@ -20,17 +20,20 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(3);
-  -webkit-filter: brightness(3);
   transition: transform .7s ease;
+}
+
+.mapCard:hover .imgHolder>img {
+  filter: brightness(1.2);
+  -webkit-filter: brightness(1.2);
 }
 
 .mapCard .imgHolder .layer {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top,
-      rgba(0, 0, 0, .9),
-      rgba(0, 0, 0, .2) 60%,
+      rgba(0, 0, 0, .3),
+      rgba(0, 0, 0, .1) 60%,
       transparent);
   display: flex;
   align-items: center;
