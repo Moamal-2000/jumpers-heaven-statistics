@@ -52,10 +52,10 @@ const MapCard = ({ mapData, lastMapRef }) => {
 
         <div className={s.videos}>
           {Videos?.map(({ type, icon, id }) => (
-            <div className={s.video} key={id}>
+            <button type="button" className={s.video} key={id}>
               <SvgIcon name={icon} />
               <span className={s.type}>{type}</span>
-            </div>
+            </button>
           ))}
         </div>
 
