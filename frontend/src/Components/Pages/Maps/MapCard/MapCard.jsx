@@ -1,6 +1,7 @@
 import MapImage from "@/Components/Shared/MapImage";
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { formateReleaseDate } from "@/Functions/utils";
+import Link from "next/link";
 import s from "./MapCard.module.scss";
 
 const MapCard = ({ mapData, lastMapRef }) => {
@@ -15,8 +16,6 @@ const MapCard = ({ mapData, lastMapRef }) => {
     CompilationRate,
     Released,
     Videos,
-    CountryCode,
-    CountryName,
   } = mapData;
 
   return (
@@ -43,7 +42,8 @@ const MapCard = ({ mapData, lastMapRef }) => {
 
       <section className={s.content}>
         <div className={s.nameAndRating}>
-          <h2>{Name}</h2>
+          <Link href="/maps/map/details">{Name}</Link>
+
           <div className={s.rateWrapper}>
             <span className={s.star}>★</span>
             <span className={s.rate}>{Rate ? Rate : "?"}</span>
