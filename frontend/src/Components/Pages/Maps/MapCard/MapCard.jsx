@@ -75,11 +75,15 @@ const MapCard = ({ mapData, lastMapRef }) => {
         <div className={s.completionRate}>
           <div className={s.textWrapper}>
             <span className={s.text}>Completion Rate</span>
-            <span className={s.rate}>{CompilationRate}</span>
+            <span className={s.rate}>{CompilationRate || 0 + "%"}</span>
           </div>
 
+          {console.log(CompilationRate)}
           <div className={s.progressBar}>
-            <div className={s.progressLine}></div>
+            <div
+              className={s.progressLine}
+              style={{ width: CompilationRate || 0 + "%" }}
+            />
           </div>
         </div>
 
