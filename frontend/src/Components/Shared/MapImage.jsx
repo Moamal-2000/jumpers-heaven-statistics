@@ -3,22 +3,25 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const MapImage = ({ mapName, size = 32 }) => {
+const PLACEHOLDER_PATH = "/map-placeholder.svg";
+
+const MapImage = ({ mapName }) => {
   const [src, setSrc] = useState(`/maps/${mapName.toLowerCase()}.jpg`);
-  const [title, setTitle] = useState(mapName);
+  const [scale, setScale] = useState(1);
 
   function handleError() {
-    setSrc("/map-placeholder.jpg");
-    setTitle("Unknown map");
+    setSrc(PLACEHOLDER_PATH);
+    setScale(0.5);
   }
 
   return (
     <Image
-      width={size}
-      height={size}
-      src={src}
-      alt={title}
-      title={title}
+      fill={true}
+      objectFit="contain"
+      src={src || PLACEHOLDER_PATH}
+      alt={mapName}
+      title={mapName}
+      style={{ scale }}
       onError={handleError}
     />
   );

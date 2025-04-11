@@ -1,6 +1,6 @@
+import MapImage from "@/Components/Shared/MapImage";
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { formateReleaseDate } from "@/Functions/utils";
-import Image from "next/image";
 import s from "./MapCard.module.scss";
 
 const MapCard = ({ mapData, lastMapRef }) => {
@@ -22,7 +22,7 @@ const MapCard = ({ mapData, lastMapRef }) => {
   return (
     <div className={s.mapCard} ref={lastMapRef}>
       <div className={s.imgHolder}>
-        <Image src={`/maps/${Name}.jpg`} alt={Name} fill={true} />
+        <MapImage mapName={Name} />
 
         <div className={s.layer}>
           <div className={s.classifications}>
