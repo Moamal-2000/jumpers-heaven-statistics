@@ -78,7 +78,6 @@ const MapCard = ({ mapData, lastMapRef }) => {
             <span className={s.rate}>{CompilationRate || 0 + "%"}</span>
           </div>
 
-          {console.log(CompilationRate)}
           <div className={s.progressBar}>
             <div
               className={s.progressLine}
