@@ -1,7 +1,7 @@
 @use "@/Styles/mixins" as m;
 
 .mapCard {
-  background-color: #1a202c;
+  background-color: #101828;
   border-radius: 12px;
   border: 1px solid #2D3748;
   box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
@@ -10,13 +10,42 @@
 }
 
 .mapCard .imgHolder {
-  position: relative;
+  border-radius: inherit;
   height: 220px;
   width: 100%;
+  min-height: 224px;
   overflow: hidden;
+  position: relative;
+}
+
+@include m.large {
+  .mapCard .imgHolder {
+    min-height: 300px;
+  }
+}
+
+@include m.medium {
+  .mapCard .imgHolder {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 812px) {
+  .mapCard .imgHolder {
+    min-height: 400px;
+  }
+}
+
+@include m.small {
+  .mapCard .imgHolder {
+    aspect-ratio: 16 / 10;
+    min-height: auto;
+    height: auto;
+  }
 }
 
 .mapCard .imgHolder>img {
+  border-radius: inherit;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -111,9 +140,11 @@
 .mapCard .content .nameAndRating .rateWrapper {
   display: flex;
   align-items: center;
-  background-color: rgba(45, 55, 72, .7);
-  border-radius: 20px;
-  padding: 6px 12px;
+  justify-content: center;
+  background-color: #1e2939;
+  min-width: 50px;
+  border-radius: 10px;
+  padding: 4px;
   transition: all .3s ease;
 }
 
@@ -168,7 +199,7 @@
   background-color: rgba(45, 55, 72, .3);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(74, 85, 104, .2);
+  border: 1px solid rgba(45, 55, 72, .5);
   border-radius: 8px;
   padding: 16px;
   transition: all .3s ease;
@@ -232,7 +263,7 @@
 
 .mapCard .content .completionRate .progressBar {
   width: 100%;
-  background-color: rgba(45, 55, 72, .7);
+  background-color: oklch(27.8% 0.033 256.848);
   border-radius: 12px;
   height: 12px;
   overflow: hidden;
@@ -285,7 +316,7 @@
   color: #fff;
   font-size: 18px;
   font-weight: 600;
-  border: 2px solid #4A5568;
+  border: 2px solid #364153;
   position: relative;
   overflow: hidden;
   transition: all .3s ease;
@@ -306,7 +337,7 @@
 }
 
 .mapCard .authorAndRelease .releaseBox {
-  background-color: rgba(45, 55, 72, .7);
+  background-color: #1a2434;
   border-radius: 8px;
   padding: 8px 14px;
   transition: all .3s ease;
