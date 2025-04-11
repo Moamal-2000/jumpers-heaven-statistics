@@ -10,42 +10,13 @@
 }
 
 .mapCard .imgHolder {
-  border-radius: inherit;
-  height: 220px;
-  width: 100%;
-  min-height: 224px;
-  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  aspect-ratio: 19.58 / 11;
   position: relative;
 }
 
-@include m.large {
-  .mapCard .imgHolder {
-    min-height: 300px;
-  }
-}
-
-@include m.medium {
-  .mapCard .imgHolder {
-    min-height: 250px;
-  }
-}
-
-@media (max-width: 812px) {
-  .mapCard .imgHolder {
-    min-height: 400px;
-  }
-}
-
-@include m.small {
-  .mapCard .imgHolder {
-    aspect-ratio: 16 / 10;
-    min-height: auto;
-    height: auto;
-  }
-}
-
 .mapCard .imgHolder>img {
-  border-radius: inherit;
+  border-radius: 12px 12px 0 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
