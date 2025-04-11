@@ -1,3 +1,17 @@
-export const WEBSITE_NAME = "JumpersHeaven"
+export const WEBSITE_NAME = "JumpersHeaven";
 export const PAGINATION_ITEMS_PER_PAGE = 10;
 export const PAGINATION_DISPLAY_LIMIT = 5;
+export const MONTHS = {
+  1: "January",
+  2: "February",
+  3: "March",
+  4: "April",
+  5: "May",
+  6: "June",
+  7: "July",
+  8: "August",
+  9: "September",
+  10: "October",
+  11: "November",
+  12: "December",
+};

@@ -1,5 +1,5 @@
 import { jhApis } from "@/Api/jumpersHeaven";
-import { PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
+import { MONTHS, PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
 import { COUNTRIES_BY_CODE, REGIONS, TOP_STATS_COLOR } from "@/Data/staticData";
 import { decode } from "msgpackr";
 import { inflate } from "pako";
@@ -81,4 +81,10 @@ export async function decodeAsyncData(response) {
   const uint8Array = new Uint8Array(buffer);
   const decompressed = inflate(uint8Array);
   return decode(decompressed);
+}
+
+export function formateReleaseDate(dateStr) {
+  if (!dateStr) return "Unknown";
+  const [year, month, day] = dateStr.split("-");
+  return `${MONTHS[+month]} ${day}, ${year}}`;
 }

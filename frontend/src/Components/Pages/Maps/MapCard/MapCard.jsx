@@ -1,4 +1,5 @@
 import SvgIcon from "@/Components/Shared/SvgIcon";
+import { formateReleaseDate } from "@/Functions/utils";
 import Image from "next/image";
 import s from "./MapCard.module.scss";
 
@@ -96,7 +97,7 @@ const MapCard = ({ mapData, lastMapRef }) => {
 
           <div className={s.releaseBox}>
             <div className={s.title}>Released</div>
-            <p className={s.date}>{Released}</p>
+            <p className={s.date}>{formateReleaseDate(Released)}</p>
           </div>
         </div>
       </section>
