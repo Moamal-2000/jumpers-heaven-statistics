@@ -86,5 +86,5 @@ export async function decodeAsyncData(response) {
 export function formateReleaseDate(dateStr) {
   if (!dateStr) return "Unknown";
   const [year, month, day] = dateStr.split("-");
-  return `${MONTHS[+month]} ${day}, ${year}}`;
+  return `${MONTHS[+month]} ${day}, ${year}`;
 }

@@ -120,6 +120,12 @@
   padding: 24px;
 }
 
+@media (max-width: 1280px) {
+  .mapCard .content {
+    padding: 24px 14px;
+  }
+}
+
 @include m.small {
   .mapCard .content {
     padding: 18px;
@@ -323,6 +329,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
   padding-top: 20px;
   border-top: 1px solid rgba(45, 55, 72, .7);
 }
@@ -334,8 +341,11 @@
 }
 
 .mapCard .authorAndRelease .authorWrapper .countryFlag {
-  width: 46px;
-  height: 46px;
+  --size: 46px;
+  min-width: var(--size);
+  min-height: var(--size);
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -349,6 +359,12 @@
   transition: all .3s ease;
 }
 
+@include m.very-small {
+  .mapCard .authorAndRelease .authorWrapper .countryFlag {
+    display: none;
+  }
+}
+
 .mapCard .authorAndRelease .authorWrapper .countryFlag>img {
   border-radius: inherit;
   width: 100%;
@@ -357,7 +373,7 @@
 
 .mapCard .authorAndRelease .authorWrapper .authorName {
   color: #fff;
-  font-size: 15px;
+  font-size: .9rem;
   font-weight: 600;
   text-decoration: none;
   transition: color .3s ease;
@@ -378,9 +394,10 @@
 
 .mapCard .authorAndRelease .releaseBox .date {
   color: #fff;
-  font-size: 14px;
+  font-size: .8rem;
   font-weight: 600;
   margin: 2px 0 0 0;
+  width: max-content;
 }
 
 @keyframes shine {
