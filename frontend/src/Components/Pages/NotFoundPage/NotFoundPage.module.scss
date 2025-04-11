@@ -63,8 +63,23 @@
   }
 }
 
-.returnHomeBtn {
-  border: solid 2px #F5D452;
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+@include m.very-small {
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.buttons .returnHomeBtn {}
+
+.buttons :where(a, button) {
+  font-family: inherit;
+  border: none;
   background-color: #F5D452;
   color: #0E1116;
   padding: 12px 24px;
@@ -73,6 +88,7 @@
   position: relative;
   overflow: hidden;
   user-select: none;
+  cursor: pointer;
   transition: translate .2s ease, box-shadow .2s ease;
 
   &:hover {
@@ -86,20 +102,21 @@
 }
 
 @include m.small {
-  .returnHomeBtn {
+  .buttons :where(a, button) {
     padding: 10px 18px;
     font-size: .9rem;
+    font-weight: 500;
   }
 }
 
 @include m.very-small {
-  .returnHomeBtn {
+  .buttons :where(a, button) {
     width: 100%;
     text-align: center;
   }
 }
 
-.returnHomeBtn::before {
+.buttons :where(a, button)::before {
   content: '';
   position: absolute;
   top: 0;

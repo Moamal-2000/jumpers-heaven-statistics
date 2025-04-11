@@ -27,9 +27,19 @@ const NotFoundPage = () => {
 
       <NotFoundPageList />
 
-      <Link href="/" className={s.returnHomeBtn}>
-        Return to Home page
-      </Link>
+      <div className={s.buttons}>
+        <Link href="/" className={s.returnHomeBtn}>
+          Return to Home page
+        </Link>
+
+        <button
+          type="button"
+          className={s.backBtn}
+          onClick={() => window.history.back()}
+        >
+          Go Back
+        </button>
+      </div>
     </main>
   );
 };
