@@ -120,21 +120,48 @@
   padding: 24px;
 }
 
+@include m.small {
+  .mapCard .content {
+    padding: 18px;
+  }
+}
+
+@include m.very-small {
+  .mapCard .content {
+    padding: 16px 10px;
+  }
+}
+
 .mapCard .content .nameAndRating {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
+  gap: 30px;
 }
 
 .mapCard .content .nameAndRating h2 {
-  font-size: 22px;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #fff;
   margin: 0;
   letter-spacing: -.3px;
   position: relative;
   padding-left: 2px;
+  word-break: break-all;
+}
+
+@include m.small {
+  .mapCard .content .nameAndRating h2 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+@include m.very-small {
+  .mapCard .content .nameAndRating h2 {
+    font-size: 1rem;
+  }
 }
 
 .mapCard .content .nameAndRating .rateWrapper {
@@ -142,7 +169,7 @@
   align-items: center;
   justify-content: center;
   background-color: #1e2939;
-  min-width: 50px;
+  min-width: 60px;
   border-radius: 10px;
   padding: 4px;
   transition: all .3s ease;
