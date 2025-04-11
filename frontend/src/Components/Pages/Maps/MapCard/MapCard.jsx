@@ -51,6 +51,8 @@ const MapCard = ({ mapData, lastMapRef }) => {
         </div>
 
         <div className={s.videos}>
+          {!Videos?.length && <p>This map has no videos.</p>}
+
           {Videos?.map(({ type, icon, id }) => (
             <button type="button" className={s.video} key={id}>
               <SvgIcon name={icon} />
