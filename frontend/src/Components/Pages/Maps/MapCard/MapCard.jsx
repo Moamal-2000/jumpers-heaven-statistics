@@ -1,6 +1,7 @@
 import MapImage from "@/Components/Shared/MapImage";
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { formateReleaseDate } from "@/Functions/utils";
+import Image from "next/image";
 import Link from "next/link";
 import s from "./MapCard.module.scss";
 
@@ -17,6 +18,9 @@ const MapCard = ({ mapData, lastMapRef }) => {
     Released,
     Videos,
   } = mapData;
+
+  const difficulty = Math.ceil(Difficulty?.["125"]?.Difficulty) || 0;
+  const fixedDiff = difficulty < 0 ? 0 : difficulty;
 
   return (
     <div className={s.mapCard} ref={lastMapRef}>
@@ -91,11 +95,11 @@ const MapCard = ({ mapData, lastMapRef }) => {
         <div className={s.authorAndRelease}>
           <div className={s.authorWrapper}>
             <div className={s.countryFlag}>
-              {/* <CountryImage
-                countryCode={CountryCode}
-                countryName={CountryName}
-                size={64}
-              /> */}
+              <Image
+                src={`/difficultiesIcons/diff-${fixedDiff}.png`}
+                alt={`Difficulty ${fixedDiff}`}
+                fill={true}
+              />
             </div>
             <span className={s.authorName}>{Author}</span>
           </div>
