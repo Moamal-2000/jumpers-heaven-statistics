@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ExpandButton from "./ExpandButton";
 import s from "./LeaderboardHeaderBtns.module.scss";
+import ShowAllButton from "./ShowAllButton";
 
 const LeaderboardHeaderBtns = ({ setPaginationNumber }) => {
   const {
@@ -76,7 +77,7 @@ const LeaderboardHeaderBtns = ({ setPaginationNumber }) => {
   return (
     <div className={s.buttons}>
       <ExpandButton />
-
+      <ShowAllButton />
       <button
         type="button"
         className={s.showAllBtn}
