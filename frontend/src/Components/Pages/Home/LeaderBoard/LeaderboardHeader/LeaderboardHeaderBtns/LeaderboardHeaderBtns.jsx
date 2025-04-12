@@ -5,6 +5,7 @@ import { updateGlobalState } from "@/Redux/slices/globalSlice";
 import { updateLeaderboardState } from "@/Redux/slices/leaderboardSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import ExpandButton from "./ExpandButton";
 import s from "./LeaderboardHeaderBtns.module.scss";
 
 const LeaderboardHeaderBtns = ({ setPaginationNumber }) => {
@@ -16,9 +17,7 @@ const LeaderboardHeaderBtns = ({ setPaginationNumber }) => {
     loading,
     error,
   } = useSelector((s) => s.leaderboard);
-  const { isLeaderboardExpanded, isLeaderboardReversed } = useSelector(
-    (s) => s.global
-  );
+  const { isLeaderboardReversed } = useSelector((s) => s.global);
   const dispatch = useDispatch();
   const isLeaderboardUnavailable =
     loading || error || leaderboardData.length === 0;
@@ -28,15 +27,6 @@ const LeaderboardHeaderBtns = ({ setPaginationNumber }) => {
       : allDataDisplayed
       ? "Show Less"
       : "Show All";
-
-  function handleExpandBtn() {
-    dispatch(
-      updateGlobalState({
-        key: "isLeaderboardExpanded",
-        value: !isLeaderboardExpanded,
-      })
-    );
-  }
 
   function handleShowAllBtn() {
     if (allDataDisplayed) {
@@ -85,14 +75,7 @@ const LeaderboardHeaderBtns = ({ setPaginationNumber }) => {
 
   return (
     <div className={s.buttons}>
-      <button
-        type="button"
-        className={s.expandBtn}
-        onClick={handleExpandBtn}
-        disabled={isLeaderboardUnavailable}
-      >
-        {isLeaderboardExpanded ? "Minimize" : "Maximize"}
-      </button>
+      <ExpandButton />
 
       <button
         type="button"
