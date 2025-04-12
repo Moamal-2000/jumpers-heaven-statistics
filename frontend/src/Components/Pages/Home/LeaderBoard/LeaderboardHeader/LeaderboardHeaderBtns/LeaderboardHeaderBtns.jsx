@@ -48,7 +48,7 @@ const LeaderboardHeaderBtns = ({ setPaginationNumber }) => {
   }
 
   function handleShowAll() {
-    if (leaderboardData?.length <= 0) return;
+    if (leaderboardData?.length <= 0 || allDataDisplayed) return;
 
     const lastLeaderboardPagination = Math.ceil(
       leaderboardData?.length / PAGINATION_ITEMS_PER_PAGE
@@ -73,6 +73,7 @@ const LeaderboardHeaderBtns = ({ setPaginationNumber }) => {
         value: firstChunkLeaderboard,
       })
     );
+    dispatch(updateGlobalState({ key: "isLeaderboardReversed", value: false }));
 
     setPaginationNumber(1);
   }
