@@ -7,7 +7,7 @@ const MapsPage = () => {
     <div className="container">
       <main className={s.mapsPage}>
         <Introduction />
-        {/* <Maps /> */}
+        <Maps />
       </main>
     </div>
   );

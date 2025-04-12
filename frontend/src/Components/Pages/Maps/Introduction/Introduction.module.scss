@@ -1,6 +1,8 @@
 @use "@/Styles/mixins" as m;
 
-.introduction {}
+.introduction {
+  margin-bottom: 100px;
+}
 
 .introduction>h2 {
   font-size: 2.5rem;
