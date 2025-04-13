@@ -51,6 +51,11 @@
   color: #9ca3af;
   width: 20px;
   height: 20px;
+
+  & path {
+    stroke: #9ca3af;
+    color: #9ca3af;
+  }
 }
 
 @include m.medium {
@@ -62,10 +67,20 @@
 
 .mainNav>a.active>svg {
   color: #fff;
+
+  & path {
+    stroke: #fff;
+    color: #fff;
+  }
 }
 
 .mainNav>a:not(.active):hover>svg {
   color: #ebebeb;
+
+  & path {
+    stroke: #fff;
+    color: #fff;
+  }
 }
 
 .mainNav>a>span {

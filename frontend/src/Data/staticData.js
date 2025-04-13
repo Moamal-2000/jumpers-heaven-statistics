@@ -8,7 +8,7 @@ export const NAV_LINKS_DATA = [
   {
     name: "Leaderboards",
     href: "/leaderboards",
-    iconName: "",
+    iconName: "leaderboard",
     id: 2,
   },
   {
