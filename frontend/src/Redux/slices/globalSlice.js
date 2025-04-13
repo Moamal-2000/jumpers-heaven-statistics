@@ -17,11 +17,11 @@ export const getJumpersHeavenStats = createAsyncThunk(
       const response = await fetch(jhApis({}).map.getMapsCount, {
         headers: { Accept: "application/msgpack" },
       });
-      const mapsCountData = await decodeAsyncData(response);
 
+      const mapsCountData = await decodeAsyncData(response);
       return { mapsCount: mapsCountData?.Count };
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   }
 );

@@ -18,9 +18,9 @@ const ShowAllButton = ({ setPaginationNumber }) => {
   const { isLeaderboardReversed } = useSelector((s) => s.global);
   const dispatch = useDispatch();
   const isLeaderboardUnavailable =
-    loading || error || leaderboardData.length === 0;
+    loading || error || leaderboardData?.length === 0;
   const showAllBtnNoun =
-    leaderboardData.length === 0
+    leaderboardData?.length === 0
       ? "Show All"
       : allDataDisplayed
       ? "Show Less"

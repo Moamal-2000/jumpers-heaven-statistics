@@ -9,7 +9,7 @@ const ExpandButton = () => {
 
   const dispatch = useDispatch();
   const isLeaderboardUnavailable =
-    loading || error || leaderboardData.length === 0;
+    loading || error || leaderboardData?.length === 0;
 
   function handleExpandBtn() {
     dispatch(

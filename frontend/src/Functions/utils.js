@@ -79,8 +79,10 @@ export function getCountryName(countryCode) {
 export async function decodeAsyncData(response) {
   const buffer = await response.arrayBuffer();
   const uint8Array = new Uint8Array(buffer);
-  const decompressed = inflate(uint8Array);
-  return decode(decompressed);
+  const isGzipped = response.headers.get("Content-Encoding") === "gzip";
+  const data = isGzipped ? inflate(uint8Array) : uint8Array;
+
+  return decode(data);
 }
 
 export function formateReleaseDate(dateStr) {
