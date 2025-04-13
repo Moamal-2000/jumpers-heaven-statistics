@@ -8,12 +8,6 @@
 
 @include m.medium {
   .mainNav {
-    gap: 14px;
-  }
-}
-
-@include m.small {
-  .mainNav {
     display: none;
   }
 }
