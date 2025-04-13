@@ -29,7 +29,7 @@ export const fetchLeaderboard = createAsyncThunk(
       const regionFilter = paramsObject?.["region"];
 
       const response = await fetch(leaderboardUrl, {
-        headers: { Accept: "application/msgpack" },
+        headers: { Accept: "application/msgpack", "Accept-Encoding": "gzip" },
       });
       const leaderboardData = await decodeAsyncData(response);
       leaderboard = leaderboardData;

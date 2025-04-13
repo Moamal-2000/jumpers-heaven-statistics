@@ -15,7 +15,7 @@ export const getJumpersHeavenStats = createAsyncThunk(
   async () => {
     try {
       const response = await fetch(jhApis({}).map.getMapsCount, {
-        headers: { Accept: "application/msgpack" },
+        headers: { Accept: "application/msgpack", "Accept-Encoding": "gzip" },
       });
 
       const mapsCountData = await decodeAsyncData(response);
