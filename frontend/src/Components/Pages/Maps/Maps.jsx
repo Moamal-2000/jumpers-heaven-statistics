@@ -45,14 +45,14 @@ const Maps = () => {
         if (mapsScroll.length === index + 1) {
           return (
             <MapCard
-              key={mapData.ID}
+              key={mapData.CpID}
               mapData={mapData}
               lastMapRef={lastMapRef}
             />
           );
         }
 
-        return <MapCard key={mapData.ID} mapData={mapData} />;
+        return <MapCard key={mapData.CpID} mapData={mapData} />;
       })}
     </section>
   );
