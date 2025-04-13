@@ -489,7 +489,7 @@ export const COUNTRIES_BY_CODE = {
 export const SOCIAL_MEDIA_DATA = [
   {
     iconName: "discord",
-    link: "",
+    link: "https://discord.com/channels/@me/752895615347851264/1359590695429603451",
     id: 1,
   },
   {
