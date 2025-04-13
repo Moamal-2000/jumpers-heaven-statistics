@@ -16,12 +16,12 @@ const MapImage = ({ mapName }) => {
 
   return (
     <Image
+      sizes="402.9px"
       fill={true}
-      objectFit="contain"
       src={src || PLACEHOLDER_PATH}
       alt={mapName}
       title={mapName}
-      style={{ scale }}
+      style={{ scale, objectFit: "contain", objectPosition: "center" }}
       onError={handleError}
     />
   );

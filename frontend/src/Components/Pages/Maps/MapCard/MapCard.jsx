@@ -96,6 +96,7 @@ const MapCard = ({ mapData, lastMapRef }) => {
           <div className={s.authorWrapper}>
             <div className={s.countryFlag}>
               <Image
+                sizes="42.8px"
                 src={`/difficultiesIcons/diff-${fixedDiff}.png`}
                 alt={`Difficulty ${fixedDiff}`}
                 fill={true}
