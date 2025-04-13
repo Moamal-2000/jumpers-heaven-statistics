@@ -92,6 +92,7 @@ const MapCard = ({ mapData, lastMapRef }) => {
           </div>
         </div>
 
+        <AuthorAndRelease />
         <div className={s.authorAndRelease}>
           <div className={s.authorWrapper}>
             <div className={s.countryFlag}>
