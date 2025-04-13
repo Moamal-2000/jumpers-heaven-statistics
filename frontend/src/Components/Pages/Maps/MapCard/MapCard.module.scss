@@ -6,7 +6,7 @@
   border: 1px solid #2D3748;
   box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
   position: relative;
-  transition: all .3s ease;
+  transition: box-shadow .3s ease, border-color .3s ease;
 
   &:hover {
     box-shadow: 0 10px 25px rgba(255, 193, 7, 0.1);
@@ -66,7 +66,6 @@
   align-items: center;
   gap: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
-  transition: all .3s ease;
 }
 
 .mapCard .imgHolder .layer .types {
@@ -76,7 +75,6 @@
   display: flex;
   gap: 8px;
   translate: 0 5px;
-  transition: all .3s ease;
 }
 
 .mapCard .imgHolder .layer .types>span {
@@ -160,7 +158,6 @@
   min-width: 60px;
   border-radius: 10px;
   padding: 4px;
-  transition: all .3s ease;
 }
 
 .mapCard .content .nameAndRating .rateWrapper .star {
@@ -168,8 +165,6 @@
   font-size: 14px;
   margin-right: 6px;
 }
-
-.mapCard .content .nameAndRating .rateWrapper .rate {}
 
 .mapCard .content .videos {
   display: flex;
@@ -194,7 +189,7 @@
   min-width: 100px;
   justify-content: center;
   border-left: 3px solid #FF0000;
-  transition: all .2s ease;
+  transition: background-color .2s ease, box-shadow .2s ease;
 
   &:hover {
     background-color: rgba(74, 85, 104, .7);
@@ -207,8 +202,6 @@
   height: 18px;
   margin-right: 8px;
 }
-
-.mapCard .content .videos .video .type {}
 
 .mapCard .infoCards {
   display: grid;
@@ -224,7 +217,6 @@
   border: 1px solid rgba(45, 55, 72, .5);
   border-radius: 8px;
   padding: 16px;
-  transition: all .3s ease;
 }
 
 .mapCard .infoCards .card .titleWrapper {
@@ -244,7 +236,6 @@
   font-size: 18px;
   background-color: rgba(90, 103, 216, .15);
   color: #818CF8;
-  transition: all .3s ease;
 }
 
 .mapCard .infoCards .card .titleWrapper .title {
@@ -259,7 +250,6 @@
   font-weight: 600;
   padding-left: 50px;
   margin: 8px 0 0 0;
-  transition: all .3s ease;
 }
 
 .mapCard .content .completionRate {
@@ -315,10 +305,10 @@
 
 @keyframes shine {
   from {
-    transform: translateX(-100%);
+    translate: -100% 0;
   }
 
   to {
-    transform: translateX(100%);
+    translate: 100% 0;
   }
 }
