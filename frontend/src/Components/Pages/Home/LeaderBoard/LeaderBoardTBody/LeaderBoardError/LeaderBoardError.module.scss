@@ -42,7 +42,7 @@
 .errorIcon::before {
   content: '!';
   color: #EF4444;
-  font-size: 72px;
+  font-size: 4.5rem;
   font-weight: bold;
   text-shadow: 0 4px 6px rgba(239, 68, 68, .2);
   transition: transform .3s ease;
@@ -65,7 +65,7 @@
 
 .description {
   color: #94A3B8;
-  font-size: 16px;
+  font-size: 1rem;
   max-width: 390px;
   width: 100%;
   text-align: center;
@@ -89,7 +89,7 @@
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   user-select: none;
   display: flex;

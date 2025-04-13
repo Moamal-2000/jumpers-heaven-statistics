@@ -58,7 +58,7 @@
 .mapCard .imgHolder .layer .classifications .classification {
   background-color: #FFC107;
   color: black;
-  font-size: 12px;
+  font-size: .75rem;
   font-weight: bold;
   padding: 6px 14px;
   border-radius: 20px;
@@ -84,7 +84,7 @@
   color: white;
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 11px;
+  font-size: .6875rem;
   font-weight: 600;
   letter-spacing: .5px;
   text-transform: uppercase;
@@ -162,7 +162,7 @@
 
 .mapCard .content .nameAndRating .rateWrapper .star {
   color: #FFC107;
-  font-size: 14px;
+  font-size: .875rem;
   margin-right: 6px;
 }
 
@@ -183,7 +183,7 @@
   align-items: center;
   border-radius: 8px;
   padding: 8px 14px;
-  font-size: 13px;
+  font-size: .8125rem;
   text-decoration: none;
   flex: 1;
   min-width: 100px;
@@ -233,20 +233,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 1.125rem;
   background-color: rgba(90, 103, 216, .15);
   color: #818CF8;
 }
 
 .mapCard .infoCards .card .titleWrapper .title {
   color: #A0AEC0;
-  font-size: 12px;
+  font-size: .75rem;
   font-weight: 500;
 }
 
 .mapCard .infoCards .card .result {
   color: #fff;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   padding-left: 50px;
   margin: 8px 0 0 0;

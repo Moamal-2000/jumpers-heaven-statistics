@@ -26,12 +26,11 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   border: 2px solid #364153;
   position: relative;
   overflow: hidden;
-  transition: all .3s ease;
 }
 
 @include m.very-small {
@@ -51,19 +50,18 @@
   font-size: .9rem;
   font-weight: 600;
   text-decoration: none;
-  transition: color .3s ease;
 }
 
 .authorAndRelease .releaseBox {
   background-color: #1a2434;
+  border: solid 1px #1a2434;
   border-radius: 8px;
   padding: 8px 14px;
-  transition: all .3s ease;
 }
 
 .authorAndRelease .releaseBox .title {
   color: #A0AEC0;
-  font-size: 12px;
+  font-size: .75rem;
   font-weight: 500;
 }
 
