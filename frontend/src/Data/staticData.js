@@ -6,22 +6,28 @@ export const NAV_LINKS_DATA = [
     id: 1,
   },
   {
+    name: "Leaderboards",
+    href: "/leaderboards",
+    iconName: "",
+    id: 2,
+  },
+  {
     name: "Maps",
     href: "/maps",
     iconName: "map",
-    id: 2,
+    id: 3,
   },
   {
     name: "Players",
     href: "/players",
     iconName: "users",
-    id: 3,
+    id: 4,
   },
   {
     name: "About",
     href: "/about",
     iconName: "exclamation-mark",
-    id: 4,
+    id: 5,
   },
 ];
 
