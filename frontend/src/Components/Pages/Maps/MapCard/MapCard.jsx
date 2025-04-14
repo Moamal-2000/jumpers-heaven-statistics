@@ -4,7 +4,7 @@ import Link from "next/link";
 import AuthorAndRelease from "./AuthorAndRelease/AuthorAndRelease";
 import s from "./MapCard.module.scss";
 
-const MapCard = ({ mapData, lastMapRef }) => {
+const MapCard = ({ mapData, mapsScroll, lastMapRef, index }) => {
   const {
     Author,
     Difficulty,
@@ -17,9 +17,10 @@ const MapCard = ({ mapData, lastMapRef }) => {
     Released,
     Videos,
   } = mapData;
+  const ref = mapsScroll.length === index + 1 ? lastMapRef : null;
 
   return (
-    <div className={s.mapCard} ref={lastMapRef}>
+    <div className={s.mapCard} ref={ref}>
       <div className={s.imgHolder}>
         <MapImage mapName={Name} />
 

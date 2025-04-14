@@ -20,22 +20,13 @@ const LeaderBoardTBody = ({ leaderboardData, lastPlayerRef }) => {
       {!loading &&
         !error &&
         leaderboardData?.map((playerData, index) => {
-          if (leaderboardData.length === index + 1)
-            return (
-              <Suspense key={playerData.PlayerID}>
-                <PlayerRow
-                  playerData={playerData}
-                  leaderboardData={leaderboardData}
-                  lastPlayerRef={lastPlayerRef}
-                />
-              </Suspense>
-            );
-
           return (
             <Suspense key={playerData.PlayerID}>
               <PlayerRow
                 playerData={playerData}
                 leaderboardData={leaderboardData}
+                lastPlayerRef={lastPlayerRef}
+                index={index}
               />
             </Suspense>
           );

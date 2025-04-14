@@ -3,16 +3,13 @@ import PlayerNameCell from "./PlayerNameCell/PlayerNameCell";
 import s from "./PlayerRow.module.scss";
 import TopsCell from "./TopsCell/TopsCell";
 
-const PlayerRow = ({ playerData, leaderboardData, lastPlayerRef }) => {
+const PlayerRow = ({ playerData, leaderboardData, lastPlayerRef, index }) => {
   const { Rating, Score, TopList, Rank } = playerData;
   const modifiedRank = getModifiedRank(Rank);
+  const ref = leaderboardData.length === index + 1 ? lastPlayerRef : null;
 
   return (
-    <tr
-      className={s.playerRow}
-      ref={lastPlayerRef}
-      data-type="player-stats-row"
-    >
+    <tr className={s.playerRow} ref={ref} data-type="player-stats-row">
       <td className={s.rank} data-header="Rank">
         {modifiedRank}
       </td>

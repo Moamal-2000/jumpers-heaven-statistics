@@ -42,17 +42,15 @@ const Maps = () => {
   return (
     <section className={s.mapsSection}>
       {mapsScroll.map((mapData, index) => {
-        if (mapsScroll.length === index + 1) {
-          return (
-            <MapCard
-              key={mapData.CpID}
-              mapData={mapData}
-              lastMapRef={lastMapRef}
-            />
-          );
-        }
-
-        return <MapCard key={mapData.CpID} mapData={mapData} />;
+        return (
+          <MapCard
+            key={mapData.CpID}
+            mapData={mapData}
+            mapsScroll={mapsScroll}
+            lastMapRef={lastMapRef}
+            index={index}
+          />
+        );
       })}
     </section>
   );
