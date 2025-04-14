@@ -11,7 +11,7 @@ const CountryImage = ({ countryCode, countryName, size = 32 }) => {
   const [title, setTitle] = useState(countryName);
 
   function handleError() {
-    setSrc("/country-placeholder.svg");
+    setSrc("/placeholders/country-placeholder.svg");
     setAlt("Unknown country");
     setTitle("Unknown country");
   }

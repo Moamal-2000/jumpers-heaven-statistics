@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const PLACEHOLDER_PATH = "/map-placeholder.svg";
+const PLACEHOLDER_PATH = "/placeholders/map-placeholder.svg";
 
 const MapImage = ({ mapName }) => {
   const [src, setSrc] = useState(`/maps/${mapName.toLowerCase()}.jpg`);
