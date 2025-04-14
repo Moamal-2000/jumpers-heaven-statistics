@@ -108,7 +108,7 @@
   }
 
   .leaderBoard tr td::before {
-    content: attr(data-text);
+    content: attr(data-header);
     position: absolute;
     left: 0;
     text-transform: uppercase;

@@ -7,10 +7,16 @@ import s from "./TopsCell.module.scss";
 const TopsCell = ({ topList, leaderboardData }) => {
   const searchParams = useSearchParams();
   const isSkilledLeaderboard = searchParams.get("leaderboard") === "skilled";
-  const dataText = isSkilledLeaderboard ? "Points per difficulty" : "Tops 1-10";
+  const headerName = isSkilledLeaderboard
+    ? "Points per difficulty"
+    : "Tops 1-10";
 
   return (
-    <td className={s.tops} data-type="player-stats-tops" data-text={dataText}>
+    <td
+      className={s.tops}
+      data-type="player-stats-tops"
+      data-header={headerName}
+    >
       <TopsVisualization topsList={topList} leaderboardData={leaderboardData} />
     </td>
   );

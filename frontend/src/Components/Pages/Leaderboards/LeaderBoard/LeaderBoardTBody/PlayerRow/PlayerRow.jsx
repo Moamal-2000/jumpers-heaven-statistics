@@ -13,17 +13,17 @@ const PlayerRow = ({ playerData, leaderboardData, lastPlayerRef }) => {
       ref={lastPlayerRef}
       data-type="player-stats-row"
     >
-      <td className={s.rank} data-type="player-stats-rank" data-text="Rank">
+      <td className={s.rank} data-header="Rank">
         {modifiedRank}
       </td>
 
       <PlayerNameCell playerData={playerData} />
 
-      <td className={s.rating} data-text="Rating">
+      <td className={s.rating} data-header="Rating">
         {(+Rating * 0.1).toFixed(2)}
       </td>
 
-      <td className={s.score} data-type="player-stats-score" data-text="Points">
+      <td className={s.score} data-header="Points">
         {Score}
       </td>
 
