@@ -33,7 +33,6 @@
   align-items: center;
   min-width: 240px;
   font-size: 1.1rem;
-  color: #d1d5dc;
   padding: 4px 8px;
   border-radius: 4px;
   transition: color .2s cubic-bezier(0.4, 0, 0.2, 1),
@@ -41,7 +40,6 @@
 
   &:hover,
   &.active {
-    color: #FBBF24;
     background: linear-gradient(90deg,
         rgba(252, 211, 77, .1) 0,
         rgba(252, 211, 77, 0) 100%);
@@ -63,8 +61,30 @@
   }
 }
 
+.navigation .links a>span {
+  color: #d1d5dc;
+}
+
+.navigation .links a.active span,
+.navigation .links a:hover span {
+  color: #FBBF24;
+}
+
 .navigation .links a>svg {
   width: 1rem;
   height: 1rem;
   margin-right: 8px;
+
+  & path {
+    stroke: #d1d5dc;
+  }
+}
+
+.navigation .links a.active svg,
+.navigation .links a:hover svg {
+  color: #FBBF24;
+
+  & path {
+    stroke: #FBBF24;
+  }
 }
