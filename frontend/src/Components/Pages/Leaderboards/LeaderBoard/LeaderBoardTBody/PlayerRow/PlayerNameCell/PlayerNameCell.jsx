@@ -1,6 +1,6 @@
 "use client";
 
-import CountryImage from "@/Components/Shared/CountryImage";
+import CountryImage from "@/Components/Shared/Images/CountryImage/CountryImage";
 import { getColoredName } from "@/Functions/components";
 import Link from "next/link";
 import s from "./PlayerNameCell.module.scss";

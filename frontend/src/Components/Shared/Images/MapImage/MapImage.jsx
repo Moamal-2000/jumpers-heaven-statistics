@@ -21,7 +21,7 @@ const MapImage = ({ mapName }) => {
 
   return (
     <>
-      {isLoading && "Loading..."}
+      {isLoading && "loading..."}
 
       <Image
         sizes="402.9px"

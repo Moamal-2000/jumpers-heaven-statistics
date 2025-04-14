@@ -1,4 +1,4 @@
-import MapImage from "@/Components/Shared/MapImage";
+import MapImage from "@/Components/Shared/Images/MapImage/MapImage";
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import Link from "next/link";
 import AuthorAndRelease from "./AuthorAndRelease/AuthorAndRelease";
