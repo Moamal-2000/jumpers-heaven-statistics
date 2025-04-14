@@ -7,6 +7,7 @@ const PLACEHOLDER_PATH = "/placeholders/map-placeholder.svg";
 
 const MapImage = ({ mapName }) => {
   const [src, setSrc] = useState(`/maps/${mapName.toLowerCase()}.jpg`);
+  const [isLoading, setIsLoading] = useState(true);
   const [scale, setScale] = useState(1);
 
   function handleError() {
@@ -14,16 +15,25 @@ const MapImage = ({ mapName }) => {
     setScale(0.5);
   }
 
+  function handleLoadCompleted() {
+    setIsLoading(false);
+  }
+
   return (
-    <Image
-      sizes="402.9px"
-      fill={true}
-      src={src || PLACEHOLDER_PATH}
-      alt={mapName}
-      title={mapName}
-      style={{ scale, objectFit: "contain", objectPosition: "center" }}
-      onError={handleError}
-    />
+    <>
+      {isLoading && "Loading..."}
+
+      <Image
+        sizes="402.9px"
+        fill={true}
+        src={src || PLACEHOLDER_PATH}
+        alt={mapName}
+        title={mapName}
+        style={{ scale, objectFit: "contain", objectPosition: "center" }}
+        onError={handleError}
+        onLoad={handleLoadCompleted}
+      />
+    </>
   );
 };
 
