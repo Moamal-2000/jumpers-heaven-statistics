@@ -8,6 +8,11 @@
   }
 }
 
+.player a {
+  display: flex;
+  align-items: center;
+}
+
 .player .playerCountry {
   --size: 32px;
   min-width: var(--size);

@@ -2,19 +2,13 @@
 
 import CountryImage from "@/Components/Shared/CountryImage";
 import { getColoredName } from "@/Functions/components";
-import { navigateToPlayerPage } from "@/Functions/navigate";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import s from "./PlayerNameCell.module.scss";
 
 const PlayerNameCell = ({ playerData }) => {
   const { PlayerName, Rank, CountryCode, Country, PlayerID } = playerData;
-  const modifiedPlayerName = getColoredName(PlayerName);
+  const coloredPlayerName = getColoredName(PlayerName);
   const rankClass = s["rank" + Rank];
-  const router = useRouter();
-
-  function handlePlayerClick() {
-    navigateToPlayerPage(router, PlayerID);
-  }
 
   return (
     <td
@@ -22,12 +16,12 @@ const PlayerNameCell = ({ playerData }) => {
       data-type="player-stats-name"
       data-text="Player"
     >
-      <span className={s.playerCountry}>
-        <CountryImage countryCode={CountryCode} countryName={Country} />
-      </span>
-      <span className={s.playerName} onClick={handlePlayerClick}>
-        {modifiedPlayerName}
-      </span>
+      <Link href={`/player/${PlayerID}`}>
+        <span className={s.playerCountry}>
+          <CountryImage countryCode={CountryCode} countryName={Country} />
+        </span>
+        <span className={s.playerName}>{coloredPlayerName}</span>
+      </Link>
     </td>
   );
 };
