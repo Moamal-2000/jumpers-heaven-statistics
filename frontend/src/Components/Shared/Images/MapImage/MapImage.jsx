@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import SvgIcon from "../../SvgIcon";
+import s from "./MapImage.module.scss";
 
 const PLACEHOLDER_PATH = "/placeholders/map-placeholder.svg";
 
@@ -21,7 +23,11 @@ const MapImage = ({ mapName }) => {
 
   return (
     <>
-      {isLoading && "loading..."}
+      {isLoading && (
+        <div className={s.loader}>
+          <SvgIcon name="animated-spinner" />
+        </div>
+      )}
 
       <Image
         sizes="402.9px"
