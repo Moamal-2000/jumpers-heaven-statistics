@@ -1,9 +1,12 @@
-import s from './MobileNavBtn.module.scss'
+import SvgIcon from "@/Components/Shared/SvgIcon";
+import s from "./MobileNavBtn.module.scss";
 
 const MobileNavBtn = () => {
   return (
-    <div>MobileNavBtn</div>
-  )
-}
+    <button type="button" className={s.mobileNavBtn}>
+      <SvgIcon name="hamburger" />
+    </button>
+  );
+};
 
-export default MobileNavBtn
+export default MobileNavBtn;
