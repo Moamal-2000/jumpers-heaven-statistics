@@ -1,5 +1,6 @@
 "use client";
 
+import CopyRights from "@/Components/Footer/CopyRights/CopyRights";
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { NAV_LINKS_DATA } from "@/Data/staticData";
 import Link from "next/link";
@@ -30,6 +31,10 @@ const MobileNavMenu = () => {
           );
         })}
       </ul>
+
+      <div className={s.copyRights}>
+        <CopyRights />
+      </div>
     </nav>
   );
 };

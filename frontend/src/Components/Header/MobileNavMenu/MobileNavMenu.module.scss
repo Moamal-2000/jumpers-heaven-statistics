@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   right: -105%;
-  width: 300px;
+  width: 350px;
   height: 100vh;
   background-color: #1A1B1F;
   display: flex;
@@ -103,4 +103,13 @@
     transition: stroke .3s ease;
     stroke: #8A8D98;
   }
+}
+
+.mobileNav .copyRights {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  width: 100%;
+  bottom: 24px;
+  scale: .85;
 }
