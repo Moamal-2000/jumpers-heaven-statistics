@@ -40,13 +40,9 @@ const LeaderBoard = () => {
       leaderboardData,
       paginationNumber
     );
+    const value = leaderboardScroll.concat(paginationLeaderboardData);
 
-    dispatch(
-      updateLeaderboardState({
-        key: "leaderboardScroll",
-        value: [...leaderboardScroll, ...paginationLeaderboardData],
-      })
-    );
+    dispatch(updateLeaderboardState({ key: "leaderboardScroll", value }));
   }
 
   function checkAndLoadMoreData() {
