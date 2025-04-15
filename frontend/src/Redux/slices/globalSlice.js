@@ -6,6 +6,7 @@ const initialState = {
   isNotFoundPage: false,
   isLeaderboardReversed: false,
   isLeaderboardExpanded: true,
+  isMobileNavActive: false,
   tryFetchAgain: 0,
   statistics: {},
 };
