@@ -1,13 +1,97 @@
-.mobileNav {}
+.mobileNav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background-color: #1A1B1F;
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  z-index: 101;
+  border-left: 1px solid #2a2b30;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(to bottom, #1A1B1F, #15161A);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 
-.mobileNav .title {}
+  right: 0;
+
+  &.active {}
+}
+
+.mobileNav .title {
+  padding: 0 25px 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #8A8D98;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
 .mobileNav .links {}
 
-.mobileNav .links li {}
+.mobileNav .links li {
+  list-style: none;
+  transition: all .4s ease;
+}
 
-.mobileNav .links li a {}
+.mobileNav .links li a {
+  color: #8A8D98;
+  text-decoration: none;
+  font-size: .95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 25px;
+  transition: all 0.3s ease;
+  position: relative;
 
-.mobileNav .links li a svg {}
+  &:hover {
+    background-color: rgba(35, 36, 40, 0.7);
+    color: #fff;
+
+    & svg path {
+      stroke: #fff;
+    }
+  }
+
+  &.active {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #FFC107;
+
+    & svg path {
+      stroke: #FFC107;
+    }
+  }
+}
+
+.mobileNav .links li a.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background-color: #FFC107;
+  box-shadow: 0 0 8px rgba(255, 193, 7, 0.6);
+}
+
+.mobileNav .links li a svg {
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(35, 36, 40, 0.8);
+  border-radius: 6px;
+  font-size: 1rem;
+
+  & path {
+    transition: all 0.3s ease;
+    stroke: #8A8D98;
+  }
+}
 
 .mobileNav .links li a span {}

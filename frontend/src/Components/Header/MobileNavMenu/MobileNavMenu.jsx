@@ -11,7 +11,7 @@ const MobileNavMenu = () => {
       <ul className={s.links}>
         {NAV_LINKS_DATA.map(({ name, href, iconName, id }) => (
           <li key={id}>
-            <Link href={href} className={s.link}>
+            <Link href={href} className={`${s.link}`}>
               <SvgIcon name={iconName} />
               <span>{name}</span>
             </Link>
