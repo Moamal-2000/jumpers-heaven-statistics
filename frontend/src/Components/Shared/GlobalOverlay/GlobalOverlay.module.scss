@@ -1,4 +1,4 @@
-.globalOverlay {
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -6,8 +6,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, .7);
   backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  z-index: 100;
+  z-index: 99;
   opacity: 0;
   visibility: hidden;
   transition: opacity .3s ease;

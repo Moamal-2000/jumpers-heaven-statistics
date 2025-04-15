@@ -14,6 +14,13 @@ const MobileNavBtn = () => {
     dispatch(
       updateGlobalState({ key: "isMobileNavActive", value: !isMobileNavActive })
     );
+
+    dispatch(
+      updateGlobalState({
+        key: "isGlobalOverlayActive",
+        value: !isMobileNavActive,
+      })
+    );
   }
 
   return (

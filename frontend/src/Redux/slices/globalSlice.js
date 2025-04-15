@@ -7,6 +7,7 @@ const initialState = {
   isLeaderboardReversed: false,
   isLeaderboardExpanded: true,
   isMobileNavActive: false,
+  isGlobalOverlayActive: false,
   tryFetchAgain: 0,
   statistics: {},
 };
