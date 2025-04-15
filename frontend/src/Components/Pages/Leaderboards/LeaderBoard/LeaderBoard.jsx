@@ -18,8 +18,12 @@ const LeaderBoard = () => {
   const { leaderboardData, leaderboardScroll, allDataDisplayed } = useSelector(
     (s) => s.leaderboard
   );
-  const { tryFetchAgain, isLeaderboardReversed, isLeaderboardExpanded } =
-    useSelector((s) => s.global);
+  const {
+    tryFetchAgain,
+    isLeaderboardReversed,
+    isLeaderboardExpanded,
+    pageVisits,
+  } = useSelector((s) => s.global);
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
   const paramsObject = Object.fromEntries(searchParams.entries());
@@ -54,11 +58,16 @@ const LeaderBoard = () => {
     // In this case the handleShowAll() is activated already
     const isSameArrayReference = leaderboardScroll === leaderboardData;
 
+    const lastVisitedPage = pageVisits?.[pageVisits.length - 1];
+    const cameFromDifferentPage =
+      lastVisitedPage !== "/leaderboards" && lastVisitedPage !== undefined;
+
     const shouldShowMoreData =
       !isLastPagination &&
       !isSameArrayReference &&
       !allDataDisplayed &&
-      isLeaderboardExpanded;
+      isLeaderboardExpanded &&
+      !cameFromDifferentPage;
 
     if (shouldShowMoreData) addDataOnScroll();
   }
