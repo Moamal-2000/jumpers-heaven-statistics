@@ -38,6 +38,14 @@
 
 .mobileNav .links li {
   list-style: none;
+  opacity: 0;
+}
+
+@for $i from 1 through 5 {
+  .mobileNav.active .links li:nth-child(#{$i}) {
+    transition: all .4s ease #{$i * .09}s;
+    opacity: 1;
+  }
 }
 
 .mobileNav .links li a {

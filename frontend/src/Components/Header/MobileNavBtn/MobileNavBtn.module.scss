@@ -1,8 +1,11 @@
 @use "@/Styles/mixins" as m;
 
 .mobileNavBtn {
-  width: 35px;
-  height: 35px;
+  --size: 35px;
+  width: var(--size);
+  min-width: var(--size);
+  height: var(--size);
+  min-height: var(--size);
   position: relative;
   cursor: pointer;
   z-index: 102;
@@ -11,7 +14,7 @@
   display: none;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 193, 7, .5);
+  border: 1px solid rgba(255, 193, 7);
 }
 
 @include m.medium {
