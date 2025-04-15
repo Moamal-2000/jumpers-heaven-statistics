@@ -10,29 +10,26 @@
   padding-top: 80px;
   z-index: 101;
   border-left: 1px solid #2a2b30;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-  background-image: linear-gradient(to bottom, #1A1B1F, #15161A);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, .3);
+  background-image: linear-gradient(to bottom, #0b0c0f, #15161A);
+  transition: right .4s cubic-bezier(0.23, 1, 0.32, 1);
 
-  right: 0;
-
-  &.active {}
+  &.active {
+    right: 0;
+  }
 }
 
 .mobileNav .title {
   padding: 0 25px 20px;
-  font-size: 0.8rem;
+  font-size: .9rem;
   font-weight: 500;
   color: #8A8D98;
-  text-transform: uppercase;
   letter-spacing: 1px;
+  user-select: none;
 }
-
-.mobileNav .links {}
 
 .mobileNav .links li {
   list-style: none;
-  transition: all .4s ease;
 }
 
 .mobileNav .links li a {
@@ -42,13 +39,13 @@
   font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
   padding: 12px 25px;
-  transition: all 0.3s ease;
   position: relative;
+  transition: background-color .3s ease, color .3s ease;
 
   &:hover {
-    background-color: rgba(35, 36, 40, 0.7);
+    background-color: rgba(35, 36, 40, .4);
     color: #fff;
 
     & svg path {
@@ -57,7 +54,7 @@
   }
 
   &.active {
-    background-color: rgba(255, 193, 7, 0.1);
+    background-color: rgba(255, 193, 7, .1);
     color: #FFC107;
 
     & svg path {
@@ -74,24 +71,20 @@
   height: 100%;
   width: 4px;
   background-color: #FFC107;
-  box-shadow: 0 0 8px rgba(255, 193, 7, 0.6);
+  box-shadow: 0 0 8px rgba(255, 193, 7, .6);
 }
 
 .mobileNav .links li a svg {
-  width: 24px;
-  height: 24px;
-  padding: 4px;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(35, 36, 40, 0.8);
   border-radius: 6px;
   font-size: 1rem;
 
   & path {
-    transition: all 0.3s ease;
+    transition: stroke .3s ease;
     stroke: #8A8D98;
   }
 }
-
-.mobileNav .links li a span {}
