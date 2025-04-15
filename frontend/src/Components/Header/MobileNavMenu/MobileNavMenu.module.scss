@@ -38,6 +38,7 @@
 
 .mobileNav .links li {
   list-style: none;
+  user-select: none;
   opacity: 0;
 }
 
@@ -79,13 +80,21 @@
   }
 }
 
-.mobileNav .links li a.active::before {
+.mobileNav .links li a::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
   width: 4px;
+}
+
+.mobileNav .links li a:hover::before {
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.mobileNav .links li a.active::before {
   background-color: #FFC107;
   box-shadow: 0 0 8px rgba(255, 193, 7, .6);
 }
