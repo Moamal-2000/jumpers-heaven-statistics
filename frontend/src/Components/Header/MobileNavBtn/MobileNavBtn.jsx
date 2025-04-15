@@ -8,6 +8,7 @@ import s from "./MobileNavBtn.module.scss";
 const MobileNavBtn = () => {
   const { isMobileNavActive } = useSelector((s) => s.global);
   const dispatch = useDispatch();
+  const iconName = isMobileNavActive ? "xMark" : "hamburger";
 
   function handleToggleMenu() {
     dispatch(
@@ -17,7 +18,7 @@ const MobileNavBtn = () => {
 
   return (
     <button type="button" className={s.mobileNavBtn} onClick={handleToggleMenu}>
-      <SvgIcon name="hamburger" />
+      <SvgIcon name={iconName} />
     </button>
   );
 };
