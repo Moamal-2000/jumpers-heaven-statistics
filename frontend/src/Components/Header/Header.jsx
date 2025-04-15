@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import SvgIcon from "../Shared/SvgIcon";
 import s from "./Header.module.scss";
 import MainNav from "./MainNav/MainNav";
+import MobileNavMenu from "./MobileNavMenu/MobileNavMenu";
 
 const Header = () => {
   const { isNotFoundPage } = useSelector((s) => s.global);
@@ -20,6 +21,7 @@ const Header = () => {
         </Link>
 
         <MainNav />
+        <MobileNavMenu />
       </div>
     </header>
   );
