@@ -1,6 +1,7 @@
 import Footer from "@/Components/Footer/Footer";
 import Header from "@/Components/Header/Header";
 import ScrollToTopBtn from "@/Components/Shared/Buttons/ScrollToTopBtn/ScrollToTopBtn";
+import GlobalOverlay from "@/Components/Shared/GlobalOverlay/GlobalOverlay";
 import LayoutLayer from "@/Components/Shared/LayoutLayer/LayoutLayer";
 import "../Styles/globals.scss";
 import RootProviders from "./RootProviders";
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
             {children}
             <Footer />
             <ScrollToTopBtn />
+            <GlobalOverlay />
           </LayoutLayer>
         </body>
       </html>
