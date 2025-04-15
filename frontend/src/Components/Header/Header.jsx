@@ -6,8 +6,8 @@ import { useSelector } from "react-redux";
 import SvgIcon from "../Shared/SvgIcon";
 import s from "./Header.module.scss";
 import MainNav from "./MainNav/MainNav";
-import MobileNavMenu from "./MobileNavMenu/MobileNavMenu";
 import MobileNavBtn from "./MobileNavBtn/MobileNavBtn";
+import MobileNavMenu from "./MobileNavMenu/MobileNavMenu";
 
 const Header = () => {
   const { isNotFoundPage } = useSelector((s) => s.global);

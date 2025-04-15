@@ -1,7 +1,9 @@
+@use "@/Styles/mixins" as m;
+
 .mobileNav {
   position: fixed;
   top: 0;
-  right: -100%;
+  right: -105%;
   width: 300px;
   height: 100vh;
   background-color: #1A1B1F;
@@ -16,6 +18,12 @@
 
   &.active {
     right: 0;
+  }
+}
+
+@include m.small {
+  .mobileNav {
+    width: 100%;
   }
 }
 
