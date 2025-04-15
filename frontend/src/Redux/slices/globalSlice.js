@@ -8,6 +8,7 @@ const initialState = {
   isLeaderboardExpanded: true,
   isMobileNavActive: false,
   isGlobalOverlayActive: false,
+  pageVisits: [],
   tryFetchAgain: 0,
   statistics: {},
 };

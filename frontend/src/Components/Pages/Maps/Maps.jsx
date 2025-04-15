@@ -11,24 +11,27 @@ import s from "./Maps.module.scss";
 const Maps = () => {
   const dispatch = useDispatch();
   const { mapsData, mapsScroll } = useSelector((s) => s.maps);
+  const { pageVisits } = useSelector((s) => s.global);
 
   const { paginationNumber, lastElementRef: lastMapRef } =
     useInfiniteScroll(mapsData);
 
   function addDataOnScroll() {
     const paginationMapsData = paginateData(mapsData, paginationNumber);
+    const value = mapsScroll.concat(paginationMapsData);
 
-    dispatch(
-      updateMapsState({
-        key: "mapsScroll",
-        value: [...mapsScroll, ...paginationMapsData],
-      })
-    );
+    dispatch(updateMapsState({ key: "mapsScroll", value }));
   }
 
   function checkAndLoadMoreData() {
-    const isLastPagination = getIsLastPagination(mapsData, paginationNumber);
-    if (!isLastPagination) addDataOnScroll();
+    const isLastPage = getIsLastPagination(mapsData, paginationNumber);
+    const lastVisitedPage = pageVisits?.[pageVisits.length - 1];
+    const cameFromDifferentPage =
+      lastVisitedPage !== "/maps" && lastVisitedPage !== undefined;
+
+    const shouldLoadMoreData = !isLastPage && !cameFromDifferentPage;
+
+    if (shouldLoadMoreData) addDataOnScroll();
   }
 
   useEffect(() => {
