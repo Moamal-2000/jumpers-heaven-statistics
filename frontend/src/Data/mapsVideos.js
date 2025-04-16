@@ -5,6 +5,7 @@ export const MAPS_VIDEOS = [
     videos: [
       {
         type: "125 walkthrough",
+        icon: "",
         videoUrl: "https://www.youtube.com/watch?v=_EOjiEGgqGE",
         id: 1,
       },
