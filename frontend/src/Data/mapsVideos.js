@@ -53,6 +53,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_descend_full",
+    mapId: 140,
+    videos: [
+      {
+        type: "250 speedrun",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=u1_ylHPbHCc",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 // Valid icon names: showcase, tutorial, shorts
