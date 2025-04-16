@@ -65,6 +65,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "mp_yka",
+    mapId: 225,
+    videos: [
+      {
+        type: "250 speedrun",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=uoVDG01lPn4",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 // Valid icon names: showcase, tutorial, shorts
