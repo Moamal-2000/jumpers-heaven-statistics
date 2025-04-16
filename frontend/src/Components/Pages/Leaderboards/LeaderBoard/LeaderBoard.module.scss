@@ -5,6 +5,7 @@
   min-height: 661.6px;
   margin: 30px 0 40px;
   padding: 1.5rem;
+  padding-top: 0;
   border-radius: 16px;
   background-color: #0e1217;
   border: solid 1px #1f2937;
@@ -13,6 +14,10 @@
 
   &:hover {
     background-color: #131820;
+
+    &>header {
+      background-color: #131820;
+    }
 
     & .leaderBoard>thead {
       background-color: #1c2430;
@@ -34,6 +39,14 @@
 
     &:hover {
       background-color: transparent;
+
+      &>header {
+        background-color: #14171d;
+      }
+    }
+
+    &.collapse {
+      height: 140px;
     }
   }
 }
