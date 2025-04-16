@@ -179,6 +179,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_lost_easy",
+    mapId: 152,
+    videos: [
+      {
+        type: "125 speedrun",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=aRLB2Z0Bm7o",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 // Valid icon names: showcase, tutorial, shorts
