@@ -155,6 +155,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "mp_carentan",
+    mapId: 260,
+    videos: [
+      {
+        type: "125 no save",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=wcPG_HoftEk",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 // Valid icon names: showcase, tutorial, shorts
