@@ -2,15 +2,18 @@
 
 .player {
   color: #fff;
-
-  &>span {
-    cursor: pointer;
-  }
 }
 
 .player a {
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+@include m.small {
+  .player a {
+    align-items: flex-end;
+  }
 }
 
 .player .playerCountry {
@@ -28,7 +31,6 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  cursor: auto;
 }
 
 @include m.small {

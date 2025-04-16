@@ -3,12 +3,12 @@
 @include m.medium {
   .tops[data-type=player-stats-tops] {
     align-items: flex-end;
-    height: 180px;
+    height: 150px;
   }
 }
 
 @media (max-width: 540px) {
   .tops[data-type=player-stats-tops] {
-    display: none;
+    height: 204px;
   }
 }

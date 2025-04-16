@@ -11,7 +11,7 @@ const PlayerNameCell = ({ playerData }) => {
   const rankClass = s["rank" + Rank];
 
   return (
-    <td className={`${s.player} ${rankClass}`} data-header="Player">
+    <td className={`${s.player} ${rankClass}`}>
       <Link href={`/player/${PlayerID}`}>
         <span className={s.playerCountry}>
           <CountryImage countryCode={CountryCode} countryName={Country} />

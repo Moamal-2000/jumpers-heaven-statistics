@@ -122,7 +122,7 @@
 
 @include m.medium {
   .leaderBoard tr td:last-child::before {
-    top: 0;
+    top: -10px;
     left: 50%;
     translate: -50% 0;
   }
@@ -136,10 +136,10 @@
 
 @include m.small {
   .leaderBoard tr td::before {
-    font-size: .9rem;
+    font-size: .8rem;
     top: 0;
-    left: 50%;
-    translate: -50% 0;
+    left: 40px;
+    translate: -50% -2px;
     padding-bottom: 0;
   }
 }

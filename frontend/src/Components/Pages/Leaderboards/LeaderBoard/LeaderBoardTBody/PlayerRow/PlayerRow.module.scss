@@ -2,8 +2,7 @@
 
 @include m.small {
   .playerRow td {
-    min-height: 106px;
-    align-items: flex-end !important;
+    min-height: 64px;
   }
 }
 
@@ -13,7 +12,6 @@
 
 @media (max-width: 1300px) {
   .playerRow .rank {
-    padding-block: 30px;
     background-color: #0f1115;
     background-color: #14171d;
     border-radius: 10px 10px 0 0;
@@ -22,12 +20,6 @@
   .playerRow .rank svg {
     width: 34px !important;
     height: 34px !important;
-  }
-}
-
-@include m.small {
-  .playerRow .rank {
-    min-height: 130px;
   }
 }
 
