@@ -135,6 +135,12 @@ export const MAPS_VIDEOS = [
         videoUrl: "https://www.youtube.com/watch?v=yK0am1Jw4No",
         id: 1,
       },
+      {
+        type: "trailer",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=mfr6bAhwxEI",
+        id: 2,
+      },
     ],
   },
 ];
