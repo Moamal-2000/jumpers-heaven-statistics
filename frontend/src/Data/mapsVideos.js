@@ -233,6 +233,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_lostinice",
+    mapId: 177476,
+    videos: [
+      {
+        type: "trailer",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=qtGeSWM3Tig",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 // Valid icon names: showcase, tutorial, shorts
