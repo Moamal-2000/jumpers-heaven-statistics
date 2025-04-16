@@ -51,6 +51,7 @@ const MapCard = ({ mapData, mapsScroll, lastMapRef, index }) => {
           </div>
         </div>
 
+        <MapsVideos />
         <div className={s.videos}>
           {!Videos?.length && <p>This map has no videos.</p>}
 
