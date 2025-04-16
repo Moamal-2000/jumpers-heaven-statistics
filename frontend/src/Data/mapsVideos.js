@@ -77,6 +77,31 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_canyon",
+    mapId: 208485,
+    videos: [
+      {
+        type: "125 speedrun",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=HA31Dfano50",
+        id: 1,
+      },
+    ],
+  },
+
+  // {
+  //   mapName: "",
+  //   mapId: ,
+  //   videos: [
+  //     {
+  //       type: "",
+  //       icon: "showcase",
+  //       videoUrl: "",
+  //       id: 1,
+  //     },
+  //   ],
+  // },
 ];
 
 // Valid icon names: showcase, tutorial, shorts
