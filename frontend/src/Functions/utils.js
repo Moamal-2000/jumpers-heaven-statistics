@@ -91,7 +91,7 @@ export function formateReleaseDate(dateStr) {
 export function modifyMapsData(mapsData) {
   mapsData.map((map) => {
     const requiredVideos = MAPS_VIDEOS.find((video) => {
-      return video.mapName === map.Name && video.id === map.ID;
+      return video.mapName === map.Name && video.mapId === map.ID;
     })?.videos;
 
     if (requiredVideos) map.Videos = requiredVideos;
