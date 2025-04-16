@@ -167,6 +167,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_glass",
+    mapId: 143,
+    videos: [
+      {
+        type: "125 speedrun",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=qfNMnlbFTFM",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 // Valid icon names: showcase, tutorial, shorts
