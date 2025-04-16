@@ -35,6 +35,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_memento",
+    id: 153,
+    videos: [
+      {
+        type: "125 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=WRoX-4NZ4f8",
+        id: 4,
+      },
+    ],
+  },
 ];
 
 // Valid icon names: showcase, tutorial, shorts
