@@ -37,13 +37,19 @@ export const MAPS_VIDEOS = [
   },
   {
     mapName: "jm_memento",
-    mapId: 153,
+    mapId: 639309,
     videos: [
       {
         type: "125 showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=WRoX-4NZ4f8",
         id: 1,
+      },
+      {
+        type: "trailer",
+        icon: "shorts",
+        videoUrl: "https://www.youtube.com/watch?v=30TLrfSp224",
+        id: 2,
       },
     ],
   },
