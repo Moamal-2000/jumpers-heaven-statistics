@@ -44,7 +44,12 @@ const ScrollToTopBtn = () => {
   }, []);
 
   return (
-    <button type="button" className={buttonClass} onClick={scrollToPosition}>
+    <button
+      type="button"
+      className={buttonClass}
+      onClick={scrollToPosition}
+      title={`Scroll to ${isAtTopHalf ? "down" : "top"}`}
+    >
       <SvgIcon name="right-arrow" />
     </button>
   );
