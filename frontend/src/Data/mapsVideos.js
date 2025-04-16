@@ -143,6 +143,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "Jm_jumpers_heaven",
+    mapId: 250,
+    videos: [
+      {
+        type: "125 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=KjUJeM8qDLQ",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 // Valid icon names: showcase, tutorial, shorts
