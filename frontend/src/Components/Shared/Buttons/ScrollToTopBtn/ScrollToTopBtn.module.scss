@@ -1,9 +1,11 @@
+@use "@/Styles/mixins" as m;
+
 .button {
   position: fixed;
   bottom: 25px;
-  right: 25px;
-  width: 52px;
-  height: 52px;
+  right: 18px;
+  width: 48px;
+  height: 48px;
   border-radius: 8px;
   background: linear-gradient(145deg, #1f1f36, #0c0c19);
   border: 1px solid rgba(255, 215, 0, .3);
@@ -33,11 +35,27 @@
   }
 }
 
+@include m.medium {
+  .button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 .button svg {
   height: 24px;
   width: 24px;
   rotate: -90deg;
   fill: #FFD700;
+  position: relative;
+  top: 2px;
+}
+
+@include m.medium {
+  .button svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .button.reverse svg {
