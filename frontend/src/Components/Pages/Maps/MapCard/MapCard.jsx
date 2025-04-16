@@ -1,8 +1,8 @@
 import MapImage from "@/Components/Shared/Images/MapImage/MapImage";
-import SvgIcon from "@/Components/Shared/SvgIcon";
 import Link from "next/link";
 import AuthorAndRelease from "./AuthorAndRelease/AuthorAndRelease";
 import s from "./MapCard.module.scss";
+import MapsVideos from "./MapsVideos/MapsVideos";
 
 const MapCard = ({ mapData, mapsScroll, lastMapRef, index }) => {
   const {
@@ -51,17 +51,7 @@ const MapCard = ({ mapData, mapsScroll, lastMapRef, index }) => {
           </div>
         </div>
 
-        <MapsVideos />
-        <div className={s.videos}>
-          {!Videos?.length && <p>This map has no videos.</p>}
-
-          {Videos?.map(({ type, icon, id }) => (
-            <button type="button" className={s.video} key={id}>
-              <SvgIcon name={icon} />
-              <span className={s.type}>{type}</span>
-            </button>
-          ))}
-        </div>
+        <MapsVideos videos={Videos} />
 
         <div className={s.infoCards}>
           {Info?.map(({ title, result, icon, id }) => (

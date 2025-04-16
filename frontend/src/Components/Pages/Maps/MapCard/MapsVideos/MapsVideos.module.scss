@@ -1,0 +1,36 @@
+.videos {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  min-width: 30px;
+}
+
+.videos .video {
+  border: none;
+  cursor: pointer;
+  background-color: rgba(45, 55, 72, .5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: .8125rem;
+  text-decoration: none;
+  flex: 1;
+  min-width: 100px;
+  justify-content: center;
+  border-left: 3px solid #FF0000;
+  transition: background-color .2s ease, box-shadow .2s ease;
+
+  &:hover {
+    background-color: rgba(74, 85, 104, .7);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+  }
+}
+
+.videos .video>svg {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
