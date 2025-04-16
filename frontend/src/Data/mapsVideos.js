@@ -90,18 +90,18 @@ export const MAPS_VIDEOS = [
     ],
   },
 
-  // {
-  //   mapName: "",
-  //   mapId: ,
-  //   videos: [
-  //     {
-  //       type: "",
-  //       icon: "showcase",
-  //       videoUrl: "",
-  //       id: 1,
-  //     },
-  //   ],
-  // },
+  {
+    mapName: "defrag_portal",
+    mapId: 275,
+    videos: [
+      {
+        type: "125 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=IIpssQdWtxc",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 // Valid icon names: showcase, tutorial, shorts
