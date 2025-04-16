@@ -215,6 +215,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_pier_2_pro",
+    mapId: 14343,
+    videos: [
+      {
+        type: "125 speedrun",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=Za7UPVl9wr4",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 // Valid icon names: showcase, tutorial, shorts
