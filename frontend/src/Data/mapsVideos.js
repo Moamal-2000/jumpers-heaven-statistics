@@ -203,6 +203,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "1st_easy",
+    mapId: 119,
+    videos: [
+      {
+        type: "125 speedrun",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=TYntstrWPOc",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 // Valid icon names: showcase, tutorial, shorts
