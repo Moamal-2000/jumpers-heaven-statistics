@@ -1,8 +1,8 @@
 import { jhApis } from "@/Api/jumpersHeaven";
 import { MONTHS, PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
+import { MAPS_VIDEOS } from "@/Data/mapsVideos";
 import { COUNTRIES_BY_CODE, REGIONS, TOP_STATS_COLOR } from "@/Data/staticData";
 import { decode } from "msgpackr";
-import { inflate } from "pako";
 
 export function getMaxFinishTimesFrom(bestPlayer) {
   const maxFinishTimes = Math.max(...Object.values(bestPlayer.TopList));
@@ -86,4 +86,17 @@ export function formateReleaseDate(dateStr) {
   if (!dateStr) return "Unknown";
   const [year, month, day] = dateStr.split("-");
   return `${MONTHS[+month]} ${day}, ${year}`;
+}
+
+export function modifyMapsData(mapsData) {
+  mapsData.map((map) => {
+    const requiredVideos = MAPS_VIDEOS.find((video) => {
+      return video.mapName === map.Name && video.id === map.ID;
+    })?.videos;
+
+    if (requiredVideos) map.Videos = requiredVideos;
+    return map;
+  });
+
+  return mapsData;
 }

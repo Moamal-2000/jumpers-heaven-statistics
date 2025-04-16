@@ -1,5 +1,9 @@
 import { jhApis } from "@/Api/jumpersHeaven";
-import { decodeAsyncData, paginateData } from "@/Functions/utils";
+import {
+  decodeAsyncData,
+  modifyMapsData,
+  paginateData,
+} from "@/Functions/utils";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -31,9 +35,12 @@ export const mapsSlice = createSlice({
   extraReducers: ({ addCase }) => {
     addCase(fetchMaps.pending, (state, action) => {})
       .addCase(fetchMaps.fulfilled, (state, action) => {
-        const paginationMaps = paginateData(action.payload, 1);
+        const mapsData = [...action.payload];
+        modifyMapsData(mapsData);
 
-        state.mapsData = action.payload;
+        const paginationMaps = paginateData(mapsData, 1);
+
+        state.mapsData = mapsData;
         state.mapsScroll = paginationMaps;
         state.loading = false;
         state.error = false;
