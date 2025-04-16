@@ -10,6 +10,7 @@ const MobileNavBtn = () => {
   const dispatch = useDispatch();
   const iconName = isMobileNavActive ? "xMark" : "hamburger";
   const title = `${isMobileNavActive ? "Close" : "Open"} navigation menu`;
+  const moveClass = isMobileNavActive ? s.move : "";
 
   function handleToggleMenu() {
     dispatch(
@@ -27,7 +28,7 @@ const MobileNavBtn = () => {
   return (
     <button
       type="button"
-      className={s.mobileNavBtn}
+      className={`${moveClass} ${s.mobileNavBtn}`}
       onClick={handleToggleMenu}
       title={title}
     >

@@ -15,6 +15,10 @@
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(255, 193, 7);
+
+  &.move {
+    right: 15px;
+  }
 }
 
 @include m.medium {
@@ -24,6 +28,9 @@
 }
 
 .mobileNavBtn svg {
-  padding: 9px;
+  width: 18px;
+  height: 18px;
   fill: #ffc107;
+  position: relative;
+  left: .5px;
 }
