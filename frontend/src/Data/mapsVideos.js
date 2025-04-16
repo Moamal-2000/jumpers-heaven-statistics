@@ -89,7 +89,6 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
-
   {
     mapName: "defrag_portal",
     mapId: 275,
@@ -98,6 +97,18 @@ export const MAPS_VIDEOS = [
         type: "125 showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=IIpssQdWtxc",
+        id: 1,
+      },
+    ],
+  },
+  {
+    mapName: "jm_kuwehr2",
+    mapId: 252,
+    videos: [
+      {
+        type: "125 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=smNxrcv-wgY",
         id: 1,
       },
     ],
