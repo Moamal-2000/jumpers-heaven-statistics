@@ -245,6 +245,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "mp_paprika",
+    mapId: 99836,
+    videos: [
+      {
+        type: "125 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=S-FzIg2wVZw",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 // Valid icon names: showcase, tutorial, shorts
