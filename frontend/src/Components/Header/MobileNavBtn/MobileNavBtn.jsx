@@ -9,6 +9,7 @@ const MobileNavBtn = () => {
   const { isMobileNavActive } = useSelector((s) => s.global);
   const dispatch = useDispatch();
   const iconName = isMobileNavActive ? "xMark" : "hamburger";
+  const title = `${isMobileNavActive ? "Close" : "Open"} navigation menu`;
 
   function handleToggleMenu() {
     dispatch(
@@ -24,7 +25,12 @@ const MobileNavBtn = () => {
   }
 
   return (
-    <button type="button" className={s.mobileNavBtn} onClick={handleToggleMenu}>
+    <button
+      type="button"
+      className={s.mobileNavBtn}
+      onClick={handleToggleMenu}
+      title={title}
+    >
       <SvgIcon name={iconName} />
     </button>
   );

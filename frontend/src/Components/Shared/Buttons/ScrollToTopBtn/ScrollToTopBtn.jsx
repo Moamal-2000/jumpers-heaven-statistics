@@ -8,6 +8,7 @@ const ScrollToTopBtn = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isAtTopHalf, setIsAtTopHalf] = useState(true);
   const debounceId = useRef();
+  const title = `Scroll to ${isAtTopHalf ? "down" : "top"}`;
 
   const buttonClass = `${s.button} ${isVisible ? s.active : ""} ${
     isAtTopHalf ? s.reverse : ""
@@ -48,7 +49,7 @@ const ScrollToTopBtn = () => {
       type="button"
       className={buttonClass}
       onClick={scrollToPosition}
-      title={`Scroll to ${isAtTopHalf ? "down" : "top"}`}
+      title={title}
     >
       <SvgIcon name="right-arrow" />
     </button>
