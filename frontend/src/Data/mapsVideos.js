@@ -225,6 +225,12 @@ export const MAPS_VIDEOS = [
         videoUrl: "https://www.youtube.com/watch?v=Za7UPVl9wr4",
         id: 1,
       },
+      {
+        type: "250 speedrun",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=13p_C7RIN0M",
+        id: 2,
+      },
     ],
   },
 ];
