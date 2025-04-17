@@ -359,6 +359,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "mp_space_250",
+    mapId: 562196,
+    videos: [
+      {
+        type: "250 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=vuBFiwcArcE",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
