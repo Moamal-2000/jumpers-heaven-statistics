@@ -311,6 +311,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_rats",
+    mapId: 816094,
+    videos: [
+      {
+        type: "250 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=JV8nSUvxuig&t=9s",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
