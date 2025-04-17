@@ -291,6 +291,12 @@ export const MAPS_VIDEOS = [
         videoUrl: "https://www.youtube.com/watch?v=p3aTRSzMnB8",
         id: 1,
       },
+      {
+        type: "250 showcase part 2",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=dh2G7VozsNY",
+        id: 2,
+      },
     ],
   },
 ];
