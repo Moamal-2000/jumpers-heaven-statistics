@@ -281,6 +281,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "sp_eldaba",
+    mapId: 573443,
+    videos: [
+      {
+        type: "250 showcase part 1",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=p3aTRSzMnB8",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
