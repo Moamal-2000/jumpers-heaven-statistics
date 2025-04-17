@@ -9,48 +9,6 @@ export const MAPS_VIDEOS = [
         videoUrl: "https://www.youtube.com/watch?v=_EOjiEGgqGE",
         id: 1,
       },
-      {
-        type: "speedrun",
-        icon: "timer",
-        videoUrl: "",
-        id: 2,
-      },
-      {
-        type: "no save",
-        icon: "no-save",
-        videoUrl: "",
-        id: 3,
-      },
-      {
-        type: "no grenade",
-        icon: "no-grenade",
-        videoUrl: "",
-        id: 4,
-      },
-      {
-        type: "tutorial",
-        icon: "tutorial",
-        videoUrl: "",
-        id: 5,
-      },
-      {
-        type: "shorts",
-        icon: "shorts",
-        videoUrl: "",
-        id: 6,
-      },
-      {
-        type: "tricky",
-        icon: "tricky",
-        videoUrl: "",
-        id: 7,
-      },
-      {
-        type: "trailer",
-        icon: "trailer",
-        videoUrl: "",
-        id: 8,
-      },
     ],
   },
   {
@@ -89,7 +47,7 @@ export const MAPS_VIDEOS = [
       },
       {
         type: "trailer",
-        icon: "shorts",
+        icon: "trailer",
         videoUrl: "https://www.youtube.com/watch?v=30TLrfSp224",
         id: 2,
       },
@@ -101,7 +59,7 @@ export const MAPS_VIDEOS = [
     videos: [
       {
         type: "250 speedrun",
-        icon: "showcase",
+        icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=u1_ylHPbHCc",
         id: 1,
       },
@@ -113,7 +71,7 @@ export const MAPS_VIDEOS = [
     videos: [
       {
         type: "250 speedrun",
-        icon: "showcase",
+        icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=uoVDG01lPn4",
         id: 1,
       },
@@ -125,7 +83,7 @@ export const MAPS_VIDEOS = [
     videos: [
       {
         type: "125 speedrun",
-        icon: "showcase",
+        icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=HA31Dfano50",
         id: 1,
       },
@@ -179,7 +137,7 @@ export const MAPS_VIDEOS = [
       },
       {
         type: "trailer",
-        icon: "showcase",
+        icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=mfr6bAhwxEI",
         id: 2,
       },
@@ -203,7 +161,7 @@ export const MAPS_VIDEOS = [
     videos: [
       {
         type: "125 no save",
-        icon: "showcase",
+        icon: "no-save",
         videoUrl: "https://www.youtube.com/watch?v=wcPG_HoftEk",
         id: 1,
       },
@@ -215,7 +173,7 @@ export const MAPS_VIDEOS = [
     videos: [
       {
         type: "125 speedrun",
-        icon: "showcase",
+        icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=qfNMnlbFTFM",
         id: 1,
       },
@@ -227,7 +185,7 @@ export const MAPS_VIDEOS = [
     videos: [
       {
         type: "125 speedrun",
-        icon: "showcase",
+        icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=aRLB2Z0Bm7o",
         id: 1,
       },
@@ -251,7 +209,7 @@ export const MAPS_VIDEOS = [
     videos: [
       {
         type: "125 speedrun",
-        icon: "showcase",
+        icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=TYntstrWPOc",
         id: 1,
       },
@@ -263,13 +221,13 @@ export const MAPS_VIDEOS = [
     videos: [
       {
         type: "125 speedrun",
-        icon: "showcase",
+        icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=Za7UPVl9wr4",
         id: 1,
       },
       {
         type: "250 speedrun",
-        icon: "showcase",
+        icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=13p_C7RIN0M",
         id: 2,
       },
@@ -281,7 +239,7 @@ export const MAPS_VIDEOS = [
     videos: [
       {
         type: "trailer",
-        icon: "showcase",
+        icon: "trailer",
         videoUrl: "https://www.youtube.com/watch?v=qtGeSWM3Tig",
         id: 1,
       },
