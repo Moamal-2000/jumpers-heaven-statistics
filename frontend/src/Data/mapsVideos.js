@@ -323,6 +323,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "mp_sht_ladder_hard",
+    mapId: 955513,
+    videos: [
+      {
+        type: "250 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=3fSJ0N1mv4U",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
