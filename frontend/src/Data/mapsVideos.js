@@ -299,6 +299,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_toujane",
+    mapId: 573459,
+    videos: [
+      {
+        type: "mix showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=C4wJrDoo5r4",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
