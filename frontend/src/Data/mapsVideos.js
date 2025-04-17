@@ -347,6 +347,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "mp_paskvil_easy",
+    mapId: 556418,
+    videos: [
+      {
+        type: "125 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=v8rhtJa3Nh4",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
