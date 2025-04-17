@@ -11,7 +11,13 @@ const MapsVideos = ({ videos }) => {
       {!videos?.length && <p>This map has no videos.</p>}
 
       {videos?.map(({ type, icon, id }) => (
-        <button type="button" className={s.video} key={id} onClick={visitVideo}>
+        <button
+          type="button"
+          className={s.video}
+          key={id}
+          onClick={visitVideo}
+          data-icon={icon}
+        >
           <SvgIcon name={icon} />
           <span className={s.type}>{type}</span>
         </button>

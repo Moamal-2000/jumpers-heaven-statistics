@@ -4,10 +4,52 @@ export const MAPS_VIDEOS = [
     mapId: 173824,
     videos: [
       {
-        type: "125 showcase",
+        type: "showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=_EOjiEGgqGE",
         id: 1,
+      },
+      {
+        type: "speedrun",
+        icon: "timer",
+        videoUrl: "",
+        id: 2,
+      },
+      {
+        type: "no save",
+        icon: "no-save",
+        videoUrl: "",
+        id: 3,
+      },
+      {
+        type: "no grenade",
+        icon: "no-grenade",
+        videoUrl: "",
+        id: 4,
+      },
+      {
+        type: "tutorial",
+        icon: "tutorial",
+        videoUrl: "",
+        id: 5,
+      },
+      {
+        type: "shorts",
+        icon: "shorts",
+        videoUrl: "",
+        id: 6,
+      },
+      {
+        type: "tricky",
+        icon: "tricky",
+        videoUrl: "",
+        id: 7,
+      },
+      {
+        type: "trailer",
+        icon: "trailer",
+        videoUrl: "",
+        id: 8,
       },
     ],
   },

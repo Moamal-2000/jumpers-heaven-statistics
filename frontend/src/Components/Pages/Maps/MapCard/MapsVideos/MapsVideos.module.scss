@@ -13,13 +13,15 @@
   color: #fff;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 6px;
   border-radius: 8px;
   padding: 8px 14px;
   font-size: .8125rem;
   text-decoration: none;
   flex: 1;
   min-width: 100px;
-  justify-content: center;
+  max-height: 32px;
   border-left: 3px solid #FF0000;
   transition: background-color .2s ease, box-shadow .2s ease;
 
@@ -30,7 +32,50 @@
 }
 
 .videos .video>svg {
-  width: 18px;
-  height: 18px;
-  margin-right: 8px;
+  --size: 18px;
+  width: var(--size);
+  height: var(--size);
+  min-width: var(--size);
+  min-height: var(--size);
+}
+
+.videos .video[data-icon=no-grenade]>svg {
+  --size: 22px;
+  position: relative;
+  bottom: 2px;
+}
+
+.videos .video[data-icon=no-grenade] {
+  --size: 22px;
+  position: relative;
+  bottom: 2px;
+  border-left-color: #eab308;
+}
+
+.videos .video[data-icon=timer] {
+  border-left-color: #3b82f6;
+}
+
+.videos .video[data-icon=no-save] {
+  border-left-color: #a855f7;
+}
+
+.videos .video[data-icon=tutorial] {
+  border-left-color: #22c55e;
+}
+
+.videos .video[data-icon=shorts] {
+  border-left-color: #ec4899;
+}
+
+.videos .video[data-icon=tricky] {
+  border-left-color: #f97316;
+}
+
+.videos .video[data-icon=trailer] {
+  border-left-color: #14b8a6;
+}
+
+.videos .video .type {
+  text-wrap: nowrap;
 }
