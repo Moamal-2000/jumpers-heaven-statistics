@@ -335,6 +335,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "sp_tankhunt",
+    mapId: 573456,
+    videos: [
+      {
+        type: "mix low grenades",
+        icon: "no-grenade",
+        videoUrl: "https://www.youtube.com/watch?v=Bvav5gdntow",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
