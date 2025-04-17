@@ -269,6 +269,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_snowland",
+    mapId: 599843,
+    videos: [
+      {
+        type: "250 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=yWn4Dr99bzw",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
