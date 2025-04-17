@@ -371,6 +371,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_fracture",
+    mapId: 568694,
+    videos: [
+      {
+        type: "125 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=7mK_3V8ZpFo",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
