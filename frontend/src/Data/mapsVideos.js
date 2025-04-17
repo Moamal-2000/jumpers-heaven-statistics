@@ -259,4 +259,13 @@ export const MAPS_VIDEOS = [
   },
 ];
 
-// Valid icon names: showcase, tutorial, shorts
+/* Valid icon names:
+ * showcase
+ * tutorial
+ * shorts
+ * timer
+ * no-save
+ * no-grenade
+ * trailer
+ * tricky
+ */
