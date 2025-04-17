@@ -383,6 +383,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_prestige",
+    mapId: 209152,
+    videos: [
+      {
+        type: "125 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=7w0iisRKIQM",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
