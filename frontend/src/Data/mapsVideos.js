@@ -257,6 +257,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_g1ng3r",
+    mapId: 499329,
+    videos: [
+      {
+        type: "250 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=cIZ_ldYVsho",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
