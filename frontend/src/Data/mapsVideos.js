@@ -413,6 +413,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_ddl",
+    mapId: 229236,
+    videos: [
+      {
+        type: "125 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=GPCqtKMgfF4",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
