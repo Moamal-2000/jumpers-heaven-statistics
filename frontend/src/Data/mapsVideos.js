@@ -395,6 +395,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_flee",
+    mapId: 67866,
+    videos: [
+      {
+        type: "125 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=v7j3MX5Cgmk",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
