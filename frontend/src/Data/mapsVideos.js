@@ -449,6 +449,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "mp_ontherocks_v1.0",
+    mapId: 205,
+    videos: [
+      {
+        type: "125 no grenade",
+        icon: "no-grenade",
+        videoUrl: "https://www.youtube.com/watch?v=qkJYjLpaoeA",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
