@@ -473,6 +473,20 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_phil",
+    mapId: 831361,
+    mapHasRoutes: true,
+    videos: [
+      {
+        type: "125 showcase",
+        route: "Easy",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=8RCGO-UwGxo",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:

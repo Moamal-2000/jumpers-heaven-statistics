@@ -89,14 +89,29 @@ export function formateReleaseDate(dateStr) {
 }
 
 export function modifyMapsData(mapsData) {
-  mapsData.map((map) => {
-    const requiredVideos = MAPS_VIDEOS.find((video) => {
-      return video.mapName === map.Name && video.mapId === map.ID;
-    })?.videos;
+  mapsData.map((mapData) => {
+    const requiredVideos = getRequiredMapVideos(mapData);
 
-    if (requiredVideos) map.Videos = requiredVideos;
-    return map;
+    if (requiredVideos) mapData.Videos = requiredVideos;
+    return mapData;
   });
 
   return mapsData;
+}
+
+export function getRequiredMapVideos(mapData) {
+  return MAPS_VIDEOS.find((video) => {
+    const hasMatchedMap =
+      video.mapName === mapData.Name && video.mapId === mapData.ID;
+
+    if (video.mapHasRoutes) {
+      const hasMatchRoute = video.videos.find(
+        ({ route }) => route === mapData.Ender
+      );
+
+      return hasMatchedMap && hasMatchRoute;
+    }
+
+    return hasMatchedMap;
+  })?.videos;
 }
