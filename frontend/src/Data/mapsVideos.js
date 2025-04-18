@@ -437,6 +437,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_lighthouse_hard",
+    mapId: 665084,
+    videos: [
+      {
+        type: "125 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=H4fq21gyKqc",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
