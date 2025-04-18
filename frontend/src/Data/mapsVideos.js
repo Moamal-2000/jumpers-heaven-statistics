@@ -487,6 +487,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "7th_jump",
+    mapId: 52562,
+    videos: [
+      {
+        type: "125 fps showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=263DiyaIpWM",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
