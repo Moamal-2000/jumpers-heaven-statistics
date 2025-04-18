@@ -461,6 +461,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "mp_dark_portal_250",
+    mapId: 656962,
+    videos: [
+      {
+        type: "250 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=dZ19UWD6FX8",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
