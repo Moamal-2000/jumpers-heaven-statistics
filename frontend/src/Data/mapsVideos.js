@@ -511,6 +511,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "jm_contrast",
+    mapId: 136,
+    videos: [
+      {
+        type: "125 fps tutorial",
+        icon: "tutorial",
+        videoUrl: "https://www.youtube.com/watch?v=0irPVp7mPKE",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
