@@ -499,6 +499,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "kanyewest",
+    mapId: 241,
+    videos: [
+      {
+        type: "trailer",
+        icon: "trailer",
+        videoUrl: "https://www.youtube.com/watch?v=A1EVxhA6P2c",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
