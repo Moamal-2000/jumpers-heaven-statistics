@@ -4,7 +4,7 @@ export const MAPS_VIDEOS = [
     mapId: 173824,
     videos: [
       {
-        type: "showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=_EOjiEGgqGE",
         id: 1,
@@ -16,7 +16,7 @@ export const MAPS_VIDEOS = [
     mapId: 699462,
     videos: [
       {
-        type: "250 showcase",
+        type: "250 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=MruEPjtOYOg",
         id: 1,
@@ -28,7 +28,7 @@ export const MAPS_VIDEOS = [
     mapId: 153,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=_0TBcTwX-cY",
         id: 1,
@@ -40,7 +40,7 @@ export const MAPS_VIDEOS = [
     mapId: 639309,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=WRoX-4NZ4f8",
         id: 1,
@@ -58,7 +58,7 @@ export const MAPS_VIDEOS = [
     mapId: 140,
     videos: [
       {
-        type: "250 speedrun",
+        type: "250 fps speedrun",
         icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=u1_ylHPbHCc",
         id: 1,
@@ -70,7 +70,7 @@ export const MAPS_VIDEOS = [
     mapId: 225,
     videos: [
       {
-        type: "250 speedrun",
+        type: "250 fps speedrun",
         icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=uoVDG01lPn4",
         id: 1,
@@ -82,7 +82,7 @@ export const MAPS_VIDEOS = [
     mapId: 208485,
     videos: [
       {
-        type: "125 speedrun",
+        type: "125 fps speedrun",
         icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=HA31Dfano50",
         id: 1,
@@ -94,7 +94,7 @@ export const MAPS_VIDEOS = [
     mapId: 275,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=IIpssQdWtxc",
         id: 1,
@@ -106,7 +106,7 @@ export const MAPS_VIDEOS = [
     mapId: 252,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=smNxrcv-wgY",
         id: 1,
@@ -118,7 +118,7 @@ export const MAPS_VIDEOS = [
     mapId: 148,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=mWUBTSWLxSw",
         id: 1,
@@ -130,14 +130,14 @@ export const MAPS_VIDEOS = [
     mapId: 264,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=yK0am1Jw4No",
         id: 1,
       },
       {
         type: "trailer",
-        icon: "timer",
+        icon: "trailer",
         videoUrl: "https://www.youtube.com/watch?v=mfr6bAhwxEI",
         id: 2,
       },
@@ -148,7 +148,7 @@ export const MAPS_VIDEOS = [
     mapId: 250,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=KjUJeM8qDLQ",
         id: 1,
@@ -160,7 +160,7 @@ export const MAPS_VIDEOS = [
     mapId: 260,
     videos: [
       {
-        type: "125 no save",
+        type: "125 fps no save",
         icon: "no-save",
         videoUrl: "https://www.youtube.com/watch?v=wcPG_HoftEk",
         id: 1,
@@ -172,7 +172,7 @@ export const MAPS_VIDEOS = [
     mapId: 143,
     videos: [
       {
-        type: "125 speedrun",
+        type: "125 fps speedrun",
         icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=qfNMnlbFTFM",
         id: 1,
@@ -184,7 +184,7 @@ export const MAPS_VIDEOS = [
     mapId: 152,
     videos: [
       {
-        type: "125 speedrun",
+        type: "125 fps speedrun",
         icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=aRLB2Z0Bm7o",
         id: 1,
@@ -196,7 +196,7 @@ export const MAPS_VIDEOS = [
     mapId: 915,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=yIj2vTlPjXY",
         id: 1,
@@ -208,7 +208,7 @@ export const MAPS_VIDEOS = [
     mapId: 119,
     videos: [
       {
-        type: "125 speedrun",
+        type: "125 fps speedrun",
         icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=TYntstrWPOc",
         id: 1,
@@ -220,13 +220,13 @@ export const MAPS_VIDEOS = [
     mapId: 14343,
     videos: [
       {
-        type: "125 speedrun",
+        type: "125 fps speedrun",
         icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=Za7UPVl9wr4",
         id: 1,
       },
       {
-        type: "250 speedrun",
+        type: "250 fps speedrun",
         icon: "timer",
         videoUrl: "https://www.youtube.com/watch?v=13p_C7RIN0M",
         id: 2,
@@ -250,7 +250,7 @@ export const MAPS_VIDEOS = [
     mapId: 99836,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=S-FzIg2wVZw",
         id: 1,
@@ -262,7 +262,7 @@ export const MAPS_VIDEOS = [
     mapId: 499329,
     videos: [
       {
-        type: "250 showcase",
+        type: "250 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=cIZ_ldYVsho",
         id: 1,
@@ -274,13 +274,13 @@ export const MAPS_VIDEOS = [
     mapId: 599843,
     videos: [
       {
-        type: "250 showcase",
+        type: "250 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=yWn4Dr99bzw",
         id: 1,
       },
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=p9hDtNucBCg",
         id: 2,
@@ -292,13 +292,13 @@ export const MAPS_VIDEOS = [
     mapId: 573443,
     videos: [
       {
-        type: "250 showcase part 1",
+        type: "250 fps showcase part 1",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=p3aTRSzMnB8",
         id: 1,
       },
       {
-        type: "250 showcase part 2",
+        type: "250 fps showcase part 2",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=dh2G7VozsNY",
         id: 2,
@@ -310,7 +310,7 @@ export const MAPS_VIDEOS = [
     mapId: 573459,
     videos: [
       {
-        type: "mix showcase",
+        type: "mix fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=C4wJrDoo5r4",
         id: 1,
@@ -322,7 +322,7 @@ export const MAPS_VIDEOS = [
     mapId: 816094,
     videos: [
       {
-        type: "250 showcase",
+        type: "250 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=JV8nSUvxuig&t=9s",
         id: 1,
@@ -334,7 +334,7 @@ export const MAPS_VIDEOS = [
     mapId: 955513,
     videos: [
       {
-        type: "250 showcase",
+        type: "250 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=3fSJ0N1mv4U",
         id: 1,
@@ -346,7 +346,7 @@ export const MAPS_VIDEOS = [
     mapId: 573456,
     videos: [
       {
-        type: "mix low grenades",
+        type: "mix fps low grenades",
         icon: "no-grenade",
         videoUrl: "https://www.youtube.com/watch?v=Bvav5gdntow",
         id: 1,
@@ -358,7 +358,7 @@ export const MAPS_VIDEOS = [
     mapId: 556418,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=v8rhtJa3Nh4",
         id: 1,
@@ -370,7 +370,7 @@ export const MAPS_VIDEOS = [
     mapId: 562196,
     videos: [
       {
-        type: "250 showcase",
+        type: "250 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=vuBFiwcArcE",
         id: 1,
@@ -382,7 +382,7 @@ export const MAPS_VIDEOS = [
     mapId: 568694,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=7mK_3V8ZpFo",
         id: 1,
@@ -394,7 +394,7 @@ export const MAPS_VIDEOS = [
     mapId: 209152,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=7w0iisRKIQM",
         id: 1,
@@ -406,7 +406,7 @@ export const MAPS_VIDEOS = [
     mapId: 67866,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=v7j3MX5Cgmk",
         id: 1,
@@ -418,7 +418,7 @@ export const MAPS_VIDEOS = [
     mapId: 229236,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=GPCqtKMgfF4",
         id: 1,
@@ -430,7 +430,7 @@ export const MAPS_VIDEOS = [
     mapId: 158181,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=FONKNlPJea4",
         id: 1,
@@ -442,7 +442,7 @@ export const MAPS_VIDEOS = [
     mapId: 665084,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=H4fq21gyKqc",
         id: 1,
@@ -454,7 +454,7 @@ export const MAPS_VIDEOS = [
     mapId: 205,
     videos: [
       {
-        type: "125 no grenade",
+        type: "125 fps no grenade",
         icon: "no-grenade",
         videoUrl: "https://www.youtube.com/watch?v=qkJYjLpaoeA",
         id: 1,
@@ -466,7 +466,7 @@ export const MAPS_VIDEOS = [
     mapId: 656962,
     videos: [
       {
-        type: "250 showcase",
+        type: "250 fps showcase",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=dZ19UWD6FX8",
         id: 1,
@@ -479,7 +479,7 @@ export const MAPS_VIDEOS = [
     mapHasRoutes: true,
     videos: [
       {
-        type: "125 showcase",
+        type: "125 fps showcase",
         route: "Easy",
         icon: "showcase",
         videoUrl: "https://www.youtube.com/watch?v=8RCGO-UwGxo",
