@@ -425,6 +425,18 @@ export const MAPS_VIDEOS = [
       },
     ],
   },
+  {
+    mapName: "j4l_real_artist",
+    mapId: 158181,
+    videos: [
+      {
+        type: "125 showcase",
+        icon: "showcase",
+        videoUrl: "https://www.youtube.com/watch?v=FONKNlPJea4",
+        id: 1,
+      },
+    ],
+  },
 ];
 
 /* Valid icon names:
