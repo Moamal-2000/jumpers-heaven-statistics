@@ -68,7 +68,7 @@ export const MAPS_FILTERS_DATA = [
   {
     label: "Map Type",
     queryName: "map-type",
-    defaultUrlQuery: "all",
+    defaultUrlQuery: "jump",
     filtersData: [
       { text: "All", queryValue: "all", id: 1 },
       { text: "Jump", queryValue: "jump", id: 2 },
@@ -81,7 +81,7 @@ export const MAPS_FILTERS_DATA = [
   {
     label: "Required Difficulty",
     queryName: "map-difficulty",
-    defaultUrlQuery: "125 difficulty",
+    defaultUrlQuery: "125",
     filtersData: [
       { text: "43 difficulty", queryValue: "43", id: 1 },
       { text: "76 difficulty", queryValue: "76", id: 2 },
