@@ -1,7 +1,23 @@
+@use "@/Styles/mixins" as m;
+
 .filterButtons {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
   gap: 0.5rem;
+}
+
+@include m.large {
+  .filterButtons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@include m.very-small {
+  .filterButtons {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
 }
 
 .filterButtons button {
@@ -37,5 +53,11 @@
     background: linear-gradient(135deg, #3b82f6, #2563eb);
     box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
     transform: translateY(-2px);
+  }
+}
+
+@include m.very-small {
+  .filterButtons button {
+    flex: 1;
   }
 }
