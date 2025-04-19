@@ -1,9 +1,19 @@
-import s from './LegendLabel.module.scss'
+import SvgIcon from "@/Components/Shared/SvgIcon";
+import s from "./LegendLabel.module.scss";
 
-const LegendLabel = () => {
+const LegendLabel = ({ label, tooltipText }) => {
   return (
-    <div>LegendLabel</div>
-  )
-}
+    <legend className={s.label}>
+      {label}
+      <div className={s.tooltip}>
+        <div className={s.icon}>
+          <SvgIcon name="questionMark" />
+        </div>
 
-export default LegendLabel
+        <p className={s.tooltipText}>{tooltipText}</p>
+      </div>
+    </legend>
+  );
+};
+
+export default LegendLabel;
