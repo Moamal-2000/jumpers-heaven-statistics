@@ -71,8 +71,9 @@ export const MAPS_FILTERS_DATA = [
     defaultUrlQuery: "all",
     filtersData: [
       { text: "All", queryValue: "all", id: 1 },
-      { text: "Defrag", queryValue: "defrag", id: 2 },
-      { text: "Surf", queryValue: "surf", id: 3 },
+      { text: "Jump", queryValue: "jump", id: 2 },
+      { text: "Defrag", queryValue: "defrag", id: 3 },
+      { text: "Surf", queryValue: "surf", id: 4 },
     ],
     tooltipText: "Filter maps by their gameplay type",
     id: 1,
