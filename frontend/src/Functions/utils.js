@@ -1,5 +1,9 @@
 import { jhApis } from "@/Api/jumpersHeaven";
-import { MONTHS, PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
+import {
+  MONTHS,
+  NUMBER_OF_RATING_STARS,
+  PAGINATION_ITEMS_PER_PAGE,
+} from "@/Data/constants";
 import { MAPS_VIDEOS } from "@/Data/mapsVideos";
 import { COUNTRIES_BY_CODE, REGIONS, TOP_STATS_COLOR } from "@/Data/staticData";
 import { decode } from "msgpackr";
@@ -114,4 +118,10 @@ export function getRequiredMapVideos(mapData) {
 
     return hasMatchedMap;
   })?.videos;
+}
+
+export function getStarsText(text) {
+  const solidStars = "★".repeat(text);
+  const emptyStars = "☆".repeat(NUMBER_OF_RATING_STARS - text);
+  return solidStars + emptyStars;
 }
