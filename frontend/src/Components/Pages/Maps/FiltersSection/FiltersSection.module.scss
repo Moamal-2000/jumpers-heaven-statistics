@@ -3,23 +3,18 @@
 .filtersSection {
   background-color: #141a24;
   border-radius: 10px;
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1.5rem;
+  padding: 20px 24px;
+  margin-bottom: 24px;
   border: 1px solid #374151;
-  box-shadow: 0 4px 16px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .35);
   display: flex;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 24px;
+  flex-wrap: wrap;
   position: relative;
 }
 
-@include m.large {
-  .filtersSection {
-    flex-wrap: wrap;
-  }
-}
-
-@include m.small {
+@include m.very-small {
   .filtersSection {
     justify-content: center;
   }
@@ -29,8 +24,9 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  translate: -50% 0;
+  width: calc(100% - 10px);
   height: 3px;
   background: linear-gradient(135deg, #2563eb, #1e3a8a);
 }

@@ -9,7 +9,13 @@ const FiltersSection = () => {
         ({ label, queryName, defaultUrlQuery, filtersData, tooltipText }) => (
           <FilterGroup
             key={queryName}
-            {...{ label, queryName, defaultUrlQuery, filtersData, tooltipText }}
+            {...{
+              label,
+              queryName,
+              defaultUrlQuery,
+              filtersData,
+              tooltipText,
+            }}
           />
         )
       )}
