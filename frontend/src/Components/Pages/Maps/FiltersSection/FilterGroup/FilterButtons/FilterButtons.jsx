@@ -31,14 +31,17 @@ const FilterButtons = ({ filtersData, queryName, defaultUrlQuery }) => {
         const isNumber = !Number.isNaN(+text);
         const modifiedText = isNumber ? getStarsText(text) : text;
         const currentValue = urlQuery || defaultUrlQuery;
-        const activeClass = currentValue === queryValue ? s.active : "";
+
+        const isActive = isNumber
+          ? +currentValue === +text
+          : currentValue === queryValue;
 
         return (
           <button
             type="button"
             key={id}
             onClick={() => handleClick(queryValue)}
-            className={activeClass}
+            className={isActive ? s.active : ""}
           >
             {modifiedText}
           </button>
