@@ -1,6 +1,7 @@
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import FilterButtons from "./FilterButtons/FilterButtons";
 import s from "./FilterGroup.module.scss";
+import LegendLabel from "./LegendLabel/LegendLabel";
 
 const FilterGroup = ({
   label,
@@ -11,16 +12,7 @@ const FilterGroup = ({
 }) => {
   return (
     <fieldset className={s.filterGroup}>
-      <legend className={s.label}>
-        {label}
-        <div className={s.tooltip}>
-          <div className={s.icon}>
-            <SvgIcon name="questionMark" />
-          </div>
-
-          <p className={s.tooltipText}>{tooltipText}</p>
-        </div>
-      </legend>
+      <LegendLabel />
 
       <FilterButtons
         filtersData={filtersData}
