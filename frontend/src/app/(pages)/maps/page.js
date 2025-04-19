@@ -9,7 +9,7 @@ const MapsPage = () => {
       <main className={s.mapsPage}>
         <Introduction />
         <FiltersSection />
-        <Maps />
+        {/* <Maps /> */}
       </main>
     </div>
   );
