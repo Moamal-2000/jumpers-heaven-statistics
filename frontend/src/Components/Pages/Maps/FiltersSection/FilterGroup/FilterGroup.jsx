@@ -1,5 +1,6 @@
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { getStarsText } from "@/Functions/utils";
+import FilterButtons from "./FilterButtons/FilterButtons";
 import s from "./FilterGroup.module.scss";
 
 const FilterGroup = ({
@@ -21,6 +22,8 @@ const FilterGroup = ({
           <p className={s.tooltipText}>{tooltipText}</p>
         </div>
       </legend>
+
+      <FilterButtons />
 
       <div className={s.filterButtons}>
         {filtersData?.map(({ text, queryValue, id }) => {
