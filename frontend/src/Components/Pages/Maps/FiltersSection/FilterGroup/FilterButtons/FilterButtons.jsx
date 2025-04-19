@@ -1,9 +1,21 @@
-import s from './FilterButtons.module.scss'
+import { getStarsText } from "@/Functions/utils";
+import s from "./FilterButtons.module.scss";
 
-const FilterButtons = () => {
+const FilterButtons = ({ filtersData, queryName, defaultUrlQuery }) => {
   return (
-    <div>FilterButtons</div>
-  )
-}
+    <div className={s.filterButtons}>
+      {filtersData?.map(({ text, queryValue, id }) => {
+        const isNumber = !Number.isNaN(+text);
+        const modifiedText = isNumber ? getStarsText(text) : text;
 
-export default FilterButtons
+        return (
+          <button type="button" key={id}>
+            {modifiedText}
+          </button>
+        );
+      })}
+    </div>
+  );
+};
+
+export default FilterButtons;
