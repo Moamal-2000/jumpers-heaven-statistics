@@ -1,4 +1,4 @@
-export const FILTERS_COMPONENTS_DATA = [
+export const LEADERBOARDS_FILTERS_DATA = [
   {
     title: "Leaderboard Type",
     queryName: "leaderboard",
@@ -61,5 +61,38 @@ export const FILTERS_COMPONENTS_DATA = [
       { text: "Long Time", id: 5 },
     ],
     id: 4,
+  },
+];
+
+export const MAPS_FILTERS_DATA = [
+  {
+    title: "Map Type",
+    queryName: "map-type",
+    defaultUrlQuery: "all",
+    filtersData: ["all", "jump", "defrag", "surf"],
+    tooltipText: "Filter maps by their gameplay type",
+    id: 1,
+  },
+  {
+    title: "Required Difficulty",
+    queryName: "map-difficulty",
+    defaultUrlQuery: "125 difficulty",
+    filtersData: [
+      "43 difficulty",
+      "76 difficulty",
+      "125 difficulty",
+      "250 difficulty",
+      "333 difficulty",
+    ],
+    tooltipText: "Filter maps by their required difficulty",
+    id: 2,
+  },
+  {
+    title: "Rating",
+    queryName: "map-rating",
+    defaultUrlQuery: "all",
+    filtersData: ["all", 1, 2, 3, 4, 5],
+    tooltipText: "Filter maps by their rating",
+    id: 3,
   },
 ];

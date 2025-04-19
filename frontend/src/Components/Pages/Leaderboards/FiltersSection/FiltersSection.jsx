@@ -1,7 +1,7 @@
 "use client";
 
 import FilterCard from "@/Components/Shared/Cards/FilterCard/FilterCard";
-import { FILTERS_COMPONENTS_DATA } from "@/Data/filters";
+import { LEADERBOARDS_FILTERS_DATA } from "@/Data/filters";
 import { updateGlobalState } from "@/Redux/slices/globalSlice";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
@@ -19,7 +19,7 @@ const FiltersSection = () => {
 
   return (
     <section className={s.filtersSection}>
-      {FILTERS_COMPONENTS_DATA.map(
+      {LEADERBOARDS_FILTERS_DATA.map(
         ({ title, queryName, defaultUrlQuery, filtersData, id }) => {
           return (
             <FilterCard key={id} title={title}>
