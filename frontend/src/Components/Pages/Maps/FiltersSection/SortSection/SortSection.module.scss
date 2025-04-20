@@ -4,14 +4,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 26px;
+}
+
+@include m.small {
+  .sortSection {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 
 .sortSection .sortWrapper {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+@include m.very-small {
+  .sortSection .sortWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .sortSection .sortWrapper .label {
@@ -88,7 +102,6 @@
 .sortSection .sortViewWrapper {
   display: flex;
   gap: 0.5rem;
-  margin-left: auto;
 }
 
 .sortSection .sortViewWrapper button {
