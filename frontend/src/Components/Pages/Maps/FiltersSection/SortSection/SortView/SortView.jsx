@@ -1,22 +1,60 @@
+"use client";
+
 import SvgIcon from "@/Components/Shared/SvgIcon";
+import { createQueryString, removeQueryString } from "@/Functions/utils";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import s from "./SortView.module.scss";
 
 const SortView = () => {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  const urlQuery = searchParams.get("maps-view") || "grid";
+
+  function changeView(value) {
+    const isDefault = value === "grid";
+
+    if (isDefault) {
+      removeQueryString("maps-view", searchParams, router, pathname);
+      return;
+    }
+
+    createQueryString("maps-view", value, searchParams, router, pathname);
+  }
+
   return (
     <div className={s.sortViewWrapper}>
-      <button type="button">
-        <span>
-          <SvgIcon name="window" />
-        </span>
-      </button>
+      {VIEW_OPTIONS_DATA.map(({ value, icon, id }) => {
+        const activeClass = urlQuery === value ? s.active : "";
 
-      <button type="button">
-        <span>
-          <SvgIcon name="list" />
-        </span>
-      </button>
+        return (
+          <button
+            key={id}
+            type="button"
+            className={`${s.sortViewBtn} ${activeClass}`}
+            onClick={() => changeView(value)}
+          >
+            <span>
+              <SvgIcon name={icon} />
+            </span>
+          </button>
+        );
+      })}
     </div>
   );
 };
 
 export default SortView;
+
+const VIEW_OPTIONS_DATA = [
+  {
+    value: "grid",
+    icon: "window",
+    id: 1,
+  },
+  {
+    value: "list",
+    icon: "list",
+    id: 2,
+  },
+];
