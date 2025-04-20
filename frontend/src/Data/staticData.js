@@ -519,3 +519,36 @@ export const SOCIAL_MEDIA_DATA = [
     id: 5,
   },
 ];
+
+export const SORT_MAPS_OPTIONS = [
+  { label: "Newest First", value: "newest", id: 1 },
+  { label: "Oldest First", value: "oldest", id: 2 },
+  { label: "Name (A-Z)", value: "name-a-z", id: 3 },
+  { label: "Name (Z-A)", value: "name-z-a", id: 4 },
+  { label: "Rating (High to Low)", value: "rating-high-to-low", id: 5 },
+  { label: "Rating (Low to High)", value: "rating-low-to-high", id: 6 },
+  { label: "Short map", value: "short-map", id: 7 },
+  { label: "Long map", value: "long-map", id: 8 },
+  {
+    label: "Completions (High to Low)",
+    value: "completions-high-to-low",
+    id: 9,
+  },
+  {
+    label: "Completions (Low to High)",
+    value: "completions-low-to-high",
+    id: 10,
+  },
+  { label: "High Checkpoints", value: "high-checkpoints", id: 11 },
+  { label: "Low Checkpoints", value: "low-checkpoints", id: 12 },
+  {
+    label: "Avg Attempts (High to Low)",
+    value: "avg-attempts-high-to-low",
+    id: 13,
+  },
+  {
+    label: "Avg Attempts (Low to High)",
+    value: "avg-attempts-low-to-high",
+    id: 14,
+  },
+];
