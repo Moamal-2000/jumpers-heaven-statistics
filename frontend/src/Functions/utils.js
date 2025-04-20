@@ -125,3 +125,15 @@ export function getStarsText(text) {
   const emptyStars = "☆".repeat(NUMBER_OF_RATING_STARS - text);
   return solidStars + emptyStars;
 }
+
+export function updateThemeByPage(currentPage) {
+  const isMapsPage = currentPage === "/maps";
+  const htmlElement = document.documentElement;
+
+  if (isMapsPage) {
+    htmlElement.classList.add("maps-page");
+    return;
+  }
+
+  htmlElement.classList = "";
+}

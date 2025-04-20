@@ -1,8 +1,9 @@
 "use client";
 
+import { updateThemeByPage } from "@/Functions/utils";
 import { updateGlobalState } from "@/Redux/slices/globalSlice";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./LayoutLayer.module.scss";
 
@@ -15,11 +16,13 @@ const LayoutLayer = ({ children }) => {
   function watchPageVisits() {
     const pageVisitsClone = [...pageVisits];
     pageVisitsClone.push(currentPage);
+
     dispatch(updateGlobalState({ key: "pageVisits", value: pageVisitsClone }));
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     watchPageVisits();
+    updateThemeByPage(currentPage);
   }, [currentPage]);
 
   return <div className={`${s.websiteLayer} ${v2Class}`}>{children}</div>;
