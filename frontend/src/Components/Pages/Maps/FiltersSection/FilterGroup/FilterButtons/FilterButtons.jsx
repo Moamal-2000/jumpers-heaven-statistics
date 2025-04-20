@@ -31,6 +31,7 @@ const FilterButtons = ({ filtersData, queryName, defaultUrlQuery }) => {
         const isNumber = !Number.isNaN(+text);
         const modifiedText = isNumber ? getStarsText(text) : text;
         const currentValue = urlQuery || defaultUrlQuery;
+        const starsClass = isNumber ? s.stars : "";
 
         const isActive = isNumber
           ? +currentValue === +text
@@ -41,7 +42,7 @@ const FilterButtons = ({ filtersData, queryName, defaultUrlQuery }) => {
             type="button"
             key={id}
             onClick={() => handleClick(queryValue)}
-            className={isActive ? s.active : ""}
+            className={`${isActive ? s.active : ""} ${starsClass}`}
           >
             {modifiedText}
           </button>

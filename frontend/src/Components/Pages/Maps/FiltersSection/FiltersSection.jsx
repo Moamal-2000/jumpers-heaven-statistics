@@ -4,10 +4,10 @@ import SortSection from "./SortSection/SortSection";
 
 const FiltersSection = () => {
   return (
-    <section className={s.filtersSection}>
+    <div className={s.filtersSection}>
       <FilterSection />
       <SortSection />
-    </section>
+    </div>
   );
 };
 
