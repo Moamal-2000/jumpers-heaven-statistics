@@ -5,7 +5,7 @@ const CustomSelectMenu = () => {
   return (
     <div className={s.selectMenu}>
       <button type="button" className={s.selectButton}>
-        <span className={s.currentValue}>Newest First</span>
+        <span>Newest First</span>
         <SvgIcon name="solidArrow" />
       </button>
 

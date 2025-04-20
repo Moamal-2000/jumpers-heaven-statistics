@@ -8,6 +8,12 @@
   flex-wrap: wrap;
 }
 
+.sortSection .sortWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .sortSection .sortWrapper .label {
   color: #60a5fa;
   font-size: .875rem;
@@ -15,7 +21,6 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  margin-bottom: 8px;
   letter-spacing: .02em;
 }
 

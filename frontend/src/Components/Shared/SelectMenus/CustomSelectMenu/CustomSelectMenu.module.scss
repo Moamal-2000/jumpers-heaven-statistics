@@ -1,9 +1,71 @@
-.selectMenu {}
+.selectMenu {
+  position: relative;
+}
 
-.selectMenu .selectButton {}
+.selectMenu .selectButton {
+  cursor: pointer;
+  background-color: #21262d;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease-in-out;
+  min-width: 200px;
+  justify-content: space-between;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
 
-.selectMenu .selectButton .currentValue {}
+.selectMenu .selectButton svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
 
-.selectMenu .optionsList {}
+.selectMenu .optionsList {
+  position: absolute;
+  right: 0;
+  background-color: #161b22;
+  min-width: 240px;
+  box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.3);
+  z-index: 20;
+  border-radius: 6px;
+  margin-top: 0.25rem;
+  border: 1px solid #30363d;
+  display: none;
+  overflow: hidden;
+}
 
-.selectMenu .optionsList>li {}
+.selectMenu.active .optionsList {
+  display: block;
+}
+
+.selectMenu .optionsList>li {
+  color: #c9d1d9;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+  border: none;
+  width: 100%;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+
+  &.active {
+    color: #58a6ff;
+    font-weight: 600;
+    background-color: rgba(88, 166, 255, 0.1);
+  }
+}
