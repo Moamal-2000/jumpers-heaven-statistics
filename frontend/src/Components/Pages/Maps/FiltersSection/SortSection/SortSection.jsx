@@ -1,6 +1,7 @@
 import CustomSelectMenu from "@/Components/Shared/SelectMenus/CustomSelectMenu/CustomSelectMenu";
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import s from "./SortSection.module.scss";
+import SortView from "./SortView/SortView";
 
 const SortSection = () => {
   return (
@@ -22,19 +23,7 @@ const SortSection = () => {
         <CustomSelectMenu />
       </div>
 
-      <div className={s.sortViewWrapper}>
-        <button type="button">
-          <span>
-            <SvgIcon name="window" />
-          </span>
-        </button>
-
-        <button type="button">
-          <span>
-            <SvgIcon name="list" />
-          </span>
-        </button>
-      </div>
+      <SortView />
     </section>
   );
 };
