@@ -1,3 +1,4 @@
+import CustomSelectMenu from "@/Components/Shared/SelectMenus/CustomSelectMenu/CustomSelectMenu";
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import s from "./SortSection.module.scss";
 
@@ -18,7 +19,7 @@ const SortSection = () => {
           </div>
         </label>
 
-        {/* <CustomSelectMenu /> */}
+        <CustomSelectMenu />
       </div>
 
       <div className={s.sortViewWrapper}>
