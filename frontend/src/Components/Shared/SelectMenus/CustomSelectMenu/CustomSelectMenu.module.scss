@@ -1,5 +1,6 @@
 .selectMenu {
   position: relative;
+  user-select: none;
 }
 
 .selectMenu .selectButton {

@@ -1,6 +1,8 @@
 "use client";
 
 import { SORT_MAPS_OPTIONS } from "@/Data/staticData";
+import { createQueryString, removeQueryString } from "@/Functions/utils";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import SvgIcon from "../../SvgIcon";
 import s from "./CustomSelectMenu.module.scss";
@@ -8,10 +10,24 @@ import s from "./CustomSelectMenu.module.scss";
 const CustomSelectMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
   const visibleClass = isOpen ? `${s.visible}` : "";
 
   function handleClick() {
     setIsOpen((prev) => !prev);
+  }
+
+  function handleSelectOption(value) {
+    const isDefault = value === "newest";
+
+    if (isDefault) {
+      removeQueryString("sort-by", searchParams, router, pathname);
+      return;
+    }
+
+    createQueryString("sort-by", value, searchParams, router, pathname);
   }
 
   function handleClickOutside(event) {
@@ -36,7 +52,9 @@ const CustomSelectMenu = () => {
 
       <ul className={s.optionsList} data-type="sort-maps-options">
         {SORT_MAPS_OPTIONS.map(({ label, value, id }) => (
-          <li key={id}>{label}</li>
+          <li key={id} onClick={() => handleSelectOption(value)}>
+            {label}
+          </li>
         ))}
       </ul>
     </div>
