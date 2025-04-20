@@ -1,9 +1,21 @@
-import s from './CustomSelectMenu.module.scss'
+import SvgIcon from "../../SvgIcon";
+import s from "./CustomSelectMenu.module.scss";
 
 const CustomSelectMenu = () => {
   return (
-    <div>CustomSelectMenu</div>
-  )
-}
+    <div className={s.selectMenu}>
+      <button type="button" className={s.selectButton}>
+        <span className={s.currentValue}>Newest First</span>
+        <SvgIcon name="solidArrow" />
+      </button>
 
-export default CustomSelectMenu
+      <ul className={s.optionsList}>
+        <li>Newest First</li>
+        <li>Oldest First</li>
+        <li>Name (A-Z)</li>
+      </ul>
+    </div>
+  );
+};
+
+export default CustomSelectMenu;
