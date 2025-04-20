@@ -1,0 +1,32 @@
+@use "@/Styles/mixins" as m;
+
+.filtersSection {
+  background-color: #141a24;
+  border-radius: 10px;
+  padding: 20px 24px;
+  border: 1px solid #374151;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .35);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+@include m.very-small {
+  .filtersSection {
+    justify-content: center;
+  }
+}
+
+.filtersSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
+  width: calc(100% - 10px);
+  height: 3px;
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+}
