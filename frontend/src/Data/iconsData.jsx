@@ -437,6 +437,24 @@ export const iconsData = [
     ),
   },
 
+  {
+    name: "window",
+    icon: (
+      <svg viewBox="0 0 24 24">
+        <path d="M3 11h8V3H3v8zm0 10h8v-8H3v8zM13 3v8h8V3h-8zm0 18h8v-8h-8v8z"></path>
+      </svg>
+    ),
+  },
+
+  {
+    name: "list",
+    icon: (
+      <svg viewBox="0 0 24 24">
+        <path d="M4 18h16v-2H4v2zm0-5h16v-2H4v2zm0-7v2h16V6H4z"></path>
+      </svg>
+    ),
+  },
+
   // {
   //   name: "",
   //   icon: (
