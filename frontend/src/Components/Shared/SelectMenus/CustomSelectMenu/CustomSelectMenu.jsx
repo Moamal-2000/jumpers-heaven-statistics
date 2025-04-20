@@ -13,7 +13,7 @@ const CustomSelectMenu = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const [currentSortBy, setCurrentSortBy] = useState("First Newest");
+  const [currentSortBy, setCurrentSortBy] = useState("Newest First");
   const visibleClass = isOpen ? `${s.visible}` : "";
 
   function handleClick() {
@@ -24,7 +24,7 @@ const CustomSelectMenu = () => {
     const isDefault = value === "newest";
 
     if (isDefault) {
-      setCurrentSortBy("First Newest");
+      setCurrentSortBy("Newest First");
       removeQueryString("sort-by", searchParams, router, pathname);
       return;
     }
@@ -54,11 +54,18 @@ const CustomSelectMenu = () => {
       </button>
 
       <ul className={s.optionsList} data-type="sort-maps-options">
-        {SORT_MAPS_OPTIONS.map(({ label, value, id }) => (
-          <li key={id} onClick={() => handleSelectOption(value, label)}>
-            {label}
-          </li>
-        ))}
+        {SORT_MAPS_OPTIONS.map(({ label, value, id }) => {
+          const activeClass = currentSortBy === label ? s.active : "";
+          return (
+            <li
+              key={id}
+              className={activeClass}
+              onClick={() => handleSelectOption(value, label)}
+            >
+              {label}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

@@ -82,11 +82,11 @@
   &.active {
     color: #58a6ff;
     font-weight: 600;
-    background-color: rgba(88, 166, 255, 0.1);
+    background-color: rgba(88, 166, 255, .1);
   }
 
   &:not(.active):hover {
-    background-color: rgba(32, 40, 50, .6);
+    background-color: rgba(32, 40, 50, .4);
     color: #58a6ff;
   }
 }
