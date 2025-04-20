@@ -32,6 +32,7 @@ const FilterButtons = ({ filtersData, queryName, defaultUrlQuery }) => {
         const modifiedText = isNumber ? getStarsText(text) : text;
         const currentValue = urlQuery || defaultUrlQuery;
         const starsClass = isNumber ? s.stars : "";
+        const title = getFilterBtnTitle(queryName, queryValue);
 
         const isActive = isNumber
           ? +currentValue === +text
@@ -43,6 +44,7 @@ const FilterButtons = ({ filtersData, queryName, defaultUrlQuery }) => {
             key={id}
             onClick={() => handleClick(queryValue)}
             className={`${isActive ? s.active : ""} ${starsClass}`}
+            title={title}
           >
             {modifiedText}
           </button>
@@ -53,3 +55,25 @@ const FilterButtons = ({ filtersData, queryName, defaultUrlQuery }) => {
 };
 
 export default FilterButtons;
+
+function getFilterBtnTitle(queryName, queryValue) {
+  const value = String(queryValue)?.toLowerCase();
+
+  switch (queryName) {
+    case "map-difficulty":
+      return `Filter maps by ${value} fps difficulty`;
+
+    case "map-type":
+      return value === "all"
+        ? "Display all types of maps"
+        : `Filter maps by ${value} type`;
+
+    case "map-rating":
+      return value === "all"
+        ? "Display all ratings"
+        : `Filter maps by ${value} rating`;
+
+    default:
+      return `Filter maps by ${value}`;
+  }
+}
