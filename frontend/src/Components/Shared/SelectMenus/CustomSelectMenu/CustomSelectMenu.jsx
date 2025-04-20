@@ -1,7 +1,11 @@
 "use client";
 
 import { SORT_MAPS_OPTIONS } from "@/Data/staticData";
-import { createQueryString, removeQueryString } from "@/Functions/utils";
+import {
+  createQueryString,
+  getSortByLabel,
+  removeQueryString,
+} from "@/Functions/utils";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import SvgIcon from "../../SvgIcon";
@@ -13,7 +17,8 @@ const CustomSelectMenu = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const [currentSortBy, setCurrentSortBy] = useState("Newest First");
+  const urlQuery = searchParams.get("sort-by");
+  const [currentSortBy, setCurrentSortBy] = useState(getSortByLabel(urlQuery));
   const visibleClass = isOpen ? `${s.visible}` : "";
 
   function handleClick() {
@@ -33,15 +38,15 @@ const CustomSelectMenu = () => {
     createQueryString("sort-by", value, searchParams, router, pathname);
   }
 
-  function handleClickOutside(event) {
-    const isSelectMenu = menuRef.current.contains(event.target);
-    const isOption = event.target.closest(`.${s.optionsList}`);
-    const shouldCloseMenu = (menuRef.current && !isSelectMenu) || isOption;
-
-    if (shouldCloseMenu) setIsOpen(false);
-  }
-
   useEffect(() => {
+    function handleClickOutside(event) {
+      const isSelectMenu = menuRef.current.contains(event.target);
+      const isOption = event.target.closest(`.${s.optionsList}`);
+      const shouldCloseMenu = (menuRef.current && !isSelectMenu) || isOption;
+
+      if (shouldCloseMenu) setIsOpen(false);
+    }
+
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
@@ -56,6 +61,7 @@ const CustomSelectMenu = () => {
       <ul className={s.optionsList} data-type="sort-maps-options">
         {SORT_MAPS_OPTIONS.map(({ label, value, id }) => {
           const activeClass = currentSortBy === label ? s.active : "";
+
           return (
             <li
               key={id}

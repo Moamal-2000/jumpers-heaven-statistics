@@ -5,7 +5,12 @@ import {
   PAGINATION_ITEMS_PER_PAGE,
 } from "@/Data/constants";
 import { MAPS_VIDEOS } from "@/Data/mapsVideos";
-import { COUNTRIES_BY_CODE, REGIONS, TOP_STATS_COLOR } from "@/Data/staticData";
+import {
+  COUNTRIES_BY_CODE,
+  REGIONS,
+  SORT_MAPS_OPTIONS,
+  TOP_STATS_COLOR,
+} from "@/Data/staticData";
 import { decode } from "msgpackr";
 
 export function getMaxFinishTimesFrom(bestPlayer) {
@@ -136,4 +141,9 @@ export function updateThemeByPage(currentPage) {
   }
 
   htmlElement.classList = "";
+}
+
+export function getSortByLabel(value) {
+  const option = SORT_MAPS_OPTIONS.find((option) => option.value === value);
+  return option?.label || "Newest First";
 }
