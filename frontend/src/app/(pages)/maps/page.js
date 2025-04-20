@@ -12,7 +12,7 @@ const MapsPage = () => {
         <Suspense>
           <FiltersSection />
         </Suspense>
-        {/* <Maps /> */}
+        <Maps />
       </main>
     </div>
   );
