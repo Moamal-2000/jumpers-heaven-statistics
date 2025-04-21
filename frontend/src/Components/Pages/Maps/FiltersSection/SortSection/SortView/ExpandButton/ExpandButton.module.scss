@@ -1,0 +1,21 @@
+.expandButton {
+  background-color: #007bff;
+  border: 1px solid #58a6ff;
+  color: #fff;
+  padding-inline: 16px;
+  min-width: 102px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: .87rem;
+  cursor: pointer;
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, .3);
+  transition: background-color .2s;
+
+  &:not(:disabled):hover {}
+
+  &:disabled {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    cursor: not-allowed;
+  }
+}

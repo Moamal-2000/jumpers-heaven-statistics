@@ -3,6 +3,7 @@
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { createQueryString, removeQueryString } from "@/Functions/utils";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import ExpandButton from "./ExpandButton/ExpandButton";
 import s from "./SortView.module.scss";
 
 const SortView = () => {
@@ -24,6 +25,8 @@ const SortView = () => {
 
   return (
     <div className={s.sortViewWrapper}>
+      <ExpandButton />
+
       {VIEW_OPTIONS_DATA.map(({ value, icon, id }) => {
         const activeClass = urlQuery === value ? s.active : "";
 

@@ -6,6 +6,7 @@ const initialState = {
   isNotFoundPage: false,
   isLeaderboardReversed: false,
   isLeaderboardExpanded: true,
+  isMapsExpanded: true,
   isMobileNavActive: false,
   isGlobalOverlayActive: false,
   pageVisits: [],

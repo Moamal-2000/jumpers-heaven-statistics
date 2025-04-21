@@ -9,6 +9,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   mapsData: [],
   mapsScroll: [],
+  loading: true,
+  error: false,
 };
 
 export const fetchMaps = createAsyncThunk("globalSlice/fetchMaps", async () => {
@@ -33,7 +35,10 @@ export const mapsSlice = createSlice({
     },
   },
   extraReducers: ({ addCase }) => {
-    addCase(fetchMaps.pending, (state, action) => {})
+    addCase(fetchMaps.pending, (state, action) => {
+      state.loading = true;
+      state.error = false;
+    })
       .addCase(fetchMaps.fulfilled, (state, action) => {
         const mapsData = [...action.payload];
         modifyMapsData(mapsData);
@@ -45,7 +50,10 @@ export const mapsSlice = createSlice({
         state.loading = false;
         state.error = false;
       })
-      .addCase(fetchMaps.rejected, (state, action) => {});
+      .addCase(fetchMaps.rejected, (state) => {
+        state.error = true;
+        state.loading = false;
+      });
   },
 });
 
