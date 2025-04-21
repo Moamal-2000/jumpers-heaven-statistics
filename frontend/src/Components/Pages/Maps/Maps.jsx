@@ -5,12 +5,13 @@ import useInfiniteScroll from "@/Hooks/App/useInfiniteScroll";
 import { fetchMaps, updateMapsState } from "@/Redux/slices/mapsSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import SpinnerLoader from "../../Shared/Loaders/SpinnerLoader/SpinnerLoader";
 import MapCard from "./MapCard/MapCard";
 import s from "./Maps.module.scss";
 
 const Maps = () => {
   const dispatch = useDispatch();
-  const { mapsData, mapsScroll } = useSelector((s) => s.maps);
+  const { mapsData, mapsScroll, loading, error } = useSelector((s) => s.maps);
   const { pageVisits, isMapsExpanded } = useSelector((s) => s.global);
   const collapseClass = isMapsExpanded ? "" : s.collapse;
 
@@ -45,17 +46,26 @@ const Maps = () => {
 
   return (
     <section className={`${s.mapsSection} ${collapseClass}`}>
-      {mapsScroll.map((mapData, index) => {
-        return (
-          <MapCard
-            key={mapData.CpID}
-            mapData={mapData}
-            mapsScroll={mapsScroll}
-            lastMapRef={lastMapRef}
-            index={index}
-          />
-        );
-      })}
+      {loading && !error && (
+        <SpinnerLoader
+          title="Loading maps..."
+          description="Fetching the latest maps"
+        />
+      )}
+
+      {!loading &&
+        !error &&
+        mapsScroll.map((mapData, index) => {
+          return (
+            <MapCard
+              key={mapData.CpID}
+              mapData={mapData}
+              mapsScroll={mapsScroll}
+              lastMapRef={lastMapRef}
+              index={index}
+            />
+          );
+        })}
     </section>
   );
 };
