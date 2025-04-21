@@ -58,21 +58,29 @@ const CustomSelectMenu = () => {
         <SvgIcon name="solidArrow" />
       </button>
 
-      <ul className={s.optionsList} data-type="sort-maps-options">
+      <div
+        role="listbox"
+        aria-label="Sort maps options"
+        className={s.optionsList}
+        data-type="sort-maps-options"
+      >
         {SORT_MAPS_OPTIONS.map(({ label, value, id }) => {
-          const activeClass = currentSortBy === label ? s.active : "";
+          const isActive = currentSortBy === label;
 
           return (
-            <li
+            <button
               key={id}
-              className={activeClass}
+              type="button"
+              role="option"
+              aria-selected={isActive}
+              className={isActive ? s.active : ""}
               onClick={() => handleSelectOption(value, label)}
             >
               {label}
-            </li>
+            </button>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 };
