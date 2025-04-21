@@ -27,10 +27,6 @@ const LeaderBoard = () => {
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
   const paramsObject = Object.fromEntries(searchParams.entries());
-  const leaderboardType = searchParams.get("leaderboard") || "speedrun";
-  const fpsType = searchParams.get("fps") || "125";
-  const lastSeenType = searchParams.get("last-seen") || "All time";
-  const regionFilter = searchParams.get("region") || "Global";
   const collapseClass = isLeaderboardExpanded ? "" : s.collapse;
 
   const {
@@ -79,7 +75,7 @@ const LeaderBoard = () => {
 
   useEffect(() => {
     getLeaderboardData();
-  }, [leaderboardType, fpsType, lastSeenType, regionFilter, tryFetchAgain]);
+  }, [searchParams, tryFetchAgain]);
 
   useEffect(() => {
     checkAndLoadMoreData();
