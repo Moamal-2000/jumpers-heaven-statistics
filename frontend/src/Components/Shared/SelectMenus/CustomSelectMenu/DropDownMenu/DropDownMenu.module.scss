@@ -1,0 +1,46 @@
+.optionsList {
+  position: absolute;
+  right: 0;
+  background-color: #161b22;
+  min-width: 240px;
+  max-height: calc(45px * 6);
+  box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.3);
+  z-index: 20;
+  border-radius: 6px;
+  margin-top: 0.25rem;
+  border: 1px solid #30363d;
+  display: none;
+  overflow-y: scroll;
+}
+
+.optionsList.visible {
+  display: block;
+}
+
+.optionsList>button {
+  color: #c9d1d9;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+  border: none;
+  width: 100%;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+
+  &.active {
+    color: #58a6ff;
+    font-weight: 600;
+    background-color: rgba(88, 166, 255, .1);
+  }
+
+  &:not(.active):hover {
+    background-color: rgba(32, 40, 50, .4);
+    color: #58a6ff;
+  }
+}
