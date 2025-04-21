@@ -24,7 +24,7 @@ const ExpandButton = () => {
       onClick={handleExpandBtn}
       disabled={isMapsUnavailable}
     >
-      {isMapsExpanded ? "Minimize" : "Maximize"}
+      {isMapsExpanded ? "Hide Maps" : "Show Maps"}
     </button>
   );
 };
