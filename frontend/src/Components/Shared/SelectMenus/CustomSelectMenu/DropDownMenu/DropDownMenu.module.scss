@@ -3,11 +3,11 @@
   right: 0;
   background-color: #161b22;
   min-width: 240px;
-  max-height: calc(45px * 6);
-  box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.3);
+  max-height: calc(45px * 6); // Show 6 options
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .3);
   z-index: 20;
   border-radius: 6px;
-  margin-top: 0.25rem;
+  margin-top: 4px;
   border: 1px solid #30363d;
   display: none;
   overflow-y: scroll;
@@ -19,19 +19,21 @@
 
 .optionsList>button {
   color: #c9d1d9;
-  padding: 0.75rem 1rem;
+  padding: 12px 16px;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.875rem;
+  font-size: .875rem;
   font-weight: 500;
-  transition: all 0.15s ease-in-out;
   border: none;
   width: 100%;
   background: none;
   text-align: left;
   cursor: pointer;
+  transition:
+    background-color .15s ease-in-out,
+    color .15s ease-in-out;
 
   &.active {
     color: #58a6ff;
