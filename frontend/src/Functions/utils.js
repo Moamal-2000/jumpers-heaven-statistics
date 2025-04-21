@@ -71,20 +71,6 @@ export function getIsLastPagination(data, paginationNumber) {
   return paginationNumber > lastPagination;
 }
 
-export function getRegionByCountry(countryCode) {
-  const upperCaseCode = countryCode.toUpperCase();
-
-  for (const [region, countries] of Object.entries(REGIONS)) {
-    if (countries.includes(upperCaseCode)) return region;
-  }
-
-  return "Unknown Region";
-}
-
-export function getCountryName(countryCode) {
-  return COUNTRIES_BY_CODE[countryCode.toUpperCase()] || "Unknown Country";
-}
-
 export async function decodeAsyncData(response) {
   const buffer = await response.arrayBuffer();
   const uint8Array = new Uint8Array(buffer);
