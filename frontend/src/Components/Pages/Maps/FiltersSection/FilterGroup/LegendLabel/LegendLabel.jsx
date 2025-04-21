@@ -3,7 +3,7 @@ import s from "./LegendLabel.module.scss";
 
 const LegendLabel = ({ label, tooltipText }) => {
   return (
-    <legend className={s.label}>
+    <legend className={s.label} data-label={label}>
       {label}
       <div className={s.tooltip}>
         <div className={s.icon}>

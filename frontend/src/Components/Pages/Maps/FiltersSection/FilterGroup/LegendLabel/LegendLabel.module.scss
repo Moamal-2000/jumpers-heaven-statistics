@@ -66,6 +66,20 @@
     left: 130px;
     top: -50%;
   }
+
+  .label[data-label="Required Difficulty"] .tooltip .tooltipText {
+    top: auto;
+    left: 50%;
+    margin-left: -200px;
+  }
+}
+
+@media (max-width: 1064px) {
+  .label[data-label="Required Difficulty"] .tooltip .tooltipText {
+    top: auto;
+    left: 50%;
+    margin-left: -130px;
+  }
 }
 
 @include m.small {
@@ -79,9 +93,10 @@
 @include m.very-small {
   .label .tooltip .tooltipText {
     top: auto;
-    left: 50%;
-    translate: -50% 0;
-    margin-left: -4px;
+    left: 0;
+    translate: 0 0;
+    margin-left: -70px;
+    width: 190px;
   }
 }
 
