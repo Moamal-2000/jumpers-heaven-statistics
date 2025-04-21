@@ -5,6 +5,10 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(390px, 1fr));
   gap: 1rem;
+
+  &.collapse {
+    display: none;
+  }
 }
 
 @media (max-width: 1280px) {

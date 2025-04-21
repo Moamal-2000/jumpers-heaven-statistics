@@ -11,7 +11,8 @@ import s from "./Maps.module.scss";
 const Maps = () => {
   const dispatch = useDispatch();
   const { mapsData, mapsScroll } = useSelector((s) => s.maps);
-  const { pageVisits } = useSelector((s) => s.global);
+  const { pageVisits, isMapsExpanded } = useSelector((s) => s.global);
+  const collapseClass = isMapsExpanded ? "" : s.collapse;
 
   const { paginationNumber, lastElementRef: lastMapRef } =
     useInfiniteScroll(mapsData);
@@ -43,7 +44,7 @@ const Maps = () => {
   }, [paginationNumber]);
 
   return (
-    <section className={s.mapsSection}>
+    <section className={`${s.mapsSection} ${collapseClass}`}>
       {mapsScroll.map((mapData, index) => {
         return (
           <MapCard
