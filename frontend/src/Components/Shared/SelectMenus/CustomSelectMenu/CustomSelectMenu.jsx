@@ -13,6 +13,7 @@ const CustomSelectMenu = () => {
   const searchParams = useSearchParams();
   const urlQuery = searchParams.get("sort-by");
   const [currentSortBy, setCurrentSortBy] = useState(getSortByLabel(urlQuery));
+  const visibleClass = isOpen ? `${s.visible}` : "";
 
   function handleClick() {
     setIsOpen((prev) => !prev);
@@ -33,7 +34,7 @@ const CustomSelectMenu = () => {
   }, []);
 
   return (
-    <div ref={menuRef} className={s.selectMenu}>
+    <div ref={menuRef} className={`${s.selectMenu} ${visibleClass}`}>
       <button type="button" className={s.selectButton} onClick={handleClick}>
         <span>{currentSortBy}</span>
         <SvgIcon name="solidArrow" />
@@ -43,6 +44,7 @@ const CustomSelectMenu = () => {
         isOpen={isOpen}
         currentSortBy={currentSortBy}
         setCurrentSortBy={setCurrentSortBy}
+        visibleClass={visibleClass}
       />
     </div>
   );
