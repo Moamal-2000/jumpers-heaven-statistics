@@ -75,7 +75,7 @@ export const MAPS_FILTERS_DATA = [
       { text: "Defrag", queryValue: "defrag", id: 3 },
       { text: "Surf", queryValue: "surf", id: 4 },
     ],
-    tooltipText: "Filter maps by their gameplay type",
+    tooltipText: "Select a map type to narrow down results",
     id: 1,
   },
   {
@@ -83,13 +83,13 @@ export const MAPS_FILTERS_DATA = [
     queryName: "map-difficulty",
     defaultUrlQuery: "125",
     filtersData: [
-      { text: "43 difficulty", queryValue: "43", id: 1 },
-      { text: "76 difficulty", queryValue: "76", id: 2 },
-      { text: "125 difficulty", queryValue: "125", id: 3 },
-      { text: "250 difficulty", queryValue: "250", id: 4 },
-      { text: "333 difficulty", queryValue: "333", id: 5 },
+      { text: "43 fps", queryValue: "43", id: 1 },
+      { text: "76 fps", queryValue: "76", id: 2 },
+      { text: "125 fps", queryValue: "125", id: 3 },
+      { text: "250 fps", queryValue: "250", id: 4 },
+      { text: "333 fps", queryValue: "333", id: 5 },
     ],
-    tooltipText: "Filter maps by their required difficulty",
+    tooltipText: "Map difficulty is calculated based on chosen FPS",
     id: 2,
   },
   {
@@ -104,7 +104,7 @@ export const MAPS_FILTERS_DATA = [
       { text: 4, queryValue: 4, id: 5 },
       { text: 5, queryValue: 5, id: 6 },
     ],
-    tooltipText: "Filter maps by their rating",
+    tooltipText: "Filter maps by their rating (Not completed yet)",
     id: 3,
   },
 ];
