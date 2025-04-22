@@ -80,7 +80,7 @@ const MapCard = ({ mapData, mapsScroll, lastMapRef, index }) => {
           </div>
         </div>
 
-        <AuthorAndRelease {...{ Difficulty, Author, Released }} />
+        <AuthorAndRelease author={Author} release={Released} />
       </section>
     </div>
   );
