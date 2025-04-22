@@ -78,6 +78,19 @@
       stroke: #FFC107;
     }
   }
+
+  &.active:hover {
+    background-color: rgba(255, 203, 47, 0.2);
+  }
+
+  &:active {
+    background-color: rgb(35, 36, 40);
+  }
+
+  &.active:active::before {
+    background-color: #FFC107;
+    box-shadow: 0 0 8px #FFC107;
+  }
 }
 
 .mobileNav .links li a::before {
