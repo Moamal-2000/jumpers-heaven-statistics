@@ -36,6 +36,7 @@ const SortView = () => {
             type="button"
             className={`${s.sortViewBtn} ${activeClass}`}
             onClick={() => changeView(value)}
+            title={`Change maps view to ${value}`}
           >
             <span>
               <SvgIcon name={icon} />
