@@ -3,6 +3,7 @@
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { isMobile } from "@/Functions/validation";
 import { updateGlobalState } from "@/Redux/slices/globalSlice";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./MobileNavBtn.module.scss";
 
@@ -11,7 +12,7 @@ const MobileNavBtn = () => {
   const dispatch = useDispatch();
   const iconName = isMobileNavActive ? "xMark" : "hamburger";
   const title = `${isMobileNavActive ? "Close" : "Open"} navigation menu`;
-  const isMobileDevice = isMobile();
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
   const moveClass = isMobileNavActive ? s.move : "";
   const mobileClass = isMobileDevice ? s.mobile : "";
 
@@ -27,6 +28,10 @@ const MobileNavBtn = () => {
       })
     );
   }
+
+  useEffect(() => {
+    setIsMobileDevice(isMobile());
+  }, []);
 
   return (
     <button
