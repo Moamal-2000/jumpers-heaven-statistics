@@ -1,7 +1,7 @@
 import { formateReleaseDate } from "@/Functions/utils";
 import s from "./AuthorAndRelease.module.scss";
 
-const AuthorAndRelease = ({ author, released }) => {
+const AuthorAndRelease = ({ author, release }) => {
   return (
     <div className={s.authorAndRelease}>
       <div className={s.authorWrapper}>
@@ -10,7 +10,7 @@ const AuthorAndRelease = ({ author, released }) => {
 
       <div className={s.releaseBox}>
         <div className={s.title}>Released</div>
-        <p className={s.date}>{formateReleaseDate(released)}</p>
+        <p className={s.date}>{formateReleaseDate(release)}</p>
       </div>
     </div>
   );
