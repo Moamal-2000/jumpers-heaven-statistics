@@ -16,7 +16,7 @@
   justify-content: center;
   border: 1px solid rgba(255, 193, 7);
 
-  &.move {
+  &:not(.mobile).move {
     right: 15px;
   }
 }

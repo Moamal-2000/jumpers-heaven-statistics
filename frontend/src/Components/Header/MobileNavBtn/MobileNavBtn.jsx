@@ -1,6 +1,7 @@
 "use client";
 
 import SvgIcon from "@/Components/Shared/SvgIcon";
+import { isMobile } from "@/Functions/validation";
 import { updateGlobalState } from "@/Redux/slices/globalSlice";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./MobileNavBtn.module.scss";
@@ -10,7 +11,9 @@ const MobileNavBtn = () => {
   const dispatch = useDispatch();
   const iconName = isMobileNavActive ? "xMark" : "hamburger";
   const title = `${isMobileNavActive ? "Close" : "Open"} navigation menu`;
+  const isMobileDevice = isMobile();
   const moveClass = isMobileNavActive ? s.move : "";
+  const mobileClass = isMobileDevice ? s.mobile : "";
 
   function handleToggleMenu() {
     dispatch(
@@ -28,7 +31,7 @@ const MobileNavBtn = () => {
   return (
     <button
       type="button"
-      className={`${moveClass} ${s.mobileNavBtn}`}
+      className={`${moveClass} ${s.mobileNavBtn} ${mobileClass}`}
       onClick={handleToggleMenu}
       title={title}
     >

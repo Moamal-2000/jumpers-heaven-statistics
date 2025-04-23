@@ -19,3 +19,8 @@ export function shouldRenderPaginationBtn(numberOfPages, index, currentPage) {
 
   return isInRange || (shouldAlwaysShowLastThree && isOneOfTheLastButtons);
 }
+
+export function isMobile() {
+  const mobilesType = /Mobi|Android|iPhone|iPad|iPod/i;
+  return mobilesType.test(navigator.userAgent);
+}
