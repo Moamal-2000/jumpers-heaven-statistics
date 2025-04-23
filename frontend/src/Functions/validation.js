@@ -22,5 +22,5 @@ export function shouldRenderPaginationBtn(numberOfPages, index, currentPage) {
 
 export function isMobile() {
   const mobilesType = /Mobi|Android|iPhone|iPad|iPod/i;
-  return mobilesType.test(navigator.userAgent);
+  return mobilesType.test(navigator?.userAgent);
 }
