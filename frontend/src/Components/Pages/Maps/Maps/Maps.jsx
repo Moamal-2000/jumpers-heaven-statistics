@@ -1,7 +1,6 @@
 "use client";
 
 import { getIsLastPagination, paginateData } from "@/Functions/utils";
-import useInfiniteScroll from "@/Hooks/App/useInfiniteScroll";
 import { fetchMaps, updateMapsState } from "@/Redux/slices/mapsSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,14 +8,11 @@ import SpinnerLoader from "../../../Shared/Loaders/SpinnerLoader/SpinnerLoader";
 import MapCard from "../MapCard/MapCard";
 import s from "./Maps.module.scss";
 
-const Maps = () => {
+const Maps = ({ paginationNumber, lastMapRef }) => {
   const dispatch = useDispatch();
   const { mapsData, mapsScroll, loading, error } = useSelector((s) => s.maps);
   const { pageVisits, isMapsExpanded } = useSelector((s) => s.global);
   const collapseClass = isMapsExpanded ? "" : s.collapse;
-
-  const { paginationNumber, lastElementRef: lastMapRef } =
-    useInfiniteScroll(mapsData);
 
   function addDataOnScroll() {
     const paginationMapsData = paginateData(mapsData, paginationNumber);
