@@ -10,7 +10,8 @@ import s from "./Maps.module.scss";
 
 const Maps = ({ paginationNumber, lastMapRef }) => {
   const dispatch = useDispatch();
-  const { mapsData, mapsScroll, loading, error } = useSelector((s) => s.maps);
+  const { mapsData, mapsScroll, allDataDisplayed, loading, error } =
+    useSelector((s) => s.maps);
   const { pageVisits, isMapsExpanded } = useSelector((s) => s.global);
   const collapseClass = isMapsExpanded ? "" : s.collapse;
 
@@ -27,7 +28,14 @@ const Maps = ({ paginationNumber, lastMapRef }) => {
     const cameFromDifferentPage =
       lastVisitedPage !== "/maps" && lastVisitedPage !== undefined;
 
-    const shouldLoadMoreData = !isLastPage && !cameFromDifferentPage;
+    // In this case the handleShowAll() is activated already
+    const isSameArrayReference = mapsScroll === mapsData;
+
+    const shouldLoadMoreData =
+      !isLastPage &&
+      !allDataDisplayed &&
+      !isSameArrayReference &&
+      !cameFromDifferentPage;
 
     if (shouldLoadMoreData) addDataOnScroll();
   }

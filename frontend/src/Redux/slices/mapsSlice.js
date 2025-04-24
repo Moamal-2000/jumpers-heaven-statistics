@@ -9,6 +9,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   mapsData: [],
   mapsScroll: [],
+  firstChunkMaps: [],
+  allDataDisplayed: [],
   loading: true,
   error: false,
 };
@@ -47,6 +49,7 @@ export const mapsSlice = createSlice({
 
         state.mapsData = mapsData;
         state.mapsScroll = paginationMaps;
+        state.firstChunkMaps = paginationMaps;
         state.loading = false;
         state.error = false;
       })

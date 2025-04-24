@@ -4,9 +4,10 @@ import SvgIcon from "@/Components/Shared/SvgIcon";
 import { createQueryString, removeQueryString } from "@/Functions/utils";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import ExpandButton from "./ExpandButton/ExpandButton";
+import ShowAllButton from "./ShowAllButton/ShowAllButton";
 import s from "./SortView.module.scss";
 
-const SortView = () => {
+const SortView = ({ setPaginationNumber }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -25,25 +26,30 @@ const SortView = () => {
 
   return (
     <div className={s.sortViewWrapper}>
-      <ExpandButton />
+      <div className={s.buttonsWrapper}>
+        <ShowAllButton setPaginationNumber={setPaginationNumber} />
+        <ExpandButton />
+      </div>
 
-      {VIEW_OPTIONS_DATA.map(({ value, icon, id }) => {
-        const activeClass = urlQuery === value ? s.active : "";
+      <div className={s.buttonsWrapper}>
+        {VIEW_OPTIONS_DATA.map(({ value, icon, id }) => {
+          const activeClass = urlQuery === value ? s.active : "";
 
-        return (
-          <button
-            key={id}
-            type="button"
-            className={`${s.sortViewBtn} ${activeClass}`}
-            onClick={() => changeView(value)}
-            title={`Change maps view to ${value}`}
-          >
-            <span>
-              <SvgIcon name={icon} />
-            </span>
-          </button>
-        );
-      })}
+          return (
+            <button
+              key={id}
+              type="button"
+              className={`${s.sortViewBtn} ${activeClass}`}
+              onClick={() => changeView(value)}
+              title={`Change maps view to ${value}`}
+            >
+              <span>
+                <SvgIcon name={icon} />
+              </span>
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 };

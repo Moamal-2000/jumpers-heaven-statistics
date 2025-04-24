@@ -3,7 +3,7 @@ import SvgIcon from "@/Components/Shared/SvgIcon";
 import s from "./SortSection.module.scss";
 import SortView from "./SortView/SortView";
 
-const SortSection = () => {
+const SortSection = ({ setPaginationNumber }) => {
   return (
     <section className={s.sortSection}>
       <div className={s.sortWrapper}>
@@ -23,7 +23,7 @@ const SortSection = () => {
         <CustomSelectMenu />
       </div>
 
-      <SortView />
+      <SortView setPaginationNumber={setPaginationNumber} />
     </section>
   );
 };

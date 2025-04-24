@@ -55,17 +55,17 @@ export const leaderboardSlice = createSlice({
     },
   },
   extraReducers: ({ addCase }) => {
-    addCase(fetchLeaderboard.fulfilled, (state, action) => {
-      const paginationLeaderboard = paginateData(action.payload, 1);
-
-      state.leaderboardData = action.payload;
-      state.leaderboardScroll = paginationLeaderboard;
-      state.firstChunkLeaderboard = paginationLeaderboard;
-      state.loading = false;
+    addCase(fetchLeaderboard.pending, (state) => {
+      state.loading = true;
       state.error = false;
     })
-      .addCase(fetchLeaderboard.pending, (state) => {
-        state.loading = true;
+      .addCase(fetchLeaderboard.fulfilled, (state, action) => {
+        const paginationLeaderboard = paginateData(action.payload, 1);
+
+        state.leaderboardData = action.payload;
+        state.leaderboardScroll = paginationLeaderboard;
+        state.firstChunkLeaderboard = paginationLeaderboard;
+        state.loading = false;
         state.error = false;
       })
       .addCase(fetchLeaderboard.rejected, (state) => {

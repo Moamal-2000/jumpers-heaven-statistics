@@ -1,23 +1,45 @@
 "use client";
 
+import { PAGINATION_ITEMS_PER_PAGE } from "@/Data/constants";
 import useInfiniteScroll from "@/Hooks/App/useInfiniteScroll";
-import { Suspense } from "react";
-import { useSelector } from "react-redux";
+import { updateMapsState } from "@/Redux/slices/mapsSlice";
+import { Suspense, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import FiltersSection from "../FiltersSection/FiltersSection";
 import Introduction from "../Introduction/Introduction";
 import Maps from "../Maps/Maps";
 import s from "./MapsPage.module.scss";
 
 const MapsPage = () => {
-  const { mapsData } = useSelector((s) => s.maps);
-  const [lastMapRef, paginationNumber] = useInfiniteScroll(mapsData);
+  const { mapsData, mapsScroll } = useSelector((s) => s.maps);
+  const [lastMapRef, paginationNumber, setPaginationNumber] =
+    useInfiniteScroll(mapsData);
+  const dispatch = useDispatch();
+
+  function updateAllDataDisplayedStatus() {
+    const lastMapsPagination = Math.ceil(
+      mapsData?.length / PAGINATION_ITEMS_PER_PAGE
+    );
+    const isLastPagination = paginationNumber >= lastMapsPagination;
+
+    dispatch(
+      updateMapsState({
+        key: "allDataDisplayed",
+        value: isLastPagination,
+      })
+    );
+  }
+
+  useEffect(() => {
+    updateAllDataDisplayedStatus();
+  }, [mapsScroll]);
 
   return (
     <div className="container">
       <main className={s.mapsPage}>
         <Introduction />
         <Suspense>
-          <FiltersSection />
+          <FiltersSection setPaginationNumber={setPaginationNumber} />
         </Suspense>
         <Maps paginationNumber={paginationNumber} lastMapRef={lastMapRef} />
       </main>
