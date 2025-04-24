@@ -29,11 +29,8 @@ const LeaderBoard = () => {
   const paramsObject = Object.fromEntries(searchParams.entries());
   const collapseClass = isLeaderboardExpanded ? "" : s.collapse;
 
-  const {
-    paginationNumber,
-    setPaginationNumber,
-    lastElementRef: lastPlayerRef,
-  } = useInfiniteScroll(leaderboardData, isLeaderboardReversed);
+  const [lastPlayerRef, paginationNumber, setPaginationNumber] =
+    useInfiniteScroll(leaderboardData, isLeaderboardReversed);
 
   function addDataOnScroll() {
     const paginationLeaderboardData = paginateData(

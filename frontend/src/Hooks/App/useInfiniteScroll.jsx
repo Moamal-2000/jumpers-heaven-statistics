@@ -24,7 +24,7 @@ const useInfiniteScroll = (data, isTableElementReversed = null) => {
     if (node) observer.current.observe(node);
   });
 
-  return { paginationNumber, setPaginationNumber, lastElementRef };
+  return [lastElementRef, paginationNumber, setPaginationNumber];
 };
 
 export default useInfiniteScroll;

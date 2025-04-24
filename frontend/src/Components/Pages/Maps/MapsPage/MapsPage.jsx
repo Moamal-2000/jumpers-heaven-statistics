@@ -10,8 +10,7 @@ import s from "./MapsPage.module.scss";
 
 const MapsPage = () => {
   const { mapsData } = useSelector((s) => s.maps);
-  const { paginationNumber, lastElementRef: lastMapRef } =
-    useInfiniteScroll(mapsData);
+  const [lastMapRef, paginationNumber] = useInfiniteScroll(mapsData);
 
   return (
     <div className="container">
