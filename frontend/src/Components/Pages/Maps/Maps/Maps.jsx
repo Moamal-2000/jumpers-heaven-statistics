@@ -5,8 +5,8 @@ import useInfiniteScroll from "@/Hooks/App/useInfiniteScroll";
 import { fetchMaps, updateMapsState } from "@/Redux/slices/mapsSlice";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import SpinnerLoader from "../../Shared/Loaders/SpinnerLoader/SpinnerLoader";
-import MapCard from "./MapCard/MapCard";
+import SpinnerLoader from "../../../Shared/Loaders/SpinnerLoader/SpinnerLoader";
+import MapCard from "../MapCard/MapCard";
 import s from "./Maps.module.scss";
 
 const Maps = () => {
