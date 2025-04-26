@@ -2,7 +2,7 @@
 
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { isMobile } from "@/Functions/validation";
-import { updateGlobalState } from "@/Redux/slices/globalSlice";
+import { toggleMobileNav } from "@/Redux/slices/globalSlice";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./MobileNavBtn.module.scss";
@@ -17,16 +17,7 @@ const MobileNavBtn = () => {
   const mobileClass = isMobileDevice ? s.mobile : "";
 
   function handleToggleMenu() {
-    dispatch(
-      updateGlobalState({ key: "isMobileNavActive", value: !isMobileNavActive })
-    );
-
-    dispatch(
-      updateGlobalState({
-        key: "isGlobalOverlayActive",
-        value: !isMobileNavActive,
-      })
-    );
+    dispatch(toggleMobileNav());
   }
 
   useEffect(() => {

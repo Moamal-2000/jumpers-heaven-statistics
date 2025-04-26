@@ -1,6 +1,6 @@
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { NAV_LINKS_DATA } from "@/Data/staticData";
-import { updateGlobalState } from "@/Redux/slices/globalSlice";
+import { toggleMobileNav } from "@/Redux/slices/globalSlice";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,14 +20,7 @@ const MobileNavLinks = () => {
 
         function handleLinkClick() {
           if (isCurrentPage) return;
-
-          dispatch(
-            updateGlobalState({ key: "isMobileNavActive", value: false })
-          );
-
-          dispatch(
-            updateGlobalState({ key: "isGlobalOverlayActive", value: false })
-          );
+          dispatch(toggleMobileNav({ value: false }));
         }
 
         return (

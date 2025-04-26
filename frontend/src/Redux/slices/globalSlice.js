@@ -37,6 +37,11 @@ export const globalSlice = createSlice({
     updateGlobalState: (state, { payload }) => {
       state[payload.key] = payload.value;
     },
+    toggleMobileNav: (state, { payload }) => {
+      const value = payload?.value ? payload.value : !state.isMobileNavActive;
+      state.isMobileNavActive = value;
+      state.isGlobalOverlayActive = value;
+    },
   },
   extraReducers: ({ addCase }) => {
     addCase(getJumpersHeavenStats.pending, (state, action) => {})
@@ -48,4 +53,4 @@ export const globalSlice = createSlice({
 });
 
 export default globalSlice.reducer;
-export const { updateGlobalState } = globalSlice.actions;
+export const { updateGlobalState, toggleMobileNav } = globalSlice.actions;
