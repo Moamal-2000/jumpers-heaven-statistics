@@ -57,19 +57,21 @@ const Maps = ({ paginationNumber, lastMapRef }) => {
         />
       )}
 
-      {!loading &&
-        !error &&
-        mapsScroll.map((mapData, index) => {
-          return (
-            <MapCard
-              key={mapData.CpID}
-              mapData={mapData}
-              mapsScroll={mapsScroll}
-              lastMapRef={lastMapRef}
-              index={index}
-            />
-          );
-        })}
+      {!loading && !error && (
+        <div className={s.mapsWrapper}>
+          {mapsScroll.map((mapData, index) => {
+            return (
+              <MapCard
+                key={mapData.CpID}
+                mapData={mapData}
+                mapsScroll={mapsScroll}
+                lastMapRef={lastMapRef}
+                index={index}
+              />
+            );
+          })}
+        </div>
+      )}
     </section>
   );
 };
