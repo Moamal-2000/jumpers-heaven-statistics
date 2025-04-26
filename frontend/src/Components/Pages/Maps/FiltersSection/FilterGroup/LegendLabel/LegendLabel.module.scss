@@ -61,25 +61,9 @@
     transform .2s ease;
 }
 
-@include m.large {
-  .label .tooltip .tooltipText {
-    left: 130px;
-    top: -50%;
-  }
-
-  .label[data-label="Required Difficulty"] .tooltip .tooltipText {
-    top: auto;
-    left: 50%;
-    margin-left: -200px;
-  }
-}
-
-@media (max-width: 1064px) {
-  .label[data-label="Required Difficulty"] .tooltip .tooltipText {
-    top: auto;
-    left: 50%;
-    margin-left: -130px;
-  }
+.label .tooltip:hover .tooltipText {
+  visibility: visible;
+  opacity: 1;
 }
 
 @include m.small {
@@ -100,7 +84,30 @@
   }
 }
 
-.label .tooltip:hover .tooltipText {
-  visibility: visible;
-  opacity: 1;
+.label[data-label="Required Difficulty"] .tooltip .tooltipText {
+  top: auto;
+  left: 50%;
+  margin-left: -190px;
+}
+
+@include m.small {
+  .label[data-label="Required Difficulty"] .tooltip .tooltipText {
+    margin-left: -150px;
+  }
+}
+
+@include m.small {
+  .label[data-label="Map Type"] .tooltip .tooltipText {
+    margin-left: -90px;
+  }
+}
+
+@include m.very-small {
+  .label[data-label="Map Type"] .tooltip .tooltipText {
+    margin-left: -84px;
+  }
+
+  .label[data-label=Rating] .tooltip .tooltipText {
+    margin-left: -62px;
+  }
 }

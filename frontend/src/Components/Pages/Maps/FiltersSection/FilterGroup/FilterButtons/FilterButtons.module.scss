@@ -2,21 +2,32 @@
 
 .filterButtons {
   display: grid;
-  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  grid-template-columns: repeat(3, minmax(110px, 1fr));
   gap: 8px 6px;
 }
 
 @include m.large {
   .filterButtons {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, minmax(90px, 1fr));
+  }
+}
+
+@include m.medium {
+  .filterButtons {
+    grid-template-columns: repeat(2, minmax(90px, 1fr));
+  }
+}
+
+@include m.small {
+  .filterButtons {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
 @include m.very-small {
   .filterButtons {
-    flex-wrap: nowrap;
-    flex-direction: column;
+    grid-template-columns: repeat(2, minmax(90px, 1fr));
   }
 }
 
@@ -24,7 +35,6 @@
   cursor: pointer;
   height: 36px;
   max-height: 36px;
-  min-width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,5 +71,17 @@
 
   &.active:hover {
     box-shadow: 0 0 15px rgba(37, 99, 235, .5);
+  }
+}
+
+@include m.small {
+  .filterButtons button {
+    min-width: 100px;
+  }
+}
+
+@include m.very-small {
+  .filterButtons button {
+    flex: 1;
   }
 }

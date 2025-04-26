@@ -10,8 +10,13 @@
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  flex-wrap: wrap;
   margin-bottom: 36px;
+}
+
+@include m.small {
+  .filtersSection {
+    flex-wrap: wrap;
+  }
 }
 
 @include m.very-small {
