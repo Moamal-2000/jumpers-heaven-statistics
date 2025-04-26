@@ -8,8 +8,8 @@
 
 @include m.large {
   .filterButtons {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
   }
 }
 
