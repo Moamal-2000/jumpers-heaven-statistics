@@ -3,6 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { useSelector } from "react-redux";
 import MapCard from "../../MapCard/MapCard";
+import MapCard2 from "../../MapCard2/MapCard2";
 
 const ViewMaps = ({ mapsScroll, lastMapRef }) => {
   const { loading, error } = useSelector((s) => s.maps);
@@ -13,15 +14,15 @@ const ViewMaps = ({ mapsScroll, lastMapRef }) => {
 
   if (viewType === "list")
     return mapsScroll.map((mapData, index) => {
-      // return (
-      //   <MapCard2
-      //     key={mapData.CpID}
-      //     mapData={mapData}
-      //     mapsScroll={mapsScroll}
-      //     lastMapRef={lastMapRef}
-      //     index={index}
-      //   />
-      // );
+      return (
+        <MapCard2
+          key={mapData.CpID}
+          mapData={mapData}
+          mapsScroll={mapsScroll}
+          lastMapRef={lastMapRef}
+          index={index}
+        />
+      );
     });
 
   return mapsScroll.map((mapData, index) => {
