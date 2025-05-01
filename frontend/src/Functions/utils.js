@@ -78,17 +78,6 @@ export function formateReleaseDate(dateStr) {
   return `${MONTHS[+month]} ${day}, ${year}`;
 }
 
-export function modifyMapsData(mapsData) {
-  mapsData.map((mapData) => {
-    const requiredVideos = getRequiredMapVideos(mapData);
-
-    if (requiredVideos) mapData.Videos = requiredVideos;
-    return mapData;
-  });
-
-  return mapsData;
-}
-
 export function getRequiredMapVideos(mapData) {
   return MAPS_VIDEOS.find((video) => {
     const hasMatchedMap =
