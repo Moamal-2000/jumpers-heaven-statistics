@@ -34,7 +34,7 @@ const MapCard2 = ({ mapData, mapsScroll, lastMapRef, index }) => {
 
         <div className={s.starsWrapper}>
           <MapStars rate={Rate} />
-          <span className={s.rateText}>{Rate || "?"}</span>
+          <span className={s.rateText}>{Rate || 0}</span>
         </div>
       </div>
 
