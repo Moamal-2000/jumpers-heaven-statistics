@@ -1,4 +1,5 @@
 import { jhApis } from "@/Api/jumpersHeaven";
+import { getFilteredMaps } from "@/Functions/filters";
 import { decodeAsyncData, paginateData } from "@/Functions/utils";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
@@ -41,14 +42,10 @@ export const mapsSlice = createSlice({
       state.error = false;
     })
       .addCase(fetchMaps.fulfilled, (state, { payload }) => {
-        let mapsData = [...payload.mapsData];
-        const mapType = payload?.paramsObject?.type || "jump";
-        const shouldFilterByType = mapType !== "jump" && mapType !== "all";
-
-        if (shouldFilterByType) {
-          mapsData = mapsData.filter((map) => map.Type === mapType);
-        }
-
+        const mapsData = getFilteredMaps(
+          payload?.mapsData,
+          payload?.paramsObject
+        );
         const paginationMaps = paginateData(mapsData, 1);
 
         state.mapsData = mapsData;

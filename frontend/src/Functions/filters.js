@@ -25,3 +25,16 @@ export function getRegionLeaderboard(data, filterKey) {
   if (!filterKey) return data;
   return data?.filter((item) => item?.Region?.toLowerCase() === filterKey);
 }
+
+export function getFilteredMaps(mapsData, paramsObject) {
+  let localMapsData = mapsData;
+
+  const mapType = paramsObject?.type || "jump";
+  const shouldFilterByType = mapType !== "jump" && mapType !== "all";
+
+  if (shouldFilterByType) {
+    localMapsData = mapsData.filter((map) => map.Type === mapType);
+  }
+
+  return localMapsData;
+}
