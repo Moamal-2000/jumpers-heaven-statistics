@@ -1,5 +1,6 @@
 import MapImage from "@/Components/Shared/Images/MapImage/MapImage";
 import { formateReleaseDate } from "@/Functions/utils";
+import Link from "next/link";
 import s from "./MapCard2.module.scss";
 import MapStars from "./MapStars/MapStars";
 
@@ -22,7 +23,9 @@ const MapCard2 = ({ mapData, mapsScroll, lastMapRef, index }) => {
       </div>
 
       <div className={s.leftSide}>
-        <h3 className={s.mapName}>{Name}</h3>
+        <Link className={s.mapName} href={`/maps/map/details`}>
+          {Name}
+        </Link>
 
         <div className={s.classifications}>
           {Classifications?.map(({ text, id }) => (
