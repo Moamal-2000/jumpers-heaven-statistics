@@ -11,17 +11,17 @@ const SortView = ({ setPaginationNumber }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const urlQuery = searchParams.get("maps-view") || "grid";
+  const urlQuery = searchParams.get("view") || "grid";
 
   function changeView(value) {
     const isDefault = value === "grid";
 
     if (isDefault) {
-      removeQueryString("maps-view", searchParams, router, pathname);
+      removeQueryString("view", searchParams, router, pathname);
       return;
     }
 
-    createQueryString("maps-view", value, searchParams, router, pathname);
+    createQueryString("view", value, searchParams, router, pathname);
   }
 
   return (
