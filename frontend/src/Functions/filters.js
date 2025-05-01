@@ -40,15 +40,25 @@ export function getFilteredMaps(mapsData, paramsObject) {
 }
 
 export function getSortedMaps(mapsData, paramsObject) {
-  const difficultyByFps = paramsObject?.difficulty || "125";
+  const sortType = paramsObject?.["sort-by"] || "125 difficulty";
+  const difficultyByFps = parseInt(sortType);
+  const isDifficultyByFps = !isNaN(difficultyByFps);
 
-  const filteredMaps = mapsData.toSorted((a, b) => {
+  let filteredMaps = mapsData;
+
+  if (isDifficultyByFps) {
+    filteredMaps = sortByDifficultyFps(mapsData, difficultyByFps);
+  }
+
+  return filteredMaps;
+}
+
+export function sortByDifficultyFps(mapsData, difficultyByFps) {
+  return mapsData.toSorted((a, b) => {
     const difficultyA = a.Difficulty?.[difficultyByFps]?.Difficulty ?? 0;
     const difficultyB = b.Difficulty?.[difficultyByFps]?.Difficulty ?? 0;
     return difficultyA - difficultyB;
   });
-
-  return filteredMaps;
 }
 
 export function getFilteredLeaderboard(leaderboardData, paramsObject) {
