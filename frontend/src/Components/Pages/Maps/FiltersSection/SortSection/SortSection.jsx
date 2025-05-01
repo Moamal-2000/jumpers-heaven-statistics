@@ -8,7 +8,7 @@ const SortSection = ({ setPaginationNumber }) => {
     <section className={s.sortSection}>
       <div className={s.sortWrapper}>
         <label htmlFor="sort-by" className={s.label}>
-          Sort by:
+          Sort Maps By:
           <div className={s.tooltip}>
             <div className={s.icon}>
               <SvgIcon name="questionMark" />

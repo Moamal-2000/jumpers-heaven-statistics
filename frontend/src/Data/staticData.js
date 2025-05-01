@@ -162,34 +162,49 @@ export const SOCIAL_MEDIA_DATA = [
 ];
 
 export const SORT_MAPS_OPTIONS = [
-  { label: "Newest First", value: "newest", id: 1 },
-  { label: "Oldest First", value: "oldest", id: 2 },
-  { label: "Shortest First", value: "shortest", id: 3 },
-  { label: "Longest First", value: "longest", id: 4 },
-  { label: "High Checkpoints", value: "high-checkpoints", id: 5 },
-  { label: "Low Checkpoints", value: "low-checkpoints", id: 6 },
-  { label: "Name (A-Z)", value: "name-a-z", id: 7 },
-  { label: "Name (Z-A)", value: "name-z-a", id: 8 },
-  { label: "Rating (High to Low)", value: "rating-high-to-low", id: 9 },
-  { label: "Rating (Low to High)", value: "rating-low-to-high", id: 10 },
   {
-    label: "Avg Attempts (High to Low)",
-    value: "avg-attempts-high-to-low",
-    id: 11,
+    groupLabel: "Basic Sorting Options",
+    groupOptions: [
+      { label: "Newest First", value: "newest", id: 1 },
+      { label: "Oldest First", value: "oldest", id: 2 },
+      { label: "Shortest First", value: "shortest", id: 3 },
+      { label: "Longest First", value: "longest", id: 4 },
+      { label: "High Checkpoints", value: "high-checkpoints", id: 5 },
+      { label: "Low Checkpoints", value: "low-checkpoints", id: 6 },
+      { label: "Name (A-Z)", value: "name-a-z", id: 7 },
+      { label: "Name (Z-A)", value: "name-z-a", id: 8 },
+      { label: "Rating (High to Low)", value: "rating-high-to-low", id: 9 },
+      { label: "Rating (Low to High)", value: "rating-low-to-high", id: 10 },
+      {
+        label: "Avg Attempts (High to Low)",
+        value: "avg-attempts-high-to-low",
+        id: 11,
+      },
+      {
+        label: "Avg Attempts (Low to High)",
+        value: "avg-attempts-low-to-high",
+        id: 12,
+      },
+      {
+        label: "Completions (High to Low)",
+        value: "completions-high-to-low",
+        id: 13,
+      },
+      {
+        label: "Completions (Low to High)",
+        value: "completions-low-to-high",
+        id: 14,
+      },
+    ],
   },
   {
-    label: "Avg Attempts (Low to High)",
-    value: "avg-attempts-low-to-high",
-    id: 12,
-  },
-  {
-    label: "Completions (High to Low)",
-    value: "completions-high-to-low",
-    id: 13,
-  },
-  {
-    label: "Completions (Low to High)",
-    value: "completions-low-to-high",
-    id: 14,
+    groupLabel: "FPS Difficulty",
+    groupOptions: [
+      { label: "43 fps", value: "43-difficulty", id: 1 },
+      { label: "76 fps", value: "76-difficulty", id: 2 },
+      { label: "125 fps", value: "125-difficulty", id: 3 },
+      { label: "250 fps", value: "250-difficulty", id: 4 },
+      { label: "333 fps", value: "333-difficulty", id: 5 },
+    ],
   },
 ];

@@ -28,20 +28,30 @@ const DropDownMenu = ({ isOpen, currentSortBy, setCurrentSortBy }) => {
       aria-label="Sort maps options"
       className={`${s.optionsList} ${visibleClass}`}
     >
-      {SORT_MAPS_OPTIONS.map(({ label, value, id }) => {
-        const isActive = currentSortBy === label;
-
+      {SORT_MAPS_OPTIONS.map(({ groupLabel, groupOptions }) => {
         return (
-          <button
-            key={id}
-            type="button"
-            role="option"
-            aria-selected={isActive}
-            className={isActive ? s.active : ""}
-            onClick={() => handleSelectOption(value, label)}
-          >
-            {label}
-          </button>
+          <div className={s.group}>
+            <label className={s.groupLabel}>{groupLabel}</label>
+
+            <div className={s.options}>
+              {groupOptions.map(({ label, value, id }) => {
+                const isActive = currentSortBy === label;
+
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    role="option"
+                    aria-selected={isActive}
+                    className={isActive ? s.active : ""}
+                    onClick={() => handleSelectOption(value, label)}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         );
       })}
     </div>
