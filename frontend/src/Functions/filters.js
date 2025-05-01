@@ -30,13 +30,13 @@ export function getFilteredMaps(mapsData, paramsObject) {
   const mapType = paramsObject?.type || "jump";
   const shouldFilterByType = mapType !== "jump" && mapType !== "all";
 
-  let filteredMaps = mapsData;
+  let filteredData = mapsData;
 
   if (shouldFilterByType) {
-    filteredMaps = mapsData.filter((map) => map.Type === mapType);
+    filteredData = mapsData.filter((map) => map.Type === mapType);
   }
 
-  return filteredMaps;
+  return filteredData;
 }
 
 export function getSortedMaps(mapsData, paramsObject) {
@@ -49,4 +49,19 @@ export function getSortedMaps(mapsData, paramsObject) {
   });
 
   return filteredMaps;
+}
+
+export function getFilteredLeaderboard(leaderboardData, paramsObject) {
+  const lastSeenFilter = paramsObject?.["last-seen"];
+  const regionFilter = paramsObject?.["region"];
+
+  let filteredData = leaderboardData;
+
+  if (lastSeenFilter)
+    filteredData = getLastSeenLeaderboard(filteredData, lastSeenFilter);
+
+  if (regionFilter)
+    filteredData = getRegionLeaderboard(filteredData, regionFilter);
+
+  return filteredData;
 }

@@ -1,7 +1,4 @@
-import {
-  getLastSeenLeaderboard,
-  getRegionLeaderboard,
-} from "@/Functions/filters";
+import { getFilteredLeaderboard } from "@/Functions/filters";
 import {
   decodeAsyncData,
   getLeaderboardUrl,
@@ -22,24 +19,13 @@ export const fetchLeaderboard = createAsyncThunk(
   "leaderboardSlice/fetchLeaderboard",
   async (paramsObject) => {
     try {
-      let leaderboard = [];
-
       const leaderboardUrl = getLeaderboardUrl(paramsObject);
-      const lastSeenFilter = paramsObject?.["last-seen"];
-      const regionFilter = paramsObject?.["region"];
-
       const response = await fetch(leaderboardUrl, {
         headers: { Accept: "application/msgpack", "Accept-Encoding": "gzip" },
       });
       const leaderboardData = await decodeAsyncData(response);
-      leaderboard = leaderboardData;
 
-      if (!!lastSeenFilter)
-        leaderboard = getLastSeenLeaderboard(leaderboard, lastSeenFilter);
-      if (!!regionFilter)
-        leaderboard = getRegionLeaderboard(leaderboard, regionFilter);
-
-      return leaderboard;
+      return { leaderboardData, paramsObject };
     } catch (error) {
       console.error(error);
     }
@@ -59,10 +45,15 @@ export const leaderboardSlice = createSlice({
       state.loading = true;
       state.error = false;
     })
-      .addCase(fetchLeaderboard.fulfilled, (state, action) => {
-        const paginationLeaderboard = paginateData(action.payload, 1);
+      .addCase(fetchLeaderboard.fulfilled, (state, { payload }) => {
+        const { leaderboardData, paramsObject } = payload;
+        const filteredLeaderboard = getFilteredLeaderboard(
+          leaderboardData,
+          paramsObject
+        );
+        const paginationLeaderboard = paginateData(filteredLeaderboard, 1);
 
-        state.leaderboardData = action.payload;
+        state.leaderboardData = filteredLeaderboard;
         state.leaderboardScroll = paginationLeaderboard;
         state.firstChunkLeaderboard = paginationLeaderboard;
         state.loading = false;
