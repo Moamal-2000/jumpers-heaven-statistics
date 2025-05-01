@@ -94,6 +94,13 @@
   }
 }
 
+@include m.very-small {
+  .sortWrapper .label .tooltip .tooltipText {
+    margin-left: -100px;
+    width: 190px;
+  }
+}
+
 .label .tooltip:hover .tooltipText {
   visibility: visible;
   opacity: 1;
