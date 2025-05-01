@@ -67,7 +67,7 @@ export const LEADERBOARDS_FILTERS_DATA = [
 export const MAPS_FILTERS_DATA = [
   {
     label: "Map Type",
-    queryName: "map-type",
+    queryName: "type",
     defaultUrlQuery: "jump",
     filtersData: [
       { text: "All", queryValue: "all", id: 1 },
@@ -80,7 +80,7 @@ export const MAPS_FILTERS_DATA = [
   },
   {
     label: "Required Difficulty",
-    queryName: "map-difficulty",
+    queryName: "difficulty",
     defaultUrlQuery: "125",
     filtersData: [
       { text: "43 fps", queryValue: "43", id: 1 },
@@ -94,7 +94,7 @@ export const MAPS_FILTERS_DATA = [
   },
   {
     label: "Rating",
-    queryName: "map-rating",
+    queryName: "rating",
     defaultUrlQuery: "all",
     filtersData: [
       { text: "All", queryValue: "all", id: 1 },
