@@ -27,14 +27,22 @@ export function getRegionLeaderboard(data, filterKey) {
 }
 
 export function getFilteredMaps(mapsData, paramsObject) {
-  let localMapsData = mapsData;
-
   const mapType = paramsObject?.type || "jump";
+  const difficultyByFps = paramsObject?.difficulty || "125";
   const shouldFilterByType = mapType !== "jump" && mapType !== "all";
 
+  let filteredMaps = mapsData;
+
   if (shouldFilterByType) {
-    localMapsData = mapsData.filter((map) => map.Type === mapType);
+    filteredMaps = mapsData.filter((map) => map.Type === mapType);
   }
 
-  return localMapsData;
+  // Sort maps by difficulty for the selected FPS
+  filteredMaps.sort((a, b) => {
+    const difficultyA = a.Difficulty?.[difficultyByFps]?.Difficulty ?? 0;
+    const difficultyB = b.Difficulty?.[difficultyByFps]?.Difficulty ?? 0;
+    return difficultyA - difficultyB;
+  });
+
+  return filteredMaps;
 }
