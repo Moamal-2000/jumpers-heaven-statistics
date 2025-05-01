@@ -2,10 +2,8 @@
 
 import { getIsLastPagination, paginateData } from "@/Functions/utils";
 import useInfiniteScroll from "@/Hooks/App/useInfiniteScroll";
-import {
-  fetchLeaderboard,
-  updateLeaderboardState,
-} from "@/Redux/slices/leaderboardSlice";
+import { updateLeaderboardState } from "@/Redux/slices/leaderboardSlice";
+import { fetchLeaderboard } from "@/Redux/thunks/leaderboardThunk";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";

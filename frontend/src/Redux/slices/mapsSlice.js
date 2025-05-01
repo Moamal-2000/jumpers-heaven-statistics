@@ -1,7 +1,7 @@
-import { jhApis } from "@/Api/jumpersHeaven";
 import { getFilteredMaps, getSortedMaps } from "@/Functions/filters";
-import { decodeAsyncData, paginateData } from "@/Functions/utils";
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { paginateData } from "@/Functions/utils";
+import { createSlice } from "@reduxjs/toolkit";
+import { fetchMaps } from "../thunks/mapsThunk";
 
 const initialState = {
   mapsData: [],
@@ -11,22 +11,6 @@ const initialState = {
   loading: true,
   error: false,
 };
-
-export const fetchMaps = createAsyncThunk(
-  "globalSlice/fetchMaps",
-  async (paramsObject) => {
-    try {
-      const response = await fetch(jhApis({}).map.getAllMaps, {
-        headers: { Accept: "application/msgpack", "Accept-Encoding": "gzip" },
-      });
-      const mapsData = await decodeAsyncData(response);
-
-      return { mapsData, paramsObject };
-    } catch (error) {
-      console.error(error);
-    }
-  }
-);
 
 export const mapsSlice = createSlice({
   initialState,
