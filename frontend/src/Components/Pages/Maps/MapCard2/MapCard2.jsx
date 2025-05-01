@@ -1,6 +1,7 @@
 import MapImage from "@/Components/Shared/Images/MapImage/MapImage";
 import { formateReleaseDate } from "@/Functions/utils";
 import s from "./MapCard2.module.scss";
+import MapStars from "./MapStars/MapStars";
 
 const MapCard2 = ({ mapData, mapsScroll, lastMapRef, index }) => {
   const {
@@ -32,7 +33,7 @@ const MapCard2 = ({ mapData, mapsScroll, lastMapRef, index }) => {
         </div>
 
         <div className={s.starsWrapper}>
-          <div className={s.stars}></div>
+          <MapStars rate={Rate} />
           <span className={s.rateText}>{Rate || "?"}</span>
         </div>
       </div>
