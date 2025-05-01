@@ -30,3 +30,12 @@
     grid-template-columns: 1fr;
   }
 }
+
+.mapsSection.list {
+  display: flex;
+  flex-direction: column;
+  background-color: #111827;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25), 0 8px 16px rgba(0, 0, 0, 0.15);
+}

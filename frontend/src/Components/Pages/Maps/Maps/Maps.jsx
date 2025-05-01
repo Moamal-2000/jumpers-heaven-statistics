@@ -7,7 +7,6 @@ import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SpinnerLoader from "../../../Shared/Loaders/SpinnerLoader/SpinnerLoader";
-import MapCard from "../MapCard/MapCard";
 import s from "./Maps.module.scss";
 import ViewMaps from "./ViewMaps/ViewMaps";
 
@@ -17,8 +16,10 @@ const Maps = ({ paginationNumber, setPaginationNumber, lastMapRef }) => {
     useSelector((s) => s.maps);
   const { pageVisits, isMapsExpanded } = useSelector((s) => s.global);
   const searchParams = useSearchParams();
+  const viewType = searchParams.get("view") || "grid";
   const paramsObject = Object.fromEntries(searchParams.entries());
   const collapseClass = isMapsExpanded ? "" : s.collapse;
+  const listClass = viewType === "list" ? s.list : "";
 
   function addDataOnScroll() {
     const paginationMapsData = paginateData(mapsData, paginationNumber);
@@ -59,7 +60,7 @@ const Maps = ({ paginationNumber, setPaginationNumber, lastMapRef }) => {
   }, [paginationNumber]);
 
   return (
-    <section className={`${s.mapsSection} ${collapseClass}`}>
+    <section className={`${s.mapsSection} ${collapseClass} ${listClass}`}>
       {loading && !error && (
         <SpinnerLoader
           title="Loading maps..."
