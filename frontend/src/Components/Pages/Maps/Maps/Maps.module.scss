@@ -14,19 +14,19 @@
 }
 
 @media (max-width: 1280px) {
-  .mapsSection .mapsWrapper {
+  .mapsSection {
     grid-template-columns: repeat(3, minmax(368px, 1fr));
   }
 }
 
 @include m.large {
-  .mapsSection .mapsWrapper {
+  .mapsSection {
     grid-template-columns: repeat(2, minmax(368px, 1fr));
   }
 }
 
 @media (max-width: 812px) {
-  .mapsSection .mapsWrapper {
+  .mapsSection {
     grid-template-columns: 1fr;
   }
 }
