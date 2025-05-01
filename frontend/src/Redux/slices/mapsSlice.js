@@ -1,5 +1,5 @@
 import { jhApis } from "@/Api/jumpersHeaven";
-import { getFilteredMaps } from "@/Functions/filters";
+import { getFilteredMaps, getSortedMaps } from "@/Functions/filters";
 import { decodeAsyncData, paginateData } from "@/Functions/utils";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
@@ -42,13 +42,12 @@ export const mapsSlice = createSlice({
       state.error = false;
     })
       .addCase(fetchMaps.fulfilled, (state, { payload }) => {
-        const mapsData = getFilteredMaps(
-          payload?.mapsData,
-          payload?.paramsObject
-        );
-        const paginationMaps = paginateData(mapsData, 1);
+        const { mapsData, paramsObject } = payload;
+        const filteredMapsData = getFilteredMaps(mapsData, paramsObject);
+        const sortedMapsData = getSortedMaps(filteredMapsData, paramsObject);
+        const paginationMaps = paginateData(sortedMapsData, 1);
 
-        state.mapsData = mapsData;
+        state.mapsData = sortedMapsData;
         state.mapsScroll = paginationMaps;
         state.firstChunkMaps = paginationMaps;
         state.loading = false;

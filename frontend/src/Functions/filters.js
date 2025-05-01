@@ -28,7 +28,6 @@ export function getRegionLeaderboard(data, filterKey) {
 
 export function getFilteredMaps(mapsData, paramsObject) {
   const mapType = paramsObject?.type || "jump";
-  const difficultyByFps = paramsObject?.difficulty || "125";
   const shouldFilterByType = mapType !== "jump" && mapType !== "all";
 
   let filteredMaps = mapsData;
@@ -37,8 +36,13 @@ export function getFilteredMaps(mapsData, paramsObject) {
     filteredMaps = mapsData.filter((map) => map.Type === mapType);
   }
 
-  // Sort maps by difficulty for the selected FPS
-  filteredMaps.sort((a, b) => {
+  return filteredMaps;
+}
+
+export function getSortedMaps(mapsData, paramsObject) {
+  const difficultyByFps = paramsObject?.difficulty || "125";
+
+  const filteredMaps = mapsData.toSorted((a, b) => {
     const difficultyA = a.Difficulty?.[difficultyByFps]?.Difficulty ?? 0;
     const difficultyB = b.Difficulty?.[difficultyByFps]?.Difficulty ?? 0;
     return difficultyA - difficultyB;
