@@ -40,8 +40,12 @@ const MapsPage = () => {
         <Introduction />
         <Suspense>
           <FiltersSection setPaginationNumber={setPaginationNumber} />
+          <Maps
+            paginationNumber={paginationNumber}
+            setPaginationNumber={setPaginationNumber}
+            lastMapRef={lastMapRef}
+          />
         </Suspense>
-        <Maps paginationNumber={paginationNumber} lastMapRef={lastMapRef} />
       </main>
     </div>
   );

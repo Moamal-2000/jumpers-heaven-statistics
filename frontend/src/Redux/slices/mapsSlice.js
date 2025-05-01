@@ -1,9 +1,5 @@
 import { jhApis } from "@/Api/jumpersHeaven";
-import {
-  decodeAsyncData,
-  modifyMapsData,
-  paginateData,
-} from "@/Functions/utils";
+import { decodeAsyncData, paginateData } from "@/Functions/utils";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -15,18 +11,21 @@ const initialState = {
   error: false,
 };
 
-export const fetchMaps = createAsyncThunk("globalSlice/fetchMaps", async () => {
-  try {
-    const response = await fetch(jhApis({}).map.getAllMaps, {
-      headers: { Accept: "application/msgpack", "Accept-Encoding": "gzip" },
-    });
-    const mapsData = await decodeAsyncData(response);
+export const fetchMaps = createAsyncThunk(
+  "globalSlice/fetchMaps",
+  async (paramsObject) => {
+    try {
+      const response = await fetch(jhApis({}).map.getAllMaps, {
+        headers: { Accept: "application/msgpack", "Accept-Encoding": "gzip" },
+      });
+      const mapsData = await decodeAsyncData(response);
 
-    return mapsData;
-  } catch (error) {
-    console.error(error);
+      return { mapsData, paramsObject };
+    } catch (error) {
+      console.error(error);
+    }
   }
-});
+);
 
 export const mapsSlice = createSlice({
   initialState,
@@ -37,13 +36,18 @@ export const mapsSlice = createSlice({
     },
   },
   extraReducers: ({ addCase }) => {
-    addCase(fetchMaps.pending, (state, action) => {
+    addCase(fetchMaps.pending, (state) => {
       state.loading = true;
       state.error = false;
     })
-      .addCase(fetchMaps.fulfilled, (state, action) => {
-        const mapsData = [...action.payload];
-        modifyMapsData(mapsData);
+      .addCase(fetchMaps.fulfilled, (state, { payload }) => {
+        let mapsData = [...payload.mapsData];
+        const mapType = payload?.paramsObject?.type || "jump";
+        const shouldFilterByType = mapType !== "jump" && mapType !== "all";
+
+        if (shouldFilterByType) {
+          mapsData = mapsData.filter((map) => map.Type === mapType);
+        }
 
         const paginationMaps = paginateData(mapsData, 1);
 

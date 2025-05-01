@@ -2,17 +2,20 @@
 
 import { getIsLastPagination, paginateData } from "@/Functions/utils";
 import { fetchMaps, updateMapsState } from "@/Redux/slices/mapsSlice";
+import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SpinnerLoader from "../../../Shared/Loaders/SpinnerLoader/SpinnerLoader";
 import MapCard from "../MapCard/MapCard";
 import s from "./Maps.module.scss";
 
-const Maps = ({ paginationNumber, lastMapRef }) => {
+const Maps = ({ paginationNumber, setPaginationNumber, lastMapRef }) => {
   const dispatch = useDispatch();
   const { mapsData, mapsScroll, allDataDisplayed, loading, error } =
     useSelector((s) => s.maps);
   const { pageVisits, isMapsExpanded } = useSelector((s) => s.global);
+  const searchParams = useSearchParams();
+  const paramsObject = Object.fromEntries(searchParams.entries());
   const collapseClass = isMapsExpanded ? "" : s.collapse;
 
   function addDataOnScroll() {
@@ -40,9 +43,14 @@ const Maps = ({ paginationNumber, lastMapRef }) => {
     if (shouldLoadMoreData) addDataOnScroll();
   }
 
+  function getMapsData() {
+    dispatch(fetchMaps(paramsObject));
+    setPaginationNumber(1);
+  }
+
   useEffect(() => {
-    dispatch(fetchMaps());
-  }, []);
+    getMapsData();
+  }, [searchParams]);
 
   useEffect(() => {
     checkAndLoadMoreData();
