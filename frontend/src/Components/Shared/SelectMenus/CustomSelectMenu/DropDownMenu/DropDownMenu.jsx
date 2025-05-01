@@ -30,10 +30,10 @@ const DropDownMenu = ({ isOpen, currentSortBy, setCurrentSortBy }) => {
     >
       {SORT_MAPS_OPTIONS.map(({ groupLabel, groupOptions }) => {
         return (
-          <div className={s.group}>
+          <div key={groupLabel} className={s.group}>
             <label className={s.groupLabel}>{groupLabel}</label>
 
-            <div className={s.options}>
+            <div className={s.options} role="group">
               {groupOptions.map(({ label, value, id }) => {
                 const isActive = currentSortBy === label;
 
