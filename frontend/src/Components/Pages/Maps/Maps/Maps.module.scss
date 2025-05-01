@@ -3,20 +3,14 @@
 .mapsSection {
   width: 100%;
   min-height: 480px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(390px, 1fr));
+  gap: 16px;
   position: relative;
 
   &.collapse>* {
     display: none;
   }
-}
-
-.mapsSection .mapsWrapper {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(390px, 1fr));
-  gap: 16px;
-  height: 1080px;
-  overflow-y: scroll;
-  overscroll-behavior: contain;
 }
 
 @media (max-width: 1280px) {
