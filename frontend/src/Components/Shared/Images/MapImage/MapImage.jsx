@@ -38,6 +38,7 @@ const MapImage = ({ mapName }) => {
         style={{ scale, objectFit: "contain", objectPosition: "center" }}
         onError={handleError}
         onLoad={handleLoadCompleted}
+        priority
       />
     </>
   );
