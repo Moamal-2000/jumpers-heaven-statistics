@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import SpinnerLoader from "../../../Shared/Loaders/SpinnerLoader/SpinnerLoader";
 import MapCard from "../MapCard/MapCard";
 import s from "./Maps.module.scss";
+import ViewMaps from "./ViewMaps/ViewMaps";
 
 const Maps = ({ paginationNumber, setPaginationNumber, lastMapRef }) => {
   const dispatch = useDispatch();
@@ -66,19 +67,7 @@ const Maps = ({ paginationNumber, setPaginationNumber, lastMapRef }) => {
         />
       )}
 
-      {!loading &&
-        !error &&
-        mapsScroll.map((mapData, index) => {
-          return (
-            <MapCard
-              key={mapData.CpID}
-              mapData={mapData}
-              mapsScroll={mapsScroll}
-              lastMapRef={lastMapRef}
-              index={index}
-            />
-          );
-        })}
+      <ViewMaps lastMapRef={lastMapRef} mapsScroll={mapsScroll} />
     </section>
   );
 };
