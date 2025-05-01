@@ -79,20 +79,6 @@ export const MAPS_FILTERS_DATA = [
     id: 1,
   },
   {
-    label: "Required Difficulty",
-    queryName: "difficulty",
-    defaultUrlQuery: "125",
-    filtersData: [
-      { text: "43 fps", queryValue: "43", id: 1 },
-      { text: "76 fps", queryValue: "76", id: 2 },
-      { text: "125 fps", queryValue: "125", id: 3 },
-      { text: "250 fps", queryValue: "250", id: 4 },
-      { text: "333 fps", queryValue: "333", id: 5 },
-    ],
-    tooltipText: "Map difficulty is calculated based on chosen FPS",
-    id: 2,
-  },
-  {
     label: "Rating",
     queryName: "rating",
     defaultUrlQuery: "all",
@@ -105,6 +91,6 @@ export const MAPS_FILTERS_DATA = [
       { text: 5, queryValue: 5, id: 6 },
     ],
     tooltipText: "Filter maps by their rating (Not completed yet)",
-    id: 3,
+    id: 2,
   },
 ];
