@@ -166,53 +166,31 @@
   margin-right: 6px;
 }
 
-.mapCard .infoCards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 24px;
+.videoIcon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
 
-.mapCard .infoCards .card {
-  background-color: rgba(45, 55, 72, .3);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(45, 55, 72, .5);
-  border-radius: 8px;
-  padding: 16px;
+.videoIcon::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  background-color: #fff;
+  width: calc(100% - 6px);
+  height: calc(100% - 16px);
+  z-index: -1;
 }
 
-.mapCard .infoCards .card .titleWrapper {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 8px;
-}
-
-.mapCard .infoCards .card .titleWrapper .iconHolder {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.125rem;
-  background-color: rgba(90, 103, 216, .15);
-  color: #818CF8;
-}
-
-.mapCard .infoCards .card .titleWrapper .title {
-  color: #A0AEC0;
-  font-size: .75rem;
-  font-weight: 500;
-}
-
-.mapCard .infoCards .card .result {
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 600;
-  padding-left: 50px;
-  margin: 8px 0 0 0;
+.videoIcon>svg {
+  width: 100%;
+  height: 100%;
+  fill: #FF0000;
 }
 
 .mapCard .content .completionRate {

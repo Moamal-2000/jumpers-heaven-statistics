@@ -1,5 +1,5 @@
 import { getFilteredMaps, getSortedMaps } from "@/Functions/filters";
-import { paginateData } from "@/Functions/utils";
+import { modifyMapsData, paginateData } from "@/Functions/utils";
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchMaps } from "../thunks/mapsThunk";
 
@@ -29,9 +29,11 @@ export const mapsSlice = createSlice({
         const { mapsData, paramsObject } = payload;
         const filteredMapsData = getFilteredMaps(mapsData, paramsObject);
         const sortedMapsData = getSortedMaps(filteredMapsData, paramsObject);
-        const paginationMaps = paginateData(sortedMapsData, 1);
+        const modifiedMapsData = modifyMapsData(sortedMapsData);
 
-        state.mapsData = sortedMapsData;
+        const paginationMaps = paginateData(modifiedMapsData, 1);
+
+        state.mapsData = modifiedMapsData;
         state.mapsScroll = paginationMaps;
         state.firstChunkMaps = paginationMaps;
         state.loading = false;

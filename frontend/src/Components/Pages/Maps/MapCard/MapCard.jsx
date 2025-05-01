@@ -1,8 +1,8 @@
 import MapImage from "@/Components/Shared/Images/MapImage/MapImage";
+import SvgIcon from "@/Components/Shared/SvgIcon";
 import Link from "next/link";
 import AuthorAndRelease from "./AuthorAndRelease/AuthorAndRelease";
 import s from "./MapCard.module.scss";
-import MapsVideos from "./MapsVideos/MapsVideos";
 
 const MapCard = ({ mapData, mapsScroll, lastMapRef, index }) => {
   const {
@@ -12,12 +12,14 @@ const MapCard = ({ mapData, mapsScroll, lastMapRef, index }) => {
     Types,
     Classifications,
     Rate,
-    Info,
     CompilationRate,
     Released,
     Videos,
   } = mapData;
   const ref = mapsScroll.length === index + 1 ? lastMapRef : null;
+  const nameAndRatingStyles = {
+    marginBottom: !Videos?.length > 0 ? "68px" : "",
+  };
 
   return (
     <div className={s.mapCard} ref={ref}>
@@ -42,7 +44,7 @@ const MapCard = ({ mapData, mapsScroll, lastMapRef, index }) => {
       </div>
 
       <section className={s.content}>
-        <div className={s.nameAndRating}>
+        <div className={s.nameAndRating} style={nameAndRatingStyles}>
           <Link href="/maps/map/details">{Name}</Link>
 
           <div className={s.rateWrapper}>
@@ -51,20 +53,15 @@ const MapCard = ({ mapData, mapsScroll, lastMapRef, index }) => {
           </div>
         </div>
 
-        <MapsVideos videos={Videos} />
-
-        <div className={s.infoCards}>
-          {Info?.map(({ title, result, icon, id }) => (
-            <div className={s.card} key={id}>
-              <div className={s.titleWrapper}>
-                <span className={s.iconHolder}>{icon}</span>
-                <span className={s.title}>{title}</span>
-              </div>
-
-              <p className={s.result}>{result}</p>
-            </div>
-          ))}
-        </div>
+        {Videos?.length > 0 && (
+          <Link
+            href="/maps/map/details"
+            className={s.videoIcon}
+            title="Map has videos"
+          >
+            <SvgIcon name="youtube" />
+          </Link>
+        )}
 
         <div className={s.completionRate}>
           <div className={s.textWrapper}>
