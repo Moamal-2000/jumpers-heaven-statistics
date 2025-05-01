@@ -1,15 +1,7 @@
-@use "@/Styles/mixins" as m;
-
 .filterGroup {
   border: none;
   display: flex;
   flex-direction: column;
   gap: 12px;
   min-width: 200px;
-}
-
-@include m.large {
-  .filterGroup {
-    width: 100%;
-  }
 }

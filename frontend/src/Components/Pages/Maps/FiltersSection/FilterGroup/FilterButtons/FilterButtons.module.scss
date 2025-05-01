@@ -12,12 +12,6 @@
   }
 }
 
-@include m.medium {
-  .filterButtons {
-    grid-template-columns: repeat(2, minmax(90px, 1fr));
-  }
-}
-
 @include m.small {
   .filterButtons {
     display: flex;

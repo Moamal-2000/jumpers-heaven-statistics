@@ -84,18 +84,6 @@
   }
 }
 
-.label[data-label="Required Difficulty"] .tooltip .tooltipText {
-  top: auto;
-  left: 50%;
-  margin-left: -190px;
-}
-
-@include m.small {
-  .label[data-label="Required Difficulty"] .tooltip .tooltipText {
-    margin-left: -150px;
-  }
-}
-
 @include m.small {
   .label[data-label="Map Type"] .tooltip .tooltipText {
     margin-left: -90px;
