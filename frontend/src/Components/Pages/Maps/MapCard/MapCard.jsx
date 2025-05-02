@@ -28,8 +28,8 @@ const MapCard = ({ mapData, mapsScroll, lastMapRef, index }) => {
 
         <div className={s.layer}>
           <div className={s.classifications}>
-            {Classifications?.map(({ text, id }) => (
-              <span className={s.classification} key={id}>
+            {Classifications?.map((text, index) => (
+              <span className={`${s.classification} ${s[text]}`} key={index}>
                 {text}
               </span>
             ))}

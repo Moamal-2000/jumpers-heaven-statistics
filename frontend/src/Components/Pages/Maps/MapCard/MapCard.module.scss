@@ -49,23 +49,50 @@
 
 .mapCard .imgHolder .layer .classifications {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  bottom: 1rem;
+  left: 1rem;
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .mapCard .imgHolder .layer .classifications .classification {
-  background-color: #FFC107;
-  color: black;
-  font-size: .75rem;
-  font-weight: bold;
-  padding: 6px 14px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+  display: block;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &.jump,
+  &.new,
+  &.speedrun {
+    background-color: #3a86ff;
+  }
+
+  &.defrag {
+    background-color: #994ee0;
+  }
+
+  &.surf {
+    background-color: #13a797;
+  }
+
+  &.expert {
+    background-color: #d93e3e;
+  }
+
+  &.hard {
+    background-color: #ef4444;
+  }
+
+  &.medium {
+    background-color: #e7af07;
+  }
+
+  &.easy {
+    background-color: #20b356;
+  }
 }
 
 .mapCard .imgHolder .layer .types {

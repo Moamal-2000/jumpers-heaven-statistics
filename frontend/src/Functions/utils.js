@@ -86,14 +86,14 @@ export function modifyMapsData(mapsData) {
     const requiredVideos = getRequiredMapVideos(mapData);
     const isReleasedInThisYear = mapData?.Released?.startsWith(currentYear);
 
+    mapData.Classifications = mapData?.Type ? [mapData?.Type?.toLowerCase()] : [];
     if (requiredVideos) mapData.Videos = requiredVideos;
 
     if (mapData?.Released && isReleasedInThisYear) {
       const releaseDate = new Date(mapData.Released).getTime();
 
       if (releaseDate >= dateBeforeMonth) {
-        mapData.Classifications = [];
-        mapData.Classifications.push("New");
+        mapData.Classifications.push("new");
       }
     }
 
