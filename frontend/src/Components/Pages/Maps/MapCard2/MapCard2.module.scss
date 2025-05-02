@@ -55,6 +55,34 @@
   border-radius: 100px;
   background-color: rgba(58, 134, 255, 0.15);
   color: #3a86ff;
+  text-transform: uppercase;
+
+  &.defrag {
+    background-color: rgba(153, 78, 224, 0.15);
+    color: #b86cff;
+  }
+
+  &.surf {
+    background-color: rgba(19, 167, 151, 0.15);
+    color: #13a797;
+  }
+
+  &.expert,
+  &.hard {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+  }
+
+  &.medium,
+  &.featured {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+  }
+
+  &.easy {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+  }
 }
 
 .starsWrapper {
