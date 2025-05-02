@@ -14,11 +14,10 @@
 }
 
 .card::before {
+  content: "";
   position: absolute;
   left: 24px;
   top: 28px;
-
-  content: "";
   width: 4px;
   height: 20px;
   background: linear-gradient(135deg, #FFB800, #FF9000);

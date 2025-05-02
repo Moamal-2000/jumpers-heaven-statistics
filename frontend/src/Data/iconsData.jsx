@@ -13,8 +13,8 @@ export const iconsData = [
       <svg viewBox="0 0 24 24">
         <defs>
           <linearGradient id="a" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="50%" stop-color="#ffc107" />
-            <stop offset="50%" stop-color="#475569" />
+            <stop offset="50%" stopColor="#ffc107" />
+            <stop offset="50%" stopColor="#475569" />
           </linearGradient>
         </defs>
         <path
