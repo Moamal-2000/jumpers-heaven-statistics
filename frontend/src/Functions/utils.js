@@ -77,16 +77,28 @@ export function formateReleaseDate(dateStr) {
   const [year, month, day] = dateStr.split("-");
   return `${MONTHS[+month]} ${day}, ${year}`;
 }
-
 export function modifyMapsData(mapsData) {
-  mapsData.map((mapData) => {
+  const now = Date.now();
+  const dateBeforeMonth = now - 30 * 24 * 60 * 60 * 1000;
+  const currentYear = new Date().getFullYear();
+
+  return mapsData.map((mapData) => {
     const requiredVideos = getRequiredMapVideos(mapData);
+    const isReleasedInThisYear = mapData?.Released?.startsWith(currentYear);
 
     if (requiredVideos) mapData.Videos = requiredVideos;
+
+    if (mapData?.Released && isReleasedInThisYear) {
+      const releaseDate = new Date(mapData.Released).getTime();
+
+      if (releaseDate >= dateBeforeMonth) {
+        mapData.Classifications = [];
+        mapData.Classifications.push("New");
+      }
+    }
+
     return mapData;
   });
-
-  return mapsData;
 }
 
 export function getRequiredMapVideos(mapData) {
