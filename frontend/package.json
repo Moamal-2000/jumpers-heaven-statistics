@@ -11,7 +11,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.7.0",
     "msgpackr": "^1.11.2",
-    "next": "15.3.1",
+    "next": "15.3.3",
     "npm-check-updates": "^18.0.0",
     "pako": "^2.1.0",
     "react": "^19.1.0",
