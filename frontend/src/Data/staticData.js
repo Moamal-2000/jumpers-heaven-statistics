@@ -37,7 +37,7 @@ export const NAV_LINKS_DATA = [
   },
 ];
 
-export const COD_2_COLORS = {
+export const COD2_COLORS = {
   1: "red",
   2: "green",
   3: "yellow",

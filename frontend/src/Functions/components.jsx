@@ -1,5 +1,5 @@
 import SvgIcon from "@/Components/Shared/SvgIcon";
-import { COD_2_COLORS } from "@/Data/staticData";
+import { COD2_COLORS } from "@/Data/staticData";
 
 export function getModifiedRank(rank) {
   const isTop1 = rank === 1;
@@ -25,7 +25,7 @@ export function getColoredName(name) {
 
     const colorNumber = colorNumbers[index - 1];
     const text = part.slice(1);
-    const color = COD_2_COLORS[colorNumber];
+    const color = COD2_COLORS[colorNumber];
 
     return (
       <span className={color} key={index}>
