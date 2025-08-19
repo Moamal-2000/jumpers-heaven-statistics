@@ -1,3 +1,5 @@
+const API_URL = "https://jhstats.fly.dev/api/v1";
+
 export const jhApis = ({
   fps = 125,
   limit = 50,
@@ -7,13 +9,6 @@ export const jhApis = ({
   playerid = 108468,
   cpid = 14606,
 }) => {
-  const domain = "https://jhstats.fly.dev/api/v1";
-
-  function generateUrl(endpoint, params = {}) {
-    const queryParams = new URLSearchParams(params).toString();
-    return `${domain}${endpoint}?${queryParams}`;
-  }
-
   return {
     map: {
       getAllMaps: generateUrl("/map/all"),
@@ -33,6 +28,11 @@ export const jhApis = ({
     },
   };
 };
+
+export function generateUrl(endpoint, params = {}) {
+  const queryParams = new URLSearchParams(params).toString();
+  return `${API_URL}${endpoint}?${queryParams}`;
+}
 
 export async function testApi(url) {
   try {
