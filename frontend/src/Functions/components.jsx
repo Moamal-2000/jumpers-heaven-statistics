@@ -18,10 +18,7 @@ export function MedalIcon({ rank }) {
 
 export function getColoredName(name) {
   const colorParts = name.split(/\^(?=\d)/);
-  const colorNumbers = colorParts
-    .slice(1)
-    .map((part) => part.charAt(0))
-    .filter(Boolean);
+  const colorNumbers = colorParts.slice(1).map((part) => part.charAt(0));
 
   return colorParts.map((part, index) => {
     if (index === 0 || !colorNumbers[index - 1]) return part;
