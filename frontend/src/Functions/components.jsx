@@ -17,32 +17,21 @@ export function MedalIcon({ rank }) {
 }
 
 export function getColoredName(name) {
-  if (!name) return '';
-  
-  // Split by color codes but keep the color codes
-  const parts = name.split(/(\^\d)/);
-  const elements = [];
-  
-  parts.forEach((part, index) => {
-    // If it's a color code (starts with ^ followed by a digit)
-    if (part.match(/^\^\d$/)) {
-      return; // Skip color codes, we'll handle them in the next part
-    }
-    
-    // If it's text and the previous part was a color code
-    if (index > 0 && parts[index - 1] && parts[index - 1].match(/^\^\d$/)) {
-      const colorCode = parts[index - 1].charAt(1); // Get the digit after ^
-      const color = COD_2_COLORS[colorCode];
-      
-      elements.push(
-        <span className={color} key={index}>
-          {part}
-        </span>
-      );
-    } else if (part) {
-      // If it's text without a preceding color code, add as is
-      elements.push(part);
-    }
+  const colorParts = name.split(/\^(?=\d)/);
+  const colorNumbers = colorParts.slice(1).map((part) => part.charAt(0));
+
+  return colorParts.map((part, index) => {
+    if (index === 0 || !colorNumbers[index - 1]) return part;
+
+    const colorNumber = colorNumbers[index - 1];
+    const text = part.slice(1);
+    const color = COD_2_COLORS[colorNumber];
+
+    return (
+      <span className={color} key={index}>
+        {text}
+      </span>
+    );
   });
   
   return elements.length === 1 ? elements[0] : elements;
