@@ -9,17 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.7.0",
-    "msgpackr": "^1.11.2",
-    "next": "15.4.7",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "@reduxjs/toolkit": "^2.9.0",
+    "msgpackr": "^1.11.5",
+    "next": "15.5.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "react-redux": "^9.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "eslint": "^9",
-    "eslint-config-next": "15.3.1",
+    "eslint-config-next": "15.5.2",
     "npm-check-updates": "^18.0.3",
     "sass": "^1.92.0"
   }
