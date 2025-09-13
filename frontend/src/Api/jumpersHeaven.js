@@ -6,6 +6,7 @@ export const jhApis = ({
   name = "SAD",
   playerid = 108468,
   cpid = 14606,
+  sort = "admin",
 }) => {
   const domain = "https://jhstats.fly.dev/api/v1";
 
@@ -14,22 +15,28 @@ export const jhApis = ({
     return `${domain}${endpoint}?${queryParams}`;
   }
 
+  // Use fps=0 for mix queries
+  const fpsParam = fps === "mix" ? 0 : fps;
+
   return {
     map: {
       getAllMaps: generateUrl("/map/all"),
       getMapsCount: generateUrl("/map/count"),
-      getTops: generateUrl("/map/tops", { cpid, fps, limit }),
+      getTops: generateUrl("/map/tops", { cpid, fps: fpsParam, limit }),
     },
     player: {
-      getAllTops: generateUrl("/player/all-tops", { fps, limit }),
-      getTops: generateUrl("/player/tops", { fps, playerid, limit }),
-      getJumpScores: generateUrl("/player/jump-score", { fps, playerid }),
+      getAll: generateUrl("/player/all", { sort }),
+      getAllTops: generateUrl("/player/all-tops", { fps: fpsParam, limit }),
+      getTops: generateUrl("/player/tops", { fps: fpsParam, playerid, limit }),
+      getJumpScores: generateUrl("/player/jump-scores", { fps: fpsParam, playerid }),
+      getIdFromName: generateUrl("/player/id-from-name", { name, limit }),
     },
     leaderboard: {
-      getSkilledLeaderboard: generateUrl("/leaderboard/jump-skill", { fps }),
-      getSpeedRunLeaderboard: generateUrl("/leaderboard/speed-skill", { fps }),
-      getDefragLeaderboard: generateUrl("/leaderboard/defrag-skill", { fps }),
-      getSurfLeaderboard: generateUrl("/leaderboard/surf-skill", { fps }),
+      getSkilledLeaderboard: generateUrl("/leaderboard/jump-skill", { fps: fpsParam }),
+      getSpeedRunLeaderboard: generateUrl("/leaderboard/speed-skill", { fps: fpsParam }),
+      getDefragLeaderboard: generateUrl("/leaderboard/defrag-skill", { fps: fpsParam }),
+      getSurfLeaderboard: generateUrl("/leaderboard/surf-skill", { fps: fpsParam }),
+      getRoutesCompletedLeaderboard: generateUrl("/leaderboard/howmany"),
     },
   };
 };

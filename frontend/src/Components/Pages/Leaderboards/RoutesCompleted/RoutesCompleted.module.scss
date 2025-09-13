@@ -1,0 +1,203 @@
+@use "@/Styles/mixins" as m;
+
+.leaderboardWrapper {
+  width: 100%;
+  min-height: 661.6px;
+  margin: 30px 0 40px;
+  padding: 1.5rem;
+  padding-top: 0;
+  border-radius: 16px;
+  background-color: #0e1217;
+  border: solid 1px #1f2937;
+  position: relative;
+  transition: background-color .3s;
+
+  &:hover {
+    background-color: #131820;
+
+    &>header {
+      background-color: #131820;
+    }
+
+    & .leaderBoard>thead {
+      background-color: #1c2430;
+    }
+  }
+
+  &.collapse {
+    min-height: auto;
+    height: 83px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1300px) {
+  .leaderboardWrapper {
+    background-color: transparent;
+    padding: 1.5rem 0;
+    border: none;
+
+    &:hover {
+      background-color: transparent;
+
+      &>header {
+        background-color: #14171d;
+      }
+    }
+
+    &.collapse {
+      height: 140px;
+    }
+  }
+}
+
+@media (max-width: 472px) {
+  .leaderboardWrapper.collapse {
+    height: 160px;
+  }
+}
+
+.leaderBoard {
+  user-select: none;
+  width: inherit;
+}
+
+.leaderBoard :where(thead, tbody) {
+  width: inherit;
+}
+
+.leaderBoard tr {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr 1fr;
+  font-weight: 600;
+}
+
+@media (max-width: 1300px) {
+  .leaderBoard tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1d222f;
+    gap: 10px;
+    border-radius: 10px;
+  }
+}
+
+.leaderBoard:has([data-loader]) tbody tr,
+.leaderBoard:has([data-error]) tbody tr {
+  grid-template-columns: 1fr 0 0 0;
+}
+
+@media (max-width: 1300px) {
+  .leaderBoard:has([data-loader]) tbody tr,
+  .leaderBoard:has([data-error]) tbody tr {
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 1300px) {
+  .leaderBoard tr td {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .leaderBoard tr td:not(:last-child) {
+    border-bottom: 1px solid #373f53;
+  }
+
+  .leaderBoard tr td::before {
+    content: attr(data-header);
+    position: absolute;
+    left: 0;
+    text-transform: uppercase;
+    color: #9AA3B2;
+    padding: 24px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: .5px;
+  }
+}
+
+@include m.medium {
+  .leaderBoard tr td:last-child::before {
+    top: -10px;
+    left: 50%;
+    translate: -50% 0;
+  }
+}
+
+@include m.small {
+  .leaderBoard tr td {
+    font-size: .9rem !important;
+  }
+}
+
+@include m.small {
+  .leaderBoard tr td::before {
+    font-size: .8rem;
+    top: 0;
+    left: 40px;
+    translate: -50% -2px;
+    padding-bottom: 0;
+  }
+}
+
+.playerInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+
+  .countryFlag {
+    width: 1.5rem;
+    height: 1.125rem;
+    border-radius: 0.25rem;
+    object-fit: cover;
+  }
+
+  .playerName {
+    font-weight: 500;
+    color: #fff;
+  }
+}
+
+.rank {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3b82f6;
+}
+
+.completionRate {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #10b981;
+}
+
+.completed {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .leaderBoard {
+    font-size: 0.8rem;
+
+    thead th,
+    tbody td {
+      padding: 0.75rem 0.5rem;
+    }
+
+    .playerInfo {
+      gap: 0.5rem;
+
+      .countryFlag {
+        width: 1.25rem;
+        height: 0.9375rem;
+      }
+    }
+  }
+}

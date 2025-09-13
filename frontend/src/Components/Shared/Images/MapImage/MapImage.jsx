@@ -1,20 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, memo } from "react";
 import SvgIcon from "../../SvgIcon";
 import s from "./MapImage.module.scss";
 
 const PLACEHOLDER_PATH = "/placeholders/map-placeholder.svg";
 
-const MapImage = ({ mapName }) => {
-  const [src, setSrc] = useState(`/maps/${mapName.toLowerCase()}.jpg`);
+const MapImage = memo(({ mapName }) => {
+  // Clean the map name for file path
+  const cleanMapName = mapName?.toLowerCase().replace(/[^a-z0-9_]/g, '') || 'unknown';
+  const [src, setSrc] = useState(`/maps/${cleanMapName}.jpg`);
   const [isLoading, setIsLoading] = useState(true);
-  const [scale, setScale] = useState(1);
+  const [hasError, setHasError] = useState(false);
 
   function handleError() {
+    setHasError(true);
     setSrc(PLACEHOLDER_PATH);
-    setScale(0.5);
+    setIsLoading(false);
   }
 
   function handleLoadCompleted() {
@@ -22,7 +25,7 @@ const MapImage = ({ mapName }) => {
   }
 
   return (
-    <>
+    <div className={s.imageContainer}>
       {isLoading && (
         <div className={s.loader}>
           <SvgIcon name="animated-spinner" />
@@ -35,13 +38,19 @@ const MapImage = ({ mapName }) => {
         src={src || PLACEHOLDER_PATH}
         alt={mapName}
         title={mapName}
-        style={{ scale, objectFit: "contain", objectPosition: "center" }}
+        style={{ 
+          objectFit: "contain", 
+          objectPosition: "center",
+          scale: hasError ? 0.8 : 1
+        }}
         onError={handleError}
         onLoad={handleLoadCompleted}
         priority
       />
-    </>
+    </div>
   );
-};
+});
+
+MapImage.displayName = 'MapImage';
 
 export default MapImage;

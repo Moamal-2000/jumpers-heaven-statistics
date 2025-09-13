@@ -1,0 +1,138 @@
+@use "@/Styles/mixins" as m;
+
+.header {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border: 1px solid #374151;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.backButton {
+  background: #374151;
+  color: #f9fafb;
+  border: 1px solid #4b5563;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 1.5rem;
+
+  &:hover {
+    background: #4b5563;
+    border-color: #6b7280;
+  }
+}
+
+.mapInfo {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.mapImage {
+  flex-shrink: 0;
+  width: 200px;
+  height: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #374151;
+}
+
+.mapDetails {
+  flex: 1;
+  min-width: 0;
+}
+
+.mapName {
+  color: #f9fafb;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ender {
+  color: #facc15;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.mapMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.label {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  font-weight: 500;
+  min-width: 80px;
+}
+
+.value {
+  color: #f9fafb;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.typeBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &.jump {
+    background: #10b981;
+    color: #064e3b;
+  }
+
+  &.defrag {
+    background: #3b82f6;
+    color: #1e3a8a;
+  }
+
+  &.surf {
+    background: #8b5cf6;
+    color: #4c1d95;
+  }
+}
+
+@include m.small {
+  .header {
+    padding: 1.5rem;
+  }
+
+  .mapInfo {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .mapImage {
+    width: 100%;
+    height: 200px;
+  }
+
+  .mapName {
+    font-size: 1.5rem;
+  }
+
+  .mapMeta {
+    gap: 0.5rem;
+  }
+}

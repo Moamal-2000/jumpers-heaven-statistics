@@ -3,8 +3,7 @@
 .sortSection {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 26px;
+  gap: 1rem;
 }
 
 @include m.small {
@@ -18,7 +17,7 @@
 .sortSection .sortWrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.75rem;
 }
 
 @include m.very-small {
@@ -29,7 +28,7 @@
 }
 
 .sortSection .sortWrapper .label {
-  color: #60a5fa;
+  color: #f9fafb;
   font-size: .875rem;
   font-weight: 600;
   display: flex;
@@ -66,7 +65,7 @@
   width: max-content;
   height: fit-content;
   background-color: #1f2937;
-  color: #f3f4f6;
+  color: #f9fafb;
   text-align: center;
   border-radius: 6px;
   padding: 8px 12px;
@@ -77,7 +76,7 @@
   margin-left: -90px;
   font-size: .75rem;
   font-weight: 400;
-  box-shadow: 0 4px 16px 0px rgba(0, 0, 0, .35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   pointer-events: none;
   translate: 5px 0;
   border: 1px solid #374151;
@@ -104,4 +103,33 @@
 .label .tooltip:hover .tooltipText {
   visibility: visible;
   opacity: 1;
+}
+
+.sortSelect {
+  background-color: #374151;
+  border: solid 1px #4b5563;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  color: #f9fafb;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 200px;
+
+  &:hover {
+    background-color: #4b5563;
+    border-color: #6b7280;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #facc15;
+    box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.1);
+  }
+
+  option {
+    background-color: #374151;
+    color: #f9fafb;
+  }
 }

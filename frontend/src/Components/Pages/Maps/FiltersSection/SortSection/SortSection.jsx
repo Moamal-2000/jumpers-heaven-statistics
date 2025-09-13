@@ -1,9 +1,17 @@
-import CustomSelectMenu from "@/Components/Shared/SelectMenus/CustomSelectMenu/CustomSelectMenu";
+import { useDispatch, useSelector } from "react-redux";
+import { setSortBy } from "@/Redux/slices/mapsSlice";
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import s from "./SortSection.module.scss";
 import SortView from "./SortView/SortView";
 
 const SortSection = ({ setPaginationNumber }) => {
+  const dispatch = useDispatch();
+  const { sortBy } = useSelector((state) => state.maps);
+
+  const handleSortChange = (e) => {
+    dispatch(setSortBy(e.target.value));
+  };
+
   return (
     <section className={s.sortSection}>
       <div className={s.sortWrapper}>
@@ -20,7 +28,22 @@ const SortSection = ({ setPaginationNumber }) => {
           </div>
         </label>
 
-        <CustomSelectMenu />
+        <select
+          id="sort-by"
+          value={sortBy}
+          onChange={handleSortChange}
+          className={s.sortSelect}
+        >
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+          <option value="name-a-z">Name (A-Z)</option>
+          <option value="name-z-a">Name (Z-A)</option>
+          <option value="43-difficulty">43 fps (Difficulty)</option>
+          <option value="76-difficulty">76 fps (Difficulty)</option>
+          <option value="125-difficulty">125 fps (Difficulty)</option>
+          <option value="250-difficulty">250 fps (Difficulty)</option>
+          <option value="333-difficulty">333 fps (Difficulty)</option>
+        </select>
       </div>
 
       <SortView setPaginationNumber={setPaginationNumber} />

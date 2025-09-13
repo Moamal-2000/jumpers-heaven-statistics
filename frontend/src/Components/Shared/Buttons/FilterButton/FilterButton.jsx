@@ -23,14 +23,14 @@ export function FilterButton({
 
   const isActive = isRegionFilter
     ? regionValue === currentValue
-    : currentValue === textValue;
+    : currentValue === (queryValue?.toLowerCase() || textValue);
 
   const ariaLabel = isActive
     ? `The leaderboard currently filtered by ${text}`
     : `Filter the leaderboard by ${text}`;
 
   const handleClick = () => {
-    const value = isRegionFilter ? regionValue : textValue;
+    const value = isRegionFilter ? regionValue : (queryValue?.toLowerCase() || textValue);
     if (!value) return;
 
     const isDefault = value === defaultUrlQuery;

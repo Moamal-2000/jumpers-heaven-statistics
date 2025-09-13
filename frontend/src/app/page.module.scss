@@ -1,1 +1,5 @@
-.home {}
+.home {
+  padding: 2rem 2rem 2rem 2rem;
+  min-height: 100vh;
+  margin-top: 72px; /* Account for fixed header */
+}
