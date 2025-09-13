@@ -7,7 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import s from "./LeaderboardsPage.module.scss";
 
-const LeaderboardsPage = () => {
+const LeaderboardsPageContent = () => {
   const searchParams = useSearchParams();
   const leaderboardType = searchParams.get("leaderboard");
 
@@ -19,11 +19,19 @@ const LeaderboardsPage = () => {
   };
 
   return (
+    <>
+      <FiltersSection />
+      {renderLeaderboard()}
+    </>
+  );
+};
+
+const LeaderboardsPage = () => {
+  return (
     <div className="container">
       <main className={s.leaderboardsPage}>
-        <Suspense>
-          <FiltersSection />
-          {renderLeaderboard()}
+        <Suspense fallback={<div>Loading...</div>}>
+          <LeaderboardsPageContent />
         </Suspense>
       </main>
     </div>

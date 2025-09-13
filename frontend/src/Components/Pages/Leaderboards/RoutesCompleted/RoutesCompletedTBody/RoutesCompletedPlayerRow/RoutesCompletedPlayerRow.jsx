@@ -51,4 +51,3 @@ const RoutesCompletedPlayerRow = forwardRef(({ player }, ref) => {
 RoutesCompletedPlayerRow.displayName = "RoutesCompletedPlayerRow";
 
 export default RoutesCompletedPlayerRow;
-name 

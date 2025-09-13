@@ -95,11 +95,11 @@ const AboutPage = () => {
               <p className={s.description}>
                 JH Stats serves the JumpersHeaven community by providing easy access 
                 to player statistics, map completion records, and competitive rankings. 
-                Whether you're a casual player or a competitive jumper, our platform helps 
+                Whether you&apos;re a casual player or a competitive jumper, our platform helps 
                 you track your progress and compare your achievements with others.
               </p>
               <p className={s.description}>
-                We're committed to maintaining an accurate, up-to-date, and user-friendly 
+                We&apos;re committed to maintaining an accurate, up-to-date, and user-friendly 
                 platform that enhances the JumpersHeaven gaming experience.
               </p>
             </div>

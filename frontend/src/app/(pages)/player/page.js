@@ -1,9 +1,9 @@
 "use client";
 
 import { useSearchParams, useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 
-const PlayerPage = () => {
+const PlayerPageContent = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const playerId = searchParams.get("id");
@@ -22,6 +22,14 @@ const PlayerPage = () => {
     <main>
       <div>Redirecting...</div>
     </main>
+  );
+};
+
+const PlayerPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PlayerPageContent />
+    </Suspense>
   );
 };
 
