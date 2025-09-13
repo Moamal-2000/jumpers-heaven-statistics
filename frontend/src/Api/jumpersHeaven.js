@@ -10,6 +10,9 @@ export const jhApis = ({
   cpid = 14606,
   sort = "admin",
 }) => {
+  // Use fps=0 for mix queries
+  const fpsParam = fps === "mix" ? 0 : fps;
+
   return {
     map: {
       getAllMaps: generateUrl("/map/all"),
