@@ -151,7 +151,11 @@ const ServersPage = () => {
 
       {gameTypes.map((gameType) => (
         <div key={gameType} className={s.gameSection}>
-          <div className={s.serversGrid}>
+          <div
+            className={`${s.serversGrid} ${
+              gameType === "COD4" ? s.cod4Card : ""
+            }`}
+          >
             {groupedServers[gameType].map((server) => (
               <div key={`${server.ip}-${server.port}`} className={s.serverCard}>
                 <header className={s.serverHeader}>
@@ -250,14 +254,6 @@ const ServersPage = () => {
                           </div>
                         ))}
                       </div>
-                    </div>
-                  )}
-
-                {/* No Players Message */}
-                {server.online &&
-                  (!server.players || server.players.length === 0) && (
-                    <div className={s.noPlayersMessage}>
-                      <span>No Online Players</span>
                     </div>
                   )}
               </div>
