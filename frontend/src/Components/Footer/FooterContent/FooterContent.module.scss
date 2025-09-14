@@ -31,6 +31,7 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 16px;
+  width: fit-content;
 }
 
 .contentSection .leftSide .logo>svg {
@@ -50,7 +51,6 @@
   color: #FBBF24;
   font-weight: 700;
   font-size: 1.8rem;
-  text-shadow: 0 0 10px rgba(252, 211, 77, 0.5);
 }
 
 @include m.small {
@@ -63,7 +63,7 @@
   font-size: .9rem;
   color: #9CA3AF;
   margin-bottom: 24px;
-  max-width: 512px;
+  max-width: 390px;
 }
 
 @include m.small {
