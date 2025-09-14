@@ -84,31 +84,13 @@
   border-radius: 16px;
   border: 2px solid #4b5563;
   padding: 1.5rem;
-  transition: all 0.4s ease;
+  transition: border-color .3s ease;
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #4b5563, #6b7280);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
     border-color: #6b7280;
-
-    &::before {
-      opacity: 1;
-    }
   }
 }
 
@@ -180,26 +162,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #1f2937;
-  border: 1px solid #374151;
+  border: solid 2px transparent;
   cursor: help;
-  transition: all 0.2s ease;
-  position: relative;
-
-  &:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
 }
 
 .statusDot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  animation: pulse 2s infinite;
 }
 
 .mapSection {
@@ -240,20 +214,6 @@
       background: none;
       -webkit-text-fill-color: initial;
     }
-  }
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 1;
   }
 }
 

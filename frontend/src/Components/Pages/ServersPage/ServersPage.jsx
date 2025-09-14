@@ -78,7 +78,7 @@ const ServersPage = () => {
   };
 
   const getServerStatusColor = (online) => {
-    return online ? "#4CAF50" : "#F44336"; // Green if online, Red if offline
+    return online ? "#47ca4b" : "#F44336";
   };
 
   const getServerStatusText = (online, playerCount) => {
@@ -209,6 +209,9 @@ const ServersPage = () => {
                   </div>
                   <div
                     className={s.serverStatusIndicator}
+                    style={{
+                      borderColor: getServerStatusColor(server.online),
+                    }}
                     onMouseEnter={(e) =>
                       showTooltip(
                         e,
