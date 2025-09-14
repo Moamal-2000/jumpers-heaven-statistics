@@ -96,16 +96,13 @@ export const iconsData = [
   },
 
   {
-    name: "home",
+    name: "servers",
     icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      <svg viewBox="0 0 1024 1024" fill="currentColor">
+        <path d="M853 148c5 0 9 4 9 9v168c0 5-4 9-9 9H171c-5 0-9-4-9-9V157c0-5 4-9 9-9zm0-50H171c-32 0-59 26-59 59v168c0 32 27 59 59 59h682c32 0 59-27 59-59V157c0-33-27-59-59-59" />
+        <path d="M291 214h-60v60h60zm103 0h-60v60h60zm412 0H591v60h215zm47 204c5 0 9 4 9 9v168c0 5-4 9-9 9H171c-5 0-9-4-9-9V427c0-5 4-9 9-9zm0-50H171c-32 0-59 26-59 59v168c0 32 27 59 59 59h682c32 0 59-27 59-59V427c0-33-27-59-59-59" />
+        <path d="M291 484h-60v60h60zm103 0h-60v60h60zm412 0H591v60h215zm47 204c5 0 9 4 9 9v168c0 5-4 9-9 9H171c-5 0-9-4-9-9V697c0-5 4-9 9-9zm0-50H171c-32 0-59 26-59 59v168c0 32 27 59 59 59h682c32 0 59-27 59-59V697c0-33-27-59-59-59" />
+        <path d="M291 754h-60v60h60zm103 0h-60v60h60zm412 0H591v60h215z" />
       </svg>
     ),
   },

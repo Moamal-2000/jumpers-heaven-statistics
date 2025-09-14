@@ -1,8 +1,8 @@
 export const NAV_LINKS_DATA = [
   {
-    name: "Home",
+    name: "Servers",
     href: "/",
-    iconName: "home",
+    iconName: "servers",
     id: 1,
   },
   {
