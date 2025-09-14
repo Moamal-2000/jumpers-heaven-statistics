@@ -29,6 +29,24 @@
   width: fit-content;
 }
 
+@include m.medium {
+  .navigation .links {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@include m.small {
+  .navigation .links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include m.very-small {
+  .navigation .links {
+    grid-template-columns: 1fr;
+  }
+}
+
 .navigation .links a {
   display: flex;
   align-items: center;
