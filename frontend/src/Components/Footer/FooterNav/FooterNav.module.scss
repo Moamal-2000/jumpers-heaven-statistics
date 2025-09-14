@@ -89,8 +89,9 @@
 }
 
 .navigation .links a>svg {
-  width: 1rem;
-  height: 1rem;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
   margin-right: 8px;
 
   & path {
