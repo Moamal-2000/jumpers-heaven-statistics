@@ -151,31 +151,6 @@ const ServersPage = () => {
 
       {gameTypes.map((gameType) => (
         <div key={gameType} className={s.gameSection}>
-          <div className={s.gameHeader}>
-            <div className={s.gameTitle}>
-              <img
-                src={getGameLogo(gameType)}
-                alt={gameType}
-                className={s.gameLogo}
-                onError={(e) => {
-                  e.target.style.display = "none";
-                }}
-              />
-              <h3
-                className={s.gameTypeTitle}
-                style={{ color: getGameTypeColor(gameType) }}
-              >
-                {gameType}
-              </h3>
-            </div>
-            <div className={s.gameStats}>
-              <span className={s.serverCount}>
-                {groupedServers[gameType].length} server
-                {groupedServers[gameType].length !== 1 ? "s" : ""}
-              </span>
-            </div>
-          </div>
-
           <div className={s.serversGrid}>
             {groupedServers[gameType].map((server) => (
               <div key={`${server.ip}-${server.port}`} className={s.serverCard}>
