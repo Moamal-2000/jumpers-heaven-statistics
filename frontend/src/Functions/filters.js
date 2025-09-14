@@ -28,12 +28,15 @@ export function getRegionLeaderboard(data, filterKey) {
 
 export function getFilteredMaps(mapsData, paramsObject) {
   const mapType = paramsObject?.type || "jump";
-  const shouldFilterByType = mapType !== "jump" && mapType !== "all";
+  const shouldFilterByType = mapType !== "all";
 
   let filteredData = mapsData;
 
   if (shouldFilterByType) {
-    filteredData = mapsData.filter((map) => map.Type === mapType);
+    filteredData = mapsData.filter((map) => {
+      const mapTypeLower = map.Type?.toLowerCase() || "jump";
+      return mapTypeLower === mapType;
+    });
   }
 
   return filteredData;

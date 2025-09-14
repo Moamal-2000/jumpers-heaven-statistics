@@ -1,0 +1,119 @@
+@use "@/Styles/mixins" as m;
+
+.mapDetailPage {
+  min-height: 100vh;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tabContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tabNavigation {
+  display: flex;
+  background: #374151;
+  border-radius: 8px 8px 0 0;
+  border: 1px solid #4b5563;
+  border-bottom: none;
+  overflow: hidden;
+}
+
+.tabButton {
+  flex: 1;
+  background: transparent;
+  color: #9ca3af;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-right: 1px solid #4b5563;
+  
+  &:last-child {
+    border-right: none;
+  }
+  
+  &:hover {
+    background: #4b5563;
+    color: #f9fafb;
+  }
+  
+  &.active {
+    background: #1f2937;
+    color: #f9fafb;
+    border-bottom: 2px solid #facc15;
+  }
+}
+
+.tabContent {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border: 1px solid #4b5563;
+  border-radius: 0 0 8px 8px;
+  border-top: none;
+  min-height: 400px;
+}
+
+.errorContainer {
+  text-align: center;
+  padding: 4rem 2rem;
+  
+  h2 {
+    color: #f9fafb;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    color: #9ca3af;
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.backButton {
+  background: #facc15;
+  color: #1f2937;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: #eab308;
+    transform: translateY(-1px);
+  }
+}
+
+@include m.small {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .mapDetailPage {
+    padding: 1rem 0;
+  }
+}

@@ -33,4 +33,6 @@ export function getColoredName(name) {
       </span>
     );
   });
+  
+  return elements.length === 1 ? elements[0] : elements;
 }

@@ -12,7 +12,7 @@ import ViewMaps from "./ViewMaps/ViewMaps";
 
 const Maps = ({ paginationNumber, setPaginationNumber, lastMapRef }) => {
   const dispatch = useDispatch();
-  const { mapsData, mapsScroll, allDataDisplayed, loading, error } =
+  const { mapsData, mapsScroll, allDataDisplayed, loading, error, searchTerm, filteredMaps, sortedMaps } =
     useSelector((s) => s.maps);
   const { pageVisits, isMapsExpanded } = useSelector((s) => s.global);
   const searchParams = useSearchParams();
@@ -22,20 +22,20 @@ const Maps = ({ paginationNumber, setPaginationNumber, lastMapRef }) => {
   const listClass = viewType === "list" ? s.list : "";
 
   function addDataOnScroll() {
-    const paginationMapsData = paginateData(mapsData, paginationNumber);
+    const paginationMapsData = paginateData(sortedMaps, paginationNumber);
     const value = mapsScroll.concat(paginationMapsData);
 
     dispatch(updateMapsState({ key: "mapsScroll", value }));
   }
 
   function checkAndLoadMoreData() {
-    const isLastPage = getIsLastPagination(mapsData, paginationNumber);
+    const isLastPage = getIsLastPagination(sortedMaps, paginationNumber);
     const lastVisitedPage = pageVisits?.[pageVisits.length - 1];
     const cameFromDifferentPage =
       lastVisitedPage !== "/maps" && lastVisitedPage !== undefined;
 
     // In this case the handleShowAll() is activated already
-    const isSameArrayReference = mapsScroll === mapsData;
+    const isSameArrayReference = mapsScroll === sortedMaps;
 
     const shouldLoadMoreData =
       !isLastPage &&
@@ -68,7 +68,12 @@ const Maps = ({ paginationNumber, setPaginationNumber, lastMapRef }) => {
         />
       )}
 
-      <ViewMaps lastMapRef={lastMapRef} mapsScroll={mapsScroll} />
+      <ViewMaps 
+        lastMapRef={lastMapRef} 
+        mapsScroll={mapsScroll} 
+        searchTerm={searchTerm}
+        filteredMaps={filteredMaps}
+      />
     </section>
   );
 };

@@ -24,10 +24,16 @@ export const NAV_LINKS_DATA = [
     id: 4,
   },
   {
+    name: "Scoring",
+    href: "/scoring",
+    iconName: "calculator",
+    id: 5,
+  },
+  {
     name: "About",
     href: "/about",
     iconName: "exclamation-mark",
-    id: 5,
+    id: 6,
   },
 ];
 

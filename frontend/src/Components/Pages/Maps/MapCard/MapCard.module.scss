@@ -119,37 +119,52 @@
 }
 
 .mapCard .content {
-  padding: 24px;
+  padding: 16px;
 }
 
 @media (max-width: 1280px) {
   .mapCard .content {
-    padding: 24px 14px;
+    padding: 16px 12px;
   }
 }
 
 @include m.small {
   .mapCard .content {
-    padding: 18px;
+    padding: 14px;
   }
 }
 
 @include m.very-small {
   .mapCard .content {
-    padding: 16px 10px;
+    padding: 12px 8px;
   }
 }
 
-.mapCard .content .nameAndRating {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-  gap: 30px;
+.mapCard .content .nameSection {
+  margin-bottom: 8px;
 }
 
-.mapCard .content .nameAndRating a {
-  font-size: 1.2rem;
+.nameAndVideo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.mapCardLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.mapCard .content .nameSection .mapName {
+  font-size: 1.1rem;
   font-weight: 700;
   color: #fff;
   margin: 0;
@@ -158,67 +173,123 @@
   padding-left: 2px;
   word-break: break-all;
   transition: color .2s;
+  display: inline-block;
 
-  &:hover {
+  .mapCardLink:hover & {
     color: #ffc107;
   }
 }
 
+.mapCard .content .nameSection .enderValue {
+  color: #9ca3af;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-left: 4px;
+}
+
 @include m.small {
-  .mapCard .content .nameAndRating a {
+  .mapCard .content .nameSection a {
     font-size: 1rem;
     font-weight: 600;
   }
 }
 
 @include m.very-small {
-  .mapCard .content .nameAndRating a {
+  .mapCard .content .nameSection a {
     font-size: 1rem;
   }
 }
 
-.mapCard .content .nameAndRating .rateWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #1e2939;
-  min-width: 60px;
-  border-radius: 10px;
-  padding: 4px;
+.mapCard .content .difficultySection {
+  margin-bottom: 8px;
 }
 
-.mapCard .content .nameAndRating .rateWrapper .star {
-  color: #FFC107;
-  font-size: .875rem;
-  margin-right: 6px;
+.mapCard .content .difficultyLabel {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mapCard .content .fpsDifficulties {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.mapCard .content .fpsDifficulty {
+  display: flex;
+  align-items: center;
+  background-color: #1e2939;
+  border-radius: 4px;
+  padding: 3px 6px;
+  gap: 3px;
+  border: 1px solid #374151;
+}
+
+.mapCard .content .fps {
+  color: #9ca3af;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.mapCard .content .difficulty {
+  color: #facc15;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.mapCard .content .moreDifficulties {
+  display: flex;
+  align-items: center;
+  background-color: #374151;
+  border-radius: 4px;
+  padding: 3px 6px;
+  border: 1px solid #4b5563;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #4b5563;
+    border-color: #6b7280;
+  }
+}
+
+.mapCard .content .moreText {
+  color: #9ca3af;
+  font-size: 0.7rem;
+  font-weight: 500;
 }
 
 .videoIcon {
-  display: block;
-  width: 32px;
-  height: 32px;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  padding: 0;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
-.videoIcon::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  translate: -50% -50%;
-  background-color: #fff;
-  width: calc(100% - 6px);
-  height: calc(100% - 16px);
-  z-index: -1;
-}
-
-.videoIcon>svg {
-  width: 100%;
-  height: 100%;
+.videoIcon svg {
+  width: 24px;
+  height: 24px;
   fill: #FF0000;
 }
+
 
 .mapCard .content .completionRate {
   margin-bottom: 26px;
@@ -279,4 +350,74 @@
   to {
     translate: 100% 0;
   }
+}
+
+// Content section styles
+.mapCard .content {
+  padding: 1rem;
+}
+
+.mapCard .nameSection {
+  margin-bottom: 0.75rem;
+}
+
+.mapCard .nameSection a {
+  color: #f9fafb;
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+  display: block;
+  margin-bottom: 0.5rem;
+
+  &:hover {
+    color: #facc15;
+  }
+}
+
+.mapCard .enderValue {
+  color: #facc15;
+  font-weight: 500;
+}
+
+.mapCard .difficultySection {
+  margin-bottom: 0.75rem;
+}
+
+.mapCard .difficultyLabel {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.mapCard .fpsDifficulties {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.mapCard .fpsDifficulty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  background: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  min-width: 60px;
+}
+
+.mapCard .fps {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.mapCard .difficulty {
+  color: #f9fafb;
+  font-size: 0.875rem;
+  font-weight: 600;
 }

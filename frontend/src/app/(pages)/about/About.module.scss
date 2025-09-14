@@ -1,0 +1,173 @@
+@use "../../../Styles/variables" as variables;
+
+.aboutPage {
+  padding: 6rem 0 4rem 0; // Added extra top padding to account for fixed header
+  min-height: calc(100vh - 8rem);
+}
+
+.heroSection {
+  margin-bottom: 2rem;
+  padding: 24px 20px;
+  background-color: #14171d;
+  border-radius: 16px 16px 0 0;
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+  }
+
+  .subtitle {
+    font-size: 0.875rem;
+    color: #9AA3B2;
+    margin: 0;
+  }
+}
+
+.contentGrid {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section {
+  .sectionTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+}
+
+.card {
+  background-color: #0e1217;
+  border: solid 1px #1f2937;
+  border-radius: 0 0 16px 16px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.description {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #f9fafb;
+  margin-bottom: 1rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  strong {
+    color: #FFB800;
+    font-weight: 600;
+  }
+}
+
+
+.teamGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.teamMember {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+}
+
+.memberRole {
+  font-size: 0.75rem;
+  color: #ffcc33;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.memberName {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.memberDescription {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #f9fafb;
+}
+
+.techGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.techItem {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+}
+
+.techTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffcc33;
+  margin-bottom: 0.5rem;
+}
+
+.techDescription {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #f9fafb;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .aboutPage {
+    padding: 1rem 0 2rem 0;
+  }
+  
+  .heroSection {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .contentGrid {
+    gap: 1rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .description {
+    font-size: 0.8rem;
+  }
+}

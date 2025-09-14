@@ -56,6 +56,7 @@ export function getLeaderboardUrl(paramsObject) {
     skilled: jhApis(paramsObject).leaderboard.getSkilledLeaderboard,
     defrag: jhApis(paramsObject).leaderboard.getDefragLeaderboard,
     surf: jhApis(paramsObject).leaderboard.getSurfLeaderboard,
+    routescompleted: jhApis(paramsObject).leaderboard.getRoutesCompletedLeaderboard,
   };
 
   return leaderboardUrls[leaderboardType];
@@ -67,9 +68,32 @@ export function getIsLastPagination(data, paginationNumber) {
 }
 
 export async function decodeAsyncData(response) {
-  const buffer = await response.arrayBuffer();
-  const uint8Array = new Uint8Array(buffer);
-  return decode(uint8Array);
+  try {
+    // Check if response is valid
+    if (!response || !response.ok) {
+      console.warn('Invalid response in decodeAsyncData:', response?.status, response?.statusText);
+      return null;
+    }
+    
+    const buffer = await response.arrayBuffer();
+    const uint8Array = new Uint8Array(buffer);
+    
+    // Check if buffer is empty or too small
+    if (uint8Array.length === 0) {
+      console.warn('Empty buffer received in decodeAsyncData');
+      return null;
+    }
+    
+    return decode(uint8Array);
+  } catch (error) {
+    console.error('Error decoding data:', error);
+    console.error('Buffer length:', uint8Array?.length || 'unknown');
+    console.error('Response status:', response?.status);
+    console.error('Response headers:', response?.headers);
+    
+    // Return null to prevent app crash
+    return null;
+  }
 }
 
 export function formateReleaseDate(dateStr) {
@@ -148,4 +172,10 @@ export function openVideo(videos, videoIndex) {
   if (!videoUrl) return;
 
   window.open(videoUrl, "_blank");
+}
+
+export function stripColorCodes(name) {
+  if (!name) return "";
+  // Remove color codes like ^1, ^2, etc. from player names
+  return name.replace(/\^\d/g, "");
 }

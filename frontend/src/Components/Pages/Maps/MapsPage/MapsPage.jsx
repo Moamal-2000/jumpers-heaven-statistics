@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import FiltersSection from "../FiltersSection/FiltersSection";
 import Introduction from "../Introduction/Introduction";
 import Maps from "../Maps/Maps";
+import SearchSection from "../SearchSection/SearchSection";
 import s from "./MapsPage.module.scss";
 
 const MapsPage = () => {
@@ -38,6 +39,7 @@ const MapsPage = () => {
     <div className="container">
       <main className={s.mapsPage}>
         <Introduction />
+        <SearchSection />
         <Suspense>
           <FiltersSection setPaginationNumber={setPaginationNumber} />
           <Maps

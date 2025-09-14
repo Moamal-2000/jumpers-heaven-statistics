@@ -31,15 +31,70 @@
   flex: 1;
 }
 
+.nameSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.mapCardLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+}
+
 .leftSide .mapName {
   font-size: 18px;
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 8px;
   display: flex;
   align-items: center;
   gap: 12px;
   letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+
+  .mapCardLink:hover & {
+    color: #ffc107;
+  }
+}
+
+.leftSide .mapName .enderValue {
+  color: #9ca3af;
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: 4px;
+}
+
+.videoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  padding: 0;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.videoIcon svg {
+  width: 24px;
+  height: 24px;
+  fill: #FF0000;
 }
 
 .leftSide .classifications {
@@ -85,18 +140,69 @@
   }
 }
 
-.starsWrapper {
+.difficultySection {
+  margin-bottom: 8px;
+}
+
+.difficultyLabel {
+  color: #9ca3af;
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fpsDifficulties {
   display: flex;
   align-items: center;
   gap: 4px;
-  margin-bottom: 3px;
+  flex-wrap: wrap;
+  margin-top: 3px;
 }
 
-.starsWrapper .rateText {
-  margin-left: 6px;
-  font-size: 1rem;
+.fpsDifficulty {
+  display: flex;
+  align-items: center;
+  background-color: #1e2939;
+  border-radius: 4px;
+  padding: 2px 5px;
+  gap: 2px;
+  border: 1px solid #374151;
+}
+
+.fps {
+  color: #9ca3af;
+  font-size: 0.65rem;
+  font-weight: 500;
+}
+
+.difficulty {
+  color: #facc15;
+  font-size: 0.7rem;
   font-weight: 600;
-  color: #ffc107;
+}
+
+.moreDifficulties {
+  display: flex;
+  align-items: center;
+  background-color: #374151;
+  border-radius: 4px;
+  padding: 2px 5px;
+  border: 1px solid #4b5563;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #4b5563;
+    border-color: #6b7280;
+  }
+}
+
+.moreText {
+  color: #9ca3af;
+  font-size: 0.65rem;
+  font-weight: 500;
 }
 
 .rightSide .authorAndRelease {
