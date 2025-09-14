@@ -66,6 +66,12 @@
   max-width: 390px;
 }
 
+@include m.medium {
+  .contentSection .leftSide .description {
+    max-width: 470px;
+  }
+}
+
 @include m.small {
   .contentSection .leftSide .description {
     text-align: center;
