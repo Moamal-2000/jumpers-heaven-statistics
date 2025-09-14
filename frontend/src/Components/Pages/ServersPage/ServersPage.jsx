@@ -179,26 +179,24 @@ const ServersPage = () => {
           <div className={s.serversGrid}>
             {groupedServers[gameType].map((server) => (
               <div key={`${server.ip}-${server.port}`} className={s.serverCard}>
-                {/* Country Flag - Top Left */}
-                <div className={s.countryFlag}>
-                  <img
-                    src={getCountryFlag(server.domain)}
-                    alt="Country flag"
-                    className={s.flag}
-                    onError={(e) => {
-                      console.log("Flag failed to load:", e.target.src);
-                      // Try fallback for UAE
-                      if (e.target.src.includes("ae.svg")) {
-                        e.target.src = "/countryFlags/ae.svg";
-                      } else {
-                        e.target.style.display = "none";
-                      }
-                    }}
-                  />
-                </div>
+                <header className={s.serverHeader}>
+                  <div className={s.countryFlag}>
+                    <img
+                      src={getCountryFlag(server.domain)}
+                      alt="Country flag"
+                      className={s.flag}
+                      onError={(e) => {
+                        console.log("Flag failed to load:", e.target.src);
+                        // Try fallback for UAE
+                        if (e.target.src.includes("ae.svg")) {
+                          e.target.src = "/countryFlags/ae.svg";
+                        } else {
+                          e.target.style.display = "none";
+                        }
+                      }}
+                    />
+                  </div>
 
-                {/* Server Header - Domain/IP with Status Indicator */}
-                <div className={s.serverHeader}>
                   <div className={s.serverAddress}>
                     <div className={s.domainInfo}>
                       <span className={s.domain}>{server.domain}</span>
@@ -207,6 +205,7 @@ const ServersPage = () => {
                       {server.ip}:{server.port}
                     </p>
                   </div>
+
                   <div
                     className={s.serverStatusIndicator}
                     style={{
@@ -229,12 +228,12 @@ const ServersPage = () => {
                       }}
                     ></div>
                   </div>
-                </div>
+                </header>
 
                 {/* Map Information */}
                 <div className={s.mapSection}>
                   <div className={s.mapInfo}>
-                    <span className={s.mapLabel}>Map</span>
+                    <span className={s.mapLabel}>Map:</span>
                     <span className={s.mapName}>{server.map}</span>
                   </div>
                 </div>
