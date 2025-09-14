@@ -23,15 +23,15 @@
 
 .navigation .links {
   list-style: none;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
+  width: fit-content;
 }
 
 .navigation .links a {
   display: flex;
   align-items: center;
-  min-width: 240px;
   font-size: 1.1rem;
   padding: 4px 8px;
   border-radius: 4px;
