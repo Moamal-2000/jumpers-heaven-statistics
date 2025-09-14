@@ -1,33 +1,31 @@
 .button {
-  background: #374151;
-  border: 1px solid #4b5563;
-  color: #d1d5db;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-size: 0.875rem;
-  font-weight: 500;
+  border: none;
+  background-color: #1F2534;
+  color: #9AA3B2;
+  border-radius: 10px;
+  min-width: 33px;
+  padding: 8px 12px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
+  font-size: .9rem;
+  font-weight: 500;
   position: relative;
-  outline: none;
+  outline: solid 2px transparent;
+  transition: background-color .2s, color .2s, outline-color .1s;
 
   &:hover {
-    background: #4b5563;
-    border-color: #6b7280;
-    color: #f9fafb;
+    background-color: #2C344A;
+    color: #FFF;
   }
 
   &.active {
-    background: #facc15;
-    border-color: #facc15;
-    color: #1f2937;
     font-weight: 600;
+    background: linear-gradient(135deg, #FFB800, #FF9000);
+    box-shadow: 0 4px 10px rgba(255, 184, 0, .3);
+    color: #000;
   }
 
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.1);
+  &:focus-visible {
+    outline-color: #fff;
   }
 }
 
@@ -36,20 +34,18 @@
   left: 50%;
   translate: -50%;
   top: -32px;
-  background-color: #1f2937;
-  color: #f9fafb;
+  background-color: #111827;
+  color: #fff;
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: .8rem;
   line-height: 1rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+  padding: .25rem .5rem;
+  border-radius: .25rem;
   white-space: nowrap;
   z-index: 11;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease;
-  border: 1px solid #374151;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: opacity .2s ease;
 }
 
 .button:hover .toolTip {
