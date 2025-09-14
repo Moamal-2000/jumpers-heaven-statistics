@@ -9,7 +9,10 @@ import { SORT_MAPS_OPTIONS, TOP_STATS_COLOR } from "@/Data/staticData";
 import { decode } from "msgpackr";
 
 export function getMaxFinishTimesFrom(bestPlayer) {
-  const maxFinishTimes = Math.max(...Object.values(bestPlayer.TopList));
+  const topList = bestPlayer?.TopList;
+  if (topList === undefined || topList === null) return 0;
+
+  const maxFinishTimes = Math.max(...Object.values(topList));
   return maxFinishTimes;
 }
 
@@ -56,7 +59,8 @@ export function getLeaderboardUrl(paramsObject) {
     skilled: jhApis(paramsObject).leaderboard.getSkilledLeaderboard,
     defrag: jhApis(paramsObject).leaderboard.getDefragLeaderboard,
     surf: jhApis(paramsObject).leaderboard.getSurfLeaderboard,
-    routescompleted: jhApis(paramsObject).leaderboard.getRoutesCompletedLeaderboard,
+    routescompleted:
+      jhApis(paramsObject).leaderboard.getRoutesCompletedLeaderboard,
   };
 
   return leaderboardUrls[leaderboardType];
@@ -71,26 +75,30 @@ export async function decodeAsyncData(response) {
   try {
     // Check if response is valid
     if (!response || !response.ok) {
-      console.warn('Invalid response in decodeAsyncData:', response?.status, response?.statusText);
+      console.warn(
+        "Invalid response in decodeAsyncData:",
+        response?.status,
+        response?.statusText
+      );
       return null;
     }
-    
+
     const buffer = await response.arrayBuffer();
     const uint8Array = new Uint8Array(buffer);
-    
+
     // Check if buffer is empty or too small
     if (uint8Array.length === 0) {
-      console.warn('Empty buffer received in decodeAsyncData');
+      console.warn("Empty buffer received in decodeAsyncData");
       return null;
     }
-    
+
     return decode(uint8Array);
   } catch (error) {
-    console.error('Error decoding data:', error);
-    console.error('Buffer length:', uint8Array?.length || 'unknown');
-    console.error('Response status:', response?.status);
-    console.error('Response headers:', response?.headers);
-    
+    console.error("Error decoding data:", error);
+    console.error("Buffer length:", uint8Array?.length || "unknown");
+    console.error("Response status:", response?.status);
+    console.error("Response headers:", response?.headers);
+
     // Return null to prevent app crash
     return null;
   }
@@ -110,7 +118,9 @@ export function modifyMapsData(mapsData) {
     const requiredVideos = getRequiredMapVideos(mapData);
     const isReleasedInThisYear = mapData?.Released?.startsWith(currentYear);
 
-    mapData.Classifications = mapData?.Type ? [mapData?.Type?.toLowerCase()] : [];
+    mapData.Classifications = mapData?.Type
+      ? [mapData?.Type?.toLowerCase()]
+      : [];
     if (requiredVideos) mapData.Videos = requiredVideos;
 
     if (mapData?.Released && isReleasedInThisYear) {

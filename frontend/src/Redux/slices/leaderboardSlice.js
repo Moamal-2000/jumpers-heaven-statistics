@@ -1,3 +1,4 @@
+import { TOTAL_MAPS_PLACEHOLDER } from "@/Data/constants";
 import { getFilteredLeaderboard } from "@/Functions/filters";
 import { paginateData } from "@/Functions/utils";
 import { createSlice } from "@reduxjs/toolkit";
@@ -8,6 +9,7 @@ const initialState = {
   leaderboardScroll: [],
   firstChunkLeaderboard: [],
   allDataDisplayed: [],
+  totalMaps: TOTAL_MAPS_PLACEHOLDER,
   loading: false,
   error: false,
 };
@@ -38,6 +40,7 @@ export const leaderboardSlice = createSlice({
         state.firstChunkLeaderboard = paginationLeaderboard;
         state.loading = false;
         state.error = false;
+        state.totalMaps = payload?.totalMaps || TOTAL_MAPS_PLACEHOLDER;
       })
       .addCase(fetchLeaderboard.rejected, (state) => {
         state.error = true;

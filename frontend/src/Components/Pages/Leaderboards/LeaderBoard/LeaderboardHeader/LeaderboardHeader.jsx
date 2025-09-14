@@ -9,15 +9,18 @@ import s from "./LeaderboardHeader.module.scss";
 import LeaderboardHeaderBtns from "./LeaderboardHeaderBtns/LeaderboardHeaderBtns";
 
 const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
-  const { leaderboardData, leaderboardScroll } = useSelector(
+  const { leaderboardData, leaderboardScroll, totalMaps } = useSelector(
     (s) => s.leaderboard
   );
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
   const isLastSeenLeader = !!searchParams.get("last-seen");
+
   const leaderboardTitle = isLastSeenLeader
     ? "Last Seen Players"
     : "Top Players";
+  const totalPlayers = leaderboardData?.length || 0;
+  const displayedPlayers = leaderboardScroll?.length || 0;
 
   function updateAllDataDisplayedStatus() {
     const lastLeaderboardPagination = Math.ceil(
@@ -39,7 +42,14 @@ const LeaderboardHeader = ({ paginationNumber, setPaginationNumber }) => {
 
   return (
     <header className={s.header}>
-      <h3>{leaderboardTitle}</h3>
+      <div className={s.wrapper}>
+        <h3>{leaderboardTitle}</h3>
+        <p>
+          Showing <span>{displayedPlayers}</span> of <span>{totalPlayers}</span>{" "}
+          players • <span>{totalMaps}</span> total maps available
+        </p>
+      </div>
+
       <LeaderboardHeaderBtns setPaginationNumber={setPaginationNumber} />
     </header>
   );

@@ -37,8 +37,18 @@
   }
 }
 
-.header>h3 {
+.header .wrapper>h3 {
   font-size: 1.4rem;
   font-weight: 700;
   text-wrap: nowrap;
+  margin-bottom: 10px;
+}
+
+.header .wrapper>p {
+  color: #9ca3af;
+}
+
+.header .wrapper>p>span {
+  color: #cdd4de;
+  font-weight: 500;
 }

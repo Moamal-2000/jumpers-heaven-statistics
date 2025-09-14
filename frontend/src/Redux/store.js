@@ -2,9 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import globalSlice from "./slices/globalSlice";
 import leaderboardSlice from "./slices/leaderboardSlice";
 import mapsSlice from "./slices/mapsSlice";
-import playersSlice from "./slices/playersSlice";
 import playerProfileSlice from "./slices/playerProfileSlice";
-import routesCompletedSlice from "./slices/routesCompletedSlice";
+import playersSlice from "./slices/playersSlice";
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +12,5 @@ export const store = configureStore({
     maps: mapsSlice,
     players: playersSlice,
     playerProfile: playerProfileSlice,
-    routesCompleted: routesCompletedSlice,
   },
 });

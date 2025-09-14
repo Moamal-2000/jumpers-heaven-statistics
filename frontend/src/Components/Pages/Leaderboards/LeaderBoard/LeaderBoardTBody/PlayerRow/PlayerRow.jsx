@@ -1,4 +1,7 @@
+"use client";
+
 import { getModifiedRank } from "@/Functions/components";
+import { useSearchParams } from "next/navigation";
 import PlayerNameCell from "./PlayerNameCell/PlayerNameCell";
 import s from "./PlayerRow.module.scss";
 import TopsCell from "./TopsCell/TopsCell";
@@ -7,6 +10,9 @@ const PlayerRow = ({ playerData, leaderboardData, lastPlayerRef, index }) => {
   const { Rating, Score, TopList, Rank } = playerData;
   const modifiedRank = getModifiedRank(Rank);
   const ref = leaderboardData.length === index + 1 ? lastPlayerRef : null;
+  const searchParams = useSearchParams();
+  const isRoutesCompletedLeaderboard =
+    searchParams.get("leaderboard") === "routescompleted";
 
   return (
     <tr className={s.playerRow} ref={ref} data-type="player-stats-row">
@@ -24,7 +30,9 @@ const PlayerRow = ({ playerData, leaderboardData, lastPlayerRef, index }) => {
         {Score}
       </td>
 
-      <TopsCell topList={TopList} leaderboardData={leaderboardData} />
+      {!isRoutesCompletedLeaderboard && (
+        <TopsCell topList={TopList} leaderboardData={leaderboardData} />
+      )}
     </tr>
   );
 };

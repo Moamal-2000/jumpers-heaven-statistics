@@ -16,3 +16,5 @@ export const MONTHS = {
   11: "November",
   12: "December",
 };
+
+export const TOTAL_MAPS_PLACEHOLDER = 627
