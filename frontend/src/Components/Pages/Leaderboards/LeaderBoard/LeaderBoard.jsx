@@ -27,6 +27,12 @@ const LeaderBoard = () => {
   const paramsObject = Object.fromEntries(searchParams.entries());
   const collapseClass = isLeaderboardExpanded ? "" : s.collapse;
 
+  const leaderboardType = searchParams.get("leaderboard");
+  const isRoutesCompletedLeaderboard = leaderboardType === "routescompleted";
+  const leaderboardClasses = `${s.leaderBoard} ${
+    isRoutesCompletedLeaderboard ? s.routesCompleted : ""
+  }`;
+
   const [lastPlayerRef, paginationNumber, setPaginationNumber] =
     useInfiniteScroll(leaderboardData, isLeaderboardReversed);
 
@@ -83,7 +89,7 @@ const LeaderBoard = () => {
         setPaginationNumber={setPaginationNumber}
       />
 
-      <table className={s.leaderBoard}>
+      <table className={leaderboardClasses}>
         <LeaderBoardTHead />
         <LeaderBoardTBody
           leaderboardData={leaderboardScroll}

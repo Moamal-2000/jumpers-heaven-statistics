@@ -9,6 +9,9 @@ const LeaderBoardTHead = () => {
   const leaderboardType = searchParams.get("leaderboard");
   const isSkilledLeaderboard = leaderboardType === "skilled";
   const isRoutesCompletedLeaderboard = leaderboardType === "routescompleted";
+  const scoreText = isRoutesCompletedLeaderboard
+    ? "Completed routes"
+    : "Points";
 
   return (
     <thead className={s.thead}>
@@ -16,7 +19,7 @@ const LeaderBoardTHead = () => {
         <RankTableHeader text="Rank" />
         <th className={s.player}>Player</th>
         <th className={s.rating}>Rating</th>
-        <th className={s.score}>Points</th>
+        <th className={s.score}>{scoreText}</th>
 
         {!isRoutesCompletedLeaderboard && (
           <th className={s.tops}>

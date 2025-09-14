@@ -83,6 +83,10 @@
   font-weight: 600;
 }
 
+.leaderBoard.routesCompleted tr {
+  grid-template-columns: 2.16fr 9fr 4fr 4fr 4fr;
+}
+
 @media (max-width: 1300px) {
   .leaderBoard tr {
     display: flex;
