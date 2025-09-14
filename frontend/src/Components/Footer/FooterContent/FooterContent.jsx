@@ -1,7 +1,6 @@
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { WEBSITE_NAME } from "@/Data/constants";
 import Link from "next/link";
-import FooterMenusButtons from "../FooterMenusButtons/FooterMenusButtons";
 import FooterNav from "../FooterNav/FooterNav";
 import s from "./FooterContent.module.scss";
 import SocialMedia from "./SocialMedia/SocialMedia";
@@ -20,8 +19,6 @@ const FooterContent = () => {
           community for jumping game enthusiasts. Supporting Defrag, Surf,
           Speedrun, and other movement-based game modes across multiple titles
         </p>
-
-        <FooterMenusButtons />
       </div>
       <FooterNav />
       <SocialMedia />
