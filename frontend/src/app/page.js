@@ -1,4 +1,4 @@
-import ServersPage from "@/Components/Shared/ServersPage/ServersPage";
+import ServersPage from "@/Components/Pages/ServersPage/ServersPage";
 import s from "./page.module.scss";
 
 export default async function Servers() {
