@@ -1,11 +1,11 @@
+import ServersPage from "@/Components/Shared/ServersPage/ServersPage";
 import s from "./page.module.scss";
-import ServerDisplay from "@/Components/Shared/ServerDisplay/ServerDisplay";
 
-export default async function Home() {
+export default async function Servers() {
   return (
     <div className="container">
       <main className={s.home}>
-        <ServerDisplay />
+        <ServersPage />
       </main>
     </div>
   );

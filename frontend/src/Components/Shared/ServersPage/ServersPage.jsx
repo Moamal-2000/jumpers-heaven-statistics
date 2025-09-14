@@ -2,9 +2,9 @@
 
 import { getColoredName } from "@/Functions/components";
 import { useEffect, useState } from "react";
-import s from "./ServerDisplay.module.scss";
+import s from "./ServersPage.module.scss";
 
-const ServerDisplay = () => {
+const ServersPage = () => {
   const [servers, setServers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -305,4 +305,4 @@ const ServerDisplay = () => {
   );
 };
 
-export default ServerDisplay;
+export default ServersPage;
