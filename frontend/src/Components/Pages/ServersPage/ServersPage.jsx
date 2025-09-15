@@ -17,9 +17,7 @@ const ServersPage = () => {
         const response = await fetch(
           "https://jhstats.fly.dev/api/v1/tracker/online-players"
         );
-        if (!response.ok) {
-          throw new Error("Failed to fetch server data");
-        }
+        if (!response.ok) throw new Error("Failed to fetch server data");
         const data = await response.json();
         setServers(data.servers || []);
       } catch (err) {
@@ -35,32 +33,10 @@ const ServersPage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const getGameLogo = (gameType) => {
-    switch (gameType) {
-      case "COD4":
-        return "/game-logos/cod4.png";
-      case "COD2":
-        return "/game-logos/cod2.png";
-      default:
-        return "/game-logos/default.png";
-    }
-  };
-
   const getCountryFlag = (domain) => {
     const country = domain.split(".")[0];
     const flagPath = `/countryFlags/${country}.svg`;
     return flagPath;
-  };
-
-  const getGameTypeColor = (gameType) => {
-    switch (gameType) {
-      case "COD4":
-        return "#4CAF50"; // Green
-      case "COD2":
-        return "#FF9800"; // Orange
-      default:
-        return "#9E9E9E"; // Gray
-    }
   };
 
   const getServerStatusColor = (online) => {
