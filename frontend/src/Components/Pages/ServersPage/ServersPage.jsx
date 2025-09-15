@@ -1,6 +1,7 @@
 "use client";
 
 import { getColoredName } from "@/Functions/components";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import s from "./ServersPage.module.scss";
 
@@ -46,23 +47,8 @@ const ServersPage = () => {
   };
 
   const getCountryFlag = (domain) => {
-    // Extract country from domain (e.g., hk.jumpersheaven.com -> hk)
     const country = domain.split(".")[0];
-
-    // Handle special cases for broken flags
-    const flagMappings = {
-      ae: "ae", // UAE
-      uk: "gb", // UK -> GB
-      us: "us", // USA
-      hk: "hk", // Hong Kong
-    };
-
-    const flagCountry = flagMappings[country] || country;
-    const flagPath = `/countryFlags/${flagCountry}.svg`;
-
-    // Debug logging
-    console.log(`Country: ${country}, Flag: ${flagCountry}, Path: ${flagPath}`);
-
+    const flagPath = `/countryFlags/${country}.svg`;
     return flagPath;
   };
 
@@ -160,19 +146,12 @@ const ServersPage = () => {
               <div key={`${server.ip}-${server.port}`} className={s.serverCard}>
                 <header className={s.serverHeader}>
                   <div className={s.countryFlag}>
-                    <img
+                    <Image
                       src={getCountryFlag(server.domain)}
                       alt="Country flag"
+                      width="30"
+                      height="26"
                       className={s.flag}
-                      onError={(e) => {
-                        console.log("Flag failed to load:", e.target.src);
-                        // Try fallback for UAE
-                        if (e.target.src.includes("ae.svg")) {
-                          e.target.src = "/countryFlags/ae.svg";
-                        } else {
-                          e.target.style.display = "none";
-                        }
-                      }}
                     />
                   </div>
 
