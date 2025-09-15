@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState, useRef, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchAllPlayers } from "@/Redux/thunks/playersThunk";
-import { setSearchTerm, setSortBy, clearSearch, updatePlayersState, resetPagination, loadMorePlayersAction, setIsLoadingMore } from "@/Redux/slices/playersSlice";
 import { stripColorCodes } from "@/Functions/utils";
+import { loadMorePlayersAction, resetPagination, setIsLoadingMore, setSearchTerm, setSortBy, updatePlayersState } from "@/Redux/slices/playersSlice";
+import { fetchAllPlayers } from "@/Redux/thunks/playersThunk";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import PlayerCard from "./PlayerCard/PlayerCard";
 import s from "./Players.module.scss";
 
@@ -26,18 +26,7 @@ const Players = () => {
   const playersToDisplay = searchTerm 
     ? filteredPlayers // Show all filtered results when searching
     : playersData.slice(0, Math.min(effectiveDisplayedCount, playersData.length)); // Show only the first displayedCount players when not searching
-  
-  // Debug logging
-  console.log('Players state:', {
-    playersDataLength: playersData.length,
-    filteredPlayersLength: filteredPlayers.length,
-    playersToDisplayLength: playersToDisplay.length,
-    displayedCount,
-    effectiveDisplayedCount,
-    hasMore,
-    isLoadingMore,
-    searchTerm
-  });
+
   const dispatch = useDispatch();
   const [isSearching, setIsSearching] = useState(false);
   const inputRef = useRef(null);

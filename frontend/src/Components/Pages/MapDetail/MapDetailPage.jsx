@@ -128,7 +128,6 @@ const MapDetailPage = ({ cpid }) => {
           );
 
           const results = await Promise.all(promises);
-          console.log(results);
           const allData = results
             .filter((result) => Array.isArray(result))
             .flat()
@@ -161,11 +160,8 @@ const MapDetailPage = ({ cpid }) => {
       } else if (selectedFps === "mix") {
         // Mix FPS - use fps=0 in API call
         if (!isLoadMore) {
-          // First time loading - fetch all data for mix FPS
-          console.log("Fetching all tops for mix FPS (fps=0):", selectedFps);
           const response = await fetch(jhApis({ fps: "0", cpid }).map.getTops);
           const data = await response.json();
-          console.log("Received data:", data.length, "items");
 
           setAllTopsData(data);
 
@@ -187,13 +183,10 @@ const MapDetailPage = ({ cpid }) => {
       } else {
         // Single FPS - fetch all data and paginate client-side
         if (!isLoadMore) {
-          // First time loading - fetch all data for this FPS
-          console.log("Fetching all tops for individual FPS:", selectedFps);
           const response = await fetch(
             jhApis({ fps: selectedFps, cpid }).map.getTops
           );
           const data = await response.json();
-          console.log("Received data:", data.length, "items");
 
           setAllTopsData(data);
 
@@ -317,14 +310,11 @@ const MapDetailPage = ({ cpid }) => {
       } else if (selectedFps === "mix") {
         // Mix FPS - use fps=0 in API call
         if (!isLoadMore) {
-          // First time loading - fetch all data for mix FPS
-          console.log("Fetching all players for mix FPS (fps=0):", selectedFps);
           const response = await fetch(
             jhApis({ fps: "0", mapid: mapData?.mapid }).player
               .getPlayersPlayTime
           );
           const data = await response.json();
-          console.log("Received data:", data.length, "items");
 
           setAllPlayersData(data);
 
@@ -346,14 +336,11 @@ const MapDetailPage = ({ cpid }) => {
       } else {
         // Single FPS - fetch all data and paginate client-side
         if (!isLoadMore) {
-          // First time loading - fetch all data for this FPS
-          console.log("Fetching all players for individual FPS:", selectedFps);
           const response = await fetch(
             jhApis({ fps: selectedFps, mapid: mapData?.mapid }).player
               .getPlayersPlayTime
           );
           const data = await response.json();
-          console.log("Received data:", data.length, "items");
 
           setAllPlayersData(data);
 

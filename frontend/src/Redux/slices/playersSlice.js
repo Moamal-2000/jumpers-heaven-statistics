@@ -17,7 +17,7 @@ const initialState = {
 // Helper function to transform player data
 const transformPlayerData = (apiResponse) => {
   if (!Array.isArray(apiResponse)) {
-    console.log('Invalid API response format:', apiResponse);
+    console.warn('Invalid API response format:', apiResponse);
     return [];
   }
   
@@ -83,8 +83,6 @@ export const playersSlice = createSlice({
       state.isLoadingMore = false;
       // Update hasMore based on whether we've shown all players
       state.hasMore = state.displayedCount < state.playersData.length;
-      
-      console.log(`Loaded more players: displayed ${state.displayedCount} of ${state.playersData.length}, hasMore: ${state.hasMore}`);
     },
   },
   extraReducers: ({ addCase }) => {
@@ -105,8 +103,6 @@ export const playersSlice = createSlice({
         state.isLoadingMore = false;
         state.loading = false;
         state.error = false;
-        
-        console.log(`Fetched ${transformedPlayers.length} players, displaying first 200, hasMore: ${state.hasMore}`);
       })
       .addCase(fetchAllPlayers.rejected, (state) => {
         state.error = true;

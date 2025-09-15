@@ -162,7 +162,6 @@ export const fetchPlayerRouteCompletionNew = createAsyncThunk(
       }
       
       const playerRoutesData = await playerRoutesResponse.json();
-      console.log('Player routes completion data:', playerRoutesData);
       
       // Process completed routes
       const playerCompletedMaps = new Set();
@@ -185,9 +184,6 @@ export const fetchPlayerRouteCompletionNew = createAsyncThunk(
         });
       }
       
-      console.log('Completed routes count:', playerCompletedMaps.size);
-      console.log('Completed routes:', Array.from(playerCompletedMaps));
-      
       // Fetch all available maps
       const allMapsResponse = await fetch(
         "/api/localhost/map/all",
@@ -205,13 +201,9 @@ export const fetchPlayerRouteCompletionNew = createAsyncThunk(
       }
       
       const allMapsData = await allMapsResponse.json();
-      console.log('All maps data sample:', allMapsData.slice(0, 3));
-      console.log('Total maps from API:', allMapsData.length);
       
       // Use all maps without any filtering (type and FPS agnostic)
       const availableMaps = allMapsData;
-      
-      console.log('All maps count (no filtering):', availableMaps.length);
       
       // Process maps to handle multiple routes/endings using the 'ender' field
       const processedMaps = availableMaps.map(map => {
@@ -229,9 +221,6 @@ export const fetchPlayerRouteCompletionNew = createAsyncThunk(
           };
         }
       });
-      
-      console.log('Processed maps count (after ender processing):', processedMaps.length);
-      console.log('Completed maps count:', playerCompletedMaps.size);
       
       const totalAvailableMaps = processedMaps.length;
       const completedMapsCount = playerCompletedMaps.size;
@@ -269,8 +258,6 @@ export const fetchPlayerRouteCompletionNew = createAsyncThunk(
         if (individual_finish_count === 0) {
           individual_finish_count = 1; // Default to 1 if no data available
         }
-        
-        console.log('Map:', map.mapname, 'Finish count:', individual_finish_count, 'Raw map data:', map);
         
         return {
           mapid: map.mapid,

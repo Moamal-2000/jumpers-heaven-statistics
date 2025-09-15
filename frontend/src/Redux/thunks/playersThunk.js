@@ -10,8 +10,6 @@ export const fetchAllPlayers = createAsyncThunk(
         sort: paramsObject.sort || "admin_level"
       }).player.getAll;
       
-      console.log('Fetching all players from URL:', url);
-      
       const response = await fetch(url, {
         headers: { 
           'Accept': 'application/json',
@@ -19,14 +17,11 @@ export const fetchAllPlayers = createAsyncThunk(
         },
       });
       
-      console.log('Response status:', response.status);
-      
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       
       const playersData = await response.json();
-      console.log('Players data received:', playersData);
 
       return { playersData };
     } catch (error) {
@@ -44,8 +39,6 @@ export const searchPlayers = createAsyncThunk(
         sort: paramsObject.sort || "admin_level", 
         limit: paramsObject.limit || 100 
       }).player.getAll;
-      
-      console.log('Searching players from URL:', url);
       
       const response = await fetch(url, {
         headers: { 
@@ -68,8 +61,6 @@ export const searchPlayers = createAsyncThunk(
         player.force_name?.toLowerCase().includes(searchTerm)
       );
       
-      console.log('Filtered players:', filteredPlayers);
-
       return { playersData: filteredPlayers, paramsObject };
     } catch (error) {
       console.error('Error in searchPlayers:', error);

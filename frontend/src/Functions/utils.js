@@ -98,8 +98,6 @@ export async function decodeAsyncData(response) {
     console.error("Buffer length:", uint8Array?.length || "unknown");
     console.error("Response status:", response?.status);
     console.error("Response headers:", response?.headers);
-
-    // Return null to prevent app crash
     return null;
   }
 }

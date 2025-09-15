@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchPlayerRouteCompletionNew } from "@/Redux/thunks/playerRouteCompletionThunk";
 import SvgIcon from "@/Components/Shared/SvgIcon";
+import { fetchPlayerRouteCompletionNew } from "@/Redux/thunks/playerRouteCompletionThunk";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import s from "./PlayerRouteCompletion.module.scss";
 
 const PlayerRouteCompletion = ({ playerId }) => {
@@ -86,7 +86,6 @@ const PlayerRouteCompletion = ({ playerId }) => {
   };
 
   const getRarityLevel = (finishCount) => {
-    console.log('Getting rarity for finish count:', finishCount, 'Type:', typeof finishCount);
     if (finishCount <= 2) return 'mythical';
     if (finishCount <= 10) return 'legendary';
     if (finishCount <= 20) return 'epic';

@@ -25,7 +25,7 @@ export const getJumpersHeavenStats = createAsyncThunk(
       const mapsCountData = await decodeAsyncData(response);
       return { mapsCount: mapsCountData?.Count };
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
 );
