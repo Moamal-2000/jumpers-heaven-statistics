@@ -1,4 +1,4 @@
-const API_URL = "https://jhstats.fly.dev/api/v1";
+export const API_URL = "https://jhstats.fly.dev/api/v1";
 
 export const jhApis = ({
   fps = 125,
@@ -25,6 +25,8 @@ export const jhApis = ({
       getTops: generateUrl("/player/tops", { fps: fpsParam, playerid, limit }),
       getJumpScores: generateUrl("/player/jump-scores", { fps: fpsParam, playerid }),
       getIdFromName: generateUrl("/player/id-from-name", { name, limit }),
+      getOnlinePlayers: generateUrl("/tracker/online-players"),
+      getPlayersPlayTime: generateUrl("/map/players-playtime", { fps: fpsParam, limit, mapid }),
     },
     leaderboard: {
       getSkilledLeaderboard: generateUrl("/leaderboard/jump-skill", { fps: fpsParam }),

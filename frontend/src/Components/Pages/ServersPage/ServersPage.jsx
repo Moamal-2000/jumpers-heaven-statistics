@@ -1,5 +1,6 @@
 "use client";
 
+import { jhApis } from "@/Api/jumpersHeaven";
 import { getColoredName } from "@/Functions/components";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -14,9 +15,7 @@ const ServersPage = () => {
   useEffect(() => {
     const fetchServers = async () => {
       try {
-        const response = await fetch(
-          "https://jhstats.fly.dev/api/v1/tracker/online-players"
-        );
+        const response = await fetch(jhApis({}).player.getOnlinePlayers);
         if (!response.ok) throw new Error("Failed to fetch server data");
         const data = await response.json();
         setServers(data.servers || []);

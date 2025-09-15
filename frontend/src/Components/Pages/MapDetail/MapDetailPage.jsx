@@ -1,13 +1,14 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { jhApis } from "@/Api/jumpersHeaven";
+import SpinnerLoader from "@/Components/Shared/Loaders/SpinnerLoader/SpinnerLoader";
 import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import MapDetailHeader from "./MapDetailHeader/MapDetailHeader";
 import MapDetailInfo from "./MapDetailInfo/MapDetailInfo";
-import MapDetailTops from "./MapDetailTops/MapDetailTops";
-import MapDetailPlayers from "./MapDetailPlayers/MapDetailPlayers";
-import SpinnerLoader from "@/Components/Shared/Loaders/SpinnerLoader/SpinnerLoader";
 import s from "./MapDetailPage.module.scss";
+import MapDetailPlayers from "./MapDetailPlayers/MapDetailPlayers";
+import MapDetailTops from "./MapDetailTops/MapDetailTops";
 
 const MapDetailPage = ({ cpid }) => {
   const router = useRouter();
@@ -20,7 +21,7 @@ const MapDetailPage = ({ cpid }) => {
   const [error, setError] = useState(false);
   const [selectedFps, setSelectedFps] = useState("125");
   const [activeTab, setActiveTab] = useState("tops"); // "tops" or "players"
-  
+
   // Pagination state
   const [topsPage, setTopsPage] = useState(1);
   const [playersPage, setPlayersPage] = useState(1);
@@ -28,19 +29,19 @@ const MapDetailPage = ({ cpid }) => {
   const [hasMorePlayers, setHasMorePlayers] = useState(true);
   const [loadingMoreTops, setLoadingMoreTops] = useState(false);
   const [loadingMorePlayers, setLoadingMorePlayers] = useState(false);
-  
+
   // Track displayed items count for "All" FPS
   const [displayedTopsCount, setDisplayedTopsCount] = useState(0);
   const [displayedPlayersCount, setDisplayedPlayersCount] = useState(0);
-  
+
   // Track if showing all items
   const [showingAllTops, setShowingAllTops] = useState(false);
   const [showingAllPlayers, setShowingAllPlayers] = useState(false);
-  
+
   // Refs for infinite scroll
   const topsLoadMoreRef = useRef(null);
   const playersLoadMoreRef = useRef(null);
-  
+
   // Store all fetched data for "All" FPS case
   const [allTopsData, setAllTopsData] = useState(null);
   const [allPlayersData, setAllPlayersData] = useState(null);
@@ -69,7 +70,7 @@ const MapDetailPage = ({ cpid }) => {
       setDisplayedPlayersCount(0);
       setShowingAllTops(false);
       setShowingAllPlayers(false);
-      
+
       fetchTopsData();
       fetchPlayersData();
     }
@@ -79,12 +80,11 @@ const MapDetailPage = ({ cpid }) => {
     try {
       setLoading(true);
       setError(false);
-      
-      const response = await fetch("https://jhstats.fly.dev/api/v1/map/all");
+
+      const response = await fetch(jhApis({}).map.getAllMaps);
       const data = await response.json();
-      
-      const map = data.find(m => m.cp_id === parseInt(cpid));
-      
+      const map = data.find((m) => m.cp_id === parseInt(cpid));
+
       if (map) {
         setMapData(map);
       } else {
@@ -105,37 +105,44 @@ const MapDetailPage = ({ cpid }) => {
       } else {
         setLoadingTops(true);
       }
-      
+
       if (selectedFps === "All") {
         // For "All" FPS, fetch all data once and paginate client-side
         if (!isLoadMore) {
           // First time loading - fetch all data from all FPS
           const allFps = ["125", "250", "333", "43", "76"];
-          const promises = allFps.map(fps => 
-            fetch(`https://jhstats.fly.dev/api/v1/map/tops?cpid=${cpid}&fps=${fps}&limit=1000&offset=0`)
-              .then(res => res.json())
-              .then(data => {
+          const promises = allFps.map((fps) =>
+            fetch(jhApis({ fps, cpid }).map.getTops)
+              .then((res) => res.json())
+              .then((data) => {
                 // Add FPS information to each run record
                 if (Array.isArray(data)) {
-                  return data.map(run => ({ ...run, fps }));
+                  return data.map((run) => ({ ...run, fps }));
                 }
                 return [];
               })
-              .catch(err => {
+              .catch((err) => {
                 console.warn(`Error fetching tops for ${fps} FPS:`, err);
                 return [];
               })
           );
-          
+
           const results = await Promise.all(promises);
+          console.log(results);
           const allData = results
-            .filter(result => Array.isArray(result))
+            .filter((result) => Array.isArray(result))
             .flat()
-            .filter(item => item && typeof item === 'object' && item.time_played !== null && item.time_played !== undefined)
+            .filter(
+              (item) =>
+                item &&
+                typeof item === "object" &&
+                item.time_played !== null &&
+                item.time_played !== undefined
+            )
             .sort((a, b) => a.time_played - b.time_played);
-          
+
           setAllTopsData(allData);
-          
+
           // Show first page
           const firstPage = allData.slice(0, ITEMS_PER_PAGE);
           setTopsData(firstPage);
@@ -146,8 +153,8 @@ const MapDetailPage = ({ cpid }) => {
           const startIndex = displayedTopsCount;
           const endIndex = startIndex + ITEMS_PER_PAGE;
           const nextPage = allTopsData.slice(startIndex, endIndex);
-          
-          setTopsData(prev => [...(prev || []), ...nextPage]);
+
+          setTopsData((prev) => [...(prev || []), ...nextPage]);
           setHasMoreTops(endIndex < allTopsData.length);
           setDisplayedTopsCount(endIndex);
         }
@@ -155,15 +162,13 @@ const MapDetailPage = ({ cpid }) => {
         // Mix FPS - use fps=0 in API call
         if (!isLoadMore) {
           // First time loading - fetch all data for mix FPS
-          console.log('Fetching all tops for mix FPS (fps=0):', selectedFps);
-          const response = await fetch(
-            `https://jhstats.fly.dev/api/v1/map/tops?cpid=${cpid}&fps=0&limit=1000&offset=0`
-          );
+          console.log("Fetching all tops for mix FPS (fps=0):", selectedFps);
+          const response = await fetch(jhApis({ fps: "0", cpid }).map.getTops);
           const data = await response.json();
-          console.log('Received data:', data.length, 'items');
-          
+          console.log("Received data:", data.length, "items");
+
           setAllTopsData(data);
-          
+
           // Show first page
           const firstPage = data.slice(0, ITEMS_PER_PAGE);
           setTopsData(firstPage);
@@ -174,8 +179,8 @@ const MapDetailPage = ({ cpid }) => {
           const startIndex = displayedTopsCount;
           const endIndex = startIndex + ITEMS_PER_PAGE;
           const nextPage = allTopsData.slice(startIndex, endIndex);
-          
-          setTopsData(prev => [...(prev || []), ...nextPage]);
+
+          setTopsData((prev) => [...(prev || []), ...nextPage]);
           setHasMoreTops(endIndex < allTopsData.length);
           setDisplayedTopsCount(endIndex);
         }
@@ -183,15 +188,15 @@ const MapDetailPage = ({ cpid }) => {
         // Single FPS - fetch all data and paginate client-side
         if (!isLoadMore) {
           // First time loading - fetch all data for this FPS
-          console.log('Fetching all tops for individual FPS:', selectedFps);
+          console.log("Fetching all tops for individual FPS:", selectedFps);
           const response = await fetch(
-            `https://jhstats.fly.dev/api/v1/map/tops?cpid=${cpid}&fps=${selectedFps}&limit=1000&offset=0`
+            jhApis({ fps: selectedFps, cpid }).map.getTops
           );
           const data = await response.json();
-          console.log('Received data:', data.length, 'items');
-          
+          console.log("Received data:", data.length, "items");
+
           setAllTopsData(data);
-          
+
           // Show first page
           const firstPage = data.slice(0, ITEMS_PER_PAGE);
           setTopsData(firstPage);
@@ -202,8 +207,8 @@ const MapDetailPage = ({ cpid }) => {
           const startIndex = displayedTopsCount;
           const endIndex = startIndex + ITEMS_PER_PAGE;
           const nextPage = allTopsData.slice(startIndex, endIndex);
-          
-          setTopsData(prev => [...(prev || []), ...nextPage]);
+
+          setTopsData((prev) => [...(prev || []), ...nextPage]);
           setHasMoreTops(endIndex < allTopsData.length);
           setDisplayedTopsCount(endIndex);
         }
@@ -229,37 +234,46 @@ const MapDetailPage = ({ cpid }) => {
       } else {
         setLoadingPlayers(true);
       }
-      
+
       if (selectedFps === "All") {
         // For "All" FPS, fetch all data once and paginate client-side
         if (!isLoadMore) {
           // First time loading - fetch all data from all FPS
           const allFps = ["125", "250", "333", "43", "76"];
-          const promises = allFps.map(fps => 
-            fetch(`https://jhstats.fly.dev/api/v1/map/players-playtime?fps=${fps}&limit=1000&offset=0&mapid=${mapData?.mapid}&ender=`)
-              .then(res => res.json())
-              .then(data => {
+          const promises = allFps.map((fps) =>
+            fetch(
+              jhApis({ fps, mapid: mapData?.mapid }).player.getPlayersPlayTime
+            )
+              .then((res) => res.json())
+              .then((data) => {
                 // Add FPS information to each player record
                 if (Array.isArray(data)) {
-                  return data.map(player => ({ ...player, fps }));
+                  return data.map((player) => ({ ...player, fps }));
                 }
                 return [];
               })
-              .catch(err => {
+              .catch((err) => {
                 console.warn(`Error fetching players for ${fps} FPS:`, err);
                 return [];
               })
           );
-          
+
           const results = await Promise.all(promises);
           const combinedData = results
-            .filter(result => Array.isArray(result))
+            .filter((result) => Array.isArray(result))
             .flat()
-            .filter(player => player && typeof player === 'object' && player.player_id && player.time_played !== null && player.time_played !== undefined);
-          
+            .filter(
+              (player) =>
+                player &&
+                typeof player === "object" &&
+                player.player_id &&
+                player.time_played !== null &&
+                player.time_played !== undefined
+            );
+
           // Group by player and sum playtime, preserving FPS information
           const playerMap = new Map();
-          combinedData.forEach(player => {
+          combinedData.forEach((player) => {
             const key = player.player_id;
             if (playerMap.has(key)) {
               const existingPlayer = playerMap.get(key);
@@ -272,18 +286,19 @@ const MapDetailPage = ({ cpid }) => {
                 existingPlayer.fps_list.push(player.fps);
               }
             } else {
-              playerMap.set(key, { 
-                ...player, 
-                fps_list: [player.fps] 
+              playerMap.set(key, {
+                ...player,
+                fps_list: [player.fps],
               });
             }
           });
-          
-          const allData = Array.from(playerMap.values())
-            .sort((a, b) => b.time_played - a.time_played);
-          
+
+          const allData = Array.from(playerMap.values()).sort(
+            (a, b) => b.time_played - a.time_played
+          );
+
           setAllPlayersData(allData);
-          
+
           // Show first page
           const firstPage = allData.slice(0, ITEMS_PER_PAGE);
           setPlayersData(firstPage);
@@ -294,8 +309,8 @@ const MapDetailPage = ({ cpid }) => {
           const startIndex = displayedPlayersCount;
           const endIndex = startIndex + ITEMS_PER_PAGE;
           const nextPage = allPlayersData.slice(startIndex, endIndex);
-          
-          setPlayersData(prev => [...(prev || []), ...nextPage]);
+
+          setPlayersData((prev) => [...(prev || []), ...nextPage]);
           setHasMorePlayers(endIndex < allPlayersData.length);
           setDisplayedPlayersCount(endIndex);
         }
@@ -303,15 +318,16 @@ const MapDetailPage = ({ cpid }) => {
         // Mix FPS - use fps=0 in API call
         if (!isLoadMore) {
           // First time loading - fetch all data for mix FPS
-          console.log('Fetching all players for mix FPS (fps=0):', selectedFps);
+          console.log("Fetching all players for mix FPS (fps=0):", selectedFps);
           const response = await fetch(
-            `https://jhstats.fly.dev/api/v1/map/players-playtime?fps=0&limit=1000&offset=0&mapid=${mapData?.mapid}&ender=`
+            jhApis({ fps: "0", mapid: mapData?.mapid }).player
+              .getPlayersPlayTime
           );
           const data = await response.json();
-          console.log('Received data:', data.length, 'items');
-          
+          console.log("Received data:", data.length, "items");
+
           setAllPlayersData(data);
-          
+
           // Show first page
           const firstPage = data.slice(0, ITEMS_PER_PAGE);
           setPlayersData(firstPage);
@@ -322,8 +338,8 @@ const MapDetailPage = ({ cpid }) => {
           const startIndex = displayedPlayersCount;
           const endIndex = startIndex + ITEMS_PER_PAGE;
           const nextPage = allPlayersData.slice(startIndex, endIndex);
-          
-          setPlayersData(prev => [...(prev || []), ...nextPage]);
+
+          setPlayersData((prev) => [...(prev || []), ...nextPage]);
           setHasMorePlayers(endIndex < allPlayersData.length);
           setDisplayedPlayersCount(endIndex);
         }
@@ -331,15 +347,16 @@ const MapDetailPage = ({ cpid }) => {
         // Single FPS - fetch all data and paginate client-side
         if (!isLoadMore) {
           // First time loading - fetch all data for this FPS
-          console.log('Fetching all players for individual FPS:', selectedFps);
+          console.log("Fetching all players for individual FPS:", selectedFps);
           const response = await fetch(
-            `https://jhstats.fly.dev/api/v1/map/players-playtime?fps=${selectedFps}&limit=1000&offset=0&mapid=${mapData?.mapid}&ender=`
+            jhApis({ fps: selectedFps, mapid: mapData?.mapid }).player
+              .getPlayersPlayTime
           );
           const data = await response.json();
-          console.log('Received data:', data.length, 'items');
-          
+          console.log("Received data:", data.length, "items");
+
           setAllPlayersData(data);
-          
+
           // Show first page
           const firstPage = data.slice(0, ITEMS_PER_PAGE);
           setPlayersData(firstPage);
@@ -350,8 +367,8 @@ const MapDetailPage = ({ cpid }) => {
           const startIndex = displayedPlayersCount;
           const endIndex = startIndex + ITEMS_PER_PAGE;
           const nextPage = allPlayersData.slice(startIndex, endIndex);
-          
-          setPlayersData(prev => [...(prev || []), ...nextPage]);
+
+          setPlayersData((prev) => [...(prev || []), ...nextPage]);
           setHasMorePlayers(endIndex < allPlayersData.length);
           setDisplayedPlayersCount(endIndex);
         }
@@ -438,11 +455,16 @@ const MapDetailPage = ({ cpid }) => {
 
   // Infinite scroll effect for players
   useEffect(() => {
-    if (activeTab !== "players" || !playersData || playersData.length === 0) return;
+    if (activeTab !== "players" || !playersData || playersData.length === 0)
+      return;
 
     const playersObserver = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && hasMorePlayers && !loadingMorePlayers) {
+        if (
+          entries[0].isIntersecting &&
+          hasMorePlayers &&
+          !loadingMorePlayers
+        ) {
           loadMorePlayers();
         }
       },
@@ -464,7 +486,6 @@ const MapDetailPage = ({ cpid }) => {
     };
   }, [hasMorePlayers, loadingMorePlayers, activeTab, playersData]);
 
-
   if (loading) {
     return (
       <main className={s.mapDetailPage}>
@@ -485,10 +506,7 @@ const MapDetailPage = ({ cpid }) => {
           <div className={s.errorContainer}>
             <h2>Map Not Found</h2>
             <p>The requested map could not be found.</p>
-            <button 
-              className={s.backButton}
-              onClick={() => router.back()}
-            >
+            <button className={s.backButton} onClick={() => router.back()}>
               Go Back
             </button>
           </div>
@@ -500,41 +518,42 @@ const MapDetailPage = ({ cpid }) => {
   return (
     <main className={s.mapDetailPage}>
       <div className="container">
-        <MapDetailHeader 
-          mapData={mapData}
-          onBack={() => router.back()}
-        />
-        
+        <MapDetailHeader mapData={mapData} onBack={() => router.back()} />
+
         <div className={s.contentGrid}>
           <div className={s.leftColumn}>
-            <MapDetailInfo 
+            <MapDetailInfo
               mapData={mapData}
               selectedFps={selectedFps}
               onFpsChange={handleFpsChange}
               fpsOptions={fpsOptions}
             />
           </div>
-          
+
           <div className={s.rightColumn}>
             <div className={s.tabContainer}>
               <div className={s.tabNavigation}>
                 <button
-                  className={`${s.tabButton} ${activeTab === "tops" ? s.active : ""}`}
+                  className={`${s.tabButton} ${
+                    activeTab === "tops" ? s.active : ""
+                  }`}
                   onClick={() => handleTabChange("tops")}
                 >
                   Top Runs
                 </button>
                 <button
-                  className={`${s.tabButton} ${activeTab === "players" ? s.active : ""}`}
+                  className={`${s.tabButton} ${
+                    activeTab === "players" ? s.active : ""
+                  }`}
                   onClick={() => handleTabChange("players")}
                 >
                   Most Played
                 </button>
               </div>
-              
+
               <div className={s.tabContent}>
                 {activeTab === "tops" && (
-                  <MapDetailTops 
+                  <MapDetailTops
                     topsData={topsData}
                     selectedFps={selectedFps}
                     loading={loadingTops}
@@ -546,9 +565,9 @@ const MapDetailPage = ({ cpid }) => {
                     allData={allTopsData}
                   />
                 )}
-                
+
                 {activeTab === "players" && (
-                  <MapDetailPlayers 
+                  <MapDetailPlayers
                     playersData={playersData}
                     selectedFps={selectedFps}
                     loading={loadingPlayers}

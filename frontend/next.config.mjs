@@ -1,10 +1,12 @@
+import { API_URL } from "@/Api/jumpersHeaven";
+
 const nextConfig = {
   devIndicators: false,
   async rewrites() {
     return [
       {
-        source: '/api/localhost/:path*',
-        destination: 'https://jhstats.fly.dev/api/v1/:path*',
+        source: "/api/localhost/:path*",
+        destination: `${API_URL}/:path*`,
       },
     ];
   },
