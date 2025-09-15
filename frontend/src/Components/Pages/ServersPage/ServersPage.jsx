@@ -9,7 +9,6 @@ const ServersPage = () => {
   const [servers, setServers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [tooltip, setTooltip] = useState({ show: false, text: "", x: 0, y: 0 });
 
   useEffect(() => {
     const fetchServers = async () => {
@@ -32,20 +31,6 @@ const ServersPage = () => {
     if (!online) return "Offline";
     if (playerCount === 0) return "Empty";
     return `${playerCount} player${playerCount !== 1 ? "s" : ""}`;
-  };
-
-  const showTooltip = (e, text) => {
-    const rect = e.target.getBoundingClientRect();
-    setTooltip({
-      show: true,
-      text,
-      x: rect.left + rect.width / 2,
-      y: rect.top - 40,
-    });
-  };
-
-  const hideTooltip = () => {
-    setTooltip({ show: false, text: "", x: 0, y: 0 });
   };
 
   if (loading) {
@@ -80,19 +65,6 @@ const ServersPage = () => {
       </div>
 
       <AllServers servers={servers} />
-
-      {/* Custom Tooltip */}
-      {tooltip.show && (
-        <div
-          className={s.customTooltip}
-          style={{
-            left: tooltip.x,
-            top: tooltip.y,
-          }}
-        >
-          {tooltip.text}
-        </div>
-      )}
     </div>
   );
 };
