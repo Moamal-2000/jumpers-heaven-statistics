@@ -1,4 +1,4 @@
-import { API_URL } from "@/Api/jumpersHeaven";
+import { API_URL } from "./src/Api/jumpersHeaven.js";
 
 const nextConfig = {
   devIndicators: false,
