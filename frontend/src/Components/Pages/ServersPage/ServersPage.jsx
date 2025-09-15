@@ -27,9 +27,6 @@ const ServersPage = () => {
     };
 
     fetchServers();
-    // Refresh every 30 seconds
-    const interval = setInterval(fetchServers, 30000);
-    return () => clearInterval(interval);
   }, []);
 
   const getCountryFlag = (domain) => {
