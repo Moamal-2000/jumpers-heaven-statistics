@@ -10,29 +10,28 @@ export const jhApis = ({
   cpid = 14606,
   sort = "admin",
 }) => {
-  // Use fps=0 for mix queries
-  const fpsParam = fps === "mix" ? 0 : fps;
+  fps = fps === "mix" ? 0 : fps;
 
   return {
     map: {
       getAllMaps: generateUrl("/map/all"),
       getMapsCount: generateUrl("/map/count"),
-      getTops: generateUrl("/map/tops", { cpid, fps: fpsParam, limit }),
+      getTops: generateUrl("/map/tops", { cpid, fps, limit }),
     },
     player: {
       getAll: generateUrl("/player/all", { sort }),
-      getAllTops: generateUrl("/player/all-tops", { fps: fpsParam, limit }),
-      getTops: generateUrl("/player/tops", { fps: fpsParam, playerid, limit }),
-      getJumpScores: generateUrl("/player/jump-scores", { fps: fpsParam, playerid }),
+      getAllTops: generateUrl("/player/all-tops", { fps, limit }),
+      getTops: generateUrl("/player/tops", { fps, playerid, limit }),
+      getJumpScores: generateUrl("/player/jump-scores", { fps, playerid }),
       getIdFromName: generateUrl("/player/id-from-name", { name, limit }),
       getOnlinePlayers: generateUrl("/tracker/online-players"),
-      getPlayersPlayTime: generateUrl("/map/players-playtime", { fps: fpsParam, limit, mapid }),
+      getPlayersPlayTime: generateUrl("/map/players-playtime", { fps, limit, mapid }),
     },
     leaderboard: {
-      getSkilledLeaderboard: generateUrl("/leaderboard/jump-skill", { fps: fpsParam }),
-      getSpeedRunLeaderboard: generateUrl("/leaderboard/speed-skill", { fps: fpsParam }),
-      getDefragLeaderboard: generateUrl("/leaderboard/defrag-skill", { fps: fpsParam }),
-      getSurfLeaderboard: generateUrl("/leaderboard/surf-skill", { fps: fpsParam }),
+      getSkilledLeaderboard: generateUrl("/leaderboard/jump-skill", { fps }),
+      getSpeedRunLeaderboard: generateUrl("/leaderboard/speed-skill", { fps }),
+      getDefragLeaderboard: generateUrl("/leaderboard/defrag-skill", { fps }),
+      getSurfLeaderboard: generateUrl("/leaderboard/surf-skill", { fps }),
       getRoutesCompletedLeaderboard: generateUrl("/leaderboard/howmany"),
     },
   };
