@@ -1,4 +1,4 @@
-import ToolTip from "@/Components/Shared/ToolTip/ToolTip";
+import ToolTip from "@/Components/Pages/ServersPage/AllServers/ToolTip/ToolTip";
 import { getColoredName } from "@/Functions/components";
 import Image from "next/image";
 import s from "./AllServers.module.scss";
