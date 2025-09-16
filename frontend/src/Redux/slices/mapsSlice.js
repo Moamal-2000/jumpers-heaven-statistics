@@ -1,4 +1,4 @@
-import { getFilteredMaps, getSortedMaps } from "@/Functions/filters";
+import { getFilteredMaps } from "@/Functions/filters";
 import { modifyMapsData, paginateData } from "@/Functions/utils";
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchMaps } from "../thunks/mapsThunk";
@@ -6,25 +6,30 @@ import { fetchMaps } from "../thunks/mapsThunk";
 // Sorting function for maps
 const sortMaps = (maps, sortBy) => {
   if (!maps || maps.length === 0) return maps;
-  
+
   const sortedMaps = [...maps];
-  
+
   switch (sortBy) {
     case "newest":
-      return sortedMaps.sort((a, b) => new Date(b.Released) - new Date(a.Released));
-    
+      return sortedMaps.sort(
+        (a, b) => new Date(b.Released) - new Date(a.Released)
+      );
+
     case "oldest":
-      return sortedMaps.sort((a, b) => new Date(a.Released) - new Date(b.Released));
-    
-    
-    
+      return sortedMaps.sort(
+        (a, b) => new Date(a.Released) - new Date(b.Released)
+      );
+
     case "name-a-z":
-      return sortedMaps.sort((a, b) => (a.Name || "").localeCompare(b.Name || ""));
-    
+      return sortedMaps.sort((a, b) =>
+        (a.Name || "").localeCompare(b.Name || "")
+      );
+
     case "name-z-a":
-      return sortedMaps.sort((a, b) => (b.Name || "").localeCompare(a.Name || ""));
-    
-    
+      return sortedMaps.sort((a, b) =>
+        (b.Name || "").localeCompare(a.Name || "")
+      );
+
     case "43-difficulty":
       return sortedMaps.sort((a, b) => {
         const difficultyA = a.Difficulty?.[43]?.Difficulty ?? -1;
@@ -35,7 +40,7 @@ const sortMaps = (maps, sortBy) => {
         if (difficultyB < 0) return -1;
         return difficultyB - difficultyA; // Higher to lower
       });
-    
+
     case "76-difficulty":
       return sortedMaps.sort((a, b) => {
         const difficultyA = a.Difficulty?.[76]?.Difficulty ?? -1;
@@ -46,7 +51,7 @@ const sortMaps = (maps, sortBy) => {
         if (difficultyB < 0) return -1;
         return difficultyB - difficultyA; // Higher to lower
       });
-    
+
     case "125-difficulty":
       return sortedMaps.sort((a, b) => {
         const difficultyA = a.Difficulty?.[125]?.Difficulty ?? -1;
@@ -57,7 +62,7 @@ const sortMaps = (maps, sortBy) => {
         if (difficultyB < 0) return -1;
         return difficultyB - difficultyA; // Higher to lower
       });
-    
+
     case "250-difficulty":
       return sortedMaps.sort((a, b) => {
         const difficultyA = a.Difficulty?.[250]?.Difficulty ?? -1;
@@ -68,7 +73,7 @@ const sortMaps = (maps, sortBy) => {
         if (difficultyB < 0) return -1;
         return difficultyB - difficultyA; // Higher to lower
       });
-    
+
     case "333-difficulty":
       return sortedMaps.sort((a, b) => {
         const difficultyA = a.Difficulty?.[333]?.Difficulty ?? -1;
@@ -79,7 +84,7 @@ const sortMaps = (maps, sortBy) => {
         if (difficultyB < 0) return -1;
         return difficultyB - difficultyA; // Higher to lower
       });
-    
+
     default:
       return sortedMaps;
   }
@@ -141,7 +146,7 @@ export const mapsSlice = createSlice({
         const { mapsData, paramsObject } = payload;
         const filteredMapsData = getFilteredMaps(mapsData, paramsObject);
         const modifiedMapsData = modifyMapsData(filteredMapsData);
-        
+
         // Apply sorting using the current sortBy state
         const sortedMapsData = sortMaps(modifiedMapsData, state.sortBy);
         const paginationMaps = paginateData(sortedMapsData, 1);
@@ -161,5 +166,11 @@ export const mapsSlice = createSlice({
   },
 });
 
-export const { updateMapsState, setSearchTerm, setFilteredMaps, clearSearch, setSortBy } = mapsSlice.actions;
+export const {
+  updateMapsState,
+  setSearchTerm,
+  setFilteredMaps,
+  clearSearch,
+  setSortBy,
+} = mapsSlice.actions;
 export default mapsSlice.reducer;

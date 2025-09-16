@@ -1,13 +1,19 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import {
+  clearSearch,
+  setFilteredMaps,
+  setSearchTerm,
+} from "@/Redux/slices/mapsSlice";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearchTerm, setFilteredMaps, clearSearch } from "@/Redux/slices/mapsSlice";
 import s from "./SearchSection.module.scss";
 
 const SearchSection = () => {
   const dispatch = useDispatch();
-  const { mapsData, searchTerm, filteredMaps } = useSelector((state) => state.maps);
+  const { mapsData, searchTerm, filteredMaps } = useSelector(
+    (state) => state.maps
+  );
   const [isSearching, setIsSearching] = useState(false);
   const inputRef = useRef(null);
   const searchTimeoutRef = useRef(null);
@@ -20,12 +26,12 @@ const SearchSection = () => {
     }
 
     setIsSearching(true);
-    
+
     // Small delay to show loading state
     setTimeout(() => {
       const searchLower = searchValue.toLowerCase();
       // Search through maps by name
-      const filtered = mapsData.filter(map => 
+      const filtered = mapsData.filter((map) =>
         map.Name?.toLowerCase().includes(searchLower)
       );
       dispatch(setFilteredMaps(filtered));
@@ -36,12 +42,12 @@ const SearchSection = () => {
 
   const handleSearchInput = (e) => {
     const inputValue = e.target.value;
-    
+
     // Clear previous timeout
     if (searchTimeoutRef.current) {
       clearTimeout(searchTimeoutRef.current);
     }
-    
+
     // Set new timeout for debounced search
     searchTimeoutRef.current = setTimeout(() => {
       performSearch(inputValue);
@@ -52,12 +58,12 @@ const SearchSection = () => {
     if (inputRef.current) {
       inputRef.current.value = ""; // Clear input immediately
     }
-    
+
     // Clear any pending search timeout
     if (searchTimeoutRef.current) {
       clearTimeout(searchTimeoutRef.current);
     }
-    
+
     dispatch(clearSearch());
     setIsSearching(false);
   };
@@ -91,16 +97,19 @@ const SearchSection = () => {
           className={s.clearButton}
           title="Clear search"
         >
-          ×
+          x
         </button>
       </div>
-      
+
       <div className={s.searchResults}>
         <p className={s.resultsText}>
-          {searchTerm 
-            ? `${filteredMaps.length} map${filteredMaps.length !== 1 ? 's' : ''} found`
-            : `${mapsData.length} map${mapsData.length !== 1 ? 's' : ''} available`
-          }
+          {searchTerm
+            ? `${filteredMaps.length} map${
+                filteredMaps.length !== 1 ? "s" : ""
+              } found`
+            : `${mapsData.length} map${
+                mapsData.length !== 1 ? "s" : ""
+              } available`}
         </p>
       </div>
     </div>
