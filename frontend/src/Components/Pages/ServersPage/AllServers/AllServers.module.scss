@@ -90,6 +90,12 @@
   background: #1f2937;
   border: solid 2px transparent;
   cursor: help;
+  position: relative;
+}
+
+.serverStatusIndicator:hover [data-tooltip] {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .statusDot {

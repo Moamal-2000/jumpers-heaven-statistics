@@ -1,3 +1,4 @@
+import ToolTip from "@/Components/Shared/ToolTip/ToolTip";
 import { getColoredName } from "@/Functions/components";
 import Image from "next/image";
 import s from "./AllServers.module.scss";
@@ -62,12 +63,17 @@ const AllServers = ({ servers }) => {
                   borderColor: getServerStatusColor(server.online),
                 }}
               >
-                <div
+                <span
                   className={s.statusDot}
                   style={{
                     backgroundColor: getServerStatusColor(server.online),
                   }}
-                ></div>
+                />
+                <ToolTip>
+                  {server.online
+                    ? `Online - ${server.player_count || 0} players`
+                    : "Offline"}
+                </ToolTip>
               </div>
             </header>
 
