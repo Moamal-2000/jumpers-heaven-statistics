@@ -28,9 +28,9 @@ const LeaderBoard = () => {
   const collapseClass = isLeaderboardExpanded ? "" : s.collapse;
 
   const leaderboardType = searchParams.get("leaderboard");
-  const isRoutesCompletedLeaderboard = leaderboardType === "routescompleted";
+  const isRoutesCompleted = leaderboardType === "routescompleted";
   const leaderboardClasses = `${s.leaderBoard} ${
-    isRoutesCompletedLeaderboard ? s.routesCompleted : ""
+    isRoutesCompleted ? s.routesCompleted : ""
   }`;
 
   const [lastPlayerRef, paginationNumber, setPaginationNumber] =

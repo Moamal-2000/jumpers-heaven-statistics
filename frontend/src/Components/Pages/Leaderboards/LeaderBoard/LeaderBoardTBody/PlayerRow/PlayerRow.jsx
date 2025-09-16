@@ -11,7 +11,7 @@ const PlayerRow = ({ playerData, leaderboardData, lastPlayerRef, index }) => {
   const modifiedRank = getModifiedRank(Rank);
   const ref = leaderboardData.length === index + 1 ? lastPlayerRef : null;
   const searchParams = useSearchParams();
-  const isRoutesCompletedLeaderboard =
+  const isRoutesCompleted =
     searchParams.get("leaderboard") === "routescompleted";
 
   return (
@@ -30,7 +30,7 @@ const PlayerRow = ({ playerData, leaderboardData, lastPlayerRef, index }) => {
         {Score}
       </td>
 
-      {!isRoutesCompletedLeaderboard && (
+      {!isRoutesCompleted && (
         <TopsCell topList={TopList} leaderboardData={leaderboardData} />
       )}
     </tr>
