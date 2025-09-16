@@ -4,6 +4,7 @@ import { jhApis } from "@/Api/jumpersHeaven";
 import { useEffect, useState } from "react";
 import AllServers from "./AllServers/AllServers";
 import s from "./ServersPage.module.scss";
+import ServersHeader from "./ServersHeader/ServersHeader";
 
 const ServersPage = () => {
   const [servers, setServers] = useState([]);
@@ -57,13 +58,7 @@ const ServersPage = () => {
 
   return (
     <div className={s.serverDisplay}>
-      <div className={s.header}>
-        <h2>Server Status</h2>
-        <p className={s.subtitle}>
-          Real-time server information and online players
-        </p>
-      </div>
-
+      <ServersHeader />
       <AllServers servers={servers} />
     </div>
   );
