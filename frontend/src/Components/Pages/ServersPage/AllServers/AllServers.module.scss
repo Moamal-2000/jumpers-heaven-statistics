@@ -1,3 +1,5 @@
+@use "@/Styles/mixins" as m;
+
 .gameSection {
   margin-bottom: 24px;
 }
@@ -5,18 +7,30 @@
 .serversGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1.5rem;
+  gap: 24px;
   padding-top: 4px;
 }
 
+@include m.small {
+  .serversGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 .serverCard {
-  background: linear-gradient(135deg, #374151 0%, #2d3748 100%);
   background: linear-gradient(95deg, #5d583e 0%, #3B3829 100%);
   border-radius: 16px;
   border: 2px solid #3B3829;
   padding: 24px;
   transition: border-color .3s ease;
   min-height: 360px;
+}
+
+@include m.small {
+  .serverCard {
+    padding: 18px;
+  }
 }
 
 .serversGrid.cod4Card .serverCard {
@@ -39,7 +53,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-bottom: .75rem;
+  padding-bottom: 12px;
   border-bottom: 1px solid #b9c3d4;
   gap: 12px;
 }
@@ -48,7 +62,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 4px;
 }
 
 .domainInfo {
@@ -64,20 +78,20 @@
 
 .serverIp {
   color: #dbdee4;
-  font-size: 0.85rem;
+  font-size: .85rem;
   font-family: 'Courier New', monospace;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 4px;
+}
 
-  &::before {
-    content: '';
-    width: 4px;
-    height: 4px;
-    background: #dbdee4;
-    border-radius: 50%;
-    margin-right: 0.25rem;
-  }
+.serverIp::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: #dbdee4;
+  border-radius: 50%;
+  margin-right: 0.25rem;
 }
 
 .serverStatusIndicator {
@@ -86,11 +100,18 @@
   justify-content: center;
   width: 18px;
   height: 18px;
+  margin-top: 5px;
   border-radius: 50%;
   background: #1f2937;
   border: solid 2px transparent;
   cursor: help;
   position: relative;
+}
+
+@media (max-width: 360px) {
+  .serverStatusIndicator {
+    display: none;
+  }
 }
 
 .serverStatusIndicator:hover [data-tooltip] {
@@ -115,47 +136,47 @@
   align-items: center;
   justify-content: space-between;
   gap: 8px;
+}
 
-  .mapLabel {
-    color: #b3bac6;
-    font-size: .85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-  }
+.mapInfo .mapLabel {
+  color: #b3bac6;
+  font-size: .85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
 
-  .mapName {
+.mapInfo .mapName {
+  color: #facc15;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #facc15, #eab308);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  /* Fallback for browsers that don't support background-clip */
+  @supports not (background-clip: text) {
     color: #facc15;
-    font-size: 1rem;
-    font-weight: 600;
-    background: linear-gradient(135deg, #facc15, #eab308);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-
-    /* Fallback for browsers that don't support background-clip */
-    @supports not (background-clip: text) {
-      color: #facc15;
-      background: none;
-      -webkit-text-fill-color: initial;
-    }
+    background: none;
+    -webkit-text-fill-color: initial;
   }
 }
 
 .statusText {
   color: #f9fafb;
-  font-size: 0.9rem;
+  font-size: .9rem;
   font-weight: 600;
 }
 
 .playersSection {
-  margin-top: 0.5rem;
+  margin-top: 8px;
 }
 
 .playersList {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 8px;
   max-height: 200px;
   overflow-y: auto;
 }
@@ -168,7 +189,7 @@
 
 .playerName {
   color: #f9fafb;
-  font-size: 0.85rem;
+  font-size: .85rem;
   font-weight: 500;
   flex: 1;
   overflow: hidden;
@@ -185,27 +206,27 @@
 
 .playerPing {
   color: #10b981;
-  font-size: 0.75rem;
+  font-size: .75rem;
   font-weight: 600;
-  background: rgba(16, 185, 129, 0.1);
-  padding: 0.25rem 0.5rem;
+  background: rgba(16, 185, 129, .1);
+  padding: 4px 8px;
   border-radius: 4px;
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, .2);
 }
 
 .playerAdminLevel {
   color: #facc15;
-  font-size: 0.75rem;
+  font-size: .75rem;
   font-weight: 700;
-  background: rgba(250, 204, 21, 0.15);
-  padding: 0.2rem 0.4rem;
+  background: rgba(250, 204, 21, .15);
+  padding: 3px 6px;
   border-radius: 3px;
-  border: 1px solid rgba(250, 204, 21, 0.3);
+  border: 1px solid rgba(250, 204, 21, .3);
   cursor: help;
   position: relative;
 
   &:hover {
-    background: rgba(250, 204, 21, 0.25);
-    border-color: rgba(250, 204, 21, 0.5);
+    background: rgba(250, 204, 21, .25);
+    border-color: rgba(250, 204, 21, .5);
   }
 }

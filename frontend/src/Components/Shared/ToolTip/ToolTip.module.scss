@@ -15,3 +15,17 @@
   pointer-events: none;
   opacity: 0;
 }
+
+@media (max-width: 1320px) {
+  .customTooltip {
+    left: calc(50% - 14px);
+  }
+}
+
+@media (max-width: 768px) {
+  .customTooltip {
+    left: -128px;
+    bottom: -10px;
+    translate: 0;
+  }
+}

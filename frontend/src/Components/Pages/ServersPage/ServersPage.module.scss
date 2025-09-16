@@ -1,5 +1,5 @@
 .serverDisplay {
-  margin-bottom: 3rem;
+  margin-bottom: 48px;
 }
 
 .loadingContainer {
@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
+  padding: 48px;
   text-align: center;
 
   .loadingSpinner {
@@ -17,7 +17,7 @@
     border-top: 4px solid #facc15;
     border-radius: 50%;
     animation: spin 1s linear infinite;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
   }
 
   p {
@@ -28,65 +28,28 @@
 
 @keyframes spin {
   0% {
-    transform: rotate(0deg);
+    rotate: 0deg;
   }
 
   100% {
-    transform: rotate(360deg);
+    rotate: 360deg;
   }
 }
 
 .errorContainer {
   text-align: center;
-  padding: 2rem;
+  padding: 32px;
   background: #374151;
   border-radius: 12px;
   border: 1px solid #4b5563;
 
   h3 {
     color: #ef4444;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
   }
 
   p {
     color: #9ca3af;
     margin: 0;
-  }
-}
-
-// Responsive design
-@media (max-width: 768px) {
-  .serversGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .serverCard {
-    padding: 1.25rem;
-  }
-
-  .countryFlag {
-    top: 1rem;
-    left: 1rem;
-
-    .flag {
-      width: 24px;
-      height: 18px;
-    }
-  }
-
-  .serverHeader {
-    padding-left: 2rem;
-  }
-
-  .playerItem {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .playerInfo {
-    width: 100%;
-    justify-content: space-between;
   }
 }
