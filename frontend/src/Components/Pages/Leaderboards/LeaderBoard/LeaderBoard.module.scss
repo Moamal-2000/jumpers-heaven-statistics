@@ -165,3 +165,7 @@
     width: 78px;
   }
 }
+
+.leaderBoard tbody tr td[data-header="Points per difficulty"]::before {
+  width: max-content;
+}
