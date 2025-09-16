@@ -138,7 +138,7 @@
 }
 
 @include m.medium {
-  .leaderBoard tr td:last-child::before {
+  .leaderBoard tr td:last-child:not([data-header="Completed routes"])::before {
     top: -10px;
     left: 50%;
     translate: -50% 0;
@@ -149,14 +149,19 @@
   .leaderBoard tr td {
     font-size: .9rem !important;
   }
-}
 
-@include m.small {
   .leaderBoard tr td::before {
     font-size: .8rem;
     top: 0;
     left: 40px;
     translate: -50% -2px;
     padding-bottom: 0;
+  }
+
+  .leaderBoard tr td[data-header="Completed routes"]::before {
+    padding: 0;
+    left: 55px;
+    top: 14px;
+    width: 78px;
   }
 }

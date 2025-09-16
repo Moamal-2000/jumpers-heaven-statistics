@@ -26,7 +26,10 @@ const PlayerRow = ({ playerData, leaderboardData, lastPlayerRef, index }) => {
         {(+Rating * 0.1).toFixed(2)}
       </td>
 
-      <td className={s.score} data-header="Points">
+      <td
+        className={s.score}
+        data-header={isRoutesCompleted ? "Completed routes" : "Points"}
+      >
         {Score}
       </td>
 
