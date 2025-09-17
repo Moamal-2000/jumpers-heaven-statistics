@@ -1,5 +1,11 @@
 @use "@/Styles/mixins" as m;
 
+.section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .sectionTitle {
   font-size: 1.75rem;
   font-weight: 700;
@@ -34,6 +40,7 @@
   border-radius: 6px;
   padding: 32px;
   position: relative;
+  flex: 1;
 }
 
 @include m.small {

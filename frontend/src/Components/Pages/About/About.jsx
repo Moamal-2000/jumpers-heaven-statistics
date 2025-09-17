@@ -80,29 +80,31 @@ const About = () => {
           </div>
         </AboutSection>
 
-        <AboutSection title="Community">
-          <p className={s.description}>
-            JH Stats serves the JumpersHeaven community by providing easy access
-            to player statistics, map completion records, and competitive
-            rankings. Whether you&apos;re a casual player or a competitive
-            jumper, our platform helps you track your progress and compare your
-            achievements with others.
-          </p>
-          <p className={s.description}>
-            We&apos;re committed to maintaining an accurate, up-to-date, and
-            user-friendly platform that enhances the JumpersHeaven gaming
-            experience.
-          </p>
-        </AboutSection>
+        <div className={s.wrapper}>
+          <AboutSection title="Community">
+            <p className={s.description}>
+              JH Stats serves the JumpersHeaven community by providing easy
+              access to player statistics, map completion records, and
+              competitive rankings. Whether you&apos;re a casual player or a
+              competitive jumper, our platform helps you track your progress and
+              compare your achievements with others.
+            </p>
+            <p className={s.description}>
+              We&apos;re committed to maintaining an accurate, up-to-date, and
+              user-friendly platform that enhances the JumpersHeaven gaming
+              experience.
+            </p>
+          </AboutSection>
 
-        <AboutSection title="Special Thanks">
-          <p className={s.description}>
-            Special thanks to <strong>Iznogod</strong> for creating the original
-            JumpersHeaven Call of Duty 2 mod and maintaining the servers.
-            Without his work and the database access he provided, this
-            leaderboard project would not have been possible.
-          </p>
-        </AboutSection>
+          <AboutSection title="Special Thanks">
+            <p className={s.description}>
+              Special thanks to <strong>Iznogod</strong> for creating the
+              original JumpersHeaven Call of Duty 2 mod and maintaining the
+              servers. Without his work and the database access he provided,
+              this leaderboard project would not have been possible.
+            </p>
+          </AboutSection>
+        </div>
       </div>
     </main>
   );
