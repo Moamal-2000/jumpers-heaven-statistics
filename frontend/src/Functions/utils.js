@@ -73,7 +73,6 @@ export function getIsLastPagination(data, paginationNumber) {
 
 export async function decodeAsyncData(response) {
   try {
-    // Check if response is valid
     if (!response || !response.ok) {
       console.warn(
         "Invalid response in decodeAsyncData:",
@@ -86,7 +85,6 @@ export async function decodeAsyncData(response) {
     const buffer = await response.arrayBuffer();
     const uint8Array = new Uint8Array(buffer);
 
-    // Check if buffer is empty or too small
     if (uint8Array.length === 0) {
       console.warn("Empty buffer received in decodeAsyncData");
       return null;
@@ -107,6 +105,7 @@ export function formateReleaseDate(dateStr) {
   const [year, month, day] = dateStr.split("-");
   return `${MONTHS[+month]} ${day}, ${year}`;
 }
+
 export function modifyMapsData(mapsData) {
   const now = Date.now();
   const dateBeforeMonth = now - 30 * 24 * 60 * 60 * 1000;
