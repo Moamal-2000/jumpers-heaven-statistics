@@ -1,7 +1,14 @@
 "use client";
 
 import { stripColorCodes } from "@/Functions/utils";
-import { loadMorePlayersAction, resetPagination, setIsLoadingMore, setSearchTerm, setSortBy, updatePlayersState } from "@/Redux/slices/playersSlice";
+import {
+  loadMorePlayersAction,
+  resetPagination,
+  setIsLoadingMore,
+  setSearchTerm,
+  setSortBy,
+  updatePlayersState,
+} from "@/Redux/slices/playersSlice";
 import { fetchAllPlayers } from "@/Redux/thunks/playersThunk";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,23 +16,26 @@ import PlayerCard from "./PlayerCard/PlayerCard";
 import s from "./Players.module.scss";
 
 const Players = () => {
-  const { 
-    playersData, 
-    filteredPlayers, 
-    loading, 
-    error, 
-    searchTerm, 
-    sortBy, 
-    displayedCount, 
-    hasMore, 
-    isLoadingMore 
+  const {
+    playersData,
+    filteredPlayers,
+    loading,
+    error,
+    searchTerm,
+    sortBy,
+    displayedCount,
+    hasMore,
+    isLoadingMore,
   } = useSelector((state) => state.players);
-  
+
   // Calculate how many players to display based on client-side pagination
   const effectiveDisplayedCount = displayedCount || 200; // Fallback to 200 if undefined
-  const playersToDisplay = searchTerm 
+  const playersToDisplay = searchTerm
     ? filteredPlayers // Show all filtered results when searching
-    : playersData.slice(0, Math.min(effectiveDisplayedCount, playersData.length)); // Show only the first displayedCount players when not searching
+    : playersData.slice(
+        0,
+        Math.min(effectiveDisplayedCount, playersData.length)
+      ); // Show only the first displayedCount players when not searching
 
   const dispatch = useDispatch();
   const [isSearching, setIsSearching] = useState(false);
@@ -48,29 +58,28 @@ const Players = () => {
     }
 
     setIsSearching(true);
-    
+
     // Small delay to show loading state
     setTimeout(() => {
       const searchLower = searchValue.toLowerCase();
       // Search through all loaded players using stripped names (without color codes)
-      const filtered = playersData.filter(player => 
+      const filtered = playersData.filter((player) =>
         stripColorCodes(player.name)?.toLowerCase().includes(searchLower)
       );
-      dispatch(updatePlayersState({ key: 'filteredPlayers', value: filtered }));
+      dispatch(updatePlayersState({ key: "filteredPlayers", value: filtered }));
       dispatch(setSearchTerm(searchValue));
       setIsSearching(false);
     }, 100);
   };
 
-
   const handleSearchInput = (e) => {
     const inputValue = e.target.value;
-    
+
     // Clear previous timeout
     if (searchTimeoutRef.current) {
       clearTimeout(searchTimeoutRef.current);
     }
-    
+
     // Set new timeout for debounced search
     searchTimeoutRef.current = setTimeout(() => {
       performSearch(inputValue);
@@ -88,12 +97,12 @@ const Players = () => {
     if (inputRef.current) {
       inputRef.current.value = ""; // Clear input immediately
     }
-    
+
     // Clear any pending search timeout
     if (searchTimeoutRef.current) {
       clearTimeout(searchTimeoutRef.current);
     }
-    
+
     dispatch(setSearchTerm(""));
     setIsSearching(false);
   };
@@ -154,11 +163,11 @@ const Players = () => {
       <div className={s.errorContainer}>
         <h2>Error Loading Players</h2>
         <p>Unable to fetch players data. Please try again later.</p>
-        <button 
+        <button
           onClick={() => {
             dispatch(resetPagination());
             dispatch(fetchAllPlayers({ sort: sortBy }));
-          }} 
+          }}
           className={s.retryButton}
         >
           Retry
@@ -173,10 +182,13 @@ const Players = () => {
         <div className={s.titleSection}>
           <h1 className={s.playersTitle}>Players</h1>
           <p className={s.playersSubtitle}>
-            {searchTerm 
-              ? `${filteredPlayers.length} player${filteredPlayers.length !== 1 ? 's' : ''} found`
-              : `${playersData.length} player${playersData.length !== 1 ? 's' : ''} found`
-            }
+            {searchTerm
+              ? `${filteredPlayers.length} player${
+                  filteredPlayers.length !== 1 ? "s" : ""
+                } found`
+              : `${playersData.length} player${
+                  playersData.length !== 1 ? "s" : ""
+                } found`}
           </p>
         </div>
       </div>
@@ -207,7 +219,7 @@ const Players = () => {
               </button>
             </div>
           </div>
-          
+
           <div className={s.filterGroup}>
             <label className={s.filterLabel}>Sort by</label>
             <select
@@ -222,19 +234,21 @@ const Players = () => {
           </div>
         </div>
       </div>
-      
+
       <section className={s.playersSection}>
         {playersToDisplay.length === 0 ? (
           <div className={s.noResults}>
             <h3>No players found</h3>
             <p>
-              {searchTerm 
-                ? `No players match "${searchTerm}"` 
-                : "No players available at the moment"
-              }
+              {searchTerm
+                ? `No players match "${searchTerm}"`
+                : "No players available at the moment"}
             </p>
             {searchTerm && (
-              <button onClick={handleClearSearch} className={s.clearSearchButton}>
+              <button
+                onClick={handleClearSearch}
+                className={s.clearSearchButton}
+              >
                 Clear search
               </button>
             )}
@@ -242,9 +256,13 @@ const Players = () => {
         ) : (
           <>
             {playersToDisplay.map((playerData, index) => (
-              <PlayerCard key={playerData.id} rank={index + 1} {...playerData} />
+              <PlayerCard
+                key={playerData.id}
+                rank={index + 1}
+                {...playerData}
+              />
             ))}
-            
+
             {/* Loading indicator for infinite scroll */}
             {isLoadingMore && (
               <div className={s.loadingMoreContainer}>
@@ -252,12 +270,12 @@ const Players = () => {
                 <p>Loading more players...</p>
               </div>
             )}
-            
+
             {/* Intersection observer target - only show when not searching */}
             {hasMore && !isLoadingMore && !searchTerm && (
               <div ref={loadMoreRef} className={s.loadMoreTrigger} />
             )}
-            
+
             {/* End of results message - only show when not searching */}
             {!hasMore && playersToDisplay.length > 0 && !searchTerm && (
               <div className={s.endOfResults}>

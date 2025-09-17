@@ -1,15 +1,28 @@
-import s from "./MapDetailTops.module.scss";
 import { getColoredName } from "@/Functions/components";
 import { useRouter } from "next/navigation";
+import s from "./MapDetailTops.module.scss";
 
-const MapDetailTops = ({ topsData, selectedFps, loading, loadingMore, hasMore, loadMoreRef, showingAll, onShowAll, allData }) => {
+const MapDetailTops = ({
+  topsData,
+  selectedFps,
+  loading,
+  loadingMore,
+  hasMore,
+  loadMoreRef,
+  showingAll,
+  onShowAll,
+  allData,
+}) => {
   const router = useRouter();
-  
+
   if (loading) {
     return (
       <div className={s.topsCard}>
         <div className={s.cardHeader}>
-          <h2>Top Runs {selectedFps === "All" ? "(All FPS)" : `(${selectedFps} FPS)`}</h2>
+          <h2>
+            Top Runs{" "}
+            {selectedFps === "All" ? "(All FPS)" : `(${selectedFps} FPS)`}
+          </h2>
         </div>
         <div className={s.loading}>
           <div className={s.spinner}></div>
@@ -23,7 +36,10 @@ const MapDetailTops = ({ topsData, selectedFps, loading, loadingMore, hasMore, l
     return (
       <div className={s.topsCard}>
         <div className={s.cardHeader}>
-          <h2>Top Runs {selectedFps === "All" ? "(All FPS)" : `(${selectedFps} FPS)`}</h2>
+          <h2>
+            Top Runs{" "}
+            {selectedFps === "All" ? "(All FPS)" : `(${selectedFps} FPS)`}
+          </h2>
         </div>
         <div className={s.noData}>
           <p>No runs available for {selectedFps} FPS</p>
@@ -35,41 +51,39 @@ const MapDetailTops = ({ topsData, selectedFps, loading, loadingMore, hasMore, l
   return (
     <div className={s.topsCard}>
       <div className={s.cardHeader}>
-        <h2>Top Runs {selectedFps === "All" ? "(All FPS)" : `(${selectedFps} FPS)`}</h2>
+        <h2>
+          Top Runs{" "}
+          {selectedFps === "All" ? "(All FPS)" : `(${selectedFps} FPS)`}
+        </h2>
         <div className={s.headerActions}>
           <span className={s.totalRuns}>
-            {selectedFps === "All" ? "Combined runs" : `${topsData[0]?.totalNr || 0} total runs`}
+            {selectedFps === "All"
+              ? "Combined runs"
+              : `${topsData[0]?.totalNr || 0} total runs`}
           </span>
           {!showingAll && allData && allData.length > topsData.length && (
-            <button 
-              className={s.showAllButton}
-              onClick={onShowAll}
-            >
+            <button className={s.showAllButton} onClick={onShowAll}>
               Show All ({allData.length})
             </button>
           )}
         </div>
       </div>
-      
+
       <div className={s.topsList}>
         {topsData.map((run, index) => (
-          <div 
-            key={`${run.run_id}-${index}`} 
+          <div
+            key={`${run.run_id}-${index}`}
             className={s.topRun}
             onClick={() => router.push(`/player/${run.player_id}`)}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: "pointer" }}
           >
-            <div className={s.rank}>
-              #{index + 1}
-            </div>
-            
+            <div className={s.rank}>#{index + 1}</div>
+
             <div className={s.playerInfo}>
               <div className={s.playerName}>
                 <span>{getColoredName(run.playername)}</span>
                 {selectedFps === "All" && run.fps && (
-                  <span className={s.fpsDisplay}>
-                    {run.fps} FPS
-                  </span>
+                  <span className={s.fpsDisplay}>{run.fps} FPS</span>
                 )}
               </div>
               <div className={s.runDetails}>
@@ -80,7 +94,7 @@ const MapDetailTops = ({ topsData, selectedFps, loading, loadingMore, hasMore, l
                 </span>
               </div>
             </div>
-            
+
             <div className={s.stats}>
               <div className={s.stat}>
                 <span className={s.statLabel}>Loads</span>
@@ -100,7 +114,7 @@ const MapDetailTops = ({ topsData, selectedFps, loading, loadingMore, hasMore, l
           </div>
         ))}
       </div>
-      
+
       {hasMore && (
         <div ref={loadMoreRef} className={s.loadMoreContainer}>
           {loadingMore ? (

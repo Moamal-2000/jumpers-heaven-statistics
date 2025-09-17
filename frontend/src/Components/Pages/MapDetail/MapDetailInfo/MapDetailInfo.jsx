@@ -6,7 +6,7 @@ const MapDetailInfo = ({ mapData, selectedFps, onFpsChange, fpsOptions }) => {
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+    return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
   };
 
   const getDifficultyValue = (fps) => {
@@ -33,7 +33,9 @@ const MapDetailInfo = ({ mapData, selectedFps, onFpsChange, fpsOptions }) => {
             {fpsOptions.map((fps) => (
               <button
                 key={fps}
-                className={`${s.fpsButton} ${selectedFps === fps ? s.active : ""}`}
+                className={`${s.fpsButton} ${
+                  selectedFps === fps ? s.active : ""
+                }`}
                 onClick={() => onFpsChange(fps)}
               >
                 {fps === "mix" ? "Mixed" : fps}
@@ -45,11 +47,13 @@ const MapDetailInfo = ({ mapData, selectedFps, onFpsChange, fpsOptions }) => {
 
       <div className={s.difficultySection}>
         <h3>Difficulty</h3>
-        {fpsOptions.some(fps => getDifficultyValue(fps) !== "?") ? (
+        {fpsOptions.some((fps) => getDifficultyValue(fps) !== "?") ? (
           <div className={s.difficultyGrid}>
             {fpsOptions.map((fps) => (
               <div key={fps} className={s.difficultyItem}>
-                <span className={s.fpsLabel}>{fps === "mix" ? "Mixed" : fps} FPS</span>
+                <span className={s.fpsLabel}>
+                  {fps === "mix" ? "Mixed" : fps} FPS
+                </span>
                 <span className={s.difficultyValue}>
                   {getDifficultyValue(fps)}
                 </span>
@@ -69,9 +73,7 @@ const MapDetailInfo = ({ mapData, selectedFps, onFpsChange, fpsOptions }) => {
           <div className={s.statsGrid}>
             <div className={s.statItem}>
               <span className={s.statLabel}>Number of Tops</span>
-              <span className={s.statValue}>
-                {currentStats.nb_tops}
-              </span>
+              <span className={s.statValue}>{currentStats.nb_tops}</span>
             </div>
           </div>
         </div>

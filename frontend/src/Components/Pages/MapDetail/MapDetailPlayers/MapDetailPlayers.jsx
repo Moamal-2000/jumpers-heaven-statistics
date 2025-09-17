@@ -1,14 +1,24 @@
-import s from "./MapDetailPlayers.module.scss";
 import { getColoredName } from "@/Functions/components";
 import { useRouter } from "next/navigation";
+import s from "./MapDetailPlayers.module.scss";
 
-const MapDetailPlayers = ({ playersData, selectedFps, loading, loadingMore, hasMore, loadMoreRef, showingAll, onShowAll, allData }) => {
+const MapDetailPlayers = ({
+  playersData,
+  selectedFps,
+  loading,
+  loadingMore,
+  hasMore,
+  loadMoreRef,
+  showingAll,
+  onShowAll,
+  allData,
+}) => {
   const router = useRouter();
-  
+
   const formatPlaytime = (seconds) => {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
-    
+
     if (hours > 0) {
       return `${hours}h ${minutes}m`;
     }
@@ -19,7 +29,10 @@ const MapDetailPlayers = ({ playersData, selectedFps, loading, loadingMore, hasM
     return (
       <div className={s.playersCard}>
         <div className={s.cardHeader}>
-          <h2>Most Played {selectedFps === "All" ? "(All FPS)" : `(${selectedFps} FPS)`}</h2>
+          <h2>
+            Most Played{" "}
+            {selectedFps === "All" ? "(All FPS)" : `(${selectedFps} FPS)`}
+          </h2>
         </div>
         <div className={s.loading}>
           <div className={s.spinner}></div>
@@ -33,7 +46,10 @@ const MapDetailPlayers = ({ playersData, selectedFps, loading, loadingMore, hasM
     return (
       <div className={s.playersCard}>
         <div className={s.cardHeader}>
-          <h2>Most Played {selectedFps === "All" ? "(All FPS)" : `(${selectedFps} FPS)`}</h2>
+          <h2>
+            Most Played{" "}
+            {selectedFps === "All" ? "(All FPS)" : `(${selectedFps} FPS)`}
+          </h2>
         </div>
         <div className={s.noData}>
           <p>No players available for {selectedFps} FPS</p>
@@ -45,60 +61,61 @@ const MapDetailPlayers = ({ playersData, selectedFps, loading, loadingMore, hasM
   return (
     <div className={s.playersCard}>
       <div className={s.cardHeader}>
-        <h2>Most Played {selectedFps === "All" ? "(All FPS)" : `(${selectedFps} FPS)`}</h2>
+        <h2>
+          Most Played{" "}
+          {selectedFps === "All" ? "(All FPS)" : `(${selectedFps} FPS)`}
+        </h2>
         <div className={s.headerActions}>
           <span className={s.totalPlayers}>
-            {selectedFps === "All" ? "Combined players" : `${playersData.length} players`}
+            {selectedFps === "All"
+              ? "Combined players"
+              : `${playersData.length} players`}
           </span>
           {!showingAll && allData && allData.length > playersData.length && (
-            <button 
-              className={s.showAllButton}
-              onClick={onShowAll}
-            >
+            <button className={s.showAllButton} onClick={onShowAll}>
               Show All ({allData.length})
             </button>
           )}
         </div>
       </div>
-      
+
       <div className={s.playersList}>
         {playersData.map((player, index) => (
-          <div 
-            key={`${player.player_id}-${index}`} 
+          <div
+            key={`${player.player_id}-${index}`}
             className={s.playerItem}
             onClick={() => router.push(`/player/${player.player_id}`)}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: "pointer" }}
           >
-            <div className={s.rank}>
-              #{index + 1}
-            </div>
-            
+            <div className={s.rank}>#{index + 1}</div>
+
             <div className={s.playerInfo}>
               <div className={s.playerName}>
                 <span>{getColoredName(player.player_name)}</span>
-                {selectedFps === "All" && player.fps_list && player.fps_list.length > 0 && (
-                  <span className={s.fpsDisplay}>
-                    {player.fps_list.sort((a, b) => parseInt(a) - parseInt(b)).join(', ')} FPS
-                  </span>
-                )}
+                {selectedFps === "All" &&
+                  player.fps_list &&
+                  player.fps_list.length > 0 && (
+                    <span className={s.fpsDisplay}>
+                      {player.fps_list
+                        .sort((a, b) => parseInt(a) - parseInt(b))
+                        .join(", ")}{" "}
+                      FPS
+                    </span>
+                  )}
               </div>
-              <div className={s.playerId}>
-                ID: {player.player_id}
-              </div>
+              <div className={s.playerId}>ID: {player.player_id}</div>
             </div>
-            
+
             <div className={s.playtime}>
               <div className={s.playtimeValue}>
                 {formatPlaytime(player.time_played)}
               </div>
-              <div className={s.playtimeLabel}>
-                Playtime
-              </div>
+              <div className={s.playtimeLabel}>Playtime</div>
             </div>
           </div>
         ))}
       </div>
-      
+
       {hasMore && (
         <div ref={loadMoreRef} className={s.loadMoreContainer}>
           {loadingMore ? (

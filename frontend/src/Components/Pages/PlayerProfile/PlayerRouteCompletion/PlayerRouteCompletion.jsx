@@ -11,7 +11,7 @@ const PlayerRouteCompletion = ({ playerId }) => {
   const [sortBy, setSortBy] = useState("mapname"); // "mapname", "finishers"
   const [sortOrder, setSortOrder] = useState("asc"); // "asc", "desc"
   const [activeList, setActiveList] = useState("completed"); // "completed", "not_completed"
-  
+
   // Mock data for now - will be replaced with Redux state
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -26,12 +26,14 @@ const PlayerRouteCompletion = ({ playerId }) => {
   const fetchData = async () => {
     setLoading(true);
     setError(null);
-    
+
     try {
-      const result = await dispatch(fetchPlayerRouteCompletionNew({ 
-        playerId: parseInt(playerId)
-      }));
-      
+      const result = await dispatch(
+        fetchPlayerRouteCompletionNew({
+          playerId: parseInt(playerId),
+        })
+      );
+
       if (result.payload) {
         setCompletionData(result.payload);
       } else {
@@ -53,7 +55,7 @@ const PlayerRouteCompletion = ({ playerId }) => {
     // Sort the data
     sorted.sort((a, b) => {
       let comparison = 0;
-      
+
       switch (sortBy) {
         case "mapname":
           comparison = a.mapname.localeCompare(b.mapname);
@@ -64,7 +66,7 @@ const PlayerRouteCompletion = ({ playerId }) => {
         default:
           comparison = 0;
       }
-      
+
       return sortOrder === "asc" ? comparison : -comparison;
     });
 
@@ -86,47 +88,47 @@ const PlayerRouteCompletion = ({ playerId }) => {
   };
 
   const getRarityLevel = (finishCount) => {
-    if (finishCount <= 2) return 'mythical';
-    if (finishCount <= 10) return 'legendary';
-    if (finishCount <= 20) return 'epic';
-    if (finishCount <= 30) return 'rare';
-    if (finishCount <= 50) return 'uncommon';
-    return 'common';
+    if (finishCount <= 2) return "mythical";
+    if (finishCount <= 10) return "legendary";
+    if (finishCount <= 20) return "epic";
+    if (finishCount <= 30) return "rare";
+    if (finishCount <= 50) return "uncommon";
+    return "common";
   };
 
   const getRarityInfo = (finishCount) => {
     const level = getRarityLevel(finishCount);
     const rarityMap = {
-      mythical: { label: 'MYTHICAL', color: '#ff0080', glow: '#ff0080' },
-      legendary: { label: 'LEGENDARY', color: '#ff6b35', glow: '#ff6b35' },
-      epic: { label: 'EPIC', color: '#9d4edd', glow: '#9d4edd' },
-      rare: { label: 'RARE', color: '#3a86ff', glow: '#3a86ff' },
-      uncommon: { label: 'UNCOMMON', color: '#06ffa5', glow: '#06ffa5' },
-      common: { label: 'COMMON', color: '#9ca3af', glow: '#9ca3af' }
+      mythical: { label: "MYTHICAL", color: "#ff0080", glow: "#ff0080" },
+      legendary: { label: "LEGENDARY", color: "#ff6b35", glow: "#ff6b35" },
+      epic: { label: "EPIC", color: "#9d4edd", glow: "#9d4edd" },
+      rare: { label: "RARE", color: "#3a86ff", glow: "#3a86ff" },
+      uncommon: { label: "UNCOMMON", color: "#06ffa5", glow: "#06ffa5" },
+      common: { label: "COMMON", color: "#9ca3af", glow: "#9ca3af" },
     };
     return rarityMap[level];
   };
 
   const getCompletionRateRarity = (completionRate) => {
     // Remove % sign and convert to number
-    const rate = parseFloat(completionRate.replace('%', ''));
-    if (rate >= 95) return 'mythical';
-    if (rate >= 85) return 'legendary';
-    if (rate >= 70) return 'epic';
-    if (rate >= 50) return 'rare';
-    if (rate >= 25) return 'uncommon';
-    return 'common';
+    const rate = parseFloat(completionRate.replace("%", ""));
+    if (rate >= 95) return "mythical";
+    if (rate >= 85) return "legendary";
+    if (rate >= 70) return "epic";
+    if (rate >= 50) return "rare";
+    if (rate >= 25) return "uncommon";
+    return "common";
   };
 
   const getCompletionRateInfo = (completionRate) => {
     const rarity = getCompletionRateRarity(completionRate);
     const rarityMap = {
-      mythical: { color: '#ff0080', glow: '#ff0080' },
-      legendary: { color: '#ff6b35', glow: '#ff6b35' },
-      epic: { color: '#9d4edd', glow: '#9d4edd' },
-      rare: { color: '#3a86ff', glow: '#3a86ff' },
-      uncommon: { color: '#06ffa5', glow: '#06ffa5' },
-      common: { color: '#9ca3af', glow: '#9ca3af' }
+      mythical: { color: "#ff0080", glow: "#ff0080" },
+      legendary: { color: "#ff6b35", glow: "#ff6b35" },
+      epic: { color: "#9d4edd", glow: "#9d4edd" },
+      rare: { color: "#3a86ff", glow: "#3a86ff" },
+      uncommon: { color: "#06ffa5", glow: "#06ffa5" },
+      common: { color: "#9ca3af", glow: "#9ca3af" },
     };
     return rarityMap[rarity];
   };
@@ -162,7 +164,9 @@ const PlayerRouteCompletion = ({ playerId }) => {
   }
 
   const completedRoutes = getSortedData(completionData?.completedMaps || []);
-  const notCompletedRoutes = getSortedData(completionData?.notCompletedMaps || []);
+  const notCompletedRoutes = getSortedData(
+    completionData?.notCompletedMaps || []
+  );
 
   return (
     <div className={s.routeCompletionContainer}>
@@ -171,19 +175,26 @@ const PlayerRouteCompletion = ({ playerId }) => {
         <div className={s.statsCard}>
           <div className={s.statItem}>
             <span className={s.statLabel}>Total Routes</span>
-            <span className={s.statValue}>{completionData.totalAvailableMaps}</span>
+            <span className={s.statValue}>
+              {completionData.totalAvailableMaps}
+            </span>
           </div>
           <div className={s.statItem}>
             <span className={s.statLabel}>Completed</span>
-            <span className={s.statValue}>{completionData.completedMapsCount}</span>
+            <span className={s.statValue}>
+              {completionData.completedMapsCount}
+            </span>
           </div>
           <div className={s.statItem}>
             <span className={s.statLabel}>Completion Rate</span>
-            <span 
+            <span
               className={s.statValue}
               style={{
-                color: getCompletionRateInfo(completionData.completionRate).color,
-                textShadow: `0 0 8px ${getCompletionRateInfo(completionData.completionRate).glow}`
+                color: getCompletionRateInfo(completionData.completionRate)
+                  .color,
+                textShadow: `0 0 8px ${
+                  getCompletionRateInfo(completionData.completionRate).glow
+                }`,
               }}
             >
               {completionData.completionRate}
@@ -194,16 +205,20 @@ const PlayerRouteCompletion = ({ playerId }) => {
 
       {/* List Toggle */}
       <div className={s.listToggle}>
-        <button 
-          className={`${s.toggleButton} ${activeList === 'completed' ? s.active : ''}`}
-          onClick={() => setActiveList('completed')}
+        <button
+          className={`${s.toggleButton} ${
+            activeList === "completed" ? s.active : ""
+          }`}
+          onClick={() => setActiveList("completed")}
         >
           <SvgIcon name="check-circle" />
           <span>Completed Routes ({completedRoutes.length})</span>
         </button>
-        <button 
-          className={`${s.toggleButton} ${activeList === 'not_completed' ? s.active : ''}`}
-          onClick={() => setActiveList('not_completed')}
+        <button
+          className={`${s.toggleButton} ${
+            activeList === "not_completed" ? s.active : ""
+          }`}
+          onClick={() => setActiveList("not_completed")}
         >
           <SvgIcon name="x-circle" />
           <span>Not Completed Routes ({notCompletedRoutes.length})</span>
@@ -214,8 +229,8 @@ const PlayerRouteCompletion = ({ playerId }) => {
       <div className={s.controls}>
         <div className={s.controlGroup}>
           <label>Sort By:</label>
-          <select 
-            value={sortBy} 
+          <select
+            value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
             className={s.sortSelect}
           >
@@ -226,8 +241,8 @@ const PlayerRouteCompletion = ({ playerId }) => {
 
         <div className={s.controlGroup}>
           <label>Order:</label>
-          <select 
-            value={sortOrder} 
+          <select
+            value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value)}
             className={s.orderSelect}
           >
@@ -270,17 +285,19 @@ const PlayerRouteCompletion = ({ playerId }) => {
 
       {/* Routes List */}
       <div className={s.routesList}>
-        {activeList === 'completed' ? (
+        {activeList === "completed" ? (
           completedRoutes.length > 0 ? (
             completedRoutes.map((map, index) => {
               const rarityInfo = getRarityInfo(map.individual_finish_count);
               const rarityLevel = getRarityLevel(map.individual_finish_count);
               return (
-                <div 
-                  key={`${map.mapid}-${map.mapname}-${index}`} 
-                  className={`${s.mapCard} ${s.completed} ${s[rarityLevel] || ''}`}
-                  onClick={() => window.open(`/map/${map.cp_id}`, '_blank')}
-                  style={{ cursor: 'pointer' }}
+                <div
+                  key={`${map.mapid}-${map.mapname}-${index}`}
+                  className={`${s.mapCard} ${s.completed} ${
+                    s[rarityLevel] || ""
+                  }`}
+                  onClick={() => window.open(`/map/${map.cp_id}`, "_blank")}
+                  style={{ cursor: "pointer" }}
                 >
                   <div className={s.mapInfo}>
                     <div className={s.mapHeader}>
@@ -290,17 +307,19 @@ const PlayerRouteCompletion = ({ playerId }) => {
                         <span className={s.mapReleased}>{map.released}</span>
                       </div>
                     </div>
-                    
+
                     <div className={s.mapDetails}>
                       <div className={s.finisherCount}>
                         <span className={s.finisherLabel}>Finishers:</span>
-                        <span className={s.finisherValue} style={{ color: rarityInfo.color }}>
+                        <span
+                          className={s.finisherValue}
+                          style={{ color: rarityInfo.color }}
+                        >
                           {map.individual_finish_count}
                         </span>
                       </div>
                     </div>
                   </div>
-                  
                 </div>
               );
             })
@@ -310,46 +329,48 @@ const PlayerRouteCompletion = ({ playerId }) => {
               <p>No completed routes found.</p>
             </div>
           )
-        ) : (
-          notCompletedRoutes.length > 0 ? (
-            notCompletedRoutes.map((map, index) => {
-              const rarityInfo = getRarityInfo(map.individual_finish_count);
-              const rarityLevel = getRarityLevel(map.individual_finish_count);
-              return (
-                <div 
-                  key={`${map.mapid}-${map.mapname}-${index}`} 
-                  className={`${s.mapCard} ${s.notCompleted} ${s[rarityLevel] || ''}`}
-                  onClick={() => window.open(`/map/${map.cp_id}`, '_blank')}
-                  style={{ cursor: 'pointer' }}
-                >
-                  <div className={s.mapInfo}>
-                    <div className={s.mapHeader}>
-                      <h3 className={s.mapName}>{map.mapname}</h3>
-                      <div className={s.mapMeta}>
-                        <span className={s.mapAuthor}>by {map.author}</span>
-                        <span className={s.mapReleased}>{map.released}</span>
-                      </div>
-                    </div>
-                    
-                    <div className={s.mapDetails}>
-                      <div className={s.finisherCount}>
-                        <span className={s.finisherLabel}>Finishers:</span>
-                        <span className={s.finisherValue} style={{ color: rarityInfo.color }}>
-                          {map.individual_finish_count}
-                        </span>
-                      </div>
+        ) : notCompletedRoutes.length > 0 ? (
+          notCompletedRoutes.map((map, index) => {
+            const rarityInfo = getRarityInfo(map.individual_finish_count);
+            const rarityLevel = getRarityLevel(map.individual_finish_count);
+            return (
+              <div
+                key={`${map.mapid}-${map.mapname}-${index}`}
+                className={`${s.mapCard} ${s.notCompleted} ${
+                  s[rarityLevel] || ""
+                }`}
+                onClick={() => window.open(`/map/${map.cp_id}`, "_blank")}
+                style={{ cursor: "pointer" }}
+              >
+                <div className={s.mapInfo}>
+                  <div className={s.mapHeader}>
+                    <h3 className={s.mapName}>{map.mapname}</h3>
+                    <div className={s.mapMeta}>
+                      <span className={s.mapAuthor}>by {map.author}</span>
+                      <span className={s.mapReleased}>{map.released}</span>
                     </div>
                   </div>
-                  
+
+                  <div className={s.mapDetails}>
+                    <div className={s.finisherCount}>
+                      <span className={s.finisherLabel}>Finishers:</span>
+                      <span
+                        className={s.finisherValue}
+                        style={{ color: rarityInfo.color }}
+                      >
+                        {map.individual_finish_count}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              );
-            })
-          ) : (
-            <div className={s.emptyState}>
-              <SvgIcon name="x-circle" />
-              <p>No uncompleted routes found.</p>
-            </div>
-          )
+              </div>
+            );
+          })
+        ) : (
+          <div className={s.emptyState}>
+            <SvgIcon name="x-circle" />
+            <p>No uncompleted routes found.</p>
+          </div>
         )}
       </div>
     </div>
