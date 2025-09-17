@@ -1,102 +1,199 @@
-@use "../../../Styles/variables" as variables;
+@use "@/Styles/variables" as variables;
 
 .aboutPage {
-  padding: 6rem 0 4rem 0; // Added extra top padding to account for fixed header
-  min-height: calc(100vh - 8rem);
+  min-height: calc(100vh - 128px);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+  background-color: #0a0c10;
 }
 
-.heroSection {
-  margin-bottom: 2rem;
-  padding: 24px 20px;
-  background-color: #14171d;
-  border-radius: 16px 16px 0 0;
+.techGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.titleSection {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+.description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #f9fafb;
+  margin-bottom: 24px;
+}
 
-  .title {
-    font-size: 1.5rem;
+.description:last-child {
+  margin-bottom: 0;
+
+  .teamGrid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .teamMember {
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+  }
+
+  .teamMember::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(255, 184, 0, 0.15), transparent 70%);
+    opacity: 0;
+  }
+
+  .memberRole {
+    font-size: 0.875rem;
+    color: #FFC933;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(255, 184, 0, 0.15);
+    border-radius: 4px;
+  }
+
+  .memberName {
+    font-size: 1.125rem;
     font-weight: 700;
     color: #fff;
-    margin: 0;
+    margin-bottom: 8px;
   }
 
-  .subtitle {
+  .memberDescription {
     font-size: 0.875rem;
-    color: #9AA3B2;
-    margin: 0;
+    line-height: 1.6;
+    color: #f9fafb;
+  }
+
+  @media (max-width: 768px) {
+    .teamGrid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .teamMember {
+      padding: 16px;
+    }
+  }
+
+  .contentGrid {
+    gap: 24px;
+    padding: 0 8px;
   }
 }
 
-.contentGrid {
-  display: grid;
-  gap: 1.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-block: 24px;
+  color: #fff;
+  letter-spacing: -0.01em;
+  position: relative;
+  padding-left: 16px;
 }
 
-.section {
-  .sectionTitle {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #fff;
-  }
+.sectionTitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  bottom: 0.25em;
+  width: 4px;
+  background: #FFB800;
+  border-radius: 2px;
 }
 
 .card {
-  background-color: #0e1217;
-  border: solid 1px #1f2937;
-  border-radius: 0 0 16px 16px;
-  padding: 1.5rem;
+  background-color: #0d1117;
+  border: solid 1px #30363d;
+  border-radius: 6px;
+  padding: 2rem;
   position: relative;
 }
 
 .description {
-  font-size: 0.875rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.8;
   color: #f9fafb;
-  margin-bottom: 1rem;
-  
+  margin-bottom: 1.5rem;
+
   &:last-child {
     margin-bottom: 0;
   }
-  
+
   strong {
     color: #FFB800;
     font-weight: 600;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 2px;
+      background: rgba(255, 184, 0, 0.3);
+      border-radius: 1px;
+    }
   }
 }
 
 
 .teamGrid {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 }
 
 .teamMember {
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+}
+
+.teamMember::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 184, 0, 0.15), transparent 70%);
+}
+
+.memberInfo {
+  display: flex;
+  gap: 14px;
 }
 
 .memberRole {
-  font-size: 0.75rem;
-  color: #ffcc33;
-  font-weight: 500;
-  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  color: #FFC933;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.75px;
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 184, 0, 0.15);
+  border-radius: 4px;
 }
 
 .memberName {
@@ -116,7 +213,7 @@
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -143,30 +240,29 @@
   color: #f9fafb;
 }
 
-// Responsive adjustments
 @media (max-width: 768px) {
   .aboutPage {
-    padding: 1rem 0 2rem 0;
+    padding: 16px 0 32px 0;
   }
-  
+
   .heroSection {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
+    margin-bottom: 24px;
+    padding: 16px;
   }
-  
+
   .contentGrid {
-    gap: 1rem;
+    gap: 16px;
   }
-  
+
   .card {
-    padding: 1rem;
+    padding: 16px;
   }
-  
+
   .sectionTitle {
     font-size: 1.125rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 12px;
   }
-  
+
   .description {
     font-size: 0.8rem;
   }
