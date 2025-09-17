@@ -3,7 +3,13 @@
 .mainNav {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+}
+
+@include m.large {
+  .mainNav {
+    gap: 5px;
+  }
 }
 
 @include m.medium {
