@@ -1,28 +1,25 @@
 import s from "./About.module.scss";
+import AboutSection from "./AboutSection/AboutSection";
 
 const About = () => {
   return (
     <main className={s.aboutPage}>
       <div className="container">
         <div className={s.contentGrid}>
-          <section className={s.section}>
-            <h2 className={s.sectionTitle}>Project Overview</h2>
-            <div className={s.card}>
-              <p className={s.description}>
-                JumpersHeaven is a Call of Duty 2 mod created by{" "}
-                <strong>Iznogod</strong>, featuring custom servers maintained by
-                the mod creator. JH Stats is an independent leaderboard system
-                that retrieves and displays data from the JumpersHeaven
-                database.
-              </p>
-              <p className={s.description}>
-                JH Stats provides players with comprehensive statistics,
-                rankings, and achievements within the JumpersHeaven community,
-                offering a modern web interface to explore player performance
-                and map completion data.
-              </p>
-            </div>
-          </section>
+          <AboutSection title="Project Overview">
+            <p className={s.description}>
+              JumpersHeaven is a Call of Duty 2 mod created by{" "}
+              <strong>Iznogod</strong>, featuring custom servers maintained by
+              the mod creator. JH Stats is an independent leaderboard system
+              that retrieves and displays data from the JumpersHeaven database.
+            </p>
+            <p className={s.description}>
+              JH Stats provides players with comprehensive statistics, rankings,
+              and achievements within the JumpersHeaven community, offering a
+              modern web interface to explore player performance and map
+              completion data.
+            </p>
+          </AboutSection>
 
           <section className={s.section}>
             <h2 className={s.sectionTitle}>Development Team</h2>

@@ -1,9 +1,12 @@
-import s from './AboutSection.module.scss'
+import s from "./AboutSection.module.scss";
 
-const AboutSection = () => {
+const AboutSection = ({ children, title }) => {
   return (
-    <div>AboutSection</div>
-  )
-}
+    <section className={s.section}>
+      <h2 className={s.sectionTitle}>{title}</h2>
+      <div className={s.card}>{children}</div>
+    </section>
+  );
+};
 
-export default AboutSection
+export default AboutSection;
