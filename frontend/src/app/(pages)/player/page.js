@@ -1,7 +1,7 @@
 "use client";
 
-import { useSearchParams, useRouter } from "next/navigation";
-import { useEffect, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useEffect } from "react";
 
 const PlayerPageContent = () => {
   const searchParams = useSearchParams();
@@ -10,12 +10,11 @@ const PlayerPageContent = () => {
 
   useEffect(() => {
     if (playerId) {
-      // Redirect to the new URL format
       router.replace(`/player/${playerId}`);
-    } else {
-      // If no player ID, redirect to players list
-      router.replace("/players");
+      return;
     }
+
+    router.replace("/players");
   }, [playerId, router]);
 
   return (
