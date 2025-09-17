@@ -39,17 +39,6 @@
     outline: none;
   }
 
-  .teamMember::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 50% 0%, rgba(255, 184, 0, 0.15), transparent 70%);
-    opacity: 0;
-  }
-
   .memberRole {
     font-size: 0.875rem;
     color: #FFC933;
@@ -141,13 +130,6 @@
   position: relative;
   overflow: hidden;
   outline: none;
-}
-
-.teamMember::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(255, 184, 0, 0.15), transparent 70%);
 }
 
 .memberInfo {
