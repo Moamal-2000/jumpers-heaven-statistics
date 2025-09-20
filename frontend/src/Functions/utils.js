@@ -186,3 +186,13 @@ export function stripColorCodes(name) {
   // Remove color codes like ^1, ^2, etc. from player names
   return name.replace(/\^\d/g, "");
 }
+
+export function getCodServers(servers) {
+  return servers.reduce((groups, server) => {
+    const gameType = server.game_type;
+    if (!groups[gameType]) groups[gameType] = [];
+
+    groups[gameType].push(server);
+    return groups;
+  }, {});
+}

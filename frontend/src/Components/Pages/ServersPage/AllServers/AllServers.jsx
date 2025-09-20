@@ -1,23 +1,11 @@
+import { getCodServers } from "@/Functions/utils";
 import s from "./AllServers.module.scss";
 import GameType from "./GameType/GameType";
 import SkeletonCard from "./SkeletonCard/SkeletonCard";
 
 const AllServers = ({ servers, loading, error }) => {
-  const groupedServers = servers.reduce((groups, server) => {
-    const gameType = server.game_type;
-    if (!groups[gameType]) {
-      groups[gameType] = [];
-    }
-    groups[gameType].push(server);
-    return groups;
-  }, {});
-
-  // Sort game types: COD2 first, then COD4
-  const gameTypes = Object.keys(groupedServers).sort((a, b) => {
-    if (a === "COD2" && b !== "COD2") return -1;
-    if (a !== "COD2" && b === "COD2") return 1;
-    return 0;
-  });
+  const groupedServers = getCodServers(servers)
+  const gameTypes = Object.keys(groupedServers);
 
   if (loading) {
     return (
@@ -44,7 +32,7 @@ const AllServers = ({ servers, loading, error }) => {
       gameType={gameType}
       groupedServers={groupedServers}
     />
-  ))
+  ));
 };
 
 export default AllServers;
