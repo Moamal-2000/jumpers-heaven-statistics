@@ -1,29 +1,13 @@
 import { getCodServers, getGameTypes } from "@/Functions/utils";
-import s from "./AllServers.module.scss";
 import GameType from "./GameType/GameType";
-import SkeletonCard from "./SkeletonCard/SkeletonCard";
+import ServersLoadingError from "./ServersLoadingError/ServersLoadingError";
 
 const AllServers = ({ servers, loading, error }) => {
   const groupedServers = getCodServers(servers);
   const gameTypes = getGameTypes(groupedServers);
 
-  if (loading) {
-    return (
-      <div className={s.serversGrid}>
-        {[...Array(6)].map((_, i) => (
-          <SkeletonCard key={i} />
-        ))}
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className={s.errorContainer}>
-        <h3>Server Status Unavailable</h3>
-        <p>{error}</p>
-      </div>
-    );
+  if (loading || error) {
+    return <ServersLoadingError loading={loading} error={error} />;
   }
 
   return gameTypes.map((gameType) => (
