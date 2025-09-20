@@ -1,0 +1,69 @@
+.skeletonCard {
+  background-color: #1a1e24;
+  border: 1px solid #2a313a;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.line, .flag {
+  background-color: #2a313a;
+  border-radius: 4px;
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #2a313a;
+}
+
+.flag {
+  width: 40px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.serverInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.line {
+  height: 1rem;
+  width: 100%;
+}
+
+.line.short {
+  width: 60%;
+}
+
+.line.medium {
+  width: 80%;
+}
+
+.mapInfo {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #2a313a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.players {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}

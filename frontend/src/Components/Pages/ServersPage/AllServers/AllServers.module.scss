@@ -1,232 +1,219 @@
 @use "@/Styles/mixins" as m;
 
 .gameSection {
-  margin-bottom: 24px;
+  margin-bottom: 3rem;
+}
+
+.gameTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #f9fafb;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid;
 }
 
 .serversGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 24px;
-  padding-top: 4px;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1.5rem;
 }
 
 @include m.small {
   .serversGrid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 1rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 .serverCard {
-  background: linear-gradient(95deg, #5d583e 0%, #3B3829 100%);
-  border-radius: 16px;
-  border: 2px solid #3B3829;
-  padding: 24px;
-  transition: border-color .3s ease;
-  min-height: 360px;
+  background-color: #1a1e24;
+  border: 1px solid #2a313a;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-@include m.small {
-  .serverCard {
-    padding: 18px;
+.errorContainer {
+  text-align: center;
+  padding: 32px;
+  background: #1a1e24;
+  border-radius: 12px;
+  border: 1px solid #2a313a;
+
+  h3 {
+    color: #ef4444;
+    margin-bottom: 8px;
   }
-}
 
-.serversGrid.cod4Card .serverCard {
-  background: linear-gradient(95deg, #4b6843 0%, #2D3B29 100%);
-  border-color: #2D3B29;
-}
-
-.countryFlag {
-  width: 30px;
-  height: 26px;
-  z-index: 10;
-  margin-top: 8px;
-}
-
-.countryFlag>img {
-  border-radius: 4px;
+  p {
+    color: #9ca3af;
+    margin: 0;
+  }
 }
 
 .serverHeader {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #b9c3d4;
-  gap: 12px;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #2a313a;
+}
+
+.countryFlag {
+  width: 36px;
+  height: 27px;
+  flex-shrink: 0;
+  img {
+    border-radius: 4px;
+  }
 }
 
 .serverAddress {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
 }
 
-.domainInfo {
-  display: flex;
-  align-items: center;
-
-  .domain {
-    color: #f9fafb;
-    font-weight: 700;
-    font-size: 1.1rem;
-  }
+.domain {
+  color: #f9fafb;
+  font-weight: 600;
+  font-size: 1.125rem;
 }
 
 .serverIp {
-  color: #dbdee4;
-  font-size: .85rem;
-  font-family: 'Courier New', monospace;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.serverIp::before {
-  content: '';
-  width: 4px;
-  height: 4px;
-  background: #dbdee4;
-  border-radius: 50%;
-  margin-right: 0.25rem;
+  color: #9aa3b2;
+  font-size: 0.875rem;
 }
 
 .serverStatusIndicator {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  margin-top: 5px;
-  border-radius: 50%;
-  background: #1f2937;
-  border: solid 2px transparent;
-  cursor: help;
-  position: relative;
-}
-
-@media (max-width: 360px) {
-  .serverStatusIndicator {
-    display: none;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  .statusDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .statusText {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #9aa3b2;
   }
 }
 
-.serverStatusIndicator:hover [data-tooltip] {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.statusDot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
 .mapSection {
-  margin-bottom: 16px;
-  padding: 8px 0;
-  border-bottom: 1px solid #b9c3d4;
+  padding: 1rem 0;
+  border-bottom: 1px solid #2a313a;
 }
 
 .mapInfo {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  align-items: center;
 }
 
-.mapInfo .mapLabel {
-  color: #b3bac6;
-  font-size: .85rem;
-  font-weight: 700;
+.mapLabel {
+  color: #9aa3b2;
+  font-size: 0.875rem;
   text-transform: uppercase;
-  letter-spacing: .5px;
 }
 
-.mapInfo .mapName {
-  color: #facc15;
+.mapName {
+  font-weight: 600;
   font-size: 1rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, #facc15, #eab308);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-
-  /* Fallback for browsers that don't support background-clip */
-  @supports not (background-clip: text) {
-    color: #facc15;
-    background: none;
-    -webkit-text-fill-color: initial;
-  }
+  text-decoration: none;
 }
 
-.statusText {
-  color: #f9fafb;
-  font-size: .9rem;
-  font-weight: 600;
+.cod2Card .mapName {
+  color: #facc15;
+}
+
+.cod4Card .mapName {
+  color: #4ade80;
 }
 
 .playersSection {
-  margin-top: 8px;
+  padding-top: 1rem;
 }
 
 .playersList {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem;
   max-height: 200px;
   overflow-y: auto;
+  padding-right: 0.5rem;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #1f2937;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 3px;
+  }
 }
 
 .playerItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.75rem;
+  background-color: #1f2937;
+  border-radius: 6px;
 }
 
 .playerName {
-  color: #f9fafb;
-  font-size: .85rem;
-  font-weight: 500;
-  flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  color: #e5e7eb;
+  font-size: 0.95rem;
 }
 
 .playerInfo {
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
+  gap: 1rem;
+}
+
+.playerPing,
+.playerAdminLevel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .playerPing {
-  color: #10b981;
-  font-size: .75rem;
-  font-weight: 600;
-  background: rgba(16, 185, 129, .1);
-  padding: 4px 8px;
-  border-radius: 4px;
-  border: 1px solid rgba(16, 185, 129, .2);
+  color: #4ade80;
 }
 
 .playerAdminLevel {
   color: #facc15;
-  font-size: .75rem;
-  font-weight: 700;
-  background: rgba(250, 204, 21, .15);
-  padding: 3px 6px;
-  border-radius: 3px;
-  border: 1px solid rgba(250, 204, 21, .3);
-  cursor: help;
-  position: relative;
+}
 
-  &:hover {
-    background: rgba(250, 204, 21, .25);
-    border-color: rgba(250, 204, 21, .5);
-  }
+.cod2Card .playerAdminLevel {
+  color: #facc15;
+}
+.cod4Card .playerAdminLevel {
+  color: #4ade80;
 }

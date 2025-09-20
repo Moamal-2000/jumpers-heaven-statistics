@@ -34,32 +34,10 @@ const ServersPage = () => {
     return `${playerCount} player${playerCount !== 1 ? "s" : ""}`;
   };
 
-  if (loading) {
-    return (
-      <div className={s.serverDisplay}>
-        <div className={s.loadingContainer}>
-          <div className={s.loadingSpinner}></div>
-          <p>Loading server status...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className={s.serverDisplay}>
-        <div className={s.errorContainer}>
-          <h3>Server Status Unavailable</h3>
-          <p>{error}</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className={s.serverDisplay}>
       <ServersHeader />
-      <AllServers servers={servers} />
+      <AllServers servers={servers} loading={loading} error={error} />
     </div>
   );
 };
