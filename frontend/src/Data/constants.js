@@ -17,4 +17,4 @@ export const MONTHS = {
   12: "December",
 };
 
-export const TOTAL_MAPS_PLACEHOLDER = 597;
+export const TOTAL_MAPS_PLACEHOLDER = 600;
