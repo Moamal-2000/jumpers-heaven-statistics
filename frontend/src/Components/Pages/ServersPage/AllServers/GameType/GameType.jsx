@@ -98,7 +98,7 @@ const GameType = ({ gameType, groupedServers }) => {
                         )}
                         {player.ping && (
                           <span className={s.playerPing}>
-                            <SvgIcon name="ping" /> {player.ping}ms
+                            <SvgIcon name="ping" /> {player.ping}0ms
                           </span>
                         )}
                       </div>
