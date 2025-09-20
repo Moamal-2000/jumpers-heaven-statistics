@@ -1,11 +1,16 @@
+"use client";
+
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { getColoredName } from "@/Functions/components";
 import { getCountryFlag, getServerStatusColor } from "@/Functions/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import s from "./ServerCard.module.scss";
 
 const ServerCard = ({ server }) => {
+  const [src, setSrc] = useState(`/maps/512/${server.map}.webp`);
+
   return (
     <div key={`${server.ip}-${server.port}`} className={s.serverCard}>
       <header className={s.serverHeader}>
@@ -53,11 +58,12 @@ const ServerCard = ({ server }) => {
         </div>
 
         <Image
-          src={`/maps/512/${server.map}.webp`}
+          src={src}
           alt={server.map}
           fill={true}
           sizes="383px"
           className={s.mapBackground}
+          onError={() => setSrc("/placeholders/blank-black.svg")}
         />
       </header>
 
