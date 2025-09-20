@@ -5,7 +5,7 @@ const ServersHeader = () => {
     <div className={s.header}>
       <h2>Server Status</h2>
       <p className={s.subtitle}>
-        Real-time server information and online players
+        Check which servers are up and which players are online right now
       </p>
     </div>
   );
