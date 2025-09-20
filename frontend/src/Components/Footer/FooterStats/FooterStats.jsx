@@ -34,7 +34,7 @@ const FooterStats = () => {
         </div>
 
         <div className={s.stat}>
-          <b className={s.number}>{statistics?.mapsCount}</b>
+          <b className={s.number}>{statistics?.mapsCount || "???"}</b>
           <span className={s.title}>Maps</span>
         </div>
 
