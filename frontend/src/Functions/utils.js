@@ -196,3 +196,13 @@ export function getCodServers(servers) {
     return groups;
   }, {});
 }
+
+export function getCountryFlag(domain) {
+  const country = domain.split(".")[0];
+  const flagPath = `/countryFlags/${country}.svg`;
+  return flagPath;
+}
+
+export function getServerStatusColor(online) {
+  return online ? "#47ca4b" : "#F44336";
+}

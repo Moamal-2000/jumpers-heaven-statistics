@@ -1,20 +1,11 @@
 import SvgIcon from "@/Components/Shared/SvgIcon";
 import { getColoredName } from "@/Functions/components";
+import { getCountryFlag, getServerStatusColor } from "@/Functions/utils";
 import Image from "next/image";
 import Link from "next/link";
 import s from "./GameType.module.scss";
 
 const GameType = ({ gameType, groupedServers }) => {
-  const getCountryFlag = (domain) => {
-    const country = domain.split(".")[0];
-    const flagPath = `/countryFlags/${country}.svg`;
-    return flagPath;
-  };
-
-  const getServerStatusColor = (online) => {
-    return online ? "#47ca4b" : "#F44336";
-  };
-
   return (
     <div key={gameType} className={s.gameSection}>
       <h2 className={s.gameTitle}>
