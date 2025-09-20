@@ -1,11 +1,11 @@
-import { getCodServers } from "@/Functions/utils";
+import { getCodServers, getGameTypes } from "@/Functions/utils";
 import s from "./AllServers.module.scss";
 import GameType from "./GameType/GameType";
 import SkeletonCard from "./SkeletonCard/SkeletonCard";
 
 const AllServers = ({ servers, loading, error }) => {
   const groupedServers = getCodServers(servers);
-  const gameTypes = Object.keys(groupedServers);
+  const gameTypes = getGameTypes(groupedServers);
 
   if (loading) {
     return (
