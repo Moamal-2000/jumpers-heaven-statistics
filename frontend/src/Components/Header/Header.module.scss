@@ -25,15 +25,13 @@
 
 .header .logo {
   outline: none;
-  border-bottom: solid 2px transparent;
   display: flex;
   align-items: center;
+  min-width: 208px;
+  padding-left: 68px;
   gap: 8px;
   border-radius: 1px;
-
-  &:focus-visible {
-    border-color: #facc15;
-  }
+  position: relative;
 }
 
 @include m.medium {
@@ -43,28 +41,39 @@
 }
 
 .header .logo>svg {
-  color: #facc15;
-  width: 2rem;
-  height: 2rem;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.header .logo:focus-visible>svg {
+  fill: #facc15;
 }
 
 @include m.medium {
   .header .logo>svg {
-    width: 1.9rem;
-    height: 1.9rem;
+    width: 30px;
+    height: 30px;
   }
 }
 
 @include m.small {
   .header .logo>svg {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 29px;
+    height: 29px;
   }
 }
 
 .header .logo>span {
-  color: #fff;
-  font-size: 1.5rem;
+  background: linear-gradient(135deg, #9ea3b0, #fff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #9ea3b0;
+  font-size: 1.45rem;
   font-weight: 700;
   text-wrap: nowrap;
 }

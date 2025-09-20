@@ -17,7 +17,7 @@ const Header = () => {
     <header className={`${s.header} ${v2Class}`}>
       <div className="container" data-container>
         <Link href="/" className={s.logo}>
-          <SvgIcon name="trophy" />
+          <SvgIcon name="jumpersHeaven" />
           <span>{WEBSITE_NAME}</span>
         </Link>
 
