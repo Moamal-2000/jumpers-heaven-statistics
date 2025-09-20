@@ -26,44 +26,12 @@
   }
 }
 
-.contentSection .leftSide .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
-  width: fit-content;
-}
-
-.contentSection .leftSide .logo>svg {
-  width: 42px;
-  height: 42px;
-  color: #facc15;
-}
-
-@include m.small {
-  .contentSection .leftSide .logo>svg {
-    width: 32px;
-    height: 32px;
-  }
-}
-
-.contentSection .leftSide .logo>span {
-  color: #FBBF24;
-  font-weight: 700;
-  font-size: 1.8rem;
-}
-
-@include m.small {
-  .contentSection .leftSide .logo>span {
-    font-size: 1.6rem;
-  }
-}
-
 .contentSection .leftSide .description {
   font-size: .9rem;
   color: #9CA3AF;
   margin-bottom: 24px;
   max-width: 390px;
+  margin-top: 16px;
 }
 
 @include m.medium {

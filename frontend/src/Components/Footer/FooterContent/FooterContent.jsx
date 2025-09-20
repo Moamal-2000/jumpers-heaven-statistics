@@ -1,6 +1,4 @@
-import SvgIcon from "@/Components/Shared/SvgIcon";
-import { WEBSITE_NAME } from "@/Data/constants";
-import Link from "next/link";
+import WebsiteLogo from "@/Components/Shared/WebsiteLogo/WebsiteLogo";
 import FooterNav from "../FooterNav/FooterNav";
 import s from "./FooterContent.module.scss";
 import SocialMedia from "./SocialMedia/SocialMedia";
@@ -9,10 +7,7 @@ const FooterContent = () => {
   return (
     <section className={s.contentSection}>
       <div className={s.leftSide}>
-        <Link href="/" className={s.logo}>
-          <SvgIcon name="trophy" />
-          <span>{WEBSITE_NAME}</span>
-        </Link>
+        <WebsiteLogo />
 
         <p className={s.description}>
           The premier competitive platform tracking records, stats, and building

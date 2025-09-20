@@ -1,9 +1,7 @@
 "use client";
 
-import { WEBSITE_NAME } from "@/Data/constants";
-import Link from "next/link";
 import { useSelector } from "react-redux";
-import SvgIcon from "../Shared/SvgIcon";
+import WebsiteLogo from "../Shared/WebsiteLogo/WebsiteLogo";
 import s from "./Header.module.scss";
 import MainNav from "./MainNav/MainNav";
 import MobileNavBtn from "./MobileNavBtn/MobileNavBtn";
@@ -16,10 +14,7 @@ const Header = () => {
   return (
     <header className={`${s.header} ${v2Class}`}>
       <div className="container" data-container>
-        <Link href="/" className={s.logo}>
-          <SvgIcon name="jumpersHeaven" />
-          <span>{WEBSITE_NAME}</span>
-        </Link>
+        <WebsiteLogo />
 
         <MainNav />
         <MobileNavBtn />
