@@ -1,13 +1,14 @@
 .header {
   text-align: center;
-  padding: 2rem 1rem;
-  margin-bottom: 2rem;
-  background-color: #0e1217;
-  border: 1px solid #1f2937;
-  border-radius: 16px;
+  margin-bottom: 94px;
 }
 
 .header h2 {
+    background: linear-gradient(135deg, #9ea3b0, #fff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #9ea3b0;
   font-size: 2.5rem;
   font-weight: 700;
   color: #f9fafb;
