@@ -11,9 +11,10 @@
   position: relative;
 }
 
-@include m.medium {
+@include m.very-small {
   .logo {
-    gap: 6px;
+    min-width: 172px;
+    padding-left: 64px;
   }
 }
 
@@ -30,17 +31,10 @@
   fill: #facc15;
 }
 
-@include m.medium {
+@include m.very-small {
   .logo>svg {
-    width: 30px;
-    height: 30px;
-  }
-}
-
-@include m.small {
-  .logo>svg {
-    width: 29px;
-    height: 29px;
+    width: 58px;
+    height: 58px;
   }
 }
 
@@ -62,13 +56,7 @@
   color: #0000;
 }
 
-@include m.medium {
-  .logo>span {
-    font-size: 1.4rem;
-  }
-}
-
-@include m.small {
+@include m.very-small {
   .logo>span {
     font-size: 1.2rem;
   }
