@@ -20,7 +20,7 @@ const SkeletonCard = () => {
 
       <div className={s.players}>
         {[...Array(7)].map((_, i) => (
-          <div className={s.line} />
+          <div className={s.line} key={i} />
         ))}
       </div>
     </div>
