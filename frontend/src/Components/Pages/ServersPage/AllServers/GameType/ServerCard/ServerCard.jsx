@@ -51,6 +51,14 @@ const ServerCard = ({ server }) => {
             {server.online ? `${server.player_count || 0} Players` : "Offline"}
           </span>
         </div>
+
+        <Image
+          src={`/maps/512/${server.map}.webp`}
+          alt={server.map}
+          fill={true}
+          sizes="383px"
+          className={s.mapBackground}
+        />
       </header>
 
       {/* Map Information */}
