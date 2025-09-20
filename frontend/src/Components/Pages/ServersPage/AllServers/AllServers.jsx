@@ -4,7 +4,7 @@ import GameType from "./GameType/GameType";
 import SkeletonCard from "./SkeletonCard/SkeletonCard";
 
 const AllServers = ({ servers, loading, error }) => {
-  const groupedServers = getCodServers(servers)
+  const groupedServers = getCodServers(servers);
   const gameTypes = Object.keys(groupedServers);
 
   if (loading) {
