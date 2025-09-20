@@ -19,11 +19,11 @@
 }
 
 .mainNav>a {
-  padding: .7rem 1.1rem;
+  padding: .6rem .9rem;
   display: flex;
   align-items: center;
   gap: .5rem;
-  border-radius: .5rem;
+  border-radius: 5px;
   transition: background-color .1s ease;
 
   &.active,
@@ -85,7 +85,7 @@
 
 .mainNav>a>span {
   color: #9ca3af;
-  font-size: 1rem;
+  font-size: .9rem;
   font-weight: light;
 }
 

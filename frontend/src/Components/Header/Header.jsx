@@ -15,7 +15,6 @@ const Header = () => {
     <header className={`${s.header} ${v2Class}`}>
       <div className="container" data-container>
         <WebsiteLogo />
-
         <MainNav />
         <MobileNavBtn />
         <MobileNavMenu />
