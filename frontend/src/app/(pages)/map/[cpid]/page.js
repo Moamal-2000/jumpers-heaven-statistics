@@ -1,8 +1,7 @@
 "use client";
 
-import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
 import MapDetailPage from "@/Components/Pages/MapDetail/MapDetailPage";
+import { useParams } from "next/navigation";
 
 const MapPage = () => {
   const params = useParams();

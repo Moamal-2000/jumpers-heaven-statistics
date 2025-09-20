@@ -12,7 +12,7 @@ const MapDetailHeader = ({ mapData, onBack }) => {
 
       <div className={s.mapInfo}>
         <div className={s.mapImage}>
-          <MapImage mapName={mapname} />
+          <MapImage mapName={mapname} objectFit="cover" />
         </div>
 
         <div className={s.mapDetails}>
