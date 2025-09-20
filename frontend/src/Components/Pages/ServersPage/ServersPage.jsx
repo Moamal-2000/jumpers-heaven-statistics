@@ -14,7 +14,7 @@ const ServersPage = () => {
   useEffect(() => {
     const fetchServers = async () => {
       try {
-        const response = await fetch(jhApis({}).player.getOnlinePlayers);
+        const response = await fetch(jhApis().player.getOnlinePlayers);
         if (!response.ok) throw new Error("Failed to fetch server data");
         const data = await response.json();
         setServers(data.servers || []);

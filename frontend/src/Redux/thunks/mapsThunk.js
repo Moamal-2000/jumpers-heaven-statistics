@@ -6,7 +6,7 @@ export const fetchMaps = createAsyncThunk(
   "globalSlice/fetchMaps",
   async (paramsObject) => {
     try {
-      const response = await fetch(jhApis({}).map.getAllMaps, {
+      const response = await fetch(jhApis().map.getAllMaps, {
         headers: { Accept: "application/msgpack", "Accept-Encoding": "gzip" },
       });
       const mapsData = await decodeAsyncData(response);

@@ -18,7 +18,7 @@ export const getJumpersHeavenStats = createAsyncThunk(
   "globalSlice/getJumpersHeavenStats",
   async () => {
     try {
-      const response = await fetch(jhApis({}).map.getMapsCount, {
+      const response = await fetch(jhApis().map.getMapsCount, {
         headers: { Accept: "application/msgpack", "Accept-Encoding": "gzip" },
       });
 

@@ -81,7 +81,7 @@ const MapDetailPage = ({ cpid }) => {
       setLoading(true);
       setError(false);
 
-      const response = await fetch(jhApis({}).map.getAllMaps);
+      const response = await fetch(jhApis().map.getAllMaps);
       const data = await response.json();
       const map = data.find((m) => m.cp_id === parseInt(cpid));
 

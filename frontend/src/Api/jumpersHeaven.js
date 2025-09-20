@@ -9,7 +9,7 @@ export const jhApis = ({
   playerid = 108468,
   cpid = 14606,
   sort = "admin",
-}) => {
+} = {}) => {
   fps = fps === "mix" ? 0 : fps;
 
   return {

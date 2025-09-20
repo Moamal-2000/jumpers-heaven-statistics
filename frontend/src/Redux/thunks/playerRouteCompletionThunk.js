@@ -30,7 +30,7 @@ export const fetchPlayerRouteCompletion = createAsyncThunk(
       }
       
       // Fetch all available maps
-      const allMapsResponse = await fetch(jhApis({}).map.getAllMaps, {
+      const allMapsResponse = await fetch(jhApis().map.getAllMaps, {
         headers: { Accept: "application/json" },
       });
       
